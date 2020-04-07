@@ -1,0 +1,9 @@
+entite (nom, position, direction, ?)
+	-> gendarme (IA_gendarme)
+	-> voleur (IA_voleur)
+
+Plateau(taille,affichage)
+Jeu(fonction_initialisation)
+
+création d'un type coordonnées
+liste de methodes_IA
