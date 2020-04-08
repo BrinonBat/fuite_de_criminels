@@ -8,6 +8,10 @@ enum class Cardinal{
 	Ouest
 };
 
+struct Coordonnee{
+	int x,y;
+}
+
 class Personnage{
 	public:
 		//Constructeur
