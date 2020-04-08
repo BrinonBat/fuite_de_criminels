@@ -1,4 +1,4 @@
-entite (nom, position, direction, ?)
+Personnage (nom, position, direction, ?)
 	-> gendarme (IA_gendarme)
 	-> voleur (IA_voleur)
 
