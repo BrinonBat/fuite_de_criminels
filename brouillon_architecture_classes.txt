@@ -1,9 +1,10 @@
-Personnage (nom, position, direction, ?)
+Personnage (nom, position, direction)
 	-> gendarme (IA_gendarme)
 	-> voleur (IA_voleur)
 
-Plateau(taille,affichage)
-Jeu(fonction_initialisation)
+Jeu contient Plateau (matrice de cases) et liste de personnages
 
 création d'un type coordonnées
 liste de methodes_IA
+
+deux implémentation possibles : soit la case contient un Personnage, soit le personnage pointe sur la case
