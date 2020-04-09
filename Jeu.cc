@@ -1,5 +1,13 @@
 #include "Jeu.hh"
-#include <cstdlib>
+#include <cstdlib.h>
+
+void Jeu::ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir){
+	liPersos.push_back(new Gendarme(nom,p,dir));
+}
+
+void Jeu::ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir){
+	liPersos.push_back(new Voleur(nom,p,dir));
+}
 
 void Jeu::init(int const & nb_gendarmes,int const & nb_voleurs){
 	//ajout des gendarmes
@@ -16,12 +24,4 @@ void Jeu::init(int const & nb_gendarmes,int const & nb_voleurs){
 		std::string nom="vol"+itoa(i);
 		ajoutVoleur(nom,p,Nord);
 	}
-}
-
-void Jeu::ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir){
-	liPersos.push_back(new Gendarme(nom,p,dir));
-}
-
-void Jeu::ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir){
-	liPersos.push_back(new Voleur(nom,p,dir));
 }
