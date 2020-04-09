@@ -14,10 +14,10 @@ class Jeu{
 		//méthodes
 		void init(int const & nb_gendarmes,int const & nb_voleurs);
 
-		void ajoutVoleur(Position p,Cardinal dir);
-		void ajoutGendarme(Position p,Cardinal dir);
-		void supprimeVoleur(Position p);
-		void supprimeGendarme(Position p);
+		void ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir);
+		void ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir);
+		void supprimeVoleur(Position const & p);
+		void supprimeGendarme(Position const & p);
 
 	private:
 		int largeur;
