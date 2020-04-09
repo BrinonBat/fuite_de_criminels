@@ -16,12 +16,12 @@ class Jeu{
 
 		void ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir);
 		void ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir);
-		void supprimeVoleur(Position const & p);
-		void supprimeGendarme(Position const & p);
+		//void supprimeVoleur(Position const & p);
+		//void supprimeGendarme(Position const & p);
 
 	private:
 		int largeur;
 		int hauteur;
 		Personnage <std::vector> liPersos;
 
-}
+};

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Position.hh"
+#include "Jeu.hh"
 
 enum class Cardinal{
 	Nord,
@@ -15,7 +16,7 @@ class Personnage{
 		Personnage(std::string const & nom, Position const & pos,Cardinal dir):
 			nom(nom),position(pos),direction(dir){};
 		virtual ~Personnage()=default;
-		virtual Personnage* clone() const=0;
+//		virtual Personnage* clone() const=0;
 
 		//accesseurs
 		/* à faire
@@ -31,18 +32,18 @@ class Personnage{
 
 	private:
 		std::string nom;
-		Coordonnee position;
+		Position position;
 		Cardinal direction;
 };
 
 class Voleur:public Personnage{
 	public:
 		int prevoir_coup(Jeu const & game) const override;
-		Personnage clone() const override{return new Voleur(*this);}
-}
+//		Personnage clone() const override{return new Voleur(*this);}
+};
 
 class Gendarme:public Personnage{
 	public:
 		int prevoir_coup(Jeu const & game) const override;
-		Personnage clone() const override{return new Gendarme(*this);}
-}
+//		Personnage clone() const override{return new Gendarme(*this);}
+};
