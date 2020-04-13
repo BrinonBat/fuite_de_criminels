@@ -11,13 +11,14 @@ enum class Direction {
 	Bas,
 	Gauche,
 	Droite,
+	//mouvements en diagonale possibles ?
 	Haut_Gauche,
 	Haut_Droite,
 	Bas_Gauche,
 	Bas_Droite
 };
 
-enum class type {
+enum class type { // ou enum type tout seul pour conserver les indices ?
 	nobody,
 	voleur,
 	gendarme,
@@ -54,18 +55,18 @@ public:
 class Voleur : public Joueur {
 
 public :
-Voleur(std::string nom,type const & e,Position const & pos,int id):
-Joueur(nom,e,pos,id){};
-Direction jouer() override;
+	Voleur(std::string nom,type const & e,Position const & pos,int id):
+		Joueur(nom,e,pos,id){};
+	Direction jouer() override;
 
 };
 
 class Gendarme : public Joueur {
 
 public :
-Gendarme(std::string nom,type const & e,Position const & pos,int id):
-Joueur(nom,e,pos,id){};
-Direction jouer() override;
+	Gendarme(std::string nom,type const & e,Position const & pos,int id):
+		Joueur(nom,e,pos,id){};
+	Direction jouer() override;
 
 };
 
