@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/fuite.dir/main.cpp.o CMakeFiles/fuite.dir/Jeu.cc.o  -o fuite 
