@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nimartinez/Documents/L3_Info/Projet_L3/fuite/Jeu.cc
+Jeu.hh
+/home/nimartinez/Documents/L3_Info/Projet_L3/fuite/Jeu.hh
+
+/home/nimartinez/Documents/L3_Info/Projet_L3/fuite/Jeu.hh
+iostream
+-
+vector
+-
+iostream
+-
+string
+-
+
+/home/nimartinez/Documents/L3_Info/Projet_L3/fuite/main.cpp
+iostream
+-
+string
+-
+Jeu.hh
+/home/nimartinez/Documents/L3_Info/Projet_L3/fuite/Jeu.hh
+
