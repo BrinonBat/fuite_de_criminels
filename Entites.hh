@@ -50,7 +50,7 @@ public:
 		Entite(pos,id),type(t){};
 //accesseurs
 	Type getType(){return type;}
-	
+
 private:
 	Type type;
 
@@ -69,12 +69,14 @@ public:
 	virtual ~Joueur() =default; // destructeur retiré pour que celui de Voleur et Gendarme soient utilisés
 
 //accesseurs
-
+	// Passage des valeurs de speed en constantes globales???(valeurs égales pour tout la classe)
+	double getSpeed(){return speed;}
+	std::string getNom(){return nom;}
 //méthodes
 	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
 	virtual Direction jouer() {return Direction(3.2,3.1);};
 
-// private:
+private:
 	double speed;
 	std::string nom;
 

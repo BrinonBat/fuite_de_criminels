@@ -12,13 +12,13 @@ void Jeu::ajouter_joueur(Joueur const &J)
 
 void Jeu::ajouter_sortie(Position P)
 {
-	Liste_Sortie.push_back(P); // à retravailler. Utilisation de pointeur plutot que de copie ? liste_sortie devient liste_objets ? 
+	Liste_Sortie.push_back(P); // à retravailler. Utilisation de pointeur plutot que de copie ? liste_sortie devient liste_objets ?
 }
 
 void Jeu::deplacement(Joueur & J, Direction D)
 {
 	//calcul de la nouvelle position
-	J.setPosition(Position(J.getPosition().x+(D.x*J.speed),J.getPosition().y+(D.y*J.speed)));
+	J.setPosition(Position(J.getPosition().x+(D.x*J.getSpeed()),J.getPosition().y+(D.y*J.getSpeed())));
 
 }
 
