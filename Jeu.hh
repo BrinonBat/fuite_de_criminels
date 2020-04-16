@@ -1,27 +1,90 @@
+#include <iostream>
 #include <vector>
-#include "Personnage.hh"
+#include <iostream>
+#include <string>
 
-class Jeu{
-	public:
-		//constructeur
-		Jeu(int const & larg,int const & haut):
-			largeur(larg),hauteur(haut){};
 
-		//accesseurs
-		int getLargeur() {return largeur;}
-		int getHauteur() {return hauteur;}
+using coordonnee = unsigned int ;
 
-		//méthodes
-		void init(int const & nb_gendarmes,int const & nb_voleurs);
+enum class type {
+	nobody,
+	voleur,
+	gendarme,
+	cachette,
+	sortie
+};
 
-		void ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir);
-		void ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir);
-		//void supprimeVoleur(Position const & p);
-		//void supprimeGendarme(Position const & p);
+class Position {
+public:
+	Position(double x, double y):
+	x(x),y(y){};
+	double x,y;
+};
 
-	private:
-		int largeur;
-		int hauteur;
-		Personnage <std::vector> liPersos;
+using Direction = Position;
+
+class Joueur {
+
+public:
+	Joueur(std::string nom,type const & e,Position const & pos,int id,double speed):
+	nom(nom),t(e),pos(pos),id(id),speed(0.3){};
+	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->pos.x)+","+std::to_string(this->pos.y)+")";};
+
+	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
+	virtual Direction jouer() {return Direction(3.2,3.1);};
+
+// private:
+	std::string nom;
+	type t;
+	Position pos;
+	int id;
+	double speed;
+
+};
+
+
+class Voleur : public Joueur {
+
+public :
+Voleur(std::string nom,type const & e,Position const & pos,int id,double speed):
+Joueur(nom,e,pos,id,speed){};
+Direction jouer() override;
+
+};
+
+class Gendarme : public Joueur {
+
+public :
+Gendarme(std::string nom,type const & e,Position const & pos,int id,double speed):
+Joueur(nom,e,pos,id,speed){};
+Direction jouer() override;
+
+};
+
+
+
+class Grille {
+
+public :
+    Grille(coordonnee plargeur, coordonnee phauteur) {
+		largeur=plargeur;
+		hauteur=phauteur;
+    }
+    Grille(Grille const & GrilleCopier){
+        largeur=GrilleCopier.largeur;
+        hauteur=GrilleCopier.hauteur;
+    }
+
+    void afficher();
+    void initialise();
+    void ajouter_joueur(Joueur &J);
+    void ajouter_sortie(Position P);
+    void deplacement(Joueur & J, Direction d);
+    bool victoire(Joueur J);
+
+
+    coordonnee largeur,hauteur;
+    std::vector<Joueur> Liste_Joueur;
+    std::vector<Position> Liste_Sortie;
 
 };

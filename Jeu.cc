@@ -1,27 +1,75 @@
+
 #include "Jeu.hh"
-#include <cstdlib.h>
 
-void Jeu::ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir){
-	liPersos.push_back(new Gendarme(nom,p,dir));
+Direction Voleur::jouer() {
+	return Direction(3.2,3.1);
 }
 
-void Jeu::ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir){
-	liPersos.push_back(new Voleur(nom,p,dir));
+Direction Gendarme::jouer() {
+	return Direction(3.2,3.1);
 }
 
-void Jeu::init(int const & nb_gendarmes,int const & nb_voleurs){
-	//ajout des gendarmes
-	for(int i=0;i<nb_gendarmes;i++){
-		/*ajouter la prise en compte du cas ou il y a beaucoup de gendarmes*/
-		Position p=new Position(i,0,this->largeur,this->hauteur);
-		std::string nom="gend"+itoa(i);
-		ajoutGendarme(nom,p,Nord);
+void afficherValeur(type e)
+{
+    switch (e) {
+    case type::nobody:
+    	std::cout<<" ";
+        break;
+    case type::voleur:
+        std::cout<<"V";
+        break;
+    case type::gendarme:
+        std::cout<<"G";
+        break;
+    case type::cachette:
+        std::cout<<"C";
+        break;
+    case type::sortie:
+        std::cout<<"S";
+        break;
+    }
+}
+
+void Grille::initialise()
+{
+	
+}
+
+void Grille::ajouter_joueur(Joueur &J)
+{
+	Liste_Joueur.push_back(J);
+}
+
+void Grille::ajouter_sortie(Position P)
+{
+	Liste_Sortie.push_back(P);	
+}
+
+void Grille::deplacement(Joueur & J, Direction D)
+{
+	J.pos.x=J.pos.x+(D.x*J.speed);
+	J.pos.y=J.pos.y+(D.y*J.speed);
+
+
+	for (unsigned int i = 0;i<Liste_Joueur.size();++i)
+	{
+		if (Liste_Joueur.at(i).id==J.id)
+		{
+			Liste_Joueur.at(i).pos.x=J.pos.x;
+			Liste_Joueur.at(i).pos.y=J.pos.y;
+		}
 	}
-	//ajout des voleurs
-	for(int i=0;i<nb_voleurs;i++){
-		/*ajouter la prise en compte du cas ou il y a beaucoup de voleurs*/
-		Position p=new Position((this->largeur)/2,(this->hauteur-i),this->largeur,this->hauteur);
-		std::string nom="vol"+itoa(i);
-		ajoutVoleur(nom,p,Nord);
-	}
+
+}
+
+void Grille::afficher()
+{
+
+
+
+}
+
+bool Grille::victoire(Joueur J)
+{
+	return true;	
 }
