@@ -50,7 +50,7 @@ public:
 		Entite(pos,id),type(t){};
 //accesseurs
 	Type getType(){return type;}
-
+	
 private:
 	Type type;
 

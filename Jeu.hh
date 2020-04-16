@@ -1,27 +1,28 @@
-#include <vector>
-#include "Personnage.hh"
+#include "Entites.hh"
 
-class Jeu{
-	public:
-		//constructeur
-		Jeu(int const & larg,int const & haut):
-			largeur(larg),hauteur(haut){};
 
-		//accesseurs
-		int getLargeur() {return largeur;}
-		int getHauteur() {return hauteur;}
+class Jeu {
 
-		//méthodes
-		void init(int const & nb_gendarmes,int const & nb_voleurs);
+public :
+    Jeu(Coordonnee plargeur, Coordonnee phauteur) {
+		largeur=plargeur;
+		hauteur=phauteur;
+    }
+    Jeu(Jeu const & JeuCopier){
+        largeur=JeuCopier.largeur;
+        hauteur=JeuCopier.hauteur;
+    }
 
-		void ajoutVoleur(std::string const & nom,Position const & p,Cardinal const & dir);
-		void ajoutGendarme(std::string const & nom,Position const & p,Cardinal const & dir);
-		//void supprimeVoleur(Position const & p);
-		//void supprimeGendarme(Position const & p);
+    void afficher();
+    void initialise();
+    void ajouter_joueur(Joueur const &J);
+    void ajouter_sortie(Position P);
+    void deplacement(Joueur & J, Direction d);
+    bool victoire(Joueur const & J);
 
-	private:
-		int largeur;
-		int hauteur;
-		Personnage <std::vector> liPersos;
+
+    Coordonnee largeur,hauteur;
+    std::vector<Joueur *> Liste_Joueur;
+    std::vector<Position> Liste_Sortie;
 
 };
