@@ -2,11 +2,11 @@
 #include "Jeu.hh"
 
 Direction Voleur::jouer() {
-	return Direction::Bas_Droite;
+	return Direction(3.2,3.1);
 }
 
 Direction Gendarme::jouer() {
-	return Direction::Bas_Droite;
+	return Direction(3.2,3.1);
 }
 
 void afficherValeur(type e)
@@ -32,95 +32,24 @@ void afficherValeur(type e)
 
 void Grille::initialise()
 {
-	  for (unsigned int i = 0;i<largeur;++i)
-    {
-        for (unsigned int j =0;j<hauteur;++j)
-        {
-            Tab[i][j]=type::nobody;
-        }
-    }
+	
 }
 
 void Grille::ajouter_joueur(Joueur &J)
 {
 	Liste_Joueur.push_back(J);
-	Tab[J.pos.x][J.pos.y]=J.t;
 }
 
 void Grille::ajouter_sortie(Position P)
 {
-	Liste_Sortie.push_back(P);
-	Tab[P.x][P.y]=type::sortie;
+	Liste_Sortie.push_back(P);	
 }
 
 void Grille::deplacement(Joueur & J, Direction D)
 {
+	J.pos.x=J.pos.x+(D.x*J.speed);
+	J.pos.y=J.pos.y+(D.y*J.speed);
 
-	Tab[J.pos.x][J.pos.y]=type::nobody;
-
-	switch (D) {
-    case Direction::Bas:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers le bas\n";
-    	J.pos.x=J.pos.x+1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-    case Direction::Haut:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers le haut\n";
-    	J.pos.x=J.pos.x-1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-    case Direction::Gauche:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers la gauche\n";
-    	J.pos.y=J.pos.y-1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-	case Direction::Droite:
-		std::cout<<"Déplacement de : "<<J.nom<<" vers la droite\n";
-    	J.pos.y=J.pos.y+1;
-    	if (victoire(J)) {std::cout<<"Victoire";break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-    case Direction::Haut_Gauche:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers le haut-gauche\n";
-    	J.pos.y=J.pos.y-1;
-    	J.pos.x=J.pos.x-1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-    case Direction::Haut_Droite:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers le haut-droite\n";
-    	J.pos.y=J.pos.y+1;
-    	J.pos.x=J.pos.x-1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-    case Direction::Bas_Droite:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers le bas-droite\n";
-    	J.pos.y=J.pos.y+1;
-    	J.pos.x=J.pos.x+1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-
-    case Direction::Bas_Gauche:
-    	std::cout<<"Déplacement de : "<<J.nom<<" vers le bas-gauche\n";
-    	J.pos.x=J.pos.x+1;
-    	J.pos.y=J.pos.y-1;
-    	if (victoire(J)) {std::cout<<"Victoire"; break;}
-    	Tab[J.pos.x][J.pos.y]=J.t;
-        break;
-		
-	default : std::cout<<"erreur lors du déplacement";
-    }
 
 	for (unsigned int i = 0;i<Liste_Joueur.size();++i)
 	{
@@ -136,18 +65,11 @@ void Grille::deplacement(Joueur & J, Direction D)
 void Grille::afficher()
 {
 
-    for (unsigned int i = 0;i<largeur;++i)
-    {
-        for (unsigned int j =0;j<hauteur;++j)
-        {
-            afficherValeur(Tab[i][j]);
-        }
-        std::cout<<std::endl;
-    }
+
 
 }
 
 bool Grille::victoire(Joueur J)
 {
-	return (Tab[J.pos.x][J.pos.y]==type::sortie);
+	return true;	
 }

@@ -6,19 +6,14 @@
 
 using coordonnee = unsigned int ;
 
-enum class Direction {
-	Haut,
-	Bas,
-	Gauche,
-	Droite,
-	//mouvements en diagonale possibles ?
-	Haut_Gauche,
-	Haut_Droite,
-	Bas_Gauche,
-	Bas_Droite
+class Direction {
+public:
+	Direction(double x, double y) :
+	x(x),y(y){};
+	double x,y;
 };
 
-enum class type { // ou enum type tout seul pour conserver les indices ?
+enum class type {
 	nobody,
 	voleur,
 	gendarme,
@@ -28,26 +23,27 @@ enum class type { // ou enum type tout seul pour conserver les indices ?
 
 class Position {
 public:
-	Position(int x, int y):
+	Position(double x, double y):
 	x(x),y(y){};
-	int x,y;
+	double x,y;
 };
 
 class Joueur {
 
 public:
-	Joueur(std::string nom,type const & e,Position const & pos,int id):
-	nom(nom),t(e),pos(pos),id(id){};
+	Joueur(std::string nom,type const & e,Position const & pos,int id,double speed):
+	nom(nom),t(e),pos(pos),id(id),speed(0.3){};
 	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->pos.x)+","+std::to_string(this->pos.y)+")";};
 
 	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
-	virtual Direction jouer() {return Direction::Bas;};
+	virtual Direction jouer() {return Direction(3.2,3.1);};
 
 // private:
 	std::string nom;
 	type t;
 	Position pos;
 	int id;
+	double speed;
 
 };
 
@@ -55,18 +51,18 @@ public:
 class Voleur : public Joueur {
 
 public :
-	Voleur(std::string nom,type const & e,Position const & pos,int id):
-		Joueur(nom,e,pos,id){};
-	Direction jouer() override;
+Voleur(std::string nom,type const & e,Position const & pos,int id,double speed):
+Joueur(nom,e,pos,id,speed){};
+Direction jouer() override;
 
 };
 
 class Gendarme : public Joueur {
 
 public :
-	Gendarme(std::string nom,type const & e,Position const & pos,int id):
-		Joueur(nom,e,pos,id){};
-	Direction jouer() override;
+Gendarme(std::string nom,type const & e,Position const & pos,int id,double speed):
+Joueur(nom,e,pos,id,speed){};
+Direction jouer() override;
 
 };
 
@@ -76,12 +72,10 @@ class Grille {
 
 public :
     Grille(coordonnee plargeur, coordonnee phauteur) {
-		Tab.resize(plargeur,std::vector<type>(phauteur));
 		largeur=plargeur;
 		hauteur=phauteur;
     }
     Grille(Grille const & GrilleCopier){
-        Tab=GrilleCopier.Tab;
         largeur=GrilleCopier.largeur;
         hauteur=GrilleCopier.hauteur;
     }
@@ -95,7 +89,6 @@ public :
 
 
     coordonnee largeur,hauteur;
-    std::vector<std::vector<type>> Tab;
     std::vector<Joueur> Liste_Joueur;
     std::vector<Position> Liste_Sortie;
 
