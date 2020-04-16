@@ -1,8 +1,0 @@
-Personnage (nom, position, direction)
-	-> gendarme (IA_gendarme)
-	-> voleur (IA_voleur)
-
-Jeu contient liste de personnages
-
-création d'un type coordonnées
-liste de methodes_IA
