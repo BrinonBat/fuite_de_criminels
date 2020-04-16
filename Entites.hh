@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <iostream>
 #include <string>
 
 using Coordonnee = unsigned int ;
