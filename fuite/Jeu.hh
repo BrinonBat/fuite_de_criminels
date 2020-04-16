@@ -6,13 +6,6 @@
 
 using coordonnee = unsigned int ;
 
-class Direction {
-public:
-	Direction(double x, double y) :
-	x(x),y(y){};
-	double x,y;
-};
-
 enum class type {
 	nobody,
 	voleur,
@@ -27,6 +20,8 @@ public:
 	x(x),y(y){};
 	double x,y;
 };
+
+using Direction = Position;
 
 class Joueur {
 
