@@ -1,6 +1,6 @@
 FLAGS = -Wall -std=c++14
 MAIN = main.cpp
-FICS =Jeu.cc
+FICS =Jeu.cc Entites.cc
 EXEC = exe
 
 main: $(MAIN) $(FICS)

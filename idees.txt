@@ -1,2 +1,3 @@
 - champ de visions
 - mécanique de "sprint" pour rattraper ou fuir quelqu'un
+- possibilité de positionner soi-même les gendarmes et voleurs avant de lancer la partie.

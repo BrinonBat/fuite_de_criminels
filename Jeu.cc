@@ -1,75 +1,35 @@
-
 #include "Jeu.hh"
 
-Direction Voleur::jouer() {
-	return Direction(3.2,3.1);
-}
-
-Direction Gendarme::jouer() {
-	return Direction(3.2,3.1);
-}
-
-void afficherValeur(type e)
+void Jeu::initialise()
 {
-    switch (e) {
-    case type::nobody:
-    	std::cout<<" ";
-        break;
-    case type::voleur:
-        std::cout<<"V";
-        break;
-    case type::gendarme:
-        std::cout<<"G";
-        break;
-    case type::cachette:
-        std::cout<<"C";
-        break;
-    case type::sortie:
-        std::cout<<"S";
-        break;
-    }
+
 }
 
-void Grille::initialise()
+void Jeu::ajouter_joueur(Joueur const &J)
 {
-	
+	Liste_Joueur.push_back(J.clone());
 }
 
-void Grille::ajouter_joueur(Joueur &J)
+void Jeu::ajouter_sortie(Position P)
 {
-	Liste_Joueur.push_back(J);
+	Liste_Sortie.push_back(P); // à retravailler. Utilisation de pointeur plutot que de copie ?
 }
 
-void Grille::ajouter_sortie(Position P)
+void Jeu::deplacement(Joueur & J, Direction D)
 {
-	Liste_Sortie.push_back(P);	
-}
-
-void Grille::deplacement(Joueur & J, Direction D)
-{
-	J.pos.x=J.pos.x+(D.x*J.speed);
-	J.pos.y=J.pos.y+(D.y*J.speed);
-
-
-	for (unsigned int i = 0;i<Liste_Joueur.size();++i)
-	{
-		if (Liste_Joueur.at(i).id==J.id)
-		{
-			Liste_Joueur.at(i).pos.x=J.pos.x;
-			Liste_Joueur.at(i).pos.y=J.pos.y;
-		}
-	}
+	//calcul de la nouvelle position
+	J.setPosition(Position(J.getPosition().x+(D.x*J.speed),J.getPosition().y+(D.y*J.speed)));
 
 }
 
-void Grille::afficher()
+void Jeu::afficher()
 {
 
 
 
 }
 
-bool Grille::victoire(Joueur J)
+bool Jeu::victoire(Joueur const & J)
 {
-	return true;	
+	return true;
 }
