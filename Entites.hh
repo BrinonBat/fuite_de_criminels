@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 
-using coordonnee = unsigned int ;
+using Coordonnee = unsigned int ;
 
-enum class type {
+enum class Type {
 	cachette,
 	sortie
 };
@@ -16,8 +16,10 @@ public:
 	Position(double x, double y):
 	x(x),y(y){};
 //accesseurs
-	double x,y;
-	
+	double x,y; // mise en private et ajout d'accesseurs ?
+
+	// plus simple si on redéfinit l'operaton "+" non ?
+
 };
 
 using Direction = Position;
@@ -25,31 +27,38 @@ using Direction = Position;
 class Entite{
 public:
 //constructeurs & destructeurs
-	Entite(Position const & pos):emplacement(pos){};
+	Entite(Position const & pos,int id):emplacement(pos),id(id){};
 
 //accesseurs
 	Position getPosition(){return emplacement;}
 	void setPosition(Position nouv){emplacement=nouv;}
+	int getId(){return id;}
+	void setId(int nouv){id=nouv;}
 
 //méthodes
 	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.x)+","+std::to_string(this->emplacement.y)+")";};
 
 private:
 	Position emplacement;
+	int id;
 };
-/*
-class NonJoueur{
+
+class NonJoueur: public Entite{
 public:
+	NonJoueur(Position const & pos, int id,Type const & t):
+		Entite(pos,id),type(t){};
 
+private:
+	Type type;
 
-}
-*/
+};
+
 class Joueur: public Entite {
 
 public:
 //constructeurs & destructeurs
-	Joueur(Position const & pos,std::string nom,int id,double speed):
-		Entite(pos),nom(nom),id(id),speed(0.3){};
+	Joueur(Position const & pos,int id,double speed,std::string nom):
+		Entite(pos,id),speed(0.3),nom(nom){};
 
 	virtual Joueur* clone() const=0; /* contructeur virtuel
 	permet l'ajout (et la recopie) de Voleur et Gendarme dans le vecteur du Jeu sans y copier de Joueur tout court*/
@@ -63,19 +72,18 @@ public:
 	virtual Direction jouer() {return Direction(3.2,3.1);};
 
 // private:
-	std::string nom;
-	int id;
 	double speed;
+	std::string nom;
 
 };
 
 
-class Voleur : public Joueur {
+class Voleur : public Joueur{
 
-public :
+public:
 //constructeurs & destructeurs
-	Voleur(Position const & pos,std::string nom,int id,double speed):
-		Joueur(pos,nom,id,speed){};
+	Voleur(Position const & pos,int id,double speed,std::string nom):
+		Joueur(pos,id,speed,nom){};
 
 	//redefinition du constructeur virtuel
 	Joueur* clone() const override{
@@ -89,10 +97,10 @@ public :
 
 class Gendarme : public Joueur {
 
-public :
+public:
 //constructeurs & destructeurs
-	Gendarme(Position const & pos,std::string nom,int id,double speed):
-		Joueur(pos,nom,id,speed){};
+	Gendarme(Position const & pos,int id,double speed,std::string nom):
+		Joueur(pos,id,speed,nom){};
 
 	//redefinition du constructeur virtuel
 	Joueur* clone() const override{

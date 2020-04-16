@@ -7,9 +7,9 @@ int main(){
 	// Ajout GRILLE
 	Jeu Test(20,20);
 	// Ajout JOUEURS
-	Voleur Voleur1(Position(6,5),"Voleur1",0,0.3);
+	Voleur Voleur1(Position(6,5),0,0.3,"Voleur1");
 	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-	Gendarme Gendarme1(Position(10,5),"Gendarme1",1,0.3);
+	Gendarme Gendarme1(Position(10,5),1,0.3,"Gendarme1");
 	std::cout<<"Gendarme1:"<<Gendarme1.Affiche_Position()<<"\n";
 
 	// Ajout JOUEURS sur GRILLE

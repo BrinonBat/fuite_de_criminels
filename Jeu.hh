@@ -4,7 +4,7 @@
 class Jeu {
 
 public :
-    Jeu(coordonnee plargeur, coordonnee phauteur) {
+    Jeu(Coordonnee plargeur, Coordonnee phauteur) {
 		largeur=plargeur;
 		hauteur=phauteur;
     }
@@ -21,7 +21,7 @@ public :
     bool victoire(Joueur const & J);
 
 
-    coordonnee largeur,hauteur;
+    Coordonnee largeur,hauteur;
     std::vector<Joueur *> Liste_Joueur;
     std::vector<Position> Liste_Sortie;
 

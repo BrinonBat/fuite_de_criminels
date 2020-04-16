@@ -8,13 +8,13 @@ Direction Gendarme::jouer() {
 	return Direction(3.2,3.1);
 }
 
-void afficherValeur(type e)
+void afficherValeur(Type e)
 {
     switch (e) {
-    case type::cachette:
+    case Type::cachette:
         std::cout<<"C";
         break;
-    case type::sortie:
+    case Type::sortie:
         std::cout<<"S";
         break;
     }
