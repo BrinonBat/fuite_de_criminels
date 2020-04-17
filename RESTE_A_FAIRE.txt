@@ -1,8 +1,9 @@
 reste à faire :
-OK	- passage en private des attributs de position
+OK	- passage en pointeurs des objets stockés dans les vecteurs de Jeu
+OK	- passage en private des attributs de toutes les classes
 OK	- redéfinir l'operaton "+" de Position
-	- passage en private des attributs de jeu.hh
-	- methode de test fin de partie
+	- methode de test fin de partie (question posée au prof pour savoir si on doit déterminer un vainqueur ou juste afficher "fin de partie")
+		-> si "fin de partie" uniquement, alors la méthode est appellée UNIQUEMENT dans supprimer_voleur (dans que quand un voleur quitte le terrain.)
 PUIS mise en place d'une GUI
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
