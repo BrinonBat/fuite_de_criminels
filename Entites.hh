@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -12,16 +13,25 @@ enum class Type {
 class Position {
 public:
 //constructeurs & destructeurs
-	Position(double x, double y):
+	Position(double const & x, double const & y):
 	x(x),y(y){};
+
 //accesseurs
-	double x,y; // mise en private et ajout d'accesseurs ?
+	double getX()const{return x;}
+	void setX(int const & nouv){x=nouv;}
+	double getY()const{return y;}
+	void setY(int const & nouv){y=nouv;}
+
+Position operator+(Position const & d); // redéfinition de l'addition pour les positions
+
+private:
+	double x,y;
 
 	// plus simple si on redéfinit l'operaton "+" non ?
 
 };
-
 using Direction = Position;
+//Position Position::operator+(Direction const & d); // redéfinition de l'addition pour les positions
 
 class Entite{
 public:
@@ -29,13 +39,13 @@ public:
 	Entite(Position const & pos,int id):emplacement(pos),id(id){};
 
 //accesseurs
-	Position getPosition(){return emplacement;}
+	Position getPosition()const{return emplacement;}
 	void setPosition(Position nouv){emplacement=nouv;}
-	int getId(){return id;}
+	int getId()const{return id;}
 	void setId(int nouv){id=nouv;}
 
 //méthodes
-	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.x)+","+std::to_string(this->emplacement.y)+")";};
+	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.getX())+","+std::to_string(this->emplacement.getY())+")";};
 
 private:
 	Position emplacement;
@@ -48,7 +58,7 @@ public:
 	NonJoueur(Position const & pos, int id,Type const & t):
 		Entite(pos,id),type(t){};
 //accesseurs
-	Type getType(){return type;}
+	Type getType()const{return type;}
 
 private:
 	Type type;
@@ -69,8 +79,8 @@ public:
 
 //accesseurs
 	// Passage des valeurs de speed en constantes globales???(valeurs égales pour tout la classe)
-	double getSpeed(){return speed;}
-	std::string getNom(){return nom;}
+	double getSpeed()const{return speed;}
+	std::string getNom()const{return nom;}
 //méthodes
 	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
 	virtual Direction jouer() {return Direction(3.2,3.1);};

@@ -1,10 +1,11 @@
+#pragma once
 #include "Entites.hh"
 
 
 class Jeu {
 
 public :
-    Jeu(Coordonnee plargeur, Coordonnee phauteur) {
+    Jeu(double plargeur, double phauteur) {
 		largeur=plargeur;
 		hauteur=phauteur;
     }
@@ -21,7 +22,7 @@ public :
     bool victoire(Joueur const & J);
 
 
-    Coordonnee largeur,hauteur;
+    double largeur,hauteur;
     std::vector<Joueur *> Liste_Joueur;
     std::vector<Position> Liste_Sortie;
 

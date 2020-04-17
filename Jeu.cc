@@ -18,7 +18,9 @@ void Jeu::ajouter_sortie(Position P)
 void Jeu::deplacement(Joueur & J, Direction D)
 {
 	//calcul de la nouvelle position
-	J.setPosition(Position(J.getPosition().x+(D.x*J.getSpeed()),J.getPosition().y+(D.y*J.getSpeed())));
+	J.setPosition(J.getPosition()+D);
+
+	//J.setPosition(Position(J.getPosition().getX()+(D.getX()*J.getSpeed()),J.getPosition().getY()+(D.getY()*J.getSpeed())));
 
 }
 

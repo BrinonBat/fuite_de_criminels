@@ -1,5 +1,10 @@
 #include "Entites.hh"
 
+Position Position::operator+(Position const & p){
+	return Position(getX() + p.getX(),getY() + p.getY());
+}
+
+
 Direction Voleur::jouer() {
 	return Direction(3.2,3.1);
 }
