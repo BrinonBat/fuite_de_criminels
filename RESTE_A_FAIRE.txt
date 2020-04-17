@@ -1,10 +1,10 @@
 reste à faire :
-	- passage en private des attributs de position
-	- redéfinir l'operaton "+" de Position
+OK	- passage en private des attributs de position
+OK	- redéfinir l'operaton "+" de Position
+	- passage en private des attributs de jeu.hh
 	- methode de test fin de partie
 PUIS mise en place d'une GUI
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
 		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
 		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
-	
