@@ -57,6 +57,7 @@ public:
 //constructeurs & destructeurs
 	NonJoueur(Position const & pos, int id,Type const & t):
 		Entite(pos,id),type(t){};
+
 //accesseurs
 	Type getType()const{return type;}
 

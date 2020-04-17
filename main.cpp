@@ -15,8 +15,8 @@ int main(){
 	Test.ajouter_joueur(Gendarme1);
 
 	// Ajout SORTIE
-	Test.ajouter_sortie(Position(18,18));
-	Test.ajouter_sortie(Position(13,13));
+	Test.ajouter_nonJoueur(NonJoueur(Position(18,18),11,Type::sortie));
+	Test.ajouter_nonJoueur(NonJoueur(Position(13,13),12,Type::sortie));
 
 
 	// AFFICHAGE
@@ -26,7 +26,7 @@ int main(){
 	Test.deplacement(Voleur1,Voleur1.jouer());
 	Test.afficher();
 	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-	std::cout<<"Voleur1:(Dans le vector)"<<Test.Liste_Joueur.at(0)->Affiche_Position()<<"\n";
+	// méthode me paraissant inutile, je l'ai supp  std::cout<<"Voleur1:(Dans le vector)"<<Test.getJoueur(0)->Affiche_Position()<<"\n";
 
 	Test.deplacement(Voleur1,Voleur1.jouer());
 	Test.afficher();
