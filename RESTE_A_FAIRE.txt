@@ -2,9 +2,13 @@ reste à faire :
 OK	- passage en pointeurs des objets stockés dans les vecteurs de Jeu
 OK	- passage en private des attributs de toutes les classes
 OK	- redéfinir l'operaton "+" de Position
-	- methode de test fin de partie (question posée au prof pour savoir si on doit déterminer un vainqueur ou juste afficher "fin de partie")
+OK	- methode de test fin de partie (question posée au prof pour savoir si on doit déterminer un vainqueur ou juste afficher "fin de partie")
 		-> si "fin de partie" uniquement, alors la méthode est appellée UNIQUEMENT dans supprimer_voleur (dans que quand un voleur quitte le terrain.)
 	- ajout de génération automatique de doc via Doxygen
+	- mise en place d'un vrai "main" et de vrais "tours"
+	- mise en place d'IA basiques permettant le déroulement d'une partie
+	- mettre "id" sous forme de variable partagée unique
+
 PUIS mise en place d'une GUI
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
