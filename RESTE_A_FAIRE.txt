@@ -4,8 +4,10 @@ OK	- passage en private des attributs de toutes les classes
 OK	- redéfinir l'operaton "+" de Position
 OK	- methode de test fin de partie (question posée au prof pour savoir si on doit déterminer un vainqueur ou juste afficher "fin de partie")
 		-> si "fin de partie" uniquement, alors la méthode est appellée UNIQUEMENT dans supprimer_voleur (dans que quand un voleur quitte le terrain.)
-	- ajout de génération automatique de doc via Doxygen
+		au final, faut implémnter les deux. donc :
+	- ajout de variable "voleursCaptures" et "nbVoleurDepart" pour pouvoir déterminer un vainqueur
 	- mise en place d'un vrai "main" et de vrais "tours"
+	- ajout de génération automatique de doc via Doxygen
 	- mise en place d'IA basiques permettant le déroulement d'une partie
 	- mettre "id" sous forme de variable partagée unique
 
