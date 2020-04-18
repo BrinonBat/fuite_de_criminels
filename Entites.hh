@@ -83,6 +83,8 @@ public:
 	double getSpeed()const{return speed;}
 	std::string getNom()const{return nom;}
 //méthodes
+
+	bool estVoleur() const{return false;}
 	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
 	virtual Direction jouer() {return Direction(3.2,3.1);};
 
@@ -106,6 +108,7 @@ public:
 	}
 
 //méthodes
+	bool estVoleur() const{return true;}
 	Direction jouer() override;
 
 };
