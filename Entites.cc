@@ -1,5 +1,9 @@
 #include "Entites.hh"
 
+unsigned int Entite::compteur(0);
+
+Entite::Entite(Position const & pos):emplacement(pos),id(compteur++){}
+
 Position Position::operator+(Position const & p){
 	return Position(getX() + p.getX(),getY() + p.getY());
 }

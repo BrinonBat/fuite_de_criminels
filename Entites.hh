@@ -36,27 +36,27 @@ using Direction = Position;
 class Entite{
 public:
 //constructeurs & destructeurs
-	Entite(Position const & pos,int id):emplacement(pos),id(id){};
+	Entite(Position const & pos);
 
 //accesseurs
 	Position getPosition()const{return emplacement;}
 	void setPosition(Position nouv){emplacement=nouv;}
-	int getId()const{return id;}
-	void setId(int nouv){id=nouv;}
+	unsigned int getId()const{return id;}
 
 //méthodes
 	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.getX())+","+std::to_string(this->emplacement.getY())+")";};
 
 private:
 	Position emplacement;
-	int id;
+	unsigned int id;
+	static unsigned int compteur;
 };
 
 class NonJoueur: public Entite{
 public:
 //constructeurs & destructeurs
-	NonJoueur(Position const & pos, int id,Type const & t):
-		Entite(pos,id),type(t){};
+	NonJoueur(Position const & pos,Type const & t):
+		Entite(pos),type(t){};
 
 //accesseurs
 	Type getType()const{return type;}
@@ -70,8 +70,8 @@ class Joueur: public Entite {
 
 public:
 //constructeurs & destructeurs
-	Joueur(Position const & pos,int id,double speed,std::string nom):
-		Entite(pos,id),speed(0.3),nom(nom){};
+	Joueur(Position const & pos,double speed,std::string nom):
+		Entite(pos),speed(0.3),nom(nom){};
 
 	virtual Joueur* clone() const=0; /* contructeur virtuel
 	permet l'ajout (et la recopie) de Voleur et Gendarme dans le vecteur du Jeu sans y copier de Joueur tout court*/
@@ -99,8 +99,8 @@ class Voleur : public Joueur{
 
 public:
 //constructeurs & destructeurs
-	Voleur(Position const & pos,int id,double speed,std::string nom):
-		Joueur(pos,id,speed,nom){};
+	Voleur(Position const & pos,double speed,std::string nom):
+		Joueur(pos,speed,nom){};
 
 	//redefinition du constructeur virtuel
 	Joueur* clone() const override{
@@ -117,8 +117,8 @@ class Gendarme : public Joueur {
 
 public:
 //constructeurs & destructeurs
-	Gendarme(Position const & pos,int id,double speed,std::string nom):
-		Joueur(pos,id,speed,nom){};
+	Gendarme(Position const & pos,double speed,std::string nom):
+		Joueur(pos,speed,nom){};
 
 	//redefinition du constructeur virtuel
 	Joueur* clone() const override{
