@@ -1,78 +1,24 @@
 #include "Jeu.hh"
 
 int main(){
+	//initialisation
+	Jeu Test(40,40);
 
-	// Ajout GRILLE
-	Jeu Test(20,20);
-	// Ajout JOUEURS
-	Voleur Voleur1(Position(6,5),0.3,"Voleur1");
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-	Gendarme Gendarme1(Position(10,5),0.3,"Gendarme1");
-	std::cout<<"Gendarme1:"<<Gendarme1.Affiche_Position()<<"\n";
+	//creation des entités
+	NonJoueur Sortie(Position(38,38),Type::sortie);
+	Voleur V1(Position(6,5),0.8,"V1");
+	Voleur V2(Position(5,6),0.8,"V2");
+	Gendarme G1(Position(6,5),0.8,"G1");
+	Gendarme G2(Position(6,5),1.0,"G2");
 
-	// Ajout JOUEURS sur GRILLE
-	Test.ajouter_joueur(Voleur1);
-	Test.ajouter_joueur(Gendarme1);
+	//ajout des entités au Jeu
+	Test.ajouter_joueur(V1);
+	Test.ajouter_joueur(G1);
+	Test.ajouter_joueur(V2);
+	Test.ajouter_joueur(G2);
+	Test.ajouter_nonJoueur(Sortie);
 
-	// Ajout SORTIE
-	Test.ajouter_nonJoueur(NonJoueur(Position(18,18),Type::sortie));
-	Test.ajouter_nonJoueur(NonJoueur(Position(13,13),Type::sortie));
-
-
-	// AFFICHAGE
-	std::cout<<"-------------\n";
-	Test.afficher();
-	std::cout<<"-------------\n";
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-	// méthode me paraissant inutile, je l'ai supp  std::cout<<"Voleur1:(Dans le vector)"<<Test.getJoueur(0)->Affiche_Position()<<"\n";
-
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-
-	Test.deplacement(Voleur1,Voleur1.jouer());
-	Test.afficher();
-	std::cout<<"Voleur1:"<<Voleur1.Affiche_Position()<<"\n";
-
-
-
-	// TEST
-
-	// double a,b;
-	// a=3.28;
-	// b=7.37;
-	// std::cout<<"Position P"<<"("<<a<<";"<<b<<")";
-
-	// double VD_x,VD_y,speed;
-	// VD_x=2;
-	// VD_y=3.20;
-	// speed=0.5;
-
-	// a=a+(VD_x*speed*0.4);
-	// b=b+(VD_y*speed*0.4);
-	// std::cout<<"Position P"<<"("<<a<<";"<<b<<")";
-
-	// a=a+(VD_x*speed*0.4);
-	// b=b+(VD_y*speed*0.4);
-	// std::cout<<"Position P"<<"("<<a<<";"<<b<<")";
-
-
+	//tests verifiant une bonne initialisation:
+	std::cout<<"test nbVoleurs résultat attendu: 2 -->"<<Test.getNbVoleurs()<<std::endl;
+	std::cout<<"test nbCaptures résultat attendu: 0 -->"<<Test.getNbCaptures()<<std::endl;
 }
