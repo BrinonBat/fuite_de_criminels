@@ -7,9 +7,10 @@ void Jeu::initialise()
 void Jeu::ajouter_joueur(Joueur const &J)
 {
 	Liste_Joueur.push_back(J.clone());
+	if(Joueurs.estVoleurs()) ajoutUnVoleur();
 }
 
-void Jeu::supprimer_voleur(int id){
+void Jeu::supprimer_voleur(unsigned int id){
 	for(auto i =Liste_Joueur.begin(); i!= Liste_Joueur.end();++i){
       if(Liste_Joueur[size_t(*i)]->getId()==id && Liste_Joueur[size_t(*i)]->estVoleur()){
         Liste_Joueur.erase(i);
