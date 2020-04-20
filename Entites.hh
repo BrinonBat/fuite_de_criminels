@@ -82,9 +82,9 @@ public:
 	// Passage des valeurs de speed en constantes globales???(valeurs égales pour tout la classe)
 	double getSpeed()const{return speed;}
 	std::string getNom()const{return nom;}
-//méthodes
 
-	bool estVoleur() const{return false;}
+//méthodes
+	virtual bool estVoleur() const =0;
 	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
 	virtual Direction jouer() {return Direction(3.2,3.1);};
 
@@ -108,7 +108,7 @@ public:
 	}
 
 //méthodes
-	bool estVoleur() const{return true;}
+	bool estVoleur() const override{return true;}
 	Direction jouer() override;
 
 };
@@ -126,6 +126,7 @@ public:
 	}
 
 //méthodes
+	bool estVoleur() const override{return false;}
 	Direction jouer() override;
 
 };

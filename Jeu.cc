@@ -1,13 +1,20 @@
 #include "Jeu.hh"
-void Jeu::initialise()
-{
+
+void Jeu::initialise(){
+
 
 }
 
+void Jeu::afficher()
+{
+
+
+
+}
 void Jeu::ajouter_joueur(Joueur const &J)
 {
 	Liste_Joueur.push_back(J.clone());
-	if(Joueurs.estVoleurs()) ajoutUnVoleur();
+	if(J.estVoleur()) ajoutUnVoleur();
 }
 
 void Jeu::supprimer_voleur(unsigned int id){
@@ -20,6 +27,7 @@ void Jeu::supprimer_voleur(unsigned int id){
 	//on vérifie si c'était le dernier voleur sur le terrain
 	verifieFin();
 }
+
 void Jeu::ajouter_nonJoueur(NonJoueur nJ){
 	Liste_Objets.push_back(new NonJoueur(nJ)); // fonctionnement à confirmer
 }
@@ -31,12 +39,7 @@ void Jeu::deplacement(Joueur & J, Direction const & D)
 
 }
 
-void Jeu::afficher()
-{
 
-
-
-}
 
 //le jeu se termine quand il n'y a plus de voleur en jeu
 void Jeu::verifieFin(){
