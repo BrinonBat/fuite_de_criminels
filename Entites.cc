@@ -1,22 +1,22 @@
 #include "Entites.hh"
 
 unsigned int Entite::compteur(0);
-
+/************************** IAs **************************/
+Direction Voleur::Joue_Deplacement(){
+	return Direction(0,1);
+}
+Direction Gendarme::Joue_Deplacement(){
+	return Direction(0,-1);
+}
+/************************* autre *************************/
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++){}
 
 Position Position::operator+(Position const & p){
 	return Position(getX() + p.getX(),getY() + p.getY());
 }
-
-
-Direction Voleur::jouer() {
-	return Direction(3.2,3.1);
+bool Position::operator==(Position const & p){
+	return (p.getX()==x && p.getY()==y);
 }
-
-Direction Gendarme::jouer() {
-	return Direction(3.2,3.1);
-}
-
 void afficherValeur(Type e)
 {
     switch (e) {

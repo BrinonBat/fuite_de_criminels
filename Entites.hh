@@ -23,6 +23,7 @@ public:
 	void setY(int const & nouv){y=nouv;}
 
 Position operator+(Position const & d); // redéfinition de l'addition pour les positions
+bool operator==(Position const & d); //redéfinition de la comparaison
 
 private:
 	double x,y;
@@ -85,8 +86,8 @@ public:
 
 //méthodes
 	virtual bool estVoleur() const =0;
-	// Ajout IA - Joue_Deplacement (Haut,Bas,Gauche,Droite)
-	virtual Direction jouer() {return Direction(3.2,3.1);};
+	// Ajout IA à faire
+	virtual Direction Joue_Deplacement() =0;
 
 private:
 	double speed;
@@ -108,8 +109,8 @@ public:
 	}
 
 //méthodes
+	Direction Joue_Deplacement() override;
 	bool estVoleur() const override{return true;}
-	Direction jouer() override;
 
 };
 
@@ -126,7 +127,7 @@ public:
 	}
 
 //méthodes
+	Direction Joue_Deplacement() override;
 	bool estVoleur() const override{return false;}
-	Direction jouer() override;
 
 };

@@ -1,7 +1,6 @@
 #pragma once
 #include "Entites.hh"
 
-
 class Jeu {
 
 public :
@@ -24,20 +23,26 @@ public :
 	Joueur const & getJoueur(std::size_t num)const{return *(Liste_Joueur.at(num));}
 	void ajouter_joueur(Joueur const &J);
 	void supprimer_voleur(unsigned int id);
+
 	NonJoueur const & getObject(std::size_t num)const{return *(Liste_Objets.at(num));}
 	void ajouter_nonJoueur(NonJoueur nJ); // à retravailler
+
 	double getLargeur()const{return largeur;}
 	double getHauteur()const{return hauteur;}
+
 	unsigned int getNbCaptures()const{return nbCaptures;}
 	void ajoutUneCapture(){nbCaptures++;}
+
 	unsigned int getNbVoleurs()const{return nbVoleurs;}
 	void ajoutUnVoleur(){nbVoleurs++;}
+
 	bool estFini()const{return fini;}
 
 //méthodes
+	void Jouer_tour();
     void afficher();
     void initialise();
-    void deplacement(Joueur & J, Direction const & d);
+    void deplacement(Joueur & J, Direction const & d); // sera remplacé ?
     void verifieFin();//met à jour le bool fini à chaque capture/fuite de voleur
 
 private:
