@@ -1,6 +1,6 @@
 // ici les différentes fonctions avec leurs anciens codes et autres tentatives de fonctionnment
 
-/*******************  main ***************/ 
+/*******************  main ***************/
 
 
 	// Ajout GRILLE
@@ -73,3 +73,18 @@
 	// a=a+(VD_x*speed*0.4);
 	// b=b+(VD_y*speed*0.4);
 	// std::cout<<"Position P"<<"("<<a<<";"<<b<<")";
+
+/******************* Jeu **********************************/
+
+//retire un voleur de la partie et mets fin à la partie s'il s'agissait du dernier
+void Jeu::supprimer_voleur(unsigned int id){
+	//parcours des voleur et retrait de celui concerné
+	for(auto i =Liste_Joueur.begin(); i!= Liste_Joueur.end();++i){
+      if(Liste_Joueur[size_t(*i)]->getId()==id && Liste_Joueur[size_t(*i)]->estVoleur()){
+        Liste_Joueur.erase(i);
+        return; // fin si le voleur est supprimé
+      }
+    }
+	//on vérifie si c'était le dernier voleur sur le terrain
+	verifieFin();
+}
