@@ -23,5 +23,8 @@ int main(){
 	std::cout<<"test nbCaptures résultat attendu: 0 -->"<<Test.getNbCaptures()<<std::endl;
 	Test.deplacement(V2,V2.Joue_Deplacement());
 	std::cout<<"test déplacement résultat attendu: (38,37) -->"<<V2.Affiche_Position()<<std::endl;
-	Test.Jouer_tour();
+	//Test.Jouer_tour(); //!\ SEGFAULT
+	//Test.deplacement(V2,V2.Joue_Deplacement());// SEGFAULT AUSSI
+	//std::cout<<"test nbCaptures résultat attendu: 1 -->"<<Test.getNbCaptures()<<std::endl;
+
 }
