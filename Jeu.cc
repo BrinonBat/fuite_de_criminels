@@ -50,6 +50,21 @@ void Jeu::deplacement(Joueur & J, Direction const & D){
 	//calcul de la nouvelle position
 	J.setPosition(J.getPosition()+D);
 
+	Joueur * Joueur_Modifie = &J;
+	// std::cout<<"ADD:"<<&J<<"\n";
+	// ADD:0x7ffccbed6870
+	
+
+
+	for(auto && JJ : Liste_Joueur){
+		// std::cout<<"ADD:"<<&JJ<<"\n";
+		// ADD:0x56180e1c7fa0
+		// ADD:0x56180e1c7fa8
+		// ADD:0x56180e1c7fb0
+		// ADD:0x56180e1c7fb8
+		if(JJ->getNom()==Joueur_Modifie->getNom()) {JJ->setPosition(J.getPosition());}
+	}
+
 	//traitement du voleur
 	if(J.estVoleur()){
 		//verification de la fuite du voleur
