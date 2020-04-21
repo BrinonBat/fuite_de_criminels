@@ -6,17 +6,15 @@ int main(){
 
 	//creation des entités
 	NonJoueur Sortie(Position(38,38),Type::sortie);
-	Voleur V1(Position(7,5),0.8,"V1");
+	Voleur V1(Position(6,6),0.8,"V1");
 	Voleur V2(Position(38,36),0.8,"V2");
-	Voleur V3(Position(5.2,18.6),0.8,"V3");
 	Gendarme G1(Position(7,6),0.8,"G1");
 	Gendarme G2(Position(6,8),1.0,"G2");
 
 	//ajout des entités au Jeu
 	Test.ajouter_joueur(V1);
-	Test.ajouter_joueur(V2);
-	Test.ajouter_joueur(V3);
 	Test.ajouter_joueur(G1);
+	Test.ajouter_joueur(V2);
 	Test.ajouter_joueur(G2);
 	Test.ajouter_nonJoueur(Sortie);
 
@@ -27,6 +25,8 @@ int main(){
 	std::cout<<"test nbCaptures résultat attendu: 0 -->"<<Test.getNbCaptures()<<std::endl;
 
 	std::cout<<"Déplacement voleur (0,+1) et déplacement gendarme (0,-1)\n";
+	std::cout<<"Etat Initial"<<std::endl;
+	Test.afficher();
 	std::cout<<"\n EXEMPLE_EXECUTION : \n TOUR 1 : \n";
 
 	Test.Jouer_tour();
@@ -44,5 +44,4 @@ int main(){
 
 	// Test.Jouer_tour();
 	// Test.afficher();
-
 }
