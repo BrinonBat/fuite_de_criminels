@@ -28,16 +28,19 @@ void Jeu::ajouter_joueur(Joueur const &J)
 }
 
 //retire un voleur de la partie et mets fin à la partie s'il s'agissait du dernier
-void Jeu::supprimer_voleur(unsigned int id){
-	//parcours des voleur et retrait de celui concerné
-	for(auto i =Liste_Joueur.begin(); i!= Liste_Joueur.end();++i){
-      if(Liste_Joueur[size_t(*i)]->getId()==id && Liste_Joueur[size_t(*i)]->estVoleur()){
-        Liste_Joueur.erase(i);
-        return; // fin si le voleur est supprimé
-      }
-    }
-	//on vérifie si c'était le dernier voleur sur le terrain
-	verifieFin();
+void Jeu::supprimer_voleur(Joueur & J){
+	int i=0;
+	for(auto && JJ: Liste_Joueur)
+	{
+		if(JJ->getNom()==J.getNom())
+		{
+			delete JJ;
+			break;
+		} 
+		i++;
+	}
+	Liste_Joueur.erase(Liste_Joueur.begin()+i);
+
 }
 
 //ajout d'un objet à la partie
@@ -68,14 +71,23 @@ void Jeu::deplacement(Joueur & J, Direction const & D){
 	//traitement du voleur
 	if(J.estVoleur()){
 		//verification de la fuite du voleur
-		for(auto sortie : Liste_Objets){
-			if(sortie->getType()==Type::sortie && J.getPosition()==sortie->getPosition()) supprimer_voleur(J.getId());
+		for(auto &&sortie : Liste_Objets){
+			if(sortie->getType()==Type::sortie && J.getPosition()==sortie->getPosition()) {std::cout<<"Un voleur est sortie!\n"; supprimer_voleur(J);}
+		}
+
+		for(auto &&voleur : Liste_Joueur){
+			if(voleur->estVoleur()==false && J.getPosition()==voleur->getPosition()){
+				std::cout<<"Un voleur est capturé!\n";
+				supprimer_voleur(J); // remplacement du fonctionnement par id par un fonctionnement par voleur ?
+				ajoutUneCapture();
+			} // fin if
 		}
 	//traitement du gendarme
 	}else{
-		for(auto voleur : Liste_Joueur){
+		for(auto &&voleur : Liste_Joueur){
 			if(voleur->estVoleur() && J.getPosition()==voleur->getPosition()){
-				supprimer_voleur(voleur->getId()); // remplacement du fonctionnement par id par un fonctionnement par voleur ?
+				std::cout<<"Un voleur est capturé!\n";
+				supprimer_voleur(J); // remplacement du fonctionnement par id par un fonctionnement par voleur ?
 				ajoutUneCapture();
 			} // fin if
 		}// fin for
