@@ -22,7 +22,7 @@ public :
 //accesseurs
 	Joueur const & getJoueur(std::size_t num)const{return *(Liste_Joueur.at(num));}
 	void ajouter_joueur(Joueur const &J);
-	void supprimer_voleur(unsigned int id);
+	void supprimer_voleur(Joueur &J);
 
 	NonJoueur const & getObject(std::size_t num)const{return *(Liste_Objets.at(num));}
 	void ajouter_nonJoueur(NonJoueur nJ); // à retravailler
