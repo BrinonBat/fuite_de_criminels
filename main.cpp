@@ -21,5 +21,10 @@ int main(){
 	//tests verifiant une bonne initialisation:
 	std::cout<<"test nbVoleurs résultat attendu: 2 -->"<<Test.getNbVoleurs()<<std::endl;
 	std::cout<<"test nbCaptures résultat attendu: 0 -->"<<Test.getNbCaptures()<<std::endl;
-	std::cout<<"test déplacement résultat attendu: ";
+	std::cout<<"test déplacement résultat attendu: \n";
+	std::cout<<"G1 position :"<<G1.Affiche_Position()<<"\n";
+	Test.deplacement(G1,G1.Joue_Deplacement());
+	std::cout<<"G1 position :"<<G1.Affiche_Position()<<"\n";
+
+	Test.afficher();
 }

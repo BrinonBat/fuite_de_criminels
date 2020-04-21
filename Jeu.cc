@@ -7,9 +7,10 @@ void Jeu::initialise(){
 
 void Jeu::afficher()
 {
-
-
-
+	std::cout<<"Liste Joueurs avec position :\n";
+	for(auto i:Liste_Joueur){
+		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<"\n";
+	}
 }
 
 void Jeu::Jouer_tour(){
