@@ -7,9 +7,10 @@ void Jeu::initialise(){
 
 void Jeu::afficher()
 {
-
-	//GUI fera le travail
-
+	std::cout<<"Liste Joueurs avec position :\n";
+	for(auto i:Liste_Joueur){
+		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<"\n";
+	}
 }
 
 // déroulement d'un tour /!\ ça segfault

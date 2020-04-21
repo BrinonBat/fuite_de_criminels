@@ -1,0 +1,12 @@
+-Revoir le MakeFile avec Baptiste
+	Pour le moment :  - Faire "cmake ." dans le dossier et ensuite "make" et ./Fenetre_Ajout
+
+-Fenetre d'ajout de joueurs (V)
+
+	-Ajout joueurs au choix (X)
+	-Partie déja configuré (X)
+
+-Fentre de Jeu (X)
+
+	- QWidget, QPainter ? Comment implémenter ?
+	- Dessiner un carré rouge pour les voleurs et un bleu pour les gendarmes

@@ -27,4 +27,6 @@ int main(){
 	//Test.deplacement(V2,V2.Joue_Deplacement());// SEGFAULT AUSSI
 	//std::cout<<"test nbCaptures résultat attendu: 1 -->"<<Test.getNbCaptures()<<std::endl;
 
+	Test.afficher();
+
 }
