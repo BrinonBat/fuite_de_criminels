@@ -109,7 +109,7 @@ void Jeu::deplacement(Joueur & J, Direction const & D){
 		for(auto &&voleur : Liste_Joueur){
 			if(voleur->estVoleur() && J.getPosition()==voleur->getPosition()){
 				std::cout<<"Un voleur est capturé!\n";
-				supprimer_voleur(J); // remplacement du fonctionnement par id par un fonctionnement par voleur ?
+				supprimer_voleur(*voleur);
 				ajoutUneCapture();
 			} // fin if
 		}// fin for
