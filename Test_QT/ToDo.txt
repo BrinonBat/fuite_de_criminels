@@ -1,0 +1,8 @@
+-Revoir le MakeFile avec Baptiste
+
+-Fenetre d'ajout de joueurs (V)
+
+	-Ajout joueurs au choix (X)
+	-Partie déja configuré (X)
+
+-Fentre de Jeu (X)
