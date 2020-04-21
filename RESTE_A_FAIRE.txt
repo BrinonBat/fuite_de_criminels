@@ -2,9 +2,9 @@ reste à faire :
 OK	- passage en pointeurs des objets stockés dans les vecteurs de Jeu
 OK	- passage en private des attributs de toutes les classes
 OK	- redéfinir l'operaton "+" de Position
-OK	- methode de test fin de partie (question posée au prof pour savoir si on doit déterminer un vainqueur ou juste afficher "fin de partie")
-		-> si "fin de partie" uniquement, alors la méthode est appellée UNIQUEMENT dans supprimer_voleur (dans que quand un voleur quitte le terrain.)
-		au final, faut implémnter les deux. donc :
+OK	- methode de test fin de partie 
+		->la méthode est appellée UNIQUEMENT dans supprimer_voleur (que quand un voleur quitte le terrain.)
+
 OK	- ajout de variable "voleursCaptures" et "nbVoleurDepart" pour pouvoir déterminer un vainqueur
 OK	- mettre "id" sous forme de variable partagée unique ( via un compteur d'entite )
 	- mise en place d'un vrai "main" et de vrais "tours"
