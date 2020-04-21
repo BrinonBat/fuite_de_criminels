@@ -5,6 +5,7 @@
 
 using Coordonnee = unsigned int ;
 
+//différents types d'objets non-joueurs
 enum class Type {
 	cachette,
 	sortie
@@ -22,17 +23,15 @@ public:
 	double getY()const{return y;}
 	void setY(int const & nouv){y=nouv;}
 
-Position operator+(Position const & d); // redéfinition de l'addition pour les positions
-bool operator==(Position const & d); //redéfinition de la comparaison
+//operateurs
+	Position operator+(Position const & d); // redéfinition de l'addition pour les positions
+	bool operator==(Position const & d); //redéfinition de la comparaison
 
 private:
 	double x,y;
-
-	// plus simple si on redéfinit l'operaton "+" non ?
-
 };
+
 using Direction = Position;
-//Position Position::operator+(Direction const & d); // redéfinition de l'addition pour les positions
 
 class Entite{
 public:
