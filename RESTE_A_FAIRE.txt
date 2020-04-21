@@ -12,8 +12,8 @@ OK	- mettre "id" sous forme de variable partagée unique ( via un compteur d'ent
 		-> définir fonctionnement d'un tour
 		-> mise en place d'une partie entière
 	- ajout de "hitbox " et de distance de capture
-	- remplacer le booléen fini par rapport
-- ajout de génération automatique de doc via Doxygen
+	- remplacer le booléen fini par nb_voleurs
+	- ajout de génération automatique de doc via Doxygen
 PUIS mise en place d'une GUI
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
