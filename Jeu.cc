@@ -22,6 +22,7 @@ void Jeu::Jouer_tour(){
 		//traitement du voleur
 		if(J->estVoleur()){
 			//verification de la fuite du voleur
+
 			for(auto sortie : Liste_Objets){
 				if(sortie->getType()==Type::sortie && J->getPosition()==sortie->getPosition()) supprimer_voleur(J->getId());
 			}
