@@ -8,15 +8,46 @@ void Jeu::initialise(){
 void Jeu::afficher()
 {
 	std::cout<<"Liste Joueurs avec position :\n";
-	for(auto i:Liste_Joueur){
+	for(auto i:Liste_Voleurs){
+		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<"\n";
+	}
+	for(auto i:Liste_Gendarmes){
 		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<"\n";
 	}
 }
 
-// déroulement d'un tour /!\ ça segfault
+// déroulement d'un tour /!\ ça boucle
 void Jeu::Jouer_tour(){
-	for(auto i:Liste_Joueur){
-		deplacement(*i,i->Joue_Deplacement());
+	//calcul des déplacement
+	for(auto &&V:Liste_Voleurs){
+		V->Joue_Deplacement();
+	}
+	for(auto &&G:Liste_Gendarmes){
+		G->Joue_Deplacement();
+
+	}
+	//application des déplacement
+	for(auto &&V:Liste_Voleurs){
+		deplacement(*V);
+	}
+	for(auto &&G:Liste_Gendarmes){
+		deplacement(*G);
+		//on verifie s'il capture un voleur
+		for(auto &&V:Liste_Voleurs){
+			if (G->getPosition()==V->getPosition()){
+				 supprimer_voleur(*V);
+				 ajoutUneCapture();
+			 }
+		}
+	}
+	//on verifie si un voleur s'est enfui sans se faire attraper
+	for(auto &&V:Liste_Voleurs){
+		for(auto &&sortie : Liste_Objets){
+			if(sortie->getType()==Type::sortie && V->getPosition()==sortie->getPosition()){
+				std::cout<<"Le voleur"<<V->getNom()<<" est sorti!\n";
+				supprimer_voleur(*V);
+			}
+		}
 	}
 	/*
 	for(auto J:Liste_Joueur){
@@ -40,83 +71,51 @@ void Jeu::Jouer_tour(){
 
 }
 
-//ajoute un joueur à la partie
-void Jeu::ajouter_joueur(Joueur const &J)
+//ajoute un voleur à la partie
+void Jeu::ajouter_voleur(Voleur const &V)
 {
-	Liste_Joueur.push_back(J.clone());
-	if(J.estVoleur()) ajoutUnVoleur();
+	Liste_Voleurs.push_back(V.clone());
+	ajoutUnVoleur();
 }
-
+//ajoute un joueur à la partie
+void Jeu::ajouter_gendarme(Gendarme const &G)
+{
+	Liste_Gendarmes.push_back(G.clone());
+}
 //retire un voleur de la partie et mets fin à la partie s'il s'agissait du dernier
-void Jeu::supprimer_voleur(Joueur & J){
+void Jeu::supprimer_voleur(Voleur &V){
 	int i=0;
-	for(auto && JJ: Liste_Joueur)
+	for(auto && Vcible: Liste_Voleurs)
 	{
-		if(JJ->getNom()==J.getNom())
+		if(Vcible->getId()==V.getId())
 		{
-			delete JJ;
+			delete Vcible;
 			break;
 		}
 		i++;
 	}
-	Liste_Joueur.erase(Liste_Joueur.begin()+i);
-	//on vérifie si c'était le dernier voleur sur le terrain
-	verifieFin();
+	Liste_Voleurs.erase(Liste_Voleurs.begin()+i);
 }
 
 //ajout d'un objet à la partie
-void Jeu::ajouter_nonJoueur(NonJoueur nJ){
+void Jeu::ajouter_nonJoueur(NonJoueur const nJ){
 	Liste_Objets.push_back(new NonJoueur(nJ)); // fonctionnement à confirmer
 }
 
-// execute le déplacement d'un joueur vers une direction donnée
-void Jeu::deplacement(Joueur & J, Direction const & D){
+// execute le déplacement d'un voleur vers sa destination
+void Jeu::deplacement(Voleur &V){
 	//calcul de la nouvelle position
-	J.setPosition(J.getPosition()+D);
+	V.setPosition(V.getDestination());
+}
 
-	Joueur * Joueur_Modifie = &J;
-	// std::cout<<"ADD:"<<&J<<"\n";
-	// ADD:0x7ffccbed6870
-
-
-
-	for(auto && JJ : Liste_Joueur){
-		if(JJ->getNom()==Joueur_Modifie->getNom()) {JJ->setPosition(J.getPosition());}
-	}
-
-	//traitement du voleur
-	if(J.estVoleur()){
-		//verification de la fuite du voleur
-		for(auto &&sortie : Liste_Objets){
-			if(sortie->getType()==Type::sortie && J.getPosition()==sortie->getPosition()) {std::cout<<"Un voleur est sorti!\n"; supprimer_voleur(J);}
-		}
-		// verification d'un voleur uqi s'est rendu
-		for(auto &&voleur : Liste_Joueur){
-			if(voleur->estVoleur()==false && J.getPosition()==voleur->getPosition()){
-				std::cout<<"Un voleur est capturé!\n";
-				supprimer_voleur(J); // remplacement du fonctionnement par id par un fonctionnement par voleur ?
-				ajoutUneCapture();
-			} // fin if
-		}
-	//traitement du gendarme
-	}else{
-		//verification de la capture d'un voleur
-		for(auto &&voleur : Liste_Joueur){
-			if(voleur->estVoleur() && J.getPosition()==voleur->getPosition()){
-				std::cout<<"Un voleur est capturé!\n";
-				supprimer_voleur(*voleur);
-				ajoutUneCapture();
-			} // fin if
-		}// fin for
-	} // fin else
-} // fin méthode
-
+// execute le déplacement d'un gendarme vers sa destination
+void Jeu::deplacement(Gendarme &G){
+	//calcul de la nouvelle position
+	G.setPosition(G.getDestination());
+}
 
 
 //le jeu se termine quand il n'y a plus de voleur en jeu
-void Jeu::verifieFin(){
-	for(auto i:Liste_Joueur){
-			if(i->estVoleur()) return;
-	}
-	this->fini=true;
+bool Jeu::estFini(){
+	return Liste_Voleurs.empty();
 }

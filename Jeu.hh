@@ -8,24 +8,25 @@ public :
     Jeu(double plargeur, double phauteur) {
 		largeur=plargeur;
 		hauteur=phauteur;
-		fini=false;
 		nbVoleurs=0;
 		nbCaptures=0;
     }
     Jeu(Jeu const & JeuCopier){
         largeur=JeuCopier.getLargeur();
         hauteur=JeuCopier.getHauteur();
-		fini=JeuCopier.estFini();
 		nbVoleurs=JeuCopier.getNbVoleurs();
 		nbCaptures=JeuCopier.getNbCaptures();
 	}
 //accesseurs
-	Joueur const & getJoueur(std::size_t num)const{return *(Liste_Joueur.at(num));}
-	void ajouter_joueur(Joueur const &J);
-	void supprimer_voleur(Joueur &J);
+	Voleur const & getVoleur(std::size_t num)const{return *(Liste_Voleurs.at(num));}
+	void ajouter_voleur(Voleur const &V);
+	void supprimer_voleur(Voleur  &V);
+
+	Gendarme const & getGendarme(std::size_t num)const{return *(Liste_Gendarmes.at(num));}
+	void ajouter_gendarme(Gendarme const &G);
 
 	NonJoueur const & getObject(std::size_t num)const{return *(Liste_Objets.at(num));}
-	void ajouter_nonJoueur(NonJoueur nJ); // à retravailler
+	void ajouter_nonJoueur(NonJoueur const nJ); // à retravailler
 
 	double getLargeur()const{return largeur;}
 	double getHauteur()const{return hauteur;}
@@ -36,20 +37,19 @@ public :
 	unsigned int getNbVoleurs()const{return nbVoleurs;}
 	void ajoutUnVoleur(){nbVoleurs++;}
 
-	bool estFini()const{return fini;}
-
 //méthodes
 	void Jouer_tour();
     void afficher();
     void initialise();
-    void deplacement(Joueur & J, Direction const & d); // sera remplacé ?
-    void verifieFin();//met à jour le bool fini à chaque capture/fuite de voleur
+    void deplacement(Voleur &V);
+	void deplacement(Gendarme &G);
+    bool estFini();
 
 private:
-	bool fini;
 	unsigned int nbVoleurs,nbCaptures;
     double largeur,hauteur;
-    std::vector<Joueur *> Liste_Joueur;
+    std::vector<Voleur *> Liste_Voleurs;
+	std::vector<Gendarme *> Liste_Gendarmes;
     std::vector<NonJoueur *> Liste_Objets;
 
 };
