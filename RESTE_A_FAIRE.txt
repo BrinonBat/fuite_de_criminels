@@ -7,10 +7,11 @@ OK	- methode de test fin de partie
 
 OK	- ajout de variable "voleursCaptures" et "nbVoleurDepart" pour pouvoir déterminer un vainqueur
 OK	- mettre "id" sous forme de variable partagée unique ( via un compteur d'entite )
-	- mise en place d'un vrai "main" et de vrais "tours"
-		-> mise en place de comportements basiques permettant le déroulement d'une partie
-		-> définir fonctionnement d'un tour
-		-> mise en place d'une partie entière
+OK	- mise en place d'un vrai "main" et de vrais "tours"
+OK		-> mise en place de comportements basiques permettant le déroulement d'une partie
+OK		-> définir fonctionnement d'un tour
+OK		-> mise en place d'une partie entière
+	- ajout de la vitesse
 	- ajout de "hitbox " et de distance de capture
 	- remplacer le booléen fini par nb_voleurs
 	- ajout de génération automatique de doc via Doxygen
