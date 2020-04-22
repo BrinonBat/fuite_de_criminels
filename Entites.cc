@@ -2,11 +2,17 @@
 
 unsigned int Entite::compteur(0);
 /************************** IAs **************************/
-Direction Voleur::Joue_Deplacement(){
-	return Direction(0,1);
+void Voleur::Joue_Deplacement(){
+	//calcul du déplacement à réaliser
+	Direction result(0,1);
+	//enregistrement de celui-ci
+	setDestination(getPosition()+result);
 }
-Direction Gendarme::Joue_Deplacement(){
-	return Direction(0,-1);
+void Gendarme::Joue_Deplacement(){
+	//calcul du déplacement à réaliser
+	Direction result(0,-1);
+	//enregistrement de celui-ci
+	setDestination(getPosition()+result);
 }
 /************************* autre *************************/
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++){}

@@ -12,10 +12,10 @@ int main(){
 	Gendarme G2(Position(6,8),1.0,"G2");
 
 	//ajout des entités au Jeu
-	Test.ajouter_joueur(V1);
-	Test.ajouter_joueur(G1);
-	Test.ajouter_joueur(V2);
-	Test.ajouter_joueur(G2);
+	Test.ajouter_voleur(V1);
+	Test.ajouter_gendarme(G1);
+	Test.ajouter_voleur(V2);
+	Test.ajouter_gendarme(G2);
 	Test.ajouter_nonJoueur(Sortie);
 
 	Test.afficher();

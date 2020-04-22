@@ -71,10 +71,7 @@ class Joueur: public Entite {
 public:
 //constructeurs & destructeurs
 	Joueur(Position const & pos,double speed,std::string nom):
-		Entite(pos),speed(0.3),nom(nom){};
-
-	virtual Joueur* clone() const=0; /* contructeur virtuel
-	permet l'ajout (et la recopie) de Voleur et Gendarme dans le vecteur du Jeu sans y copier de Joueur tout court*/
+		Entite(pos),speed(0.3),nom(nom),destination(pos){};
 
 	virtual ~Joueur() =default; // destructeur retiré pour que celui de Voleur et Gendarme soient utilisés
 
@@ -82,16 +79,16 @@ public:
 	// Passage des valeurs de speed en constantes globales???(valeurs égales pour tout la classe)
 	double getSpeed()const{return speed;}
 	std::string getNom()const{return nom;}
+	Position getDestination()const{return destination;}
+	void setDestination(Position const &pos){destination=pos;}
 
 //méthodes
-	virtual bool estVoleur() const =0;
-	// Ajout IA à faire
-	virtual Direction Joue_Deplacement() =0;
+	virtual void Joue_Deplacement() =0;
 
 private:
 	double speed;
 	std::string nom;
-
+	Position destination;
 };
 
 
@@ -103,13 +100,10 @@ public:
 		Joueur(pos,speed,nom){};
 
 	//redefinition du constructeur virtuel
-	Joueur* clone() const override{
-		return new Voleur(*this);
-	}
+	Voleur* clone() const {return new Voleur(*this);}
 
 //méthodes
-	Direction Joue_Deplacement() override;
-	bool estVoleur() const override{return true;}
+	void Joue_Deplacement() override;
 
 };
 
@@ -121,12 +115,9 @@ public:
 		Joueur(pos,speed,nom){};
 
 	//redefinition du constructeur virtuel
-	Joueur* clone() const override{
-		return new Gendarme(*this);
-	}
+	Gendarme* clone() const {return new Gendarme(*this);}
 
 //méthodes
-	Direction Joue_Deplacement() override;
-	bool estVoleur() const override{return false;}
+	void Joue_Deplacement() override;
 
 };
