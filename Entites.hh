@@ -19,18 +19,18 @@ public:
 
 //accesseurs
 	double getX()const{return x;}
-	void setX(int const & nouv){x=nouv;}
+	void setX(double const & nouv){x=nouv;}
 	double getY()const{return y;}
-	void setY(int const & nouv){y=nouv;}
+	void setY(double const & nouv){y=nouv;}
 
 //operateurs
 	Position operator+(Position const & d); // redéfinition de l'addition pour les positions
+	Position operator*(double mult);
 	bool operator==(Position const & d); //redéfinition de la comparaison
 
 private:
 	double x,y;
 };
-
 using Direction = Position;
 
 class Entite{
@@ -71,7 +71,7 @@ class Joueur: public Entite {
 public:
 //constructeurs & destructeurs
 	Joueur(Position const & pos,double speed,std::string nom):
-		Entite(pos),speed(0.3),nom(nom),destination(pos){};
+		Entite(pos),speed(speed),nom(nom),destination(pos){};
 
 	virtual ~Joueur() =default; // destructeur retiré pour que celui de Voleur et Gendarme soient utilisés
 

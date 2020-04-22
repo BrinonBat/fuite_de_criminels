@@ -6,10 +6,10 @@ int main(){
 
 	//creation des entités
 	NonJoueur Sortie(Position(38,38),Type::sortie);
-	Voleur V1(Position(6,6),0.8,"V1");
-	Voleur V2(Position(38,36),0.8,"V2");
-	Gendarme G1(Position(7,6),0.8,"G1");
-	Gendarme G2(Position(6,8),1.0,"G2");
+	Voleur V1(Position(6,6),1.0,"V1");
+	Voleur V2(Position(38,36),0.5,"V2");
+	Gendarme G1(Position(7,6),2.0,"G1");
+	Gendarme G2(Position(6,9),2.0,"G2");
 
 	//ajout des entités au Jeu
 	Test.ajouter_voleur(V1);
