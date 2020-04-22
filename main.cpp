@@ -18,13 +18,7 @@ int main(){
 	Test.ajouter_gendarme(G2);
 	Test.ajouter_nonJoueur(Sortie);
 
-	Test.afficher();
 
-	//tests verifiant une bonne initialisation:
-	std::cout<<"test nbVoleurs résultat attendu: 3 -->"<<Test.getNbVoleurs()<<std::endl;
-	std::cout<<"test nbCaptures résultat attendu: 0 -->"<<Test.getNbCaptures()<<std::endl;
-
-	std::cout<<"Déplacement voleur (0,+1) et déplacement gendarme (0,-1)\n";
 	std::cout<<"Etat Initial"<<std::endl;
 	Test.afficher();
 	std::cout<<"\n EXEMPLE_EXECUTION : \n ";
