@@ -27,21 +27,13 @@ int main(){
 	std::cout<<"Déplacement voleur (0,+1) et déplacement gendarme (0,-1)\n";
 	std::cout<<"Etat Initial"<<std::endl;
 	Test.afficher();
-	std::cout<<"\n EXEMPLE_EXECUTION : \n TOUR 1 : \n";
+	std::cout<<"\n EXEMPLE_EXECUTION : \n ";
 
-	Test.Jouer_tour();
-	Test.afficher();
+	// Partie
+	for(unsigned int nb_tour=1;!Test.estFini();nb_tour++){
+		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
+		Test.Jouer_tour();
+		Test.afficher();
+	}
 	std::cout<<"test nbCaptures résultat attendu: 1 -->"<<Test.getNbCaptures()<<std::endl;
-	// std::cout<<"test déplacement résultat attendu: (38,37) -->"<<V2.Affiche_Position()<<std::endl;
-	std::cout<<"\n TOUR 2 : \n";
-	Test.Jouer_tour();
-
-
-	Test.afficher();
-	std::cout<<"\n TOUR 3 : \n";
-	Test.Jouer_tour();
-	Test.afficher();
-
-	// Test.Jouer_tour();
-	// Test.afficher();
 }
