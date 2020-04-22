@@ -18,7 +18,7 @@ void Jeu::afficher()
 
 // déroulement d'un tour /!\ ça boucle
 void Jeu::Jouer_tour(){
-	//calcul des déplacement
+//calcul des déplacement
 	for(auto &&V:Liste_Voleurs){
 		V->Joue_Deplacement();
 	}
@@ -26,7 +26,8 @@ void Jeu::Jouer_tour(){
 		G->Joue_Deplacement();
 
 	}
-	//application des déplacement
+
+//application des déplacement
 	for(auto &&V:Liste_Voleurs){
 		deplacement(*V);
 	}
@@ -35,6 +36,7 @@ void Jeu::Jouer_tour(){
 		//on verifie s'il capture un voleur
 		for(auto &&V:Liste_Voleurs){
 			if (G->getPosition()==V->getPosition()){
+				std::cout<<"Le Gendarme "<<G->getNom()<<" à capturé le voleur "<<V->getNom()<<std::endl;
 				 supprimer_voleur(*V);
 				 ajoutUneCapture();
 			 }
@@ -42,33 +44,13 @@ void Jeu::Jouer_tour(){
 	}
 	//on verifie si un voleur s'est enfui sans se faire attraper
 	for(auto &&V:Liste_Voleurs){
-		for(auto &&sortie : Liste_Objets){
-			if(sortie->getType()==Type::sortie && V->getPosition()==sortie->getPosition()){
-				std::cout<<"Le voleur"<<V->getNom()<<" est sorti!\n";
+		for(auto &&S : Liste_Objets){
+			if(S->getType()==Type::sortie && V->getPosition()==S->getPosition()){
+				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
 				supprimer_voleur(*V);
 			}
 		}
 	}
-	/*
-	for(auto J:Liste_Joueur){
-		//traitement du voleur
-		if(J->estVoleur()){
-			//verification de la fuite du voleur
-
-			for(auto sortie : Liste_Objets){
-				if(sortie->getType()==Type::sortie && J->getPosition()==sortie->getPosition()) supprimer_voleur(J->getId());
-			}
-		//traitement du gendarme
-		}else{
-			for(auto voleur : Liste_Joueur){
-				if(voleur->estVoleur() && J->getPosition()==voleur->getPosition()){
-					supprimer_voleur(voleur->getId()); // remplacement du fonctionnement par id par un fonctionnement par voleur ?
-					ajoutUneCapture();
-				} // fin if
-			}// fin for
-		} // fin else
-	} */
-
 }
 
 //ajoute un voleur à la partie
