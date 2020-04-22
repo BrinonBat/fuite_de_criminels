@@ -81,11 +81,6 @@ void Jeu::deplacement(Joueur & J, Direction const & D){
 
 
 	for(auto && JJ : Liste_Joueur){
-		// std::cout<<"ADD:"<<&JJ<<"\n";
-		// ADD:0x56180e1c7fa0
-		// ADD:0x56180e1c7fa8
-		// ADD:0x56180e1c7fb0
-		// ADD:0x56180e1c7fb8
 		if(JJ->getNom()==Joueur_Modifie->getNom()) {JJ->setPosition(J.getPosition());}
 	}
 
