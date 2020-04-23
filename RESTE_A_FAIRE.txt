@@ -14,7 +14,7 @@ OK		-> mise en place d'une partie entière
 OK	- diviser Liste_Joueur en Liste_Gendarmes et Liste_Voleurs
 OK	- remplacer le booléen fini par nb_voleurs
 OK	- ajout de la vitesse
-	- ajout de "hitbox " et de distance de capture
+OK	- ajout de "hitbox " et de distance de capture
 	- ajout de génération automatique de doc via Doxygen
 PUIS mise en place d'une GUI
 PUIS :
