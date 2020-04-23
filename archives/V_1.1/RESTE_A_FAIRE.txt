@@ -1,0 +1,26 @@
+reste à faire :
+OK	- passage en pointeurs des objets stockés dans les vecteurs de Jeu
+OK	- passage en private des attributs de toutes les classes
+OK	- redéfinir l'operaton "+" de Position
+OK	- methode de test fin de partie
+		->la méthode est appellée UNIQUEMENT dans supprimer_voleur (que quand un voleur quitte le terrain.)
+
+OK	- ajout de variable "voleursCaptures" et "nbVoleurDepart" pour pouvoir déterminer un vainqueur
+OK	- mettre "id" sous forme de variable partagée unique ( via un compteur d'entite )
+OK	- mise en place d'un vrai "main" et de vrais "tours"
+OK		-> mise en place de comportements basiques permettant le déroulement d'une partie
+OK		-> définir fonctionnement d'un tour
+OK		-> mise en place d'une partie entière
+OK	- diviser Liste_Joueur en Liste_Gendarmes et Liste_Voleurs
+OK	- remplacer le booléen fini par nb_voleurs
+OK	- ajout de la vitesse
+	- ajout de "hitbox " et de distance de capture
+	- ajout de génération automatique de doc via Doxygen
+PUIS mise en place d'une GUI
+PUIS :
+	- terminer une (ou plusieurs) méthodes d'initialisation:
+		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
+		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
+
+
+QUESTION : plutot que faire des vecteur de pointeurs vers des entités, pourquoi pas faire des vecteurs d'entités directement ?
