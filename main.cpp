@@ -6,8 +6,8 @@ int main(){
 
 	//creation des entités
 	NonJoueur Sortie(Position(38,38),Type::sortie);
-	Voleur V1(Position(6,6),1.0,"V1");
-	Voleur V2(Position(38,36),0.5,"V2");
+	Voleur V1(Position(7,0),1.0,"V1");
+	Voleur V2(Position(38,30),0.5,"V2");
 	Gendarme G1(Position(7,6),2.0,"G1");
 	Gendarme G2(Position(6,9),2.0,"G2");
 
@@ -29,5 +29,13 @@ int main(){
 		Test.Jouer_tour();
 		Test.afficher();
 	}
+
+	// // Partie
+	// for(unsigned int nb_tour=1;nb_tour!=10;nb_tour++){
+	// 	std::cout<<"\n TOUR "<<nb_tour<<" : \n";
+	// 	Test.Jouer_tour();
+	// 	Test.afficher();
+		
+	// }
 	std::cout<<"test nbCaptures résultat attendu: 1 -->"<<Test.getNbCaptures()<<std::endl;
 }

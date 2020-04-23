@@ -7,12 +7,17 @@ void Jeu::initialise(){
 
 void Jeu::afficher()
 {
-	std::cout<<"Liste Joueurs avec position :\n";
+	std::cout<<"Liste Joueurs avec position et Hitbox :\n";
 	for(auto i:Liste_Voleurs){
-		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<"\n";
+		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
 	}
 	for(auto i:Liste_Gendarmes){
-		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<"\n";
+		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
+	}
+	std::cout<<"Liste NonJoueur avec position et Hitbox :\n";
+	for (auto i:Liste_Objets)
+	{
+		std::cout<<"Sortie"<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
 	}
 }
 
@@ -35,7 +40,7 @@ void Jeu::Jouer_tour(){
 		deplacement(*G);
 		//on verifie s'il capture un voleur
 		for(auto &&V:Liste_Voleurs){
-			if (G->getPosition()==V->getPosition()){
+			if (G->Hitbox_touche(*V)){
 				std::cout<<"Le Gendarme "<<G->getNom()<<" à capturé le voleur "<<V->getNom()<<std::endl;
 				 supprimer_voleur(*V);
 				 ajoutUneCapture();
@@ -45,7 +50,7 @@ void Jeu::Jouer_tour(){
 	//on verifie si un voleur s'est enfui sans se faire attraper
 	for(auto &&V:Liste_Voleurs){
 		for(auto &&S : Liste_Objets){
-			if(S->getType()==Type::sortie && V->getPosition()==S->getPosition()){
+			if(S->getType()==Type::sortie && S->Hitbox_touche(*V)){
 				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
 				supprimer_voleur(*V);
 			}
@@ -88,12 +93,14 @@ void Jeu::ajouter_nonJoueur(NonJoueur const nJ){
 void Jeu::deplacement(Voleur &V){
 	//calcul de la nouvelle position
 	V.setPosition(V.getDestination());
+	V.setHitbox();
 }
 
 // execute le déplacement d'un gendarme vers sa destination
 void Jeu::deplacement(Gendarme &G){
 	//calcul de la nouvelle position
 	G.setPosition(G.getDestination());
+	G.setHitbox();
 }
 
 

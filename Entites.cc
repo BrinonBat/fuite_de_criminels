@@ -17,7 +17,14 @@ void Gendarme::Joue_Deplacement(){
 	setDestination(getPosition()+result);
 }
 /************************* autre *************************/
-Entite::Entite(Position const & pos):emplacement(pos),id(compteur++){}
+
+Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){}
+
+bool Entite::Hitbox_touche(Entite &J2) 
+{
+	return ((this->getHitbox().getG()<=J2.getPosition().getX() and this->getHitbox().getD()>=J2.getPosition().getX()) && (this->getHitbox().getB()<=J2.getPosition().getY() and this->getHitbox().getH()>=J2.getPosition().getY()));
+}
+
 
 Position Position::operator+(Position const & p){
 	return Position(getX() + p.getX(),getY() + p.getY());

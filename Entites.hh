@@ -33,6 +33,27 @@ private:
 };
 using Direction = Position;
 
+
+class Hitbox {
+public:
+	Hitbox(double const & H,double const & B,double const & G,double const & D):
+		Haut(H),Bas(B),Gauche(G),Droite(D){};
+	
+	double getH()const{return Haut;}
+	double getB()const{return Bas;}
+	double getG()const{return Gauche;}
+	double getD()const{return Droite;}
+
+	void setH(double const & nouv){Haut=nouv;}
+	void setB(double const & nouv){Bas=nouv;}
+	void setG(double const & nouv){Gauche=nouv;}
+	void setD(double const & nouv){Droite=nouv;}
+
+
+private:
+	double Haut,Bas,Gauche,Droite;
+};
+
 class Entite{
 public:
 //constructeurs & destructeurs
@@ -44,12 +65,18 @@ public:
 	unsigned int getId()const{return id;}
 
 //méthodes
+
 	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.getX())+","+std::to_string(this->emplacement.getY())+")";};
+	Hitbox getHitbox() const {return HB;}
+	void setHitbox() {HB.setH(getPosition().getY()+2);HB.setB(getPosition().getY()-2);HB.setG(getPosition().getX()-2);HB.setD(getPosition().getX()+2);}
+	std::string Affiche_Hitbox() {return std::string()+"Hitbox:("+std::to_string(this->HB.getH())+","+std::to_string(this->HB.getB())+","+std::to_string(this->HB.getG())+","+std::to_string(this->HB.getD())+")";}
+	bool Hitbox_touche(Entite &E);
 
 private:
 	Position emplacement;
 	unsigned int id;
 	static unsigned int compteur;
+	Hitbox HB;
 };
 
 class NonJoueur: public Entite{
@@ -60,9 +87,13 @@ public:
 
 //accesseurs
 	Type getType()const{return type;}
+	
+
+//méthodes
 
 private:
 	Type type;
+	
 
 };
 
@@ -89,6 +120,7 @@ private:
 	double speed;
 	std::string nom;
 	Position destination;
+
 };
 
 
