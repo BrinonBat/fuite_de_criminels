@@ -15,6 +15,9 @@ OK	- diviser Liste_Joueur en Liste_Gendarmes et Liste_Voleurs
 OK	- remplacer le booléen fini par nb_voleurs
 OK	- ajout de la vitesse
 OK	- ajout de "hitbox " et de distance de capture
+	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
+	- ajout d'une fonction vérifiant si un coup est possible
+		(avant de retourner result, verifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 	- ajout de génération automatique de doc via Doxygen
 PUIS mise en place d'une GUI
 PUIS :
