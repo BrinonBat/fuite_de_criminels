@@ -19,6 +19,8 @@ OK	- ajout de "hitbox " et de distance de capture
 	- ajout d'une fonction vérifiant si un coup est possible
 		(avant de retourner result, verifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 	- ajout de génération automatique de doc via Doxygen
+	- ajout de sortie sur fichier texte sous forme d'historique
+	- suppressions des pointeurs
 PUIS mise en place d'une GUI
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
@@ -26,4 +28,5 @@ PUIS :
 		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
 
 
-QUESTION : plutot que faire des vecteur de pointeurs vers des entités, pourquoi pas faire des vecteurs d'entités directement ?
+		- implementer des "valeurs par défaut" dans les constructeurs
+réfléchir aux IA
