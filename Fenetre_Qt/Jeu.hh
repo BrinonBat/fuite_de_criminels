@@ -39,6 +39,7 @@ public :
 
 	std::vector<Voleur *> getListeVoleur()const {return Liste_Voleurs;}
 	std::vector<Gendarme *> getListeGendarme()const {return Liste_Gendarmes;}
+	std::vector<NonJoueur *> getListeNonJoueur()const {return Liste_Objets;}
 
 //méthodes
 	void Jouer_tour();

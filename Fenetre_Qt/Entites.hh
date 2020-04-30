@@ -5,6 +5,7 @@
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>  
+#include <QtWidgets>
 
 using Coordonnee = unsigned int ;
 
@@ -75,11 +76,15 @@ public:
 	std::string Affiche_Hitbox() {return std::string()+"Hitbox:("+std::to_string(this->HB.getH())+","+std::to_string(this->HB.getB())+","+std::to_string(this->HB.getG())+","+std::to_string(this->HB.getD())+")";}
 	bool Hitbox_touche(Entite &E);
 
+	QGraphicsRectItem* getItem()const{return item;}
+	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());} 
+
 private:
 	Position emplacement;
 	unsigned int id;
 	static unsigned int compteur;
 	Hitbox HB;
+	QGraphicsRectItem * item;
 };
 
 class NonJoueur: public Entite{
@@ -105,7 +110,8 @@ class Joueur: public Entite {
 public:
 //constructeurs & destructeurs
 	Joueur(Position const & pos,double speed,std::string nom):
-		Entite(pos),speed(speed),nom(nom),destination(pos){};
+		Entite(pos),speed(speed),nom(nom),destination(pos){
+	};
 
 	virtual ~Joueur() =default; // destructeur retiré pour que celui de Voleur et Gendarme soient utilisés
 
@@ -123,7 +129,7 @@ private:
 	double speed;
 	std::string nom;
 	Position destination;
-
+	
 };
 
 
@@ -132,7 +138,8 @@ class Voleur : public Joueur{
 public:
 //constructeurs & destructeurs
 	Voleur(Position const & pos,double speed,std::string nom):
-		Joueur(pos,speed,nom){};
+		Joueur(pos,speed,nom){
+		};
 
 	//redefinition du constructeur virtuel
 	Voleur* clone() const {return new Voleur(*this);}
@@ -147,7 +154,8 @@ class Gendarme : public Joueur {
 public:
 //constructeurs & destructeurs
 	Gendarme(Position const & pos,double speed,std::string nom):
-		Joueur(pos,speed,nom){};
+		Joueur(pos,speed,nom){
+		};
 
 	//redefinition du constructeur virtuel
 	Gendarme* clone() const {return new Gendarme(*this);}

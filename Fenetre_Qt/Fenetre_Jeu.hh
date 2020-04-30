@@ -7,7 +7,6 @@ class Fenetre_Jeu : public QWidget {
 
 public:
 	Fenetre_Jeu();
-	void paintEvent(QPaintEvent *event);
 
 	QGraphicsScene * _Scene;
 	QGraphicsView * _View;

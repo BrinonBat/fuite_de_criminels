@@ -25,7 +25,10 @@ void Gendarme::Joue_Deplacement(){
 }
 /************************* autre *************************/
 
-Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){}
+Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){
+	item = new QGraphicsRectItem(-2,-2,4,4);
+	item->setPos(pos.getX(),pos.getY());
+}
 
 bool Entite::Hitbox_touche(Entite &J2) 
 {

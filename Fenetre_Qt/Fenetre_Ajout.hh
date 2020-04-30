@@ -21,10 +21,19 @@ class Fenetre_Ajout : public QWidget {
 public:
 	Fenetre_Ajout();
 private slots :
-//	void Ajout();
+
+	void Ajouter_Joueur();
+	void Ajouter_NonJoueur();
+
 	void Lancer_Partie();
+	
+	void Choix_Exemple();
+	void Exemple1();
+	void Exemple2();
+	void Exemple3();
 
 private :
+
 	QLabel * _Intro;
 	QComboBox * _ChoixJoueur;
 	QLineEdit * _NomJoueur;
@@ -43,6 +52,10 @@ private :
 	QLabel * _Intro3;
 	QComboBox * _ChoixExemple;
 	QPushButton * _Lancer2;
+
+	QLabel * _Liste;
+
+	Jeu * Game;
 
 }; 
 

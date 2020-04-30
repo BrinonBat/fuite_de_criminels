@@ -4,14 +4,14 @@
 
 Fenetre_Ajout::Fenetre_Ajout()
 	:QWidget() {
-		resize(500,400);
+		resize(500,600);
 
 	// Ajout de Joueurs
 	_Intro = new QLabel("	Veuillez choisir un type de joueurs, son nom, sa position :\n 	(Nom attaché de préférence comme G1,G2 ..)",this);
 
 	_ChoixJoueur = new QComboBox(this);
-	_ChoixJoueur->addItem("Voleur",1);
-	_ChoixJoueur->addItem("Gendarme",2);
+	_ChoixJoueur->addItem("Voleur",0);
+	_ChoixJoueur->addItem("Gendarme",1);
 	_ChoixJoueur->setGeometry(0,40,100,20);
 
 	_NomJoueur = new QLineEdit("Nom Joueur",this);
@@ -24,14 +24,15 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 	_Ajouter = new QPushButton("Ajouter",this);
 	_Ajouter->setGeometry(400,40,60,20);
+	connect(_Ajouter,SIGNAL(released()),this,SLOT(Ajouter_Joueur()));
 
 	// Ajout des "autres" paramètres
 	_Intro2 = new QLabel("	Veuillez choisir un type(Sortie,Cachette),sa position :\n ",this);
 	_Intro2->move(0,65);
 
 	_AutreChoix = new QComboBox(this);
-	_AutreChoix->addItem("Sortie",1);
-	_AutreChoix->addItem("Cachette",2);
+	_AutreChoix->addItem("Sortie",0);
+	_AutreChoix->addItem("Cachette",1);
 	_AutreChoix->setGeometry(0,100,100,20);
 
 	_PositionX2 = new QLineEdit("Position X",this);
@@ -41,6 +42,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 	_Ajouter2 = new QPushButton("Ajouter",this);
 	_Ajouter2->setGeometry(300,100,60,20);
+	connect(_Ajouter2,SIGNAL(released()),this,SLOT(Ajouter_NonJoueur()));
 	
 	// Lancement de partie
 	_Lancer = new QPushButton("Lancer la partie!",this);
@@ -52,137 +54,240 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_Intro3->move(0,220);
 
 	_ChoixExemple = new QComboBox(this);
-	_ChoixExemple->addItem("Exemple1",1);
-	_ChoixExemple->addItem("Exemple2",2);
-	_ChoixExemple->addItem("Exemple3",3);
+	_ChoixExemple->addItem("Exemple1",0);
+	_ChoixExemple->addItem("Exemple2",1);
+	_ChoixExemple->addItem("Exemple3",2);
 	_ChoixExemple->setGeometry(0,280,100,20);
 
 	_Lancer2 = new QPushButton("Lancer la partie!",this);
 	_Lancer2->setGeometry(100,280,150,20);
+	connect(_Lancer2,SIGNAL(released()),this,SLOT(Choix_Exemple()));
+
+	_Liste = new QLabel("",this);
+	_Liste->setGeometry(0,310,300,300);
+
+	Game = new Jeu(400,400);
+
+	}
+
+	// Ajout d'un joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
+	void Fenetre_Ajout::Ajouter_Joueur()
+	{
+		switch (_ChoixJoueur->currentIndex())
+        {
+            case 0:
+            {
+                _Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+")\n");
+				this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString()));
+            }
+                break;
+
+            case 1:
+            {
+            	 _Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+")\n");
+                this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString()));
+            }
+                break;
+        }
+
 
 
 	}
 
+	// Ajout d'un Non_Joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
+	void Fenetre_Ajout::Ajouter_NonJoueur()
+	{
+		switch (_AutreChoix->currentIndex())
+        {
+            case 0:
+            {
+
+                // Voleur V1(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,"V1");
+                 _Liste->setText(_Liste->text() + "Sortie: ("+_PositionX2->text()+","+_PositionY2->text()+")\n");
+				this->Game->ajouter_nonJoueur(NonJoueur(Position(_PositionX2->text().toDouble(),_PositionY2->text().toDouble()),Type::sortie));
+            }
+                break;
+
+            case 1:
+            {
+            	// Pas encore de gestion de cachette.
+                
+            }
+                break;
+        }
+
+	}
 
 
 	void Fenetre_Ajout::Lancer_Partie()
 	{
+
 		Fenetre_Jeu *J = new Fenetre_Jeu();
 		J->show();
-		
-		// QGraphicsRectItem* item2 = new QGraphicsRectItem(20,20,4,4);
-		// item2->setBrush(QBrush(Qt::blue));
-		// J->_Scene->addItem(item2);
 
-		Jeu Test(400,400);
+		// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
+		for (auto i : this->Game->getListeVoleur())
+		{
+			i->getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i->getItem());
+		}
 
-	//creation des entités
-	NonJoueur Sortie(Position(38,38),Type::sortie);
+		for (auto i : this->Game->getListeGendarme())
+		{
+			i->getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i->getItem());
+		}
 
-	QGraphicsRectItem* item1 = new QGraphicsRectItem(-2,-2,4,4);
-		item1->setPos(38,38);
-		item1->setBrush(QBrush(Qt::green));
-		J->_Scene->addItem(item1);
+		for (auto i : this->Game->getListeNonJoueur())
+		{
+			if (i->getType()==Type::sortie)
+			{
 
-	Voleur V1(Position(-150,-150),1.0,"V1");
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			
+			}
+			else {
 
-	QGraphicsRectItem* item2 = new QGraphicsRectItem(-2,-2,4,4);
-		item2->setPos(-150,-150);
-		item2->setBrush(QBrush(Qt::red));
-		J->_Scene->addItem(item2);
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			}
 
-	Voleur V2(Position(38,30),0.5,"V2");
+		}
 
-	QGraphicsRectItem* item3 = new QGraphicsRectItem(-2,-2,4,4);
-		item3->setPos(38,30);
-		item3->setBrush(QBrush(Qt::red));
-		J->_Scene->addItem(item3);
-
-	Gendarme G1(Position(-148,300),2.0,"G1");
-
-	QGraphicsRectItem* item4 = new QGraphicsRectItem(-2,-2,4,4);
-		item4->setPos(-148,300);
-		item4->setBrush(QBrush(Qt::blue));
-		J->_Scene->addItem(item4);
-
-	Gendarme G2(Position(6,9),2.0,"G2");
-
-	QGraphicsRectItem* item5 = new QGraphicsRectItem(-2,-2,4,4);
-		item2->setPos(6,9);
-		item5->setBrush(QBrush(Qt::blue));
-		J->_Scene->addItem(item5);
-
-	// ajout des entités au Jeu
-	Test.ajouter_voleur(V1);
-	Test.ajouter_gendarme(G1);
-	Test.ajouter_voleur(V2);
-	Test.ajouter_gendarme(G2);
-	Test.ajouter_nonJoueur(Sortie);
+		std::cout<<"Etat Initial"<<std::endl;
+		this->Game->afficher();
 
 
-	std::cout<<"Etat Initial"<<std::endl;
-	Test.afficher();
-	std::cout<<"\n EXEMPLE_EXECUTION : \n ";
-	Test.getVoleur(0);
-
-
-
-	// Partie
-	for(unsigned int nb_tour=1;!Test.estFini();nb_tour++){
+		// Partie
+	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
-		Test.Jouer_tour();
-		for (auto i : Test.getListeVoleur())
+		Game->Jouer_tour();
+		for (auto i : Game->getListeVoleur())
 		{
-			if (i->getNom()=="V1")
-			{
-				item2->setPos(i->getPosition().getX(),i->getPosition().getY());
-				// std::cout<<"V1"<<(int)Test.getVoleur(0).getDestination().getX()<<","<<(int)Test.getVoleur(0).getPosition().getY();
-			}
-			if (i->getNom()=="V2")
-			{
-				item3->setPos(i->getPosition().getX(),i->getPosition().getY());
-				// std::cout<<"V1"<<(int)Test.getVoleur(0).getDestination().getX()<<","<<(int)Test.getVoleur(0).getPosition().getY();
-			}
+			i->setItem(i->getPosition());
 		}
 
-		for (auto i : Test.getListeGendarme())
+		for (auto i : Game->getListeGendarme())
 		{
-			if (i->getNom()=="G1")
-			{
-				item4->setPos(i->getPosition().getX(),i->getPosition().getY());
-				// std::cout<<"V1"<<(int)Test.getVoleur(0).getDestination().getX()<<","<<(int)Test.getVoleur(0).getPosition().getY();
-			}
-			if (i->getNom()=="G2")
-			{
-				item5->setPos(i->getPosition().getX(),i->getPosition().getY());
-				// std::cout<<"V1"<<(int)Test.getVoleur(0).getDestination().getX()<<","<<(int)Test.getVoleur(0).getPosition().getY();
-			}
+			i->setItem(i->getPosition());
 		}
 
-		// item3->setPos((int)V2.getPosition().getX(),(int)V2.getPosition().getY());
-		// item4->setPos((int)G1.getPosition().getX(),(int)G1.getPosition().getY());
-		// item5->setPos((int)G2.getPosition().getX(),(int)G2.getPosition().getY());
 		QEventLoop loop;
 		QTimer::singleShot(100, &loop, SLOT(quit()));
 		loop.exec();
 
-		Test.afficher();
-	}
-
-
-		// for (int i=20;i<100;i++)
-		// {
-		// 	// QThread::msleep(20);
-		// 	item2->setPos(i,i);
-		// 	item3->setPos(i,i);
-		// 	item4->setPos(i,i);
-		// 	item5->setPos(i,i);
-
-			
-		// 	QEventLoop loop;
-		// 	QTimer::singleShot(100, &loop, SLOT(quit()));
-		// 	loop.exec();
-		// }
+		Game->afficher();
 		
+		}
+
 
 	}
+
+
+	void Fenetre_Ajout::Choix_Exemple()
+	{
+		switch (_ChoixExemple->currentIndex())
+        {
+            case 0:
+                Exemple1();
+                break;
+
+            case 1:
+                Exemple2();
+                break;
+
+            case 2:
+            	Exemple3();
+            	break;
+        }
+	}
+
+
+
+	void Fenetre_Ajout::Exemple1()
+	{
+		Fenetre_Jeu *J = new Fenetre_Jeu();
+		J->show();
+
+		Jeu Exemple1(400,400);
+
+	//creation des entités
+	NonJoueur Sortie(Position(38,38),Type::sortie);
+	Voleur V1(Position(-150,-150),1.0,"V1");
+	Voleur V2(Position(38,30),0.5,"V2");
+	Gendarme G1(Position(-148,300),2.0,"G1");	
+	Gendarme G2(Position(6,9),2.0,"G2");
+
+	// ajout des entités au Jeu
+	Exemple1.ajouter_voleur(V1);
+	Exemple1.ajouter_gendarme(G1);
+	Exemple1.ajouter_voleur(V2);
+	Exemple1.ajouter_gendarme(G2);
+	Exemple1.ajouter_nonJoueur(Sortie);
+
+	for (auto i : Exemple1.getListeVoleur())
+		{
+			i->getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i->getItem());
+		}
+
+		for (auto i : Exemple1.getListeGendarme())
+		{
+			i->getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i->getItem());
+		}
+
+		for (auto i : Exemple1.getListeNonJoueur())
+		{
+			if (i->getType()==Type::sortie)
+			{
+
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			
+			}
+			else {
+
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			}
+
+		}
+
+	// Partie
+	for(unsigned int nb_tour=1;!Exemple1.estFini();nb_tour++){
+		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
+		Exemple1.Jouer_tour();
+		for (auto i : Exemple1.getListeVoleur())
+		{
+			i->setItem(i->getPosition());
+		}
+
+		for (auto i : Exemple1.getListeGendarme())
+		{
+			i->setItem(i->getPosition());
+		}
+
+		QEventLoop loop;
+		QTimer::singleShot(100, &loop, SLOT(quit()));
+		loop.exec();
+
+		Exemple1.afficher();
+		
+		}
+
+	}
+
+void Fenetre_Ajout::Exemple2()
+	{
+		// Exemple2
+	}
+
+
+void Fenetre_Ajout::Exemple3()
+	{
+		// Exemple3
+	}
+
+	
