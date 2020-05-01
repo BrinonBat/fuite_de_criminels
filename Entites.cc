@@ -20,10 +20,13 @@ void Gendarme::Joue_Deplacement(){
 
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){}
 
-bool Entite::Hitbox_touche(Entite &J2)
+bool Entite::Hitbox_touche(Entite &J2) 
 {
-	return ((this->getHitbox().getG()<=J2.getPosition().getX() and this->getHitbox().getD()>=J2.getPosition().getX())
-		&& (this->getHitbox().getB()<=J2.getPosition().getY() and this->getHitbox().getH()>=J2.getPosition().getY()));
+	return (
+	((this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
+	or (
+	(this->getHitbox().getG()<=J2.getHitbox().getD() and this->getHitbox().getD()>=J2.getHitbox().getD()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
+	);
 }
 
 
