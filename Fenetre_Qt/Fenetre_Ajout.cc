@@ -367,7 +367,79 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 void Fenetre_Ajout::Exemple2()
 	{
-		// Exemple2
+		// Exemple2 Grosse Partie
+		Fenetre_Jeu *J = new Fenetre_Jeu();
+		J->show();
+
+		Jeu Exemple2(400,400);
+
+		for (int i=0;i<30;++i)
+		{
+			Voleur V(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas);
+			Exemple2.ajouter_voleur(V);
+		}
+
+		for (int i=0;i<30;++i)
+		{
+			Gendarme G(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut);
+			Exemple2.ajouter_gendarme(G);
+		}
+
+		NonJoueur Sortie(Position(0,0),Type::sortie);
+		Exemple2.ajouter_nonJoueur(Sortie);
+
+
+		for (auto i : Exemple2.getListeVoleur())
+		{
+			i->getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i->getItem());
+		}
+
+		for (auto i : Exemple2.getListeGendarme())
+		{
+			i->getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i->getItem());
+		}
+
+		for (auto i : Exemple2.getListeNonJoueur())
+		{
+			if (i->getType()==Type::sortie)
+			{
+
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			
+			}
+			else {
+
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			}
+
+		}
+
+	// Partie
+	for(unsigned int nb_tour=1;!Exemple2.estFini();nb_tour++){
+		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
+		Exemple2.Jouer_tour();
+		for (auto i : Exemple2.getListeVoleur())
+		{
+			i->setItem(i->getPosition());
+		}
+
+		for (auto i : Exemple2.getListeGendarme())
+		{
+			i->setItem(i->getPosition());
+		}
+
+		QEventLoop loop;
+		QTimer::singleShot(100, &loop, SLOT(quit()));
+		loop.exec();
+
+		Exemple2.afficher();
+		
+		}
+
 	}
 
 
