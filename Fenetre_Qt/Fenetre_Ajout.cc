@@ -4,10 +4,10 @@
 
 Fenetre_Ajout::Fenetre_Ajout()
 	:QWidget() {
-		resize(500,600);
+		resize(620,600);
 
 	// Ajout de Joueurs
-	_Intro = new QLabel("	Veuillez choisir un type de joueurs, son nom, sa position :\n 	(Nom attaché de préférence comme G1,G2 ..)",this);
+	_Intro = new QLabel("	Veuillez choisir un type de joueurs, son nom, sa position et son algo:\n 	(Nom attaché de préférence comme G1,G2 ..)",this);
 
 	_ChoixJoueur = new QComboBox(this);
 	_ChoixJoueur->addItem("Voleur",0);
@@ -22,8 +22,14 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_PositionY = new QLineEdit("Position Y",this);
 	_PositionY->setGeometry(300,40,100,20);
 
+	_ChoixAlgo = new QComboBox(this);
+	_ChoixAlgo->addItem("Random",0);
+	_ChoixAlgo->addItem("Vers le haut!",1);
+	_ChoixAlgo->addItem("Vers le bas!",2);
+	_ChoixAlgo->setGeometry(400,40,140,20);
+
 	_Ajouter = new QPushButton("Ajouter",this);
-	_Ajouter->setGeometry(400,40,60,20);
+	_Ajouter->setGeometry(540,40,60,20);
 	connect(_Ajouter,SIGNAL(released()),this,SLOT(Ajouter_Joueur()));
 
 	// Ajout des "autres" paramètres
@@ -49,6 +55,10 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_Lancer->setGeometry(150,150,150,50);
 	connect(_Lancer,SIGNAL(released()),this,SLOT(Lancer_Partie()));
 
+	_Apercu = new QPushButton("Apercu",this);
+	_Apercu->setGeometry(300,150,150,50);
+	connect(_Apercu,SIGNAL(released()),this,SLOT(Apercu()));
+
 	// Partie configuré - exemple (3)
 	_Intro3 = new QLabel("	Sinon vous pouvez lancer une partie avec\n\t3 exemples déja configuré :\n ",this);
 	_Intro3->move(0,220);
@@ -64,7 +74,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	connect(_Lancer2,SIGNAL(released()),this,SLOT(Choix_Exemple()));
 
 	_Liste = new QLabel("",this);
-	_Liste->setGeometry(0,310,300,300);
+	_Liste->setGeometry(0,310,600,300);
 
 	Game = new Jeu(400,400);
 
@@ -76,16 +86,57 @@ Fenetre_Ajout::Fenetre_Ajout()
 		switch (_ChoixJoueur->currentIndex())
         {
             case 0:
-            {
-                _Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+")\n");
-				this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString()));
+            {	switch(_ChoixAlgo->currentIndex())
+            	{
+            		case 0:
+            		{
+            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Random\n");
+						this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
+            		}
+            		break;
+            		
+            		case 1:
+            		{
+            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
+						this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::haut));
+            		}
+            		break;
+
+            		case 2:
+            		{
+            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le bas!\n");
+						this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::bas));
+            		}
+            		break;
+            	}
             }
                 break;
 
             case 1:
             {
-            	 _Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+")\n");
-                this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString()));
+            	switch(_ChoixAlgo->currentIndex())
+            	{
+            		case 0:
+            		{
+            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Random\n");
+						this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
+            		}
+            		break;
+            		
+            		case 1:
+            		{
+            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
+						this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::haut));
+            		}
+            		break;
+
+            		case 2:
+            		{
+            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le bas!\n");
+						this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::bas));
+            		}
+            		break;
+            	}
             }
                 break;
         }
@@ -118,10 +169,45 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 	}
 
+	void Fenetre_Ajout::Apercu()
+	{
+
+		Fenetre_Jeu *J = new Fenetre_Jeu();
+		J->show();
+
+		// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
+		for (auto i : this->Game->getListeVoleur())
+		{
+			i->getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i->getItem());
+		}
+
+		for (auto i : this->Game->getListeGendarme())
+		{
+			i->getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i->getItem());
+		}
+
+		for (auto i : this->Game->getListeNonJoueur())
+		{
+			if (i->getType()==Type::sortie)
+			{
+
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			
+			}
+			else {
+
+			i->getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i->getItem());
+			}
+		}
+	}
+
 
 	void Fenetre_Ajout::Lancer_Partie()
 	{
-
 		Fenetre_Jeu *J = new Fenetre_Jeu();
 		J->show();
 
@@ -214,10 +300,10 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 	//creation des entités
 	NonJoueur Sortie(Position(38,38),Type::sortie);
-	Voleur V1(Position(-150,-150),1.0,"V1");
-	Voleur V2(Position(38,30),0.5,"V2");
-	Gendarme G1(Position(-148,300),2.0,"G1");	
-	Gendarme G2(Position(6,9),2.0,"G2");
+	Voleur V1(Position(-150,-150),1.0,"V1",Choix_Algo::random);
+	Voleur V2(Position(38,30),0.5,"V2",Choix_Algo::random);
+	Gendarme G1(Position(-148,300),2.0,"G1",Choix_Algo::random);	
+	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::random);
 
 	// ajout des entités au Jeu
 	Exemple1.ajouter_voleur(V1);

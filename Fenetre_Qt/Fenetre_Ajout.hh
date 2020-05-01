@@ -25,6 +25,7 @@ private slots :
 	void Ajouter_Joueur();
 	void Ajouter_NonJoueur();
 
+	void Apercu();
 	void Lancer_Partie();
 	
 	void Choix_Exemple();
@@ -39,6 +40,7 @@ private :
 	QLineEdit * _NomJoueur;
 	QLineEdit * _PositionX;
 	QLineEdit * _PositionY;
+	QComboBox * _ChoixAlgo;
 	QPushButton * _Ajouter;
 
 	QLabel * _Intro2;
@@ -48,6 +50,7 @@ private :
 	QPushButton * _Ajouter2;
 
 	QPushButton * _Lancer;
+	QPushButton * _Apercu;
 
 	QLabel * _Intro3;
 	QComboBox * _ChoixExemple;

@@ -15,6 +15,13 @@ enum class Type {
 	sortie
 };
 
+//Correspond à la liste des différénts algorithmes disponible pour chaque joueurs
+enum class Choix_Algo {
+	random,
+	haut,
+	bas
+};
+
 class Position {
 public:
 //constructeurs & destructeurs
@@ -109,8 +116,8 @@ class Joueur: public Entite {
 
 public:
 //constructeurs & destructeurs
-	Joueur(Position const & pos,double speed,std::string nom):
-		Entite(pos),speed(speed),nom(nom),destination(pos){
+	Joueur(Position const & pos,double speed,std::string nom,Choix_Algo choix):
+		Entite(pos),speed(speed),nom(nom),destination(pos),Algo(choix){
 	};
 
 	virtual ~Joueur() =default; // destructeur retiré pour que celui de Voleur et Gendarme soient utilisés
@@ -122,6 +129,10 @@ public:
 	Position getDestination()const{return destination;}
 	void setDestination(Position const &pos){destination=pos;this->setPosition(destination);}
 
+	//Setter/Getter pour le choix de l'algo
+	Choix_Algo getAlgo()const{return Algo;}
+	void setAlgo(Choix_Algo const choix) {Algo=choix;}
+
 //méthodes
 	virtual void Joue_Deplacement() =0;
 
@@ -129,6 +140,7 @@ private:
 	double speed;
 	std::string nom;
 	Position destination;
+	Choix_Algo Algo;
 	
 };
 
@@ -137,8 +149,8 @@ class Voleur : public Joueur{
 
 public:
 //constructeurs & destructeurs
-	Voleur(Position const & pos,double speed,std::string nom):
-		Joueur(pos,speed,nom){
+	Voleur(Position const & pos,double speed,std::string nom, Choix_Algo choix):
+		Joueur(pos,speed,nom,choix){
 		};
 
 	//redefinition du constructeur virtuel
@@ -153,8 +165,8 @@ class Gendarme : public Joueur {
 
 public:
 //constructeurs & destructeurs
-	Gendarme(Position const & pos,double speed,std::string nom):
-		Joueur(pos,speed,nom){
+	Gendarme(Position const & pos,double speed,std::string nom,Choix_Algo choix):
+		Joueur(pos,speed,nom,choix){
 		};
 
 	//redefinition du constructeur virtuel

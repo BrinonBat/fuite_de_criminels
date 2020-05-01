@@ -11,8 +11,28 @@ unsigned int Entite::compteur(0);
 /************************** IAs **************************/
 void Voleur::Joue_Deplacement(){
 	//calcul du déplacement à réaliser
-	// Direction result(fRand(-3,3),fRand(-3,3));
-	Direction result(0,1);
+	Direction result(0,0);
+	switch (getAlgo())
+	{
+		case Choix_Algo::random:
+		{
+			result = Direction(fRand(-3,3),fRand(-3,3));
+		}
+		break;
+
+		case Choix_Algo::haut:
+		{
+			result = Direction(0,1);
+		}
+		break;
+
+		case Choix_Algo::bas:
+		{
+			result = Direction(0,-1);
+		}
+		break;
+	}
+
 	//enregistrement de celui-ci
 	result=result*getSpeed();
 
@@ -31,8 +51,28 @@ void Voleur::Joue_Deplacement(){
 }
 void Gendarme::Joue_Deplacement(){
 	//calcul du déplacement à réaliser
-	// Direction result(fRand(-3,3),fRand(-3,3));
-	Direction result(1,0);
+	Direction result(0,0);
+	switch (getAlgo())
+	{
+		case Choix_Algo::random:
+		{
+			result = Direction(fRand(-3,3),fRand(-3,3));
+		}
+		break;
+
+		case Choix_Algo::haut:
+		{
+			result = Direction(0,1);
+		}
+		break;
+
+		case Choix_Algo::bas:
+		{
+			result = Direction(0,-1);
+		}
+		break;
+	}
+
 	//enregistrement de celui-ci
 	result=result*getSpeed();
 

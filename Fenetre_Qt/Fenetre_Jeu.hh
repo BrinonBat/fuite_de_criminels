@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <QtWidgets>
+#include <QCloseEvent>
 
 class Fenetre_Jeu : public QWidget {
 	Q_OBJECT
