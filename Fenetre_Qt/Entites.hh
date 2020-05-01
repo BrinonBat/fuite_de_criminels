@@ -73,7 +73,7 @@ public:
 	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.getX())+","+std::to_string(this->emplacement.getY())+")";};
 	Hitbox getHitbox() const {return HB;}
 	void setHitbox() {HB.setH(getPosition().getY()+2);HB.setB(getPosition().getY()-2);HB.setG(getPosition().getX()-2);HB.setD(getPosition().getX()+2);}
-	std::string Affiche_Hitbox() {return std::string()+"Hitbox:("+std::to_string(this->HB.getH())+","+std::to_string(this->HB.getB())+","+std::to_string(this->HB.getG())+","+std::to_string(this->HB.getD())+")";}
+	std::string Affiche_Hitbox() {return std::string()+"Hitbox:("+std::to_string(this->HB.getG())+","+std::to_string(this->HB.getD())+","+std::to_string(this->HB.getH())+","+std::to_string(this->HB.getB())+")";}
 	bool Hitbox_touche(Entite &E);
 
 	QGraphicsRectItem* getItem()const{return item;}

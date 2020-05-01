@@ -11,22 +11,49 @@ unsigned int Entite::compteur(0);
 /************************** IAs **************************/
 void Voleur::Joue_Deplacement(){
 	//calcul du déplacement à réaliser
-	Direction result(fRand(-3,3),fRand(-3,3));
+	// Direction result(fRand(-3,3),fRand(-3,3));
+	Direction result(0,1);
 	//enregistrement de celui-ci
 	result=result*getSpeed();
+
+	Direction verif = getPosition()+result;
+
+	if (verif.getX()+2>400 or verif.getX()-2<-400 )
+	{
+		result.setX(-result.getX());
+	}
+	if (verif.getY()+2>400 or verif.getY()-2<-400)
+	{
+		result.setY(-result.getY());
+
+	}
 	setDestination(getPosition()+result);
 }
 void Gendarme::Joue_Deplacement(){
 	//calcul du déplacement à réaliser
-	Direction result(fRand(-3,3),fRand(-3,3));
+	// Direction result(fRand(-3,3),fRand(-3,3));
+	Direction result(1,0);
 	//enregistrement de celui-ci
 	result=result*getSpeed();
+
+	Direction verif = getPosition()+result;
+
+	if (verif.getX()+2>400 or verif.getX()-2<-400 )
+	{
+		result.setX(-result.getX());
+	}
+	if (verif.getY()+2>400 or verif.getY()-2<-400)
+	{
+		result.setY(-result.getY());
+
+	}
+
 	setDestination(getPosition()+result);
 }
 /************************* autre *************************/
 
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){
-	item = new QGraphicsRectItem(-2,-2,4,4);
+	item = new QGraphicsRectItem(0,0,4,4);
 	item->setPos(pos.getX(),pos.getY());
 }
 
@@ -36,7 +63,7 @@ bool Entite::Hitbox_touche(Entite &J2)
 	((this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
 	or (
 	(this->getHitbox().getG()<=J2.getHitbox().getD() and this->getHitbox().getD()>=J2.getHitbox().getD()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
-	); 
+	);
 }
 
 

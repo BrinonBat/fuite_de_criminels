@@ -29,7 +29,6 @@ void Jeu::Jouer_tour(){
 	}
 	for(auto &&G:Liste_Gendarmes){
 		G->Joue_Deplacement();
-
 	}
 
 //application des déplacement
@@ -52,6 +51,7 @@ void Jeu::Jouer_tour(){
 		for(auto &&S : Liste_Objets){
 			if(S->getType()==Type::sortie && S->Hitbox_touche(*V)){
 				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
+				std::cout<<V->Affiche_Hitbox()<<"\n";
 				supprimer_voleur(*V);
 			}
 		}
