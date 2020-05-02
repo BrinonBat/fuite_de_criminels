@@ -4,7 +4,7 @@
 #include <string>
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
-#include <time.h>  
+#include <time.h>
 #include <QtWidgets>
 
 using Coordonnee = unsigned int ;
@@ -49,7 +49,7 @@ class Hitbox {
 public:
 	Hitbox(double const & H,double const & B,double const & G,double const & D):
 		Haut(H),Bas(B),Gauche(G),Droite(D){};
-	
+
 	double getH()const{return Haut;}
 	double getB()const{return Bas;}
 	double getG()const{return Gauche;}
@@ -84,7 +84,7 @@ public:
 	bool Hitbox_touche(Entite &E);
 
 	QGraphicsRectItem* getItem()const{return item;}
-	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());} 
+	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());}
 
 private:
 	Position emplacement;
@@ -102,13 +102,13 @@ public:
 
 //accesseurs
 	Type getType()const{return type;}
-	
+
 
 //méthodes
 
 private:
 	Type type;
-	
+
 
 };
 
@@ -141,7 +141,7 @@ private:
 	std::string nom;
 	Position destination;
 	Choix_Algo Algo;
-	
+
 };
 
 
