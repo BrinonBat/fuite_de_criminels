@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Fenetre_Ajout.hh"
 #include "Jeu.hh"
-
+#include <ctime>
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -12,5 +12,3 @@ int main(int argc, char *argv[])
     F.show();
    return app.exec();
 }
-
-
