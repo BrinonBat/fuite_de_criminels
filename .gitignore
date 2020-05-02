@@ -32,4 +32,8 @@
 *.app
 
 #cmake
+<<<<<<< HEAD
 ./Fenetre_Qt/CMakeFiles/
+=======
+./Fenetre_Qt/CMakeFiles
+>>>>>>> 249f62488e7942f4b1cf212d9ce468adfd6706ff
