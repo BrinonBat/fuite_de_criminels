@@ -45,8 +45,8 @@ public :
 	void Jouer_tour();
     void afficher();
     void initialise();
-    void deplacement(Voleur &V);
-	void deplacement(Gendarme &G);
+    void Joue_deplacement(Voleur &V);
+	void Joue_deplacement(Gendarme &G);
     bool estFini();
 
 private:

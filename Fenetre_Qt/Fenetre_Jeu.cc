@@ -12,5 +12,5 @@
 		_View->setAlignment(Qt::AlignAbsolute);
 		_View->setSceneRect(-400,-400,800,800); // Permet de bloquer le scroll-auto d'un GraphicScene
 		 _View->fitInView(_Scene->sceneRect(), Qt::KeepAspectRatio);
-		
+
 	}

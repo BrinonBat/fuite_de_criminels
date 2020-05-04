@@ -5,6 +5,7 @@
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
+#include <math.h>  
 #include <QtWidgets>
 
 using Coordonnee = unsigned int ;
@@ -19,7 +20,8 @@ enum class Type {
 enum class Choix_Algo {
 	random,
 	haut,
-	bas
+	bas,
+	Gendarme_Chasseurs,
 };
 
 class Position {
@@ -49,7 +51,7 @@ class Hitbox {
 public:
 	Hitbox(double const & H,double const & B,double const & G,double const & D):
 		Haut(H),Bas(B),Gauche(G),Droite(D){};
-
+	
 	double getH()const{return Haut;}
 	double getB()const{return Bas;}
 	double getG()const{return Gauche;}
@@ -84,7 +86,10 @@ public:
 	bool Hitbox_touche(Entite &E);
 
 	QGraphicsRectItem* getItem()const{return item;}
-	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());}
+	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());} 
+
+	// Distance entre deux entités
+	double getDistance_From (Entite E);
 
 private:
 	Position emplacement;
@@ -102,13 +107,13 @@ public:
 
 //accesseurs
 	Type getType()const{return type;}
-
+	
 
 //méthodes
 
 private:
 	Type type;
-
+	
 
 };
 
@@ -133,17 +138,22 @@ public:
 	Choix_Algo getAlgo()const{return Algo;}
 	void setAlgo(Choix_Algo const choix) {Algo=choix;}
 
+//méthodes virtuel
+	virtual void deplacement() =0;
+
 //méthodes
-	virtual void Joue_Deplacement() =0;
+	Direction Se_Rapprocher(Joueur & J);
+	Direction Fuir (Joueur & J);
 
 private:
 	double speed;
 	std::string nom;
 	Position destination;
 	Choix_Algo Algo;
-
+	
 };
 
+class Gendarme; // Pour faire appel à la fonction Gendarme_Plus_Proche
 
 class Voleur : public Joueur{
 
@@ -157,7 +167,9 @@ public:
 	Voleur* clone() const {return new Voleur(*this);}
 
 //méthodes
-	void Joue_Deplacement() override;
+	void deplacement() override;
+
+	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> Liste);
 
 };
 
@@ -173,6 +185,8 @@ public:
 	Gendarme* clone() const {return new Gendarme(*this);}
 
 //méthodes
-	void Joue_Deplacement() override;
+	void deplacement() override;
+
+	Voleur Voleur_Plus_Proche(std::vector<Voleur*> Liste);
 
 };

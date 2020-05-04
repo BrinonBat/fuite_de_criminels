@@ -1,95 +1,101 @@
 #include "Entites.hh"
 
-double fRand(double fMin, double fMax)
-{
-    double f = (double)rand() / RAND_MAX;
-    return fMin + f * (fMax - fMin);
-}
+
 
 
 unsigned int Entite::compteur(0);
 /************************** IAs **************************/
-void Voleur::Joue_Deplacement(){
-	//calcul du déplacement à réaliser
-	Direction result(0,0);
-	switch (getAlgo())
-	{
-		case Choix_Algo::random:
-		{
-			result = Direction(fRand(-3,3),fRand(-3,3));
-		}
-		break;
+void Voleur::deplacement(){
 
-		case Choix_Algo::haut:
-		{
-			result = Direction(0,1);
-		}
-		break;
+	//calcul de la nouvelle position
+	this->setPosition(this->getDestination());
+	this->setHitbox();
 
-		case Choix_Algo::bas:
-		{
-			result = Direction(0,-1);
-		}
-		break;
-	}
-
-	//enregistrement de celui-ci
-	result=result*getSpeed();
-
-	Direction verif = getPosition()+result;
-
-	if (verif.getX()+2>400 or verif.getX()-2<-400 )
-	{
-		result.setX(-result.getX());
-	}
-	if (verif.getY()+2>400 or verif.getY()-2<-400)
-	{
-		result.setY(-result.getY());
-
-	}
-	setDestination(getPosition()+result);
 }
-void Gendarme::Joue_Deplacement(){
-	//calcul du déplacement à réaliser
-	Direction result(0,0);
-	switch (getAlgo())
-	{
-		case Choix_Algo::random:
-		{
-			result = Direction(fRand(-3,3),fRand(-3,3));
-		}
-		break;
+void Gendarme::deplacement(){
 
-		case Choix_Algo::haut:
-		{
-			result = Direction(0,1);
-		}
-		break;
-
-		case Choix_Algo::bas:
-		{
-			result = Direction(0,-1);
-		}
-		break;
-	}
-
-	//enregistrement de celui-ci
-	result=result*getSpeed();
-
-	Direction verif = getPosition()+result;
-
-	if (verif.getX()+2>400 or verif.getX()-2<-400 )
-	{
-		result.setX(-result.getX());
-	}
-	if (verif.getY()+2>400 or verif.getY()-2<-400)
-	{
-		result.setY(-result.getY());
-
-	}
-
-	setDestination(getPosition()+result);
+	//calcul de la nouvelle position
+	this->setPosition(this->getDestination());
+	this->setHitbox();
+	
 }
+
+Direction Joueur::Se_Rapprocher(Joueur & J)
+{
+	double x,y;
+
+	if (J.getPosition().getX()>this->getPosition().getX())
+	{
+		x=1;
+	}
+	else if (J.getPosition().getX()<getPosition().getX())
+	{
+		x=-1;
+	}
+	else {
+		x=0;
+	}
+
+	if (J.getPosition().getY()>this->getPosition().getY())
+	{
+		y=1;
+	}
+	else if (J.getPosition().getY()<getPosition().getY())
+	{
+		y=-1;
+	}
+	else {
+		y=0;
+	}
+
+	return Direction(x,y);
+}
+
+Direction Joueur::Fuir(Joueur & J)
+{
+	Direction D = Se_Rapprocher(J);
+	D.setX(-D.getX());
+	D.setY(-D.getY());
+
+	return D;
+}
+
+Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> Liste)
+{
+	double distance = 1000;
+	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
+
+	for (auto && i : Liste)
+	{
+		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision 
+		if (this->getDistance_From(*i)<distance)
+		{
+			distance = this->getDistance_From(*i);
+			V = *i;	
+		}
+	}
+	return V;
+}
+
+
+Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste)
+{
+	double distance = 1000;
+	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
+
+	for (auto && i : Liste)
+	{
+		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision 
+		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20)
+		{
+			distance = this->getDistance_From(*i);
+			G = *i;	
+		}
+	}
+	return G;
+}
+
+
 /************************* autre *************************/
 
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){
@@ -104,6 +110,11 @@ bool Entite::Hitbox_touche(Entite &J2)
 	or (
 	(this->getHitbox().getG()<=J2.getHitbox().getD() and this->getHitbox().getD()>=J2.getHitbox().getD()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
 	);
+}
+
+double Entite::getDistance_From(Entite E)
+{
+	return std::sqrt((((E.getPosition().getX()-this->getPosition().getX())*(E.getPosition().getX()-this->getPosition().getX()))+((E.getPosition().getY()-this->getPosition().getY())*(E.getPosition().getY()-this->getPosition().getY()))));
 }
 
 

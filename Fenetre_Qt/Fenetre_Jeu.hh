@@ -11,5 +11,5 @@ public:
 
 	QGraphicsScene * _Scene;
 	QGraphicsView * _View;
-
+	
 };
