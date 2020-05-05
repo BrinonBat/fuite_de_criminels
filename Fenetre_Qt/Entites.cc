@@ -20,28 +20,23 @@ void Gendarme::deplacement(){
 
 }
 
-Direction Joueur::Se_Rapprocher(Joueur & J)
-{
+Direction Joueur::Se_Rapprocher(Joueur & J){
 	double x,y;
 
-	if (J.getPosition().getX()>this->getPosition().getX())
-	{
+	if (J.getPosition().getX()>this->getPosition().getX()){
 		x=1;
 	}
-	else if (J.getPosition().getX()<getPosition().getX())
-	{
+	else if (J.getPosition().getX()<getPosition().getX()){
 		x=-1;
 	}
-	else {
+	else{
 		x=0;
 	}
 
-	if (J.getPosition().getY()>this->getPosition().getY())
-	{
+	if (J.getPosition().getY()>this->getPosition().getY()){
 		y=1;
 	}
-	else if (J.getPosition().getY()<getPosition().getY())
-	{
+	else if (J.getPosition().getY()<getPosition().getY()){
 		y=-1;
 	}
 	else {
@@ -51,8 +46,7 @@ Direction Joueur::Se_Rapprocher(Joueur & J)
 	return Direction(x,y);
 }
 
-Direction Joueur::Fuir(Joueur & J)
-{
+Direction Joueur::Fuir(Joueur & J){
 	Direction D = Se_Rapprocher(J);
 	D.setX(-D.getX());
 	D.setY(-D.getY());
@@ -60,36 +54,34 @@ Direction Joueur::Fuir(Joueur & J)
 	return D;
 }
 
-Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur> const &Liste)
-{
+Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur>* const Liste){
 	double distance = 1000;
-	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
+	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random); //valeur par défaut
 
-	for (auto i : Liste)
-	{
+	for (size_t i=0;i<Liste->size();i++){
+		Voleur vol=Liste->at(i);
 		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision
-		if (this->getDistance_From(i)<distance)
+		if (this->getDistance_From(vol)<distance)
 		{
-			distance = this->getDistance_From(i);
-			V = i;
+			distance = this->getDistance_From(vol);
+			V = vol;
 		}
 	}
 	return V;
 }
 
 
-Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme> const & Liste)
-{
+Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme>* const Liste){
 	double distance = 1000;
 	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
 
-	for (auto i : Liste)
-	{
+	for (size_t i=0;i<Liste->size();i++){
+		Gendarme gen=Liste->at(i);
 		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision
-		if (this->getDistance_From(i)<distance and this->getDistance_From(i)<20)
+		if (this->getDistance_From(gen)<distance and this->getDistance_From(gen)<20)
 		{
-			distance = this->getDistance_From(i);
-			G = i;
+			distance = this->getDistance_From(gen);
+			G = gen;
 		}
 	}
 	return G;
@@ -103,8 +95,7 @@ Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY
 	item->setPos(pos.getX(),pos.getY());
 }
 
-bool Entite::Hitbox_touche(Entite &J2)
-{
+bool Entite::Hitbox_touche(Entite &J2){
 	return (
 	((this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
 	or (
@@ -112,8 +103,7 @@ bool Entite::Hitbox_touche(Entite &J2)
 	);
 }
 
-double Entite::getDistance_From(Entite E)
-{
+double Entite::getDistance_From(Entite E){
 	return std::sqrt((((E.getPosition().getX()-this->getPosition().getX())*(E.getPosition().getX()-this->getPosition().getX()))+((E.getPosition().getY()-this->getPosition().getY())*(E.getPosition().getY()-this->getPosition().getY()))));
 }
 
@@ -127,8 +117,7 @@ Position Position::operator*(double mult){
 bool Position::operator==(Position const & p){
 	return (p.getX()==x && p.getY()==y);
 }
-void afficherValeur(Type e)
-{
+void afficherValeur(Type e){
     switch (e) {
     case Type::cachette:
         std::cout<<"C";

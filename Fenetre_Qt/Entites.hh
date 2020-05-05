@@ -166,7 +166,7 @@ public:
 //méthodes
 	void deplacement() override;
 
-	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme> const & Liste);
+	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme>* const Liste);
 
 };
 
@@ -182,6 +182,6 @@ public:
 //méthodes
 	void deplacement() override;
 
-	Voleur Voleur_Plus_Proche(std::vector<Voleur>const & Liste);
+	Voleur Voleur_Plus_Proche(std::vector<Voleur>* const Liste);
 
 };
