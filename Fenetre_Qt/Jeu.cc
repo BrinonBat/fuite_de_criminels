@@ -105,7 +105,7 @@ void Jeu::Joue_deplacement(Voleur &V){
 
 		case Choix_Algo::Gendarme_Chasseurs:
 		{
-			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarme());
+			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarmes());
 			result = V.Fuir(G);
 		}
 		break;
@@ -159,7 +159,7 @@ void Jeu::Joue_deplacement(Gendarme &G){
 
 		case Choix_Algo::Gendarme_Chasseurs:
 		{
-			Voleur V = G.Voleur_Plus_Proche(getListeVoleur());
+			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
 			result = G.Se_Rapprocher(V);
 		}
 		break;
