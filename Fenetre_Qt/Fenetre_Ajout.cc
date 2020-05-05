@@ -192,31 +192,31 @@ Fenetre_Ajout::Fenetre_Ajout()
 		J->show();
 
 		// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
-		for (size_t i=0;i<this->Game->getListeVoleurs()->size();i++){
-			Voleur vol=this->Game->getListeVoleurs()->at(i);
-			vol.getItem()->setBrush(QBrush(Qt::red));
-			J->_Scene->addItem(vol.getItem());
+		for (auto i : this->Game->getListeVoleurs())
+		{
+			i.getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i.getItem());
 		}
 
-		for (size_t i=0;i<this->Game->getListeGendarmes()->size();i++){
-			Gendarme gen=this->Game->getListeGendarmes()->at(i);
-			gen.getItem()->setBrush(QBrush(Qt::blue));
-			J->_Scene->addItem(gen.getItem());
+		for (auto i : this->Game->getListeGendarmes())
+		{
+			i.getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i.getItem());
 		}
 
-		for (size_t i=0;i<this->Game->getListeNonJoueurs()->size();i++){
-			NonJoueur nj=this->Game->getListeNonJoueurs()->at(i);
-			if (nj.getType()==Type::sortie)
+		for (auto i : this->Game->getListeNonJoueurs())
+		{
+			if (i.getType()==Type::sortie)
 			{
 
-			nj.getItem()->setBrush(QBrush(Qt::green));
-			J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
 
 			}
 			else {
 
-			nj.getItem()->setBrush(QBrush(Qt::green));
-			J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
 			}
 		}
 	}
@@ -228,31 +228,31 @@ Fenetre_Ajout::Fenetre_Ajout()
 		J->show();
 
 		// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
-		for (size_t i=0;i<this->Game->getListeVoleurs()->size();i++){
-			Voleur vol=this->Game->getListeVoleurs()->at(i);
-			vol.getItem()->setBrush(QBrush(Qt::red));
-			J->_Scene->addItem(vol.getItem());
+		for (auto i : this->Game->getListeVoleurs())
+		{
+			i.getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i.getItem());
 		}
 
-		for (size_t i=0;i<this->Game->getListeGendarmes()->size();i++){
-			Gendarme gen=this->Game->getListeGendarmes()->at(i);
-			gen.getItem()->setBrush(QBrush(Qt::blue));
-			J->_Scene->addItem(gen.getItem());
+		for (auto i : this->Game->getListeGendarmes())
+		{
+			i.getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i.getItem());
 		}
 
-		for (size_t i=0;i<this->Game->getListeNonJoueurs()->size();i++){
-			NonJoueur nj=this->Game->getListeNonJoueurs()->at(i);
-			if (nj.getType()==Type::sortie)
+		for (auto i : this->Game->getListeNonJoueurs())
+		{
+			if (i.getType()==Type::sortie)
 			{
 
-			nj.getItem()->setBrush(QBrush(Qt::green));
-			J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
 
 			}
 			else {
 
-			nj.getItem()->setBrush(QBrush(Qt::green));
-			J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
 			}
 
 		}
@@ -265,14 +265,14 @@ Fenetre_Ajout::Fenetre_Ajout()
 	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		//std::cout<<"\n TOUR "<<nb_tour<<" : \n";
 		Game->Jouer_tour();
-		for (size_t i=0;i<Game->getListeVoleurs()->size();i++){
-			Voleur vol=Game->getListeVoleurs()->at(i);
-			vol.setItem(vol.getPosition());
+		for (auto i : Game->getListeVoleurs())
+		{
+			i.setItem(i.getPosition());
 		}
 
-		for (size_t i=0;i<Game->getListeGendarmes()->size();i++){
-			Gendarme gen=Game->getListeGendarmes()->at(i);
-			gen.setItem(gen.getPosition());
+		for (auto i : Game->getListeGendarmes())
+		{
+			i.setItem(i.getPosition());
 		}
 
 		QEventLoop loop;
@@ -328,47 +328,47 @@ Fenetre_Ajout::Fenetre_Ajout()
 	Exemple1.ajouter_gendarme(G2);
 	Exemple1.ajouter_nonJoueur(Sortie);
 
-	for (size_t i=0;i<Exemple1.getListeVoleurs()->size();i++){
-		Voleur vol=Exemple1.getListeVoleurs()->at(i);
-		vol.getItem()->setBrush(QBrush(Qt::red));
-		J->_Scene->addItem(vol.getItem());
-	}
-
-	for (size_t i=0;i<Exemple1.getListeGendarmes()->size();i++){
-		Gendarme gen=Exemple1.getListeGendarmes()->at(i);
-		gen.getItem()->setBrush(QBrush(Qt::blue));
-		J->_Scene->addItem(gen.getItem());
-	}
-
-	for (size_t i=0;i<Exemple1.getListeNonJoueurs()->size();i++){
-		NonJoueur nj=Exemple1.getListeNonJoueurs()->at(i);
-		if (nj.getType()==Type::sortie)
+	for (auto i : Exemple1.getListeVoleurs())
 		{
-
-		nj.getItem()->setBrush(QBrush(Qt::green));
-		J->_Scene->addItem(nj.getItem());
-
-		}
-		else {
-
-		nj.getItem()->setBrush(QBrush(Qt::green));
-		J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i.getItem());
 		}
 
-	}
+		for (auto i : Exemple1.getListeGendarmes())
+		{
+			i.getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i.getItem());
+		}
+
+		for (auto i : Exemple1.getListeNonJoueurs())
+		{
+			if (i.getType()==Type::sortie)
+			{
+
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
+
+			}
+			else {
+
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
+			}
+
+		}
 
 	// Partie
 	for(unsigned int nb_tour=1;!Exemple1.estFini();nb_tour++){
 		//std::cout<<"\n TOUR "<<nb_tour<<" : \n";
 		Exemple1.Jouer_tour();
-		for (size_t i=0;i<Exemple1.getListeVoleurs()->size();i++){
-			Voleur vol=Exemple1.getListeVoleurs()->at(i);
-			vol.setItem(vol.getPosition());
+		for (auto i : Exemple1.getListeVoleurs())
+		{
+			i.setItem(i.getPosition());
 		}
 
-		for (size_t i=0;i<Exemple1.getListeGendarmes()->size();i++){
-			Gendarme gen=Exemple1.getListeGendarmes()->at(i);
-			gen.setItem(gen.getPosition());
+		for (auto i : Exemple1.getListeGendarmes())
+		{
+			i.setItem(i.getPosition());
 		}
 
 		QEventLoop loop;
@@ -391,42 +391,45 @@ void Fenetre_Ajout::Exemple2()
 
 		for (int i=0;i<30;++i)
 		{
-			Exemple2.ajouter_voleur(Voleur(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas));
+			Voleur V(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas);
+			Exemple2.ajouter_voleur(V);
 		}
 
 		for (int i=0;i<30;++i)
 		{
-			Exemple2.ajouter_gendarme(Gendarme(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut));
+			Gendarme G(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut);
+			Exemple2.ajouter_gendarme(G);
 		}
 
-		Exemple2.ajouter_nonJoueur(NonJoueur(Position(0,0),Type::sortie));
+		NonJoueur Sortie(Position(0,0),Type::sortie);
+		Exemple2.ajouter_nonJoueur(Sortie);
 
 
-		for (size_t i=0;i<Exemple2.getListeVoleurs()->size();i++){
-			Voleur vol=Exemple2.getListeVoleurs()->at(i);
-			vol.getItem()->setBrush(QBrush(Qt::red));
-			J->_Scene->addItem(vol.getItem());
+		for (auto i : Exemple2.getListeVoleurs())
+		{
+			i.getItem()->setBrush(QBrush(Qt::red));
+			J->_Scene->addItem(i.getItem());
 		}
 
-		for (size_t i=0;i<Exemple2.getListeGendarmes()->size();i++){
-			Gendarme gen=Exemple2.getListeGendarmes()->at(i);
-			gen.getItem()->setBrush(QBrush(Qt::blue));
-			J->_Scene->addItem(gen.getItem());
+		for (auto i : Exemple2.getListeGendarmes())
+		{
+			i.getItem()->setBrush(QBrush(Qt::blue));
+			J->_Scene->addItem(i.getItem());
 		}
 
-		for (size_t i=0;i<Exemple2.getListeNonJoueurs()->size();i++){
-			NonJoueur nj=Exemple2.getListeNonJoueurs()->at(i);
-			if (nj.getType()==Type::sortie)
+		for (auto i : Exemple2.getListeNonJoueurs())
+		{
+			if (i.getType()==Type::sortie)
 			{
 
-			nj.getItem()->setBrush(QBrush(Qt::green));
-			J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
 
 			}
 			else {
 
-			nj.getItem()->setBrush(QBrush(Qt::green));
-			J->_Scene->addItem(nj.getItem());
+			i.getItem()->setBrush(QBrush(Qt::green));
+			J->_Scene->addItem(i.getItem());
 			}
 
 		}
@@ -435,14 +438,14 @@ void Fenetre_Ajout::Exemple2()
 	for(unsigned int nb_tour=1;!Exemple2.estFini();nb_tour++){
 	//	std::cout<<"\n TOUR "<<nb_tour<<" : \n";
 		Exemple2.Jouer_tour();
-		for (size_t i=0;i<Exemple2.getListeVoleurs()->size();i++){
-			Voleur vol=Exemple2.getListeVoleurs()->at(i);
-			vol.setItem(vol.getPosition());
+		for (auto i : Exemple2.getListeVoleurs())
+		{
+			i.setItem(i.getPosition());
 		}
 
-		for (size_t i=0;i<Exemple2.getListeGendarmes()->size();i++){
-			Gendarme gen=Exemple2.getListeGendarmes()->at(i);
-			gen.setItem(gen.getPosition());
+		for (auto i : Exemple2.getListeGendarmes())
+		{
+			i.setItem(i.getPosition());
 		}
 
 		QEventLoop loop;

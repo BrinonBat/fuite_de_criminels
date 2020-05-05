@@ -39,9 +39,9 @@ public :
 	unsigned int getNbVoleurs()const{return nbVoleurs;}
 	void ajoutUnVoleur(){nbVoleurs++;}
 
-	std::vector<Voleur>* const getListeVoleurs(){return &(Liste_Voleurs);}
-	std::vector<Gendarme>* const getListeGendarmes(){return &(Liste_Gendarmes);}
-	std::vector<NonJoueur>* const getListeNonJoueurs(){return &(Liste_Objets);}
+	std::vector<Voleur>& getListeVoleurs(){return Liste_Voleurs;}
+	std::vector<Gendarme>& getListeGendarmes(){return Liste_Gendarmes;}
+	std::vector<NonJoueur>& getListeNonJoueurs(){return Liste_Objets;}
 
 //méthodes
 	void Jouer_tour();

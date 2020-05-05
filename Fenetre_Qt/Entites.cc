@@ -54,12 +54,11 @@ Direction Joueur::Fuir(Joueur & J){
 	return D;
 }
 
-Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur>* const Liste){
+Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur>const &Liste){
 	double distance = 1000;
 	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random); //valeur par défaut
 
-	for (size_t i=0;i<Liste->size();i++){
-		Voleur vol=Liste->at(i);
+	for (auto vol : Liste){
 		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision
 		if (this->getDistance_From(vol)<distance)
 		{
@@ -71,12 +70,11 @@ Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur>* const Liste){
 }
 
 
-Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme>* const Liste){
+Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme>const &Liste){
 	double distance = 1000;
 	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
 
-	for (size_t i=0;i<Liste->size();i++){
-		Gendarme gen=Liste->at(i);
+	for (auto gen : Liste ){
 		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision
 		if (this->getDistance_From(gen)<distance and this->getDistance_From(gen)<20)
 		{
