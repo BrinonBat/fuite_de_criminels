@@ -19,9 +19,10 @@ OK	- ajout de "hitbox " et de distance de capture
 	- ajout d'une fonction vérifiant si un coup est possible
 		(avant de retourner result, verifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 	- ajout de sortie sur fichier texte sous forme d'historique
-???	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
+X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
+X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
 	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
-	
+
 PUIS mise en place d'une GUI <- OK
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
