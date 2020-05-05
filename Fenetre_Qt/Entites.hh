@@ -5,7 +5,7 @@
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
-#include <math.h>  
+#include <math.h>
 #include <QtWidgets>
 
 using Coordonnee = unsigned int ;
@@ -51,7 +51,7 @@ class Hitbox {
 public:
 	Hitbox(double const & H,double const & B,double const & G,double const & D):
 		Haut(H),Bas(B),Gauche(G),Droite(D){};
-	
+
 	double getH()const{return Haut;}
 	double getB()const{return Bas;}
 	double getG()const{return Gauche;}
@@ -86,7 +86,7 @@ public:
 	bool Hitbox_touche(Entite &E);
 
 	QGraphicsRectItem* getItem()const{return item;}
-	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());} 
+	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());}
 
 	// Distance entre deux entités
 	double getDistance_From (Entite E);
@@ -107,13 +107,13 @@ public:
 
 //accesseurs
 	Type getType()const{return type;}
-	
+
 
 //méthodes
 
 private:
 	Type type;
-	
+
 
 };
 
@@ -150,7 +150,7 @@ private:
 	std::string nom;
 	Position destination;
 	Choix_Algo Algo;
-	
+
 };
 
 class Gendarme; // Pour faire appel à la fonction Gendarme_Plus_Proche
@@ -163,13 +163,10 @@ public:
 		Joueur(pos,speed,nom,choix){
 		};
 
-	//redefinition du constructeur virtuel
-	Voleur* clone() const {return new Voleur(*this);}
-
 //méthodes
 	void deplacement() override;
 
-	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> Liste);
+	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme> const & Liste);
 
 };
 
@@ -181,12 +178,10 @@ public:
 		Joueur(pos,speed,nom,choix){
 		};
 
-	//redefinition du constructeur virtuel
-	Gendarme* clone() const {return new Gendarme(*this);}
 
 //méthodes
 	void deplacement() override;
 
-	Voleur Voleur_Plus_Proche(std::vector<Voleur*> Liste);
+	Voleur Voleur_Plus_Proche(std::vector<Voleur>const & Liste);
 
 };

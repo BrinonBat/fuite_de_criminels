@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QApplication app(argc,argv);
     Fenetre_Ajout F;
     F.show();
-   return app.exec();
+   	return app.exec();
 
 	// Voleur V1(Position(0,0),1.0,"V1",Choix_Algo::random);
 	// Voleur V2(Position(-10,0),0.5,"V2",Choix_Algo::random);
@@ -46,5 +46,3 @@ int main(int argc, char *argv[])
 	// std::cout<<G1.Affiche_Position();
 
 }
-
-

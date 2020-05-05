@@ -17,7 +17,7 @@ void Gendarme::deplacement(){
 	//calcul de la nouvelle position
 	this->setPosition(this->getDestination());
 	this->setHitbox();
-	
+
 }
 
 Direction Joueur::Se_Rapprocher(Joueur & J)
@@ -60,36 +60,36 @@ Direction Joueur::Fuir(Joueur & J)
 	return D;
 }
 
-Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> Liste)
+Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur> const &Liste)
 {
 	double distance = 1000;
 	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
 
-	for (auto && i : Liste)
+	for (auto i : Liste)
 	{
-		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision 
-		if (this->getDistance_From(*i)<distance)
+		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision
+		if (this->getDistance_From(i)<distance)
 		{
-			distance = this->getDistance_From(*i);
-			V = *i;	
+			distance = this->getDistance_From(i);
+			V = i;
 		}
 	}
 	return V;
 }
 
 
-Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste)
+Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme> const & Liste)
 {
 	double distance = 1000;
 	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
 
-	for (auto && i : Liste)
+	for (auto i : Liste)
 	{
-		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision 
-		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20)
+		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision
+		if (this->getDistance_From(i)<distance and this->getDistance_From(i)<20)
 		{
-			distance = this->getDistance_From(*i);
-			G = *i;	
+			distance = this->getDistance_From(i);
+			G = i;
 		}
 	}
 	return G;
@@ -103,7 +103,7 @@ Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY
 	item->setPos(pos.getX(),pos.getY());
 }
 
-bool Entite::Hitbox_touche(Entite &J2) 
+bool Entite::Hitbox_touche(Entite &J2)
 {
 	return (
 	((this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))

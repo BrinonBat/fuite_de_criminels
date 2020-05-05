@@ -136,33 +136,6 @@ Fenetre_Ajout_automoc/fast:
 	$(MAKE) -f CMakeFiles/Fenetre_Ajout_automoc.dir/build.make CMakeFiles/Fenetre_Ajout_automoc.dir/build
 .PHONY : Fenetre_Ajout_automoc/fast
 
-Ajout.o: Ajout.cpp.o
-
-.PHONY : Ajout.o
-
-# target to build an object file
-Ajout.cpp.o:
-	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Ajout.cpp.o
-.PHONY : Ajout.cpp.o
-
-Ajout.i: Ajout.cpp.i
-
-.PHONY : Ajout.i
-
-# target to preprocess a source file
-Ajout.cpp.i:
-	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Ajout.cpp.i
-.PHONY : Ajout.cpp.i
-
-Ajout.s: Ajout.cpp.s
-
-.PHONY : Ajout.s
-
-# target to generate assembly for a file
-Ajout.cpp.s:
-	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Ajout.cpp.s
-.PHONY : Ajout.cpp.s
-
 Entites.o: Entites.cc.o
 
 .PHONY : Entites.o
@@ -298,6 +271,33 @@ Jeu.cc.s:
 	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Jeu.cc.s
 .PHONY : Jeu.cc.s
 
+Main.o: Main.cpp.o
+
+.PHONY : Main.o
+
+# target to build an object file
+Main.cpp.o:
+	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Main.cpp.o
+.PHONY : Main.cpp.o
+
+Main.i: Main.cpp.i
+
+.PHONY : Main.i
+
+# target to preprocess a source file
+Main.cpp.i:
+	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Main.cpp.i
+.PHONY : Main.cpp.i
+
+Main.s: Main.cpp.s
+
+.PHONY : Main.s
+
+# target to generate assembly for a file
+Main.cpp.s:
+	$(MAKE) -f CMakeFiles/Fenetre_Ajout.dir/build.make CMakeFiles/Fenetre_Ajout.dir/Main.cpp.s
+.PHONY : Main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -308,9 +308,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Fenetre_Ajout"
 	@echo "... Fenetre_Ajout_automoc"
-	@echo "... Ajout.o"
-	@echo "... Ajout.i"
-	@echo "... Ajout.s"
 	@echo "... Entites.o"
 	@echo "... Entites.i"
 	@echo "... Entites.s"
@@ -326,6 +323,9 @@ help:
 	@echo "... Jeu.o"
 	@echo "... Jeu.i"
 	@echo "... Jeu.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
 .PHONY : help
 
 
