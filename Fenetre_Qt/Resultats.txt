@@ -1,15 +1,19 @@
 ------------------------------
  Résultat de la partie : 
- Temps : 30secondes 
- Voleur(s) Capturé(s) : 30 sur 30 
+ Temps : 30 secondes 
+ Nombre de voleur(s): 30
+ Nombre de gendarme(s): 30
+Voleur(s) Capturé(s) : 30 sur 30 
  Voleur(s) Sortie(s) :0 sur 30 
  Algorithme utilisé : AFAIRE 
  Autres informations : AFAIRE 
 ------------------------------
 ------------------------------
  Résultat de la partie : 
- Temps : 4secondes 
- Voleur(s) Capturé(s) : 2 sur 2 
+ Temps : 8 secondes 
+ Nombre de voleur(s): 2
+ Nombre de gendarme(s): 1
+Voleur(s) Capturé(s) : 2 sur 2 
  Voleur(s) Sortie(s) :0 sur 2 
  Algorithme utilisé : AFAIRE 
  Autres informations : AFAIRE 

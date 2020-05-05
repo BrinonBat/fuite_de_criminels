@@ -9,6 +9,7 @@ public :
 		largeur=plargeur;
 		hauteur=phauteur;
 		nbVoleurs=0;
+		nbGendarmes=0;
 		nbCaptures=0;
 		nbVoleursSorties=0;
     }
@@ -38,6 +39,9 @@ public :
 	unsigned int getNbVoleurs()const{return nbVoleurs;}
 	void ajoutUnVoleur(){nbVoleurs++;}
 
+	unsigned int getNbGendarmes()const{return nbGendarmes;}
+	void ajoutUnGendarme(){nbGendarmes++;}
+
 	unsigned int getNbVoleursSorties()const{return nbVoleursSorties;}
 	void ajoutUnVoleursSorties(){nbVoleursSorties++;}
 
@@ -55,7 +59,7 @@ public :
     bool estFini();
 
 private:
-	unsigned int nbVoleurs,nbCaptures,nbVoleursSorties;
+	unsigned int nbVoleurs,nbGendarmes,nbCaptures,nbVoleursSorties;
     double largeur,hauteur;
     std::vector<Voleur *> Liste_Voleurs;
 	std::vector<Gendarme *> Liste_Gendarmes;

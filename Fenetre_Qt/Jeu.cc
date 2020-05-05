@@ -70,6 +70,7 @@ void Jeu::ajouter_voleur(Voleur const &V)
 void Jeu::ajouter_gendarme(Gendarme const &G)
 {
 	Liste_Gendarmes.push_back(G.clone());
+	ajoutUnGendarme();
 }
 //retire un voleur de la partie et mets fin à la partie s'il s'agissait du dernier
 void Jeu::supprimer_voleur(Voleur &V){

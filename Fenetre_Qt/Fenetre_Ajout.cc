@@ -228,7 +228,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 
   		Resultats.open ("Resultats.txt",std::ios::app);
   		Resultats << "------------------------------\n Résultat de la partie : \n Temps : "<< 
-  		std::to_string(duree)<<"secondes \n Voleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<
+  		std::to_string(duree)<<" secondes \n Nombre de voleur(s): "<<std::to_string(Game->getNbVoleurs())<<"\n Nombre de gendarme(s): "<<std::to_string(Game->getNbGendarmes())<<"\nVoleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<
   		" sur "<<std::to_string(Game->getNbVoleurs())<<" \n Voleur(s) Sortie(s) :"<<std::to_string(Game->getNbVoleursSorties())<<" sur "<<std::to_string(Game->getNbVoleurs())<<
   		" \n Algorithme utilisé : AFAIRE \n Autres informations : AFAIRE \n------------------------------\n";
   		
