@@ -11,5 +11,11 @@ public:
 
 	QGraphicsScene * _Scene;
 	QGraphicsView * _View;
-	
+
+void closeEvent(QCloseEvent *event)
+{
+    exit(1);
+    QWidget::closeEvent(event);
+}
+
 };
