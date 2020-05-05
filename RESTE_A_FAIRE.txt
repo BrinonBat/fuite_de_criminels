@@ -15,10 +15,10 @@ OK	- diviser Liste_Joueur en Liste_Gendarmes et Liste_Voleurs
 OK	- remplacer le booléen fini par nb_voleurs
 OK	- ajout de la vitesse
 OK	- ajout de "hitbox " et de distance de capture
-	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
-	- ajout d'une fonction vérifiant si un coup est possible
+OK	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
+VERIFIER- ajout d'une fonction vérifiant si un coup est possible
 		(avant de retourner result, verifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
-	- ajout de sortie sur fichier texte sous forme d'historique
+OK	- ajout de sortie sur fichier texte sous forme d'historique
 X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
 X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
 	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
@@ -26,7 +26,7 @@ X			aprés une tentative avec des pointeurs, et une autre avec un passage par r�
 PUIS mise en place d'une GUI <- OK
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
-		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
+OK		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
 		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
 
 
