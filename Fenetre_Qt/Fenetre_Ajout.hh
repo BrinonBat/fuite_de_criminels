@@ -10,10 +10,17 @@
 #include <QGraphicsRectItem>
 #include <QMainWindow>
 #include <QThread>
+#include <QCloseEvent>
+#include <QPushButton>
 #include <unistd.h>
+#include <iostream>
+#include <fstream>
+#include <chrono> 
 
 #include "Fenetre_Jeu.hh"
 #include "Jeu.hh"
+
+using namespace std::chrono; 
 
 class Fenetre_Ajout : public QWidget {
 	Q_OBJECT
@@ -32,6 +39,8 @@ private slots :
 	void Exemple1();
 	void Exemple2();
 	void Exemple3();
+
+	void Ecriture_Resultats(int duree);
 
 private :
 

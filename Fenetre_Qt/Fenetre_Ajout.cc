@@ -77,7 +77,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_Liste = new QLabel("",this);
 	_Liste->setGeometry(0,310,600,300);
 
-	Game = new Jeu(400,400);
+	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
 
 	}
 
@@ -189,6 +189,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	{
 
 		Fenetre_Jeu *J = new Fenetre_Jeu();
+		J->Fenetre_Apercu = true;
 		J->show();
 
 		// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
@@ -219,6 +220,19 @@ Fenetre_Ajout::Fenetre_Ajout()
 			J->_Scene->addItem(i->getItem());
 			}
 		}
+	}
+
+	void Fenetre_Ajout::Ecriture_Resultats(int duree)
+	{
+		std::ofstream Resultats;
+
+  		Resultats.open ("Resultats.txt",std::ios::app);
+  		Resultats << "------------------------------\n Résultat de la partie : \n Temps : "<< 
+  		std::to_string(duree)<<"secondes \n Voleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<
+  		" sur "<<std::to_string(Game->getNbVoleurs())<<" \n Voleur(s) Sortie(s) :"<<std::to_string(Game->getNbVoleursSorties())<<" sur "<<std::to_string(Game->getNbVoleurs())<<
+  		" \n Algorithme utilisé : AFAIRE \n Autres informations : AFAIRE \n------------------------------\n";
+  		
+  		Resultats.close();
 	}
 
 
@@ -260,7 +274,8 @@ Fenetre_Ajout::Fenetre_Ajout()
 		std::cout<<"Etat Initial"<<std::endl;
 		this->Game->afficher();
 
-
+		// Lancement TIMER
+		auto start = high_resolution_clock::now();
 		// Partie
 	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
@@ -282,6 +297,13 @@ Fenetre_Ajout::Fenetre_Ajout()
 		Game->afficher();
 		
 		}
+		// Fin TIMER
+		auto stop = high_resolution_clock::now();
+		auto duree = duration_cast<seconds>(stop - start);
+
+		// Ecriture en fin de partie
+		int resultat_duree= duree.count();
+		Ecriture_Resultats(resultat_duree);
 
 
 	}
@@ -312,8 +334,6 @@ Fenetre_Ajout::Fenetre_Ajout()
 		Fenetre_Jeu *J = new Fenetre_Jeu();
 		J->show();
 
-		Jeu Exemple1(400,400);
-
 	//creation des entités
 	NonJoueur Sortie(Position(38,38),Type::sortie);
 	Voleur V1(Position(-150,-150),1.0,"V1",Choix_Algo::random);
@@ -322,25 +342,25 @@ Fenetre_Ajout::Fenetre_Ajout()
 	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::random);
 
 	// ajout des entités au Jeu
-	Exemple1.ajouter_voleur(V1);
-	Exemple1.ajouter_gendarme(G1);
-	Exemple1.ajouter_voleur(V2);
-	Exemple1.ajouter_gendarme(G2);
-	Exemple1.ajouter_nonJoueur(Sortie);
+	Game->ajouter_voleur(V1);
+	Game->ajouter_gendarme(G1);
+	Game->ajouter_voleur(V2);
+	Game->ajouter_gendarme(G2);
+	Game->ajouter_nonJoueur(Sortie);
 
-	for (auto i : Exemple1.getListeVoleur())
+	for (auto i : Game->getListeVoleur())
 		{
 			i->getItem()->setBrush(QBrush(Qt::red));
 			J->_Scene->addItem(i->getItem());
 		}
 
-		for (auto i : Exemple1.getListeGendarme())
+		for (auto i : Game->getListeGendarme())
 		{
 			i->getItem()->setBrush(QBrush(Qt::blue));
 			J->_Scene->addItem(i->getItem());
 		}
 
-		for (auto i : Exemple1.getListeNonJoueur())
+		for (auto i : Game->getListeNonJoueur())
 		{
 			if (i->getType()==Type::sortie)
 			{
@@ -357,16 +377,18 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 		}
 
-	// Partie
-	for(unsigned int nb_tour=1;!Exemple1.estFini();nb_tour++){
+		// Lancement TIMER
+		auto start = high_resolution_clock::now();
+		// Partie
+	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
-		Exemple1.Jouer_tour();
-		for (auto i : Exemple1.getListeVoleur())
+		Game->Jouer_tour();
+		for (auto i : Game->getListeVoleur())
 		{
 			i->setItem(i->getPosition());
 		}
 
-		for (auto i : Exemple1.getListeGendarme())
+		for (auto i : Game->getListeGendarme())
 		{
 			i->setItem(i->getPosition());
 		}
@@ -375,10 +397,16 @@ Fenetre_Ajout::Fenetre_Ajout()
 		QTimer::singleShot(100, &loop, SLOT(quit()));
 		loop.exec();
 
-		Exemple1.afficher();
+		Game->afficher();
 		
 		}
+		// Fin TIMER
+		auto stop = high_resolution_clock::now();
+		auto duree = duration_cast<seconds>(stop - start);
 
+		// Ecriture en fin de partie
+		int resultat_duree= duree.count();
+		Ecriture_Resultats(resultat_duree);
 	}
 
 void Fenetre_Ajout::Exemple2()
@@ -387,37 +415,35 @@ void Fenetre_Ajout::Exemple2()
 		Fenetre_Jeu *J = new Fenetre_Jeu();
 		J->show();
 
-		Jeu Exemple2(400,400);
-
 		for (int i=0;i<30;++i)
 		{
 			Voleur V(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas);
-			Exemple2.ajouter_voleur(V);
+			Game->ajouter_voleur(V);
 		}
 
 		for (int i=0;i<30;++i)
 		{
 			Gendarme G(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut);
-			Exemple2.ajouter_gendarme(G);
+			Game->ajouter_gendarme(G);
 		}
 
 		NonJoueur Sortie(Position(0,0),Type::sortie);
-		Exemple2.ajouter_nonJoueur(Sortie);
+		Game->ajouter_nonJoueur(Sortie);
 
 
-		for (auto i : Exemple2.getListeVoleur())
+		for (auto i : Game->getListeVoleur())
 		{
 			i->getItem()->setBrush(QBrush(Qt::red));
 			J->_Scene->addItem(i->getItem());
 		}
 
-		for (auto i : Exemple2.getListeGendarme())
+		for (auto i : Game->getListeGendarme())
 		{
 			i->getItem()->setBrush(QBrush(Qt::blue));
 			J->_Scene->addItem(i->getItem());
 		}
 
-		for (auto i : Exemple2.getListeNonJoueur())
+		for (auto i : Game->getListeNonJoueur())
 		{
 			if (i->getType()==Type::sortie)
 			{
@@ -434,16 +460,18 @@ void Fenetre_Ajout::Exemple2()
 
 		}
 
-	// Partie
-	for(unsigned int nb_tour=1;!Exemple2.estFini();nb_tour++){
+		// Lancement TIMER
+		auto start = high_resolution_clock::now();
+		// Partie
+	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
-		Exemple2.Jouer_tour();
-		for (auto i : Exemple2.getListeVoleur())
+		Game->Jouer_tour();
+		for (auto i : Game->getListeVoleur())
 		{
 			i->setItem(i->getPosition());
 		}
 
-		for (auto i : Exemple2.getListeGendarme())
+		for (auto i : Game->getListeGendarme())
 		{
 			i->setItem(i->getPosition());
 		}
@@ -452,9 +480,16 @@ void Fenetre_Ajout::Exemple2()
 		QTimer::singleShot(100, &loop, SLOT(quit()));
 		loop.exec();
 
-		Exemple2.afficher();
+		Game->afficher();
 		
 		}
+		// Fin TIMER
+		auto stop = high_resolution_clock::now();
+		auto duree = duration_cast<seconds>(stop - start);
+
+		// Ecriture en fin de partie
+		int resultat_duree= duree.count();
+		Ecriture_Resultats(resultat_duree);
 
 	}
 

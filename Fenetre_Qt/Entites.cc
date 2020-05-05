@@ -98,8 +98,8 @@ Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste)
 
 /************************* autre *************************/
 
-Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+2,pos.getY()-2,pos.getX()-2,pos.getX()+2){
-	item = new QGraphicsRectItem(0,0,4,4);
+Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),pos.getY()-(TAILLE_HITBOX/2),pos.getX()-(TAILLE_HITBOX/2),pos.getX()+(TAILLE_HITBOX/2)){
+	item = new QGraphicsRectItem(0,0,(TAILLE_HITBOX),(TAILLE_HITBOX));
 	item->setPos(pos.getX(),pos.getY());
 }
 

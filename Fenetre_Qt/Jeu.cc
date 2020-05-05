@@ -54,6 +54,7 @@ void Jeu::Jouer_tour(){
 				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
 				std::cout<<V->Affiche_Hitbox()<<"\n";
 				supprimer_voleur(*V);
+				ajoutUnVoleursSorties();
 			}
 		}
 	}
@@ -134,16 +135,14 @@ void Jeu::Joue_deplacement(Voleur &V){
 	Direction verif = V.getPosition()+result;
 
 	//  Verification des murs
-	if (verif.getX()+2>400 or verif.getX()-2<-400 )
+	if (verif.getX()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getX()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN )
 	{
 		result.setX(-result.getX());
 	}
-	if (verif.getY()+2>400 or verif.getY()-2<-400)
+	if (verif.getY()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getY()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN)
 	{
 		result.setY(-result.getY());
-
 	}
-
 
 
 	V.setDestination(V.getPosition()+result);
@@ -188,11 +187,11 @@ void Jeu::Joue_deplacement(Gendarme &G){
 	Direction verif = G.getPosition()+result;
 
 	//  Verification des murs
-	if (verif.getX()+2>400 or verif.getX()-2<-400 )
+	if (verif.getX()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getX()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN )
 	{
 		result.setX(-result.getX());
 	}
-	if (verif.getY()+2>400 or verif.getY()-2<-400)
+	if (verif.getY()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getY()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN)
 	{
 		result.setY(-result.getY());
 	}
@@ -200,6 +199,37 @@ void Jeu::Joue_deplacement(Gendarme &G){
 	G.setDestination(G.getPosition()+result);
 
 	
+}
+
+bool Jeu::Coup_Possible(Joueur &J, Direction coup)
+{
+
+	coup = coup *J.getSpeed();
+	Direction verif = J.getPosition()+coup;
+
+	// Sortie du Terrain 
+	if (verif.getX()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getX()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN )
+	{
+		return false;
+	}
+	if (verif.getY()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getY()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN)
+	{
+		return false;
+	}
+
+	// HitBox en contact avec un autre joueur
+	for (auto &&i : Liste_Voleurs)
+	{
+		if (J.Hitbox_touche(*i)) return false;
+	}
+
+	for (auto &&j : Liste_Gendarmes)
+	{
+		if (J.Hitbox_touche(*j)) return false;
+	}
+
+	return true;
+
 }
 
 

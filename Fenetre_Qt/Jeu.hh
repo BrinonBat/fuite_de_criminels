@@ -10,6 +10,7 @@ public :
 		hauteur=phauteur;
 		nbVoleurs=0;
 		nbCaptures=0;
+		nbVoleursSorties=0;
     }
     Jeu(Jeu const & JeuCopier){
         largeur=JeuCopier.getLargeur();
@@ -37,6 +38,9 @@ public :
 	unsigned int getNbVoleurs()const{return nbVoleurs;}
 	void ajoutUnVoleur(){nbVoleurs++;}
 
+	unsigned int getNbVoleursSorties()const{return nbVoleursSorties;}
+	void ajoutUnVoleursSorties(){nbVoleursSorties++;}
+
 	std::vector<Voleur *> getListeVoleur()const {return Liste_Voleurs;}
 	std::vector<Gendarme *> getListeGendarme()const {return Liste_Gendarmes;}
 	std::vector<NonJoueur *> getListeNonJoueur()const {return Liste_Objets;}
@@ -47,10 +51,11 @@ public :
     void initialise();
     void Joue_deplacement(Voleur &V);
 	void Joue_deplacement(Gendarme &G);
+	bool Coup_Possible(Joueur & J, Direction coup);
     bool estFini();
 
 private:
-	unsigned int nbVoleurs,nbCaptures;
+	unsigned int nbVoleurs,nbCaptures,nbVoleursSorties;
     double largeur,hauteur;
     std::vector<Voleur *> Liste_Voleurs;
 	std::vector<Gendarme *> Liste_Gendarmes;
