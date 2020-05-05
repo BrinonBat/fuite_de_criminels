@@ -438,12 +438,12 @@ void Fenetre_Ajout::Exemple2()
 	for(unsigned int nb_tour=1;!Exemple2.estFini();nb_tour++){
 	//	std::cout<<"\n TOUR "<<nb_tour<<" : \n";
 		Exemple2.Jouer_tour();
-		for (auto i : &Exemple2.getListeVoleur())
+		for (auto i : Exemple2.getListeVoleur())
 		{
 			i.setItem(i.getPosition());
 		}
 
-		for (auto i : &Exemple2.getListeGendarme())
+		for (auto i : Exemple2.getListeGendarme())
 		{
 			i.setItem(i.getPosition());
 		}
