@@ -21,7 +21,7 @@ void Jeu::afficher()
 	}
 }
 
-// déroulement d'un tour /!\ ça boucle
+// déroulement d'un tour
 void Jeu::Jouer_tour(){
 //calcul des déplacement
 	for(auto &&V:Liste_Voleurs){
@@ -54,7 +54,6 @@ void Jeu::Jouer_tour(){
 				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
 				std::cout<<V->Affiche_Hitbox()<<"\n";
 				supprimer_voleur(*V);
-				ajoutUnVoleursSorties();
 			}
 		}
 	}
@@ -199,7 +198,7 @@ void Jeu::Joue_deplacement(Gendarme &G){
 
 	G.setDestination(G.getPosition()+result);
 
-	
+
 }
 
 bool Jeu::Coup_Possible(Joueur &J, Direction coup)
@@ -208,7 +207,7 @@ bool Jeu::Coup_Possible(Joueur &J, Direction coup)
 	coup = coup *J.getSpeed();
 	Direction verif = J.getPosition()+coup;
 
-	// Sortie du Terrain 
+	// Sortie du Terrain
 	if (verif.getX()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getX()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN )
 	{
 		return false;

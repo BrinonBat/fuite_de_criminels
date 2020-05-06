@@ -11,7 +11,6 @@ public :
 		nbVoleurs=0;
 		nbGendarmes=0;
 		nbCaptures=0;
-		nbVoleursSorties=0;
     }
     Jeu(Jeu const & JeuCopier){
         largeur=JeuCopier.getLargeur();
@@ -42,8 +41,7 @@ public :
 	unsigned int getNbGendarmes()const{return nbGendarmes;}
 	void ajoutUnGendarme(){nbGendarmes++;}
 
-	unsigned int getNbVoleursSorties()const{return nbVoleursSorties;}
-	void ajoutUnVoleursSorties(){nbVoleursSorties++;}
+	unsigned int getNbVoleursSorties()const{return nbVoleurs-(nbCaptures+Liste_Voleurs.size());}
 
 	std::vector<Voleur *> getListeVoleur()const {return Liste_Voleurs;}
 	std::vector<Gendarme *> getListeGendarme()const {return Liste_Gendarmes;}
@@ -59,7 +57,7 @@ public :
     bool estFini();
 
 private:
-	unsigned int nbVoleurs,nbGendarmes,nbCaptures,nbVoleursSorties;
+	unsigned int nbVoleurs,nbGendarmes,nbCaptures;
     double largeur,hauteur;
     std::vector<Voleur *> Liste_Voleurs;
 	std::vector<Gendarme *> Liste_Gendarmes;
