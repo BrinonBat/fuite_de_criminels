@@ -22,7 +22,7 @@ OK	- ajout de sortie sur fichier texte sous forme d'historique
 X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
 X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
 	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
-
+	-passer speed en variable de classe
 PUIS mise en place d'une GUI <- OK
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
