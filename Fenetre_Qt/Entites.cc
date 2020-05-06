@@ -4,27 +4,6 @@ unsigned int Entite::compteur(0);//compteur permettant d'attribuer des ID unique
 
 /*************************************** IAs *******************************************/
 
-void Entite::setHitbox(){
-
-	HB.setH(getPosition().getY()+(TAILLE_HITBOX/2));
-	HB.setB(getPosition().getY()-(TAILLE_HITBOX/2));
-	HB.setG(getPosition().getX()-(TAILLE_HITBOX/2));
-	HB.setD(getPosition().getX()+(TAILLE_HITBOX/2));
-
-}
-
-std::string Entite::Affiche_Hitbox(){
-
-	// "Hitbox: (G,D,H,B)"
-	return "Hitbox:("
-		+std::to_string(this->HB.getG())+","
-		+std::to_string(this->HB.getD())+","
-		+std::to_string(this->HB.getH())+","
-		+std::to_string(this->HB.getB())+
-	")";
-
-}
-
 void Voleur::deplacement(){
 
 	//calcul de la nouvelle position
@@ -94,7 +73,6 @@ Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> Liste){
 	return V;
 }
 
-
 Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste){
 
 	//définition
@@ -117,50 +95,111 @@ Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste){
 
 }
 
-
 /******************************************* autre *******************************************/
 
-Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),
-		pos.getY()-(TAILLE_HITBOX/2),
-		pos.getX()-(TAILLE_HITBOX/2),
-		pos.getX()+(TAILLE_HITBOX/2))
-{
+void Entite::setHitbox(){
+
+	HB.setH(getPosition().getY()+(TAILLE_HITBOX/2));
+	HB.setB(getPosition().getY()-(TAILLE_HITBOX/2));
+	HB.setG(getPosition().getX()-(TAILLE_HITBOX/2));
+	HB.setD(getPosition().getX()+(TAILLE_HITBOX/2));
+
+}
+
+std::string Entite::Affiche_Hitbox(){
+
+	// "Hitbox: (G,D,H,B)"
+	return "Hitbox:("
+		+std::to_string(this->HB.getG())+","
+		+std::to_string(this->HB.getD())+","
+		+std::to_string(this->HB.getH())+","
+		+std::to_string(this->HB.getB())+
+	")";
+
+}
+
+Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),pos.getY()-(TAILLE_HITBOX/2),pos.getX()-(TAILLE_HITBOX/2),pos.getX()+(TAILLE_HITBOX/2)){
+
+	//définition de la hitbox pour l'affichage
 	item = new QGraphicsRectItem(0,0,(TAILLE_HITBOX),(TAILLE_HITBOX));
 	item->setPos(pos.getX(),pos.getY());
+
 }
 
-bool Entite::Hitbox_touche(Entite &J2)
-{
+// A RE-COMMENTER, C LE BORDEL (exemple sur getDistance_From)
+bool Entite::Hitbox_touche(Entite &J2){
+
 	return (
-	((this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
-	or (
-	(this->getHitbox().getG()<=J2.getHitbox().getD() and this->getHitbox().getD()>=J2.getHitbox().getD()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
-	);
+	(//cas 1
+			(this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG())
+			and ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH())
+				or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB())
+				)
+			)
+	)//fin cas 1
+		or
+	(// cas 2
+		(this->getHitbox().getG()<=J2.getHitbox().getD() and this->getHitbox().getD()>=J2.getHitbox().getD())
+		and ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH())
+			or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB())
+			)
+		)
+	)//fin cas 2
+	);//fin return
+
 }
 
-double Entite::getDistance_From(Entite E)
-{
-	return std::sqrt((((E.getPosition().getX()-this->getPosition().getX())*(E.getPosition().getX()-this->getPosition().getX()))+((E.getPosition().getY()-this->getPosition().getY())*(E.getPosition().getY()-this->getPosition().getY()))));
-}
+double Entite::getDistance_From(Entite E){
 
+	//retourne la racine carré de la difference des position
+	return std::sqrt((
+			//traitement X
+			(E.getPosition().getX()-this->getPosition().getX())
+			*(E.getPosition().getX()-this->getPosition().getX())
+		)+(
+			//traitement Y
+			(E.getPosition().getY()-this->getPosition().getY())
+			*(E.getPosition().getY()-this->getPosition().getY())
+		)
+	); // fin return
+
+}
 
 Position Position::operator+(Position const & p){
+
+	//retour du résultat de l'addition
 	return Position(getX() + p.getX(),getY() + p.getY());
+
 }
+
 Position Position::operator*(double mult){
+
+	//retour du résultat de la multiplication
 	return Position(getX()*mult,getY()*mult);
+
 }
+
 bool Position::operator==(Position const & p){
+
+	//retour du résultat de la comparaison
 	return (p.getX()==x && p.getY()==y);
 }
-void afficherValeur(Type e)
-{
-    switch (e) {
-    case Type::cachette:
-        std::cout<<"C";
-        break;
-    case Type::sortie:
-        std::cout<<"S";
-        break;
+
+void afficherValeur(Type type){
+
+	//pour chaque type, on affiche ce qui lui correspond
+    switch (type) {
+
+		//cas de la cachette
+	    case Type::cachette:
+	        std::cout<<"C";
+	    break;
+
+		//cas de la sortie
+	    case Type::sortie:
+	        std::cout<<"S";
+	    break;
+
     }
+
 }
