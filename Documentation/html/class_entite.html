@@ -9,9 +9,22 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,9 +35,25 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fuite de criminels
-   &#160;<span id="projectnumber">2.1</span>
+   &#160;<span id="projectnumber">v2.2</span>
    </div>
+   <div id="projectbrief">early alpha</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_entite.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,7 +96,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
@@ -69,6 +104,8 @@ $(function() {
 <div class="title">Référence de la classe Entite</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_entites_8hh_source.html">Entites.hh</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de Entite:</div>
 <div class="dyncontent">
@@ -84,53 +121,308 @@ Graphe d'héritage de Entite:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a89d2eacf7270905863521e5c7a74a40e"><td class="memItemLeft" align="right" valign="top"><a id="a89d2eacf7270905863521e5c7a74a40e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Entite</b> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
+<tr class="memitem:a89d2eacf7270905863521e5c7a74a40e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Entite</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
 <tr class="separator:a89d2eacf7270905863521e5c7a74a40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0d688d26c6836fe586ebf79eae579e3"><td class="memItemLeft" align="right" valign="top"><a id="aa0d688d26c6836fe586ebf79eae579e3"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
+<tr class="memitem:aa0d688d26c6836fe586ebf79eae579e3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aa0d688d26c6836fe586ebf79eae579e3">getId</a> () const</td></tr>
 <tr class="separator:aa0d688d26c6836fe586ebf79eae579e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abad0bb9ca169b5829bc615451274cd46"><td class="memItemLeft" align="right" valign="top"><a id="abad0bb9ca169b5829bc615451274cd46"></a>
-<a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> () const</td></tr>
+<tr class="memitem:abad0bb9ca169b5829bc615451274cd46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abad0bb9ca169b5829bc615451274cd46">getPosition</a> () const</td></tr>
 <tr class="separator:abad0bb9ca169b5829bc615451274cd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac432ef254ab09d2f6267dd268b0d856f"><td class="memItemLeft" align="right" valign="top"><a id="ac432ef254ab09d2f6267dd268b0d856f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPosition</b> (<a class="el" href="class_position.html">Position</a> nouv)</td></tr>
+<tr class="memitem:ac432ef254ab09d2f6267dd268b0d856f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac432ef254ab09d2f6267dd268b0d856f">setPosition</a> (<a class="el" href="class_position.html">Position</a> nouv)</td></tr>
 <tr class="separator:ac432ef254ab09d2f6267dd268b0d856f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe3f29c00cc58cd952e1076afa7ee138"><td class="memItemLeft" align="right" valign="top"><a id="abe3f29c00cc58cd952e1076afa7ee138"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Affiche_Position</b> ()</td></tr>
+<tr class="memitem:abe3f29c00cc58cd952e1076afa7ee138"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abe3f29c00cc58cd952e1076afa7ee138">Affiche_Position</a> ()</td></tr>
 <tr class="separator:abe3f29c00cc58cd952e1076afa7ee138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ccd07ff8f265353b657bc348c978efe"><td class="memItemLeft" align="right" valign="top"><a id="a1ccd07ff8f265353b657bc348c978efe"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getDistance_From</b> (<a class="el" href="class_entite.html">Entite</a> E)</td></tr>
+<tr class="memitem:a1ccd07ff8f265353b657bc348c978efe"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a1ccd07ff8f265353b657bc348c978efe">getDistance_From</a> (<a class="el" href="class_entite.html">Entite</a> E)</td></tr>
 <tr class="separator:a1ccd07ff8f265353b657bc348c978efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d4f13a4c32eda908922dd9525facbc9"><td class="memItemLeft" align="right" valign="top"><a id="a3d4f13a4c32eda908922dd9525facbc9"></a>
-<a class="el" href="class_hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getHitbox</b> () const</td></tr>
+<tr class="memitem:a3d4f13a4c32eda908922dd9525facbc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a3d4f13a4c32eda908922dd9525facbc9">getHitbox</a> () const</td></tr>
 <tr class="separator:a3d4f13a4c32eda908922dd9525facbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963fe64369d736c7b33b9671f0b93bc3"><td class="memItemLeft" align="right" valign="top"><a id="a963fe64369d736c7b33b9671f0b93bc3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHitbox</b> ()</td></tr>
+<tr class="memitem:a963fe64369d736c7b33b9671f0b93bc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a963fe64369d736c7b33b9671f0b93bc3">setHitbox</a> ()</td></tr>
 <tr class="separator:a963fe64369d736c7b33b9671f0b93bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6a7464bbaeb55e205040bec3c870418"><td class="memItemLeft" align="right" valign="top"><a id="ad6a7464bbaeb55e205040bec3c870418"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Affiche_Hitbox</b> ()</td></tr>
+<tr class="memitem:ad6a7464bbaeb55e205040bec3c870418"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Affiche_Hitbox</a> ()</td></tr>
 <tr class="separator:ad6a7464bbaeb55e205040bec3c870418"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01aa4b9bd81b3fa2987f6a419662edf0"><td class="memItemLeft" align="right" valign="top"><a id="a01aa4b9bd81b3fa2987f6a419662edf0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Hitbox_touche</b> (<a class="el" href="class_entite.html">Entite</a> &amp;E)</td></tr>
+<tr class="memitem:a01aa4b9bd81b3fa2987f6a419662edf0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Hitbox_touche</a> (<a class="el" href="class_entite.html">Entite</a> &amp;E)</td></tr>
 <tr class="separator:a01aa4b9bd81b3fa2987f6a419662edf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71cdfaa090f6bdc0c94ff4cc2c9c92db"><td class="memItemLeft" align="right" valign="top"><a id="a71cdfaa090f6bdc0c94ff4cc2c9c92db"></a>
-QGraphicsRectItem *&#160;</td><td class="memItemRight" valign="bottom"><b>getItem</b> () const</td></tr>
+<tr class="memitem:a71cdfaa090f6bdc0c94ff4cc2c9c92db"><td class="memItemLeft" align="right" valign="top">QGraphicsRectItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a71cdfaa090f6bdc0c94ff4cc2c9c92db">getItem</a> () const</td></tr>
 <tr class="separator:a71cdfaa090f6bdc0c94ff4cc2c9c92db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4afbb94196a1822698ce8854bd19ac4"><td class="memItemLeft" align="right" valign="top"><a id="ae4afbb94196a1822698ce8854bd19ac4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setItem</b> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
+<tr class="memitem:ae4afbb94196a1822698ce8854bd19ac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ae4afbb94196a1822698ce8854bd19ac4">setItem</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
 <tr class="separator:ae4afbb94196a1822698ce8854bd19ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>Fenetre_Qt/<a class="el" href="_entites_8hh_source.html">Entites.hh</a></li>
-<li>Fenetre_Qt/Entites.cc</li>
-</ul>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a89d2eacf7270905863521e5c7a74a40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d2eacf7270905863521e5c7a74a40e">&#9670;&nbsp;</a></span>Entite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Entite::Entite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> const &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="ad6a7464bbaeb55e205040bec3c870418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a7464bbaeb55e205040bec3c870418">&#9670;&nbsp;</a></span>Affiche_Hitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Entite::Affiche_Hitbox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe3f29c00cc58cd952e1076afa7ee138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3f29c00cc58cd952e1076afa7ee138">&#9670;&nbsp;</a></span>Affiche_Position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Entite::Affiche_Position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ccd07ff8f265353b657bc348c978efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ccd07ff8f265353b657bc348c978efe">&#9670;&nbsp;</a></span>getDistance_From()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Entite::getDistance_From </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a>&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d4f13a4c32eda908922dd9525facbc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d4f13a4c32eda908922dd9525facbc9">&#9670;&nbsp;</a></span>getHitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_hitbox.html">Hitbox</a> Entite::getHitbox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0d688d26c6836fe586ebf79eae579e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d688d26c6836fe586ebf79eae579e3">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Entite::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71cdfaa090f6bdc0c94ff4cc2c9c92db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71cdfaa090f6bdc0c94ff4cc2c9c92db">&#9670;&nbsp;</a></span>getItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsRectItem* Entite::getItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abad0bb9ca169b5829bc615451274cd46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad0bb9ca169b5829bc615451274cd46">&#9670;&nbsp;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_position.html">Position</a> Entite::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01aa4b9bd81b3fa2987f6a419662edf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01aa4b9bd81b3fa2987f6a419662edf0">&#9670;&nbsp;</a></span>Hitbox_touche()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Entite::Hitbox_touche </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> &amp;&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a963fe64369d736c7b33b9671f0b93bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963fe64369d736c7b33b9671f0b93bc3">&#9670;&nbsp;</a></span>setHitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entite::setHitbox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4afbb94196a1822698ce8854bd19ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4afbb94196a1822698ce8854bd19ac4">&#9670;&nbsp;</a></span>setItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entite::setItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> const &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac432ef254ab09d2f6267dd268b0d856f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac432ef254ab09d2f6267dd268b0d856f">&#9670;&nbsp;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entite::setPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>nouv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_entite.html">Entite</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

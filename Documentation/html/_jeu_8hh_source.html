@@ -5,13 +5,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fuite de criminels:  Fichier source de Fenetre_Qt/Jeu.hh</title>
+<title>Fuite de criminels:  Fichier source de Source/Jeu.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,9 +35,25 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fuite de criminels
-   &#160;<span id="projectnumber">2.1</span>
+   &#160;<span id="projectnumber">v2.2</span>
    </div>
+   <div id="projectbrief">early alpha</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_jeu_8hh_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,73 +96,68 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_1b335782890350683f587e335c1d0c2e.html">Fenetre_Qt</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Jeu.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Entites.hh&quot;</span></div>
+<a href="_jeu_8hh.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_entites_8hh.html">Entites.hh</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_jeu.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_jeu.html">Jeu</a> {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;public :</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//constructeurs et destructeurs</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_jeu.html">Jeu</a>(<span class="keywordtype">double</span> plargeur, <span class="keywordtype">double</span> phauteur) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_jeu.html#aec013425e5bf1024e0a4a30e44072847">    8</a></span>&#160;    <a class="code" href="class_jeu.html#aec013425e5bf1024e0a4a30e44072847">Jeu</a>(<span class="keywordtype">double</span> plargeur, <span class="keywordtype">double</span> phauteur) {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        largeur=plargeur;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        hauteur=phauteur;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        nbVoleurs=0;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        nbGendarmes=0;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        nbCaptures=0;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_jeu.html">Jeu</a>(<a class="code" href="class_jeu.html">Jeu</a> <span class="keyword">const</span> &amp; JeuCopier){</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        largeur=JeuCopier.getLargeur();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        hauteur=JeuCopier.getHauteur();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        nbVoleurs=JeuCopier.getNbVoleurs();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        nbCaptures=JeuCopier.getNbCaptures();</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_jeu.html#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41">   15</a></span>&#160;    <a class="code" href="class_jeu.html#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41">Jeu</a>(<a class="code" href="class_jeu.html">Jeu</a> <span class="keyword">const</span> &amp; JeuCopier){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        largeur=JeuCopier.<a class="code" href="class_jeu.html#a4b5516da45db336ae957d13ba5460a89">getLargeur</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        hauteur=JeuCopier.<a class="code" href="class_jeu.html#ae282b903eefeb6e1988c7ac49abba456">getHauteur</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        nbVoleurs=JeuCopier.<a class="code" href="class_jeu.html#af6934bc26cad6c9682ef84432f7109cf">getNbVoleurs</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        nbCaptures=JeuCopier.<a class="code" href="class_jeu.html#a9332948cc431565dabcebdc60197325d">getNbCaptures</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//accesseurs</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_voleur.html">Voleur</a> <span class="keyword">const</span> &amp; getVoleur(std::size_t num)<span class="keyword">const</span>{<span class="keywordflow">return</span> *(Liste_Voleurs.at(num));}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> ajouter_voleur(<a class="code" href="class_voleur.html">Voleur</a> <span class="keyword">const</span> &amp;V);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> supprimer_voleur(<a class="code" href="class_voleur.html">Voleur</a>  &amp;V);</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_jeu.html#a785eafba89b50893a8226b9e320f0ce2">   22</a></span>&#160;    <a class="code" href="class_voleur.html">Voleur</a> <span class="keyword">const</span> &amp; <a class="code" href="class_jeu.html#a785eafba89b50893a8226b9e320f0ce2">getVoleur</a>(std::size_t num)<span class="keyword">const</span>{<span class="keywordflow">return</span> *(Liste_Voleurs.at(num));}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a50dc429c5ffe621a20465b52af0d07f6">ajouter_voleur</a>(<a class="code" href="class_voleur.html">Voleur</a> <span class="keyword">const</span> &amp;V);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a0f6f117931bda32f680b926fc6f08a51">supprimer_voleur</a>(<a class="code" href="class_voleur.html">Voleur</a>  &amp;V);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a> <span class="keyword">const</span> &amp; getGendarme(std::size_t num)<span class="keyword">const</span>{<span class="keywordflow">return</span> *(Liste_Gendarmes.at(num));}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> ajouter_gendarme(<a class="code" href="class_gendarme.html">Gendarme</a> <span class="keyword">const</span> &amp;G);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af">   26</a></span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a> <span class="keyword">const</span> &amp; <a class="code" href="class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af">getGendarme</a>(std::size_t num)<span class="keyword">const</span>{<span class="keywordflow">return</span> *(Liste_Gendarmes.at(num));}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#aa265d592cf0bf8c682fc367d727cdc3a">ajouter_gendarme</a>(<a class="code" href="class_gendarme.html">Gendarme</a> <span class="keyword">const</span> &amp;G);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_non_joueur.html">NonJoueur</a> <span class="keyword">const</span> &amp; getObject(std::size_t num)<span class="keyword">const</span>{<span class="keywordflow">return</span> *(Liste_Objets.at(num));}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> ajouter_nonJoueur(<a class="code" href="class_non_joueur.html">NonJoueur</a> <span class="keyword">const</span> nJ); <span class="comment">// à retravailler</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_jeu.html#a2aaed308d67bd5e822d700b569ddef99">   29</a></span>&#160;    <a class="code" href="class_non_joueur.html">NonJoueur</a> <span class="keyword">const</span> &amp; <a class="code" href="class_jeu.html#a2aaed308d67bd5e822d700b569ddef99">getObject</a>(std::size_t num)<span class="keyword">const</span>{<span class="keywordflow">return</span> *(Liste_Objets.at(num));}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a4675b7360326a2f0e96cb85dcf05a01e">ajouter_nonJoueur</a>(<a class="code" href="class_non_joueur.html">NonJoueur</a> <span class="keyword">const</span> nJ); <span class="comment">// à retravailler</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span> getLargeur()<span class="keyword">const</span>{<span class="keywordflow">return</span> largeur;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> getHauteur()<span class="keyword">const</span>{<span class="keywordflow">return</span> hauteur;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_jeu.html#a4b5516da45db336ae957d13ba5460a89">   32</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_jeu.html#a4b5516da45db336ae957d13ba5460a89">getLargeur</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> largeur;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_jeu.html#ae282b903eefeb6e1988c7ac49abba456">   33</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_jeu.html#ae282b903eefeb6e1988c7ac49abba456">getHauteur</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> hauteur;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getNbCaptures()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbCaptures;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> ajoutUneCapture(){nbCaptures++;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_jeu.html#a9332948cc431565dabcebdc60197325d">   35</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_jeu.html#a9332948cc431565dabcebdc60197325d">getNbCaptures</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbCaptures;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82">ajoutUneCapture</a>(){nbCaptures++;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getNbVoleurs()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbVoleurs;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> ajoutUnVoleur(){nbVoleurs++;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_jeu.html#af6934bc26cad6c9682ef84432f7109cf">   38</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_jeu.html#af6934bc26cad6c9682ef84432f7109cf">getNbVoleurs</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbVoleurs;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_jeu.html#a5f397a8e1e933914ea9226343ef934ee">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a5f397a8e1e933914ea9226343ef934ee">ajoutUnVoleur</a>(){nbVoleurs++;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getNbGendarmes()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbGendarmes;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> ajoutUnGendarme(){nbGendarmes++;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_jeu.html#a03196acb5b98dedd73ea35378eac63dd">   41</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_jeu.html#a03196acb5b98dedd73ea35378eac63dd">getNbGendarmes</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbGendarmes;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_jeu.html#a4eeff410c295d409ca074439340a3603">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a4eeff410c295d409ca074439340a3603">ajoutUnGendarme</a>(){nbGendarmes++;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getNbVoleursSorties()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbVoleurs-(nbCaptures+Liste_Voleurs.size());}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_jeu.html#ad9bbb553e7a056dd693ce9933fd6025f">   44</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_jeu.html#ad9bbb553e7a056dd693ce9933fd6025f">getNbVoleursSorties</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> nbVoleurs-(nbCaptures+Liste_Voleurs.size());}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::vector&lt;Voleur *&gt; getListeVoleur()<span class="keyword">const </span>{<span class="keywordflow">return</span> Liste_Voleurs;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::vector&lt;Gendarme *&gt; getListeGendarme()<span class="keyword">const </span>{<span class="keywordflow">return</span> Liste_Gendarmes;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::vector&lt;NonJoueur *&gt; getListeNonJoueur()<span class="keyword">const </span>{<span class="keywordflow">return</span> Liste_Objets;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_jeu.html#a502f907e163d99c0cce2ec283da32e31">   46</a></span>&#160;    std::vector&lt;Voleur *&gt; <a class="code" href="class_jeu.html#a502f907e163d99c0cce2ec283da32e31">getListeVoleur</a>()<span class="keyword">const </span>{<span class="keywordflow">return</span> Liste_Voleurs;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_jeu.html#ac993807e1fd27adba89ffb24db95c9f3">   47</a></span>&#160;    std::vector&lt;Gendarme *&gt; <a class="code" href="class_jeu.html#ac993807e1fd27adba89ffb24db95c9f3">getListeGendarme</a>()<span class="keyword">const </span>{<span class="keywordflow">return</span> Liste_Gendarmes;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_jeu.html#acb44afcb6ec800f93af34d549fe39a94">   48</a></span>&#160;    std::vector&lt;NonJoueur *&gt; <a class="code" href="class_jeu.html#acb44afcb6ec800f93af34d549fe39a94">getListeNonJoueur</a>()<span class="keyword">const </span>{<span class="keywordflow">return</span> Liste_Objets;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//méthodes</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> Jouer_tour();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> afficher();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> initialise();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> Joue_deplacement(<a class="code" href="class_voleur.html">Voleur</a> &amp;V);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> Joue_deplacement(<a class="code" href="class_gendarme.html">Gendarme</a> &amp;G);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> Coup_Possible(<a class="code" href="class_joueur.html">Joueur</a> &amp; J, <a class="code" href="class_position.html">Direction</a> coup);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> estFini();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68">Jouer_tour</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#a54a25003d167335db122efb513f6508f">afficher</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#aea58e40d51cbcf4d8b4331ca4b913d23">initialise</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#aeef630cfcb73ebe59eec330f474755fa">Joue_deplacement</a>(<a class="code" href="class_voleur.html">Voleur</a> &amp;V);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu.html#aeef630cfcb73ebe59eec330f474755fa">Joue_deplacement</a>(<a class="code" href="class_gendarme.html">Gendarme</a> &amp;G);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu.html#a07691f1737745e8c0e340ebc303301d1">Coup_Possible</a>(<a class="code" href="class_joueur.html">Joueur</a> &amp; J, <a class="code" href="class_position.html">Direction</a> coup);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9">estFini</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbVoleurs,nbGendarmes,nbCaptures;</div>
@@ -137,17 +168,49 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_jeu_html_a9332948cc431565dabcebdc60197325d"><div class="ttname"><a href="class_jeu.html#a9332948cc431565dabcebdc60197325d">Jeu::getNbCaptures</a></div><div class="ttdeci">unsigned int getNbCaptures() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:35</div></div>
 <div class="ttc" id="aclass_joueur_html"><div class="ttname"><a href="class_joueur.html">Joueur</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:136</div></div>
+<div class="ttc" id="aclass_jeu_html_a50dc429c5ffe621a20465b52af0d07f6"><div class="ttname"><a href="class_jeu.html#a50dc429c5ffe621a20465b52af0d07f6">Jeu::ajouter_voleur</a></div><div class="ttdeci">void ajouter_voleur(Voleur const &amp;V)</div><div class="ttdef"><b>Definition:</b> Jeu.cc:63</div></div>
+<div class="ttc" id="aclass_jeu_html_a07691f1737745e8c0e340ebc303301d1"><div class="ttname"><a href="class_jeu.html#a07691f1737745e8c0e340ebc303301d1">Jeu::Coup_Possible</a></div><div class="ttdeci">bool Coup_Possible(Joueur &amp;J, Direction coup)</div><div class="ttdef"><b>Definition:</b> Jeu.cc:204</div></div>
 <div class="ttc" id="aclass_voleur_html"><div class="ttname"><a href="class_voleur.html">Voleur</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:173</div></div>
+<div class="ttc" id="aclass_jeu_html_aea58e40d51cbcf4d8b4331ca4b913d23"><div class="ttname"><a href="class_jeu.html#aea58e40d51cbcf4d8b4331ca4b913d23">Jeu::initialise</a></div><div class="ttdeci">void initialise()</div><div class="ttdef"><b>Definition:</b> Jeu.cc:3</div></div>
+<div class="ttc" id="aclass_jeu_html_a69f55abdaf9f5a72c01159951165eb68"><div class="ttname"><a href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68">Jeu::Jouer_tour</a></div><div class="ttdeci">void Jouer_tour()</div><div class="ttdef"><b>Definition:</b> Jeu.cc:25</div></div>
+<div class="ttc" id="a_entites_8hh_html"><div class="ttname"><a href="_entites_8hh.html">Entites.hh</a></div></div>
+<div class="ttc" id="aclass_jeu_html_a785eafba89b50893a8226b9e320f0ce2"><div class="ttname"><a href="class_jeu.html#a785eafba89b50893a8226b9e320f0ce2">Jeu::getVoleur</a></div><div class="ttdeci">const Voleur &amp; getVoleur(std::size_t num) const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:22</div></div>
+<div class="ttc" id="aclass_jeu_html_af6934bc26cad6c9682ef84432f7109cf"><div class="ttname"><a href="class_jeu.html#af6934bc26cad6c9682ef84432f7109cf">Jeu::getNbVoleurs</a></div><div class="ttdeci">unsigned int getNbVoleurs() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:38</div></div>
 <div class="ttc" id="aclass_non_joueur_html"><div class="ttname"><a href="class_non_joueur.html">NonJoueur</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:123</div></div>
+<div class="ttc" id="aclass_jeu_html_a4eeff410c295d409ca074439340a3603"><div class="ttname"><a href="class_jeu.html#a4eeff410c295d409ca074439340a3603">Jeu::ajoutUnGendarme</a></div><div class="ttdeci">void ajoutUnGendarme()</div><div class="ttdef"><b>Definition:</b> Jeu.hh:42</div></div>
+<div class="ttc" id="aclass_jeu_html_a1f3aa80bec9732ad9d0d0a3a1f9373af"><div class="ttname"><a href="class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af">Jeu::getGendarme</a></div><div class="ttdeci">const Gendarme &amp; getGendarme(std::size_t num) const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:26</div></div>
+<div class="ttc" id="aclass_jeu_html_ad9bbb553e7a056dd693ce9933fd6025f"><div class="ttname"><a href="class_jeu.html#ad9bbb553e7a056dd693ce9933fd6025f">Jeu::getNbVoleursSorties</a></div><div class="ttdeci">unsigned int getNbVoleursSorties() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:44</div></div>
+<div class="ttc" id="aclass_jeu_html_a03196acb5b98dedd73ea35378eac63dd"><div class="ttname"><a href="class_jeu.html#a03196acb5b98dedd73ea35378eac63dd">Jeu::getNbGendarmes</a></div><div class="ttdeci">unsigned int getNbGendarmes() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:41</div></div>
+<div class="ttc" id="aclass_jeu_html_ac5cd0e57e22245bce7caf322f4fe8d82"><div class="ttname"><a href="class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82">Jeu::ajoutUneCapture</a></div><div class="ttdeci">void ajoutUneCapture()</div><div class="ttdef"><b>Definition:</b> Jeu.hh:36</div></div>
+<div class="ttc" id="aclass_jeu_html_a2a7d42630c6f7d30733f9a8739fffdd9"><div class="ttname"><a href="class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9">Jeu::estFini</a></div><div class="ttdeci">bool estFini()</div><div class="ttdef"><b>Definition:</b> Jeu.cc:237</div></div>
 <div class="ttc" id="aclass_gendarme_html"><div class="ttname"><a href="class_gendarme.html">Gendarme</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:188</div></div>
+<div class="ttc" id="aclass_jeu_html_a5f397a8e1e933914ea9226343ef934ee"><div class="ttname"><a href="class_jeu.html#a5f397a8e1e933914ea9226343ef934ee">Jeu::ajoutUnVoleur</a></div><div class="ttdeci">void ajoutUnVoleur()</div><div class="ttdef"><b>Definition:</b> Jeu.hh:39</div></div>
+<div class="ttc" id="aclass_jeu_html_acb44afcb6ec800f93af34d549fe39a94"><div class="ttname"><a href="class_jeu.html#acb44afcb6ec800f93af34d549fe39a94">Jeu::getListeNonJoueur</a></div><div class="ttdeci">std::vector&lt; NonJoueur * &gt; getListeNonJoueur() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:48</div></div>
+<div class="ttc" id="aclass_jeu_html_a0f6f117931bda32f680b926fc6f08a51"><div class="ttname"><a href="class_jeu.html#a0f6f117931bda32f680b926fc6f08a51">Jeu::supprimer_voleur</a></div><div class="ttdeci">void supprimer_voleur(Voleur &amp;V)</div><div class="ttdef"><b>Definition:</b> Jeu.cc:75</div></div>
 <div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:35</div></div>
 <div class="ttc" id="aclass_jeu_html"><div class="ttname"><a href="class_jeu.html">Jeu</a></div><div class="ttdef"><b>Definition:</b> Jeu.hh:4</div></div>
+<div class="ttc" id="aclass_jeu_html_a9ffc444bdb8e3ac9dc48ca0b7f1aaa41"><div class="ttname"><a href="class_jeu.html#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41">Jeu::Jeu</a></div><div class="ttdeci">Jeu(Jeu const &amp;JeuCopier)</div><div class="ttdef"><b>Definition:</b> Jeu.hh:15</div></div>
+<div class="ttc" id="aclass_jeu_html_a54a25003d167335db122efb513f6508f"><div class="ttname"><a href="class_jeu.html#a54a25003d167335db122efb513f6508f">Jeu::afficher</a></div><div class="ttdeci">void afficher()</div><div class="ttdef"><b>Definition:</b> Jeu.cc:8</div></div>
+<div class="ttc" id="aclass_jeu_html_ae282b903eefeb6e1988c7ac49abba456"><div class="ttname"><a href="class_jeu.html#ae282b903eefeb6e1988c7ac49abba456">Jeu::getHauteur</a></div><div class="ttdeci">double getHauteur() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:33</div></div>
+<div class="ttc" id="aclass_jeu_html_aeef630cfcb73ebe59eec330f474755fa"><div class="ttname"><a href="class_jeu.html#aeef630cfcb73ebe59eec330f474755fa">Jeu::Joue_deplacement</a></div><div class="ttdeci">void Joue_deplacement(Voleur &amp;V)</div><div class="ttdef"><b>Definition:</b> Jeu.cc:101</div></div>
+<div class="ttc" id="aclass_jeu_html_ac993807e1fd27adba89ffb24db95c9f3"><div class="ttname"><a href="class_jeu.html#ac993807e1fd27adba89ffb24db95c9f3">Jeu::getListeGendarme</a></div><div class="ttdeci">std::vector&lt; Gendarme * &gt; getListeGendarme() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:47</div></div>
+<div class="ttc" id="aclass_jeu_html_aec013425e5bf1024e0a4a30e44072847"><div class="ttname"><a href="class_jeu.html#aec013425e5bf1024e0a4a30e44072847">Jeu::Jeu</a></div><div class="ttdeci">Jeu(double plargeur, double phauteur)</div><div class="ttdef"><b>Definition:</b> Jeu.hh:8</div></div>
+<div class="ttc" id="aclass_jeu_html_aa265d592cf0bf8c682fc367d727cdc3a"><div class="ttname"><a href="class_jeu.html#aa265d592cf0bf8c682fc367d727cdc3a">Jeu::ajouter_gendarme</a></div><div class="ttdeci">void ajouter_gendarme(Gendarme const &amp;G)</div><div class="ttdef"><b>Definition:</b> Jeu.cc:69</div></div>
+<div class="ttc" id="aclass_jeu_html_a4b5516da45db336ae957d13ba5460a89"><div class="ttname"><a href="class_jeu.html#a4b5516da45db336ae957d13ba5460a89">Jeu::getLargeur</a></div><div class="ttdeci">double getLargeur() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:32</div></div>
+<div class="ttc" id="aclass_jeu_html_a502f907e163d99c0cce2ec283da32e31"><div class="ttname"><a href="class_jeu.html#a502f907e163d99c0cce2ec283da32e31">Jeu::getListeVoleur</a></div><div class="ttdeci">std::vector&lt; Voleur * &gt; getListeVoleur() const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:46</div></div>
+<div class="ttc" id="aclass_jeu_html_a2aaed308d67bd5e822d700b569ddef99"><div class="ttname"><a href="class_jeu.html#a2aaed308d67bd5e822d700b569ddef99">Jeu::getObject</a></div><div class="ttdeci">const NonJoueur &amp; getObject(std::size_t num) const</div><div class="ttdef"><b>Definition:</b> Jeu.hh:29</div></div>
+<div class="ttc" id="aclass_jeu_html_a4675b7360326a2f0e96cb85dcf05a01e"><div class="ttname"><a href="class_jeu.html#a4675b7360326a2f0e96cb85dcf05a01e">Jeu::ajouter_nonJoueur</a></div><div class="ttdeci">void ajouter_nonJoueur(NonJoueur const nJ)</div><div class="ttdef"><b>Definition:</b> Jeu.cc:90</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="_jeu_8hh.html">Jeu.hh</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

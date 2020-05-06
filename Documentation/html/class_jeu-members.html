@@ -9,9 +9,22 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,9 +35,25 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fuite de criminels
-   &#160;<span id="projectnumber">2.1</span>
+   &#160;<span id="projectnumber">v2.2</span>
    </div>
+   <div id="projectbrief">early alpha</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_jeu.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,7 +96,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Jeu Liste des membres</div>  </div>
@@ -69,40 +104,43 @@ $(function() {
 
 <p>Liste complète des membres de <a class="el" href="class_jeu.html">Jeu</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>afficher</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>ajouter_gendarme</b>(Gendarme const &amp;G) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ajouter_nonJoueur</b>(NonJoueur const nJ) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>ajouter_voleur</b>(Voleur const &amp;V) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ajoutUneCapture</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>ajoutUnGendarme</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ajoutUnVoleur</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Coup_Possible</b>(Joueur &amp;J, Direction coup) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>estFini</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getGendarme</b>(std::size_t num) const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getHauteur</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getLargeur</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getListeGendarme</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getListeNonJoueur</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getListeVoleur</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getNbCaptures</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getNbGendarmes</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getNbVoleurs</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getNbVoleursSorties</b>() const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getObject</b>(std::size_t num) const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getVoleur</b>(std::size_t num) const (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>initialise</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Jeu</b>(double plargeur, double phauteur) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Jeu</b>(Jeu const &amp;JeuCopier) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Joue_deplacement</b>(Voleur &amp;V) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Joue_deplacement</b>(Gendarme &amp;G) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Jouer_tour</b>() (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>supprimer_voleur</b>(Voleur &amp;V) (défini dans <a class="el" href="class_jeu.html">Jeu</a>)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a54a25003d167335db122efb513f6508f">afficher</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#aa265d592cf0bf8c682fc367d727cdc3a">ajouter_gendarme</a>(Gendarme const &amp;G)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a4675b7360326a2f0e96cb85dcf05a01e">ajouter_nonJoueur</a>(NonJoueur const nJ)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a50dc429c5ffe621a20465b52af0d07f6">ajouter_voleur</a>(Voleur const &amp;V)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82">ajoutUneCapture</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a4eeff410c295d409ca074439340a3603">ajoutUnGendarme</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a5f397a8e1e933914ea9226343ef934ee">ajoutUnVoleur</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a07691f1737745e8c0e340ebc303301d1">Coup_Possible</a>(Joueur &amp;J, Direction coup)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9">estFini</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af">getGendarme</a>(std::size_t num) const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#ae282b903eefeb6e1988c7ac49abba456">getHauteur</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a4b5516da45db336ae957d13ba5460a89">getLargeur</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#ac993807e1fd27adba89ffb24db95c9f3">getListeGendarme</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#acb44afcb6ec800f93af34d549fe39a94">getListeNonJoueur</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a502f907e163d99c0cce2ec283da32e31">getListeVoleur</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a9332948cc431565dabcebdc60197325d">getNbCaptures</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a03196acb5b98dedd73ea35378eac63dd">getNbGendarmes</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#af6934bc26cad6c9682ef84432f7109cf">getNbVoleurs</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#ad9bbb553e7a056dd693ce9933fd6025f">getNbVoleursSorties</a>() const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a2aaed308d67bd5e822d700b569ddef99">getObject</a>(std::size_t num) const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a785eafba89b50893a8226b9e320f0ce2">getVoleur</a>(std::size_t num) const</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#aea58e40d51cbcf4d8b4331ca4b913d23">initialise</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#aec013425e5bf1024e0a4a30e44072847">Jeu</a>(double plargeur, double phauteur)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41">Jeu</a>(Jeu const &amp;JeuCopier)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#aeef630cfcb73ebe59eec330f474755fa">Joue_deplacement</a>(Voleur &amp;V)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a811a703dfaa0ef7c9cef090916d07a14">Joue_deplacement</a>(Gendarme &amp;G)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68">Jouer_tour</a>()</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_jeu.html#a0f6f117931bda32f680b926fc6f08a51">supprimer_voleur</a>(Voleur &amp;V)</td><td class="entry"><a class="el" href="class_jeu.html">Jeu</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

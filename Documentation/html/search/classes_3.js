@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hitbox_16',['Hitbox',['../class_hitbox.html',1,'']]]
+  ['hitbox_106',['Hitbox',['../class_hitbox.html',1,'']]]
 ];

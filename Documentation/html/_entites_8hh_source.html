@@ -5,13 +5,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fuite de criminels:  Fichier source de Fenetre_Qt/Entites.hh</title>
+<title>Fuite de criminels:  Fichier source de Source/Entites.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,9 +35,25 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fuite de criminels
-   &#160;<span id="projectnumber">2.1</span>
+   &#160;<span id="projectnumber">v2.2</span>
    </div>
+   <div id="projectbrief">early alpha</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_entites_8hh_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,17 +96,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_1b335782890350683f587e335c1d0c2e.html">Fenetre_Qt</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Entites.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="_entites_8hh.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -81,8 +112,8 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QtWidgets&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Constantes pour la taille du TERRAIN et la taille HITBOX</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define TAILLE_TERRAIN 400 // (400x400)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define TAILLE_HITBOX 4 // Correspond à un carré avec 4 en taille</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_entites_8hh.html#a8b888934cc7fdedc4c6ad3267ab3ad65">   12</a></span>&#160;<span class="preprocessor">#define TAILLE_TERRAIN 400 // (400x400)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_entites_8hh.html#a5e3831e6480a827be40892fe3286ff2e">   13</a></span>&#160;<span class="preprocessor">#define TAILLE_HITBOX 4 // Correspond à un carré avec 4 en taille</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                        <span class="comment">//           +2</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                        <span class="comment">//         -----</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                        <span class="comment">//     -2&lt;-| x |-&gt; +2</span></div>
@@ -90,66 +121,66 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        <span class="comment">//          -2</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//différents types d&#39;objets non-joueurs</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">enum class</span> Type {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">   21</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//Obstacle,</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    cachette,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    sortie</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7a03e66bbda52953e53e1b31d486a9072e">cachette</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7a9d414651fe8820061b0485fe70f1cdb2">sortie</a></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//liste des différénts algorithmes disponible pour chaque joueurs</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">enum class</span> Choix_Algo {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    random,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    haut,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    bas,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Gendarme_Chasseurs,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">   28</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba7ddf32e17a6ac5ce04a8ecbf782ca509">random</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba3ebb3fd63d4e9f9124c0196eb883c7ec">haut</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29baf6e660ced42e946f69a41cc473d923cc">bas</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba87bd21f69a6bfe2708bac03724c9be48">Gendarme_Chasseurs</a>,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_position.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_position.html">Position</a> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//constructeurs &amp; destructeurs</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_position.html">Position</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; x, <span class="keywordtype">double</span> <span class="keyword">const</span> &amp; y):</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_position.html#a509106e4b677a9c7266a6579b24cfc67">   39</a></span>&#160;    <a class="code" href="class_position.html#a509106e4b677a9c7266a6579b24cfc67">Position</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; x, <span class="keywordtype">double</span> <span class="keyword">const</span> &amp; y):</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    x(x),y(y){};</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//accesseurs</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> getX()<span class="keyword">const</span>{<span class="keywordflow">return</span> x;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> setX(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){x=nouv;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> getY()<span class="keyword">const</span>{<span class="keywordflow">return</span> y;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> setY(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){y=nouv;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_position.html#a10a2a09ec64310f42138f98238ec5fbd">   43</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_position.html#a10a2a09ec64310f42138f98238ec5fbd">getX</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> x;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_position.html#a9a92c54bccad78bbd06223c99064e650">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_position.html#a9a92c54bccad78bbd06223c99064e650">setX</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){x=nouv;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095">   45</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095">getY</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> y;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_position.html#ab2465b63e44c30a27b315d9ac87e3ee1">   46</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_position.html#ab2465b63e44c30a27b315d9ac87e3ee1">setY</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){y=nouv;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//operateurs</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_position.html">Position</a> operator+(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; d); <span class="comment">// redéfinition de l&#39;addition pour les positions</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_position.html">Position</a> operator*(<span class="keywordtype">double</span> mult); <span class="comment">//redéfinition de la multiplication</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> operator==(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; d); <span class="comment">//redéfinition de la comparaison</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_position.html#a338a68b8a203304e9598b137851fc212">operator+</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; d); <span class="comment">// redéfinition de l&#39;addition pour les positions</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_position.html#a54a8992507e99dc3e627a2b850e0dc52">operator*</a>(<span class="keywordtype">double</span> mult); <span class="comment">//redéfinition de la multiplication</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_position.html#aa20c621178e22416f14fbe3083b00403">operator==</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; d); <span class="comment">//redéfinition de la comparaison</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">double</span> x,y;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//classes identiques, mais concepts différents</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">using</span> <a class="code" href="class_position.html">Direction</a> = <a class="code" href="class_position.html">Position</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">   58</a></span>&#160;<span class="keyword">using</span> <a class="code" href="class_position.html">Direction</a> = <a class="code" href="class_position.html">Position</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_hitbox.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_hitbox.html">Hitbox</a> {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//constructeur</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_hitbox.html">Hitbox</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; H,<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; B,<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; G,<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; D):</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_hitbox.html#a90efd9d3f3abaf9cbef8d8e9fc20a4b1">   65</a></span>&#160;    <a class="code" href="class_hitbox.html#a90efd9d3f3abaf9cbef8d8e9fc20a4b1">Hitbox</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; H,<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; B,<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; G,<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; D):</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Haut(H),Bas(B),Gauche(G),Droite(D){};</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//accesseurs</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//getters</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> getH()<span class="keyword">const</span>{<span class="keywordflow">return</span> Haut;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">double</span> getB()<span class="keyword">const</span>{<span class="keywordflow">return</span> Bas;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> getG()<span class="keyword">const</span>{<span class="keywordflow">return</span> Gauche;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">double</span> getD()<span class="keyword">const</span>{<span class="keywordflow">return</span> Droite;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_hitbox.html#a3c907f386c56070386949af96de6a4a3">   71</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_hitbox.html#a3c907f386c56070386949af96de6a4a3">getH</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> Haut;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_hitbox.html#a1bf0baca3e029e4011d380c4b9243741">   72</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_hitbox.html#a1bf0baca3e029e4011d380c4b9243741">getB</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> Bas;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_hitbox.html#acbca0f4f5eda0268e33910b3afd4736b">   73</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_hitbox.html#acbca0f4f5eda0268e33910b3afd4736b">getG</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> Gauche;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_hitbox.html#a024061687f3562c9eb3db66b99ea5c43">   74</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_hitbox.html#a024061687f3562c9eb3db66b99ea5c43">getD</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> Droite;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//setters</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> setH(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Haut=nouv;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> setB(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Bas=nouv;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> setG(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Gauche=nouv;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> setD(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Droite=nouv;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_hitbox.html#a37d2d16d1a9a43dc2da95193aac05331">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_hitbox.html#a37d2d16d1a9a43dc2da95193aac05331">setH</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Haut=nouv;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_hitbox.html#a698820a5f45987919f13573934843195">   78</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_hitbox.html#a698820a5f45987919f13573934843195">setB</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Bas=nouv;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_hitbox.html#a5c63a10c35934c3f4b6672f1a03ec8f7">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_hitbox.html#a5c63a10c35934c3f4b6672f1a03ec8f7">setG</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Gauche=nouv;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_hitbox.html#a399bf485b4c664e8aeeba7e0b7b2a600">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_hitbox.html#a399bf485b4c664e8aeeba7e0b7b2a600">setD</a>(<span class="keywordtype">double</span> <span class="keyword">const</span> &amp; nouv){Droite=nouv;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">double</span> Haut,Bas,Gauche,Droite;</div>
@@ -158,31 +189,31 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_entite.html">   86</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_entite.html">Entite</a>{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">//constructeur</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_entite.html">Entite</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Entite</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">//accesseurs</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//getters</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getId()<span class="keyword">const</span>{<span class="keywordflow">return</span> id;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_entite.html#aa0d688d26c6836fe586ebf79eae579e3">   94</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_entite.html#aa0d688d26c6836fe586ebf79eae579e3">getId</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> id;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//setters</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_position.html">Position</a> getPosition()<span class="keyword">const</span>{<span class="keywordflow">return</span> emplacement;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> setPosition(<a class="code" href="class_position.html">Position</a> nouv){emplacement=nouv;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_entite.html#abad0bb9ca169b5829bc615451274cd46">   97</a></span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_entite.html#abad0bb9ca169b5829bc615451274cd46">getPosition</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> emplacement;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_entite.html#ac432ef254ab09d2f6267dd268b0d856f">   98</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entite.html#ac432ef254ab09d2f6267dd268b0d856f">setPosition</a>(<a class="code" href="class_position.html">Position</a> nouv){emplacement=nouv;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">//méthodes</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::string Affiche_Position() {<span class="keywordflow">return</span> std::string()+<span class="stringliteral">&quot;(&quot;</span>+std::to_string(this-&gt;emplacement.getX())+<span class="stringliteral">&quot;,&quot;</span>+std::to_string(this-&gt;emplacement.getY())+<span class="stringliteral">&quot;)&quot;</span>;};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">double</span> getDistance_From (<a class="code" href="class_entite.html">Entite</a> E);<span class="comment">// Distance entre deux entités</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_entite.html#abe3f29c00cc58cd952e1076afa7ee138">  102</a></span>&#160;    std::string <a class="code" href="class_entite.html#abe3f29c00cc58cd952e1076afa7ee138">Affiche_Position</a>() {<span class="keywordflow">return</span> std::string()+<span class="stringliteral">&quot;(&quot;</span>+std::to_string(this-&gt;emplacement.<a class="code" href="class_position.html#a10a2a09ec64310f42138f98238ec5fbd">getX</a>())+<span class="stringliteral">&quot;,&quot;</span>+std::to_string(this-&gt;emplacement.<a class="code" href="class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095">getY</a>())+<span class="stringliteral">&quot;)&quot;</span>;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_entite.html#a1ccd07ff8f265353b657bc348c978efe">getDistance_From</a> (<a class="code" href="class_entite.html">Entite</a> E);<span class="comment">// Distance entre deux entités</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//gestion de la hitbox</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_hitbox.html">Hitbox</a> getHitbox()<span class="keyword"> const </span>{<span class="keywordflow">return</span> HB;}</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> setHitbox();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::string Affiche_Hitbox();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> Hitbox_touche(<a class="code" href="class_entite.html">Entite</a> &amp;E);</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_entite.html#a3d4f13a4c32eda908922dd9525facbc9">  106</a></span>&#160;    <a class="code" href="class_hitbox.html">Hitbox</a> <a class="code" href="class_entite.html#a3d4f13a4c32eda908922dd9525facbc9">getHitbox</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> HB;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entite.html#a963fe64369d736c7b33b9671f0b93bc3">setHitbox</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::string <a class="code" href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Affiche_Hitbox</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Hitbox_touche</a>(<a class="code" href="class_entite.html">Entite</a> &amp;E);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//GUI</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QGraphicsRectItem* getItem()<span class="keyword">const</span>{<span class="keywordflow">return</span> item;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> setItem(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp;pos) {this-&gt;item-&gt;setPos(pos.getX(),pos.getY());}</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_entite.html#a71cdfaa090f6bdc0c94ff4cc2c9c92db">  112</a></span>&#160;    QGraphicsRectItem* <a class="code" href="class_entite.html#a71cdfaa090f6bdc0c94ff4cc2c9c92db">getItem</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> item;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_entite.html#ae4afbb94196a1822698ce8854bd19ac4">  113</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entite.html#ae4afbb94196a1822698ce8854bd19ac4">setItem</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp;pos) {this-&gt;item-&gt;setPos(pos.<a class="code" href="class_position.html#a10a2a09ec64310f42138f98238ec5fbd">getX</a>(),pos.<a class="code" href="class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095">getY</a>());}</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="class_position.html">Position</a> emplacement;</div>
@@ -195,49 +226,49 @@ $(function() {
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_non_joueur.html">  123</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_non_joueur.html">NonJoueur</a>: <span class="keyword">public</span> <a class="code" href="class_entite.html">Entite</a>{</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//constructeur</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="class_non_joueur.html">NonJoueur</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,Type <span class="keyword">const</span> &amp; t):</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="class_non_joueur.html#ac697085808fa2b8ac90ed27bb807df1d">  126</a></span>&#160;    <a class="code" href="class_non_joueur.html#ac697085808fa2b8ac90ed27bb807df1d">NonJoueur</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<a class="code" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> <span class="keyword">const</span> &amp; t):</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="class_entite.html">Entite</a>(pos),type(t){};</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">//accesseur</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    Type getType()<span class="keyword">const</span>{<span class="keywordflow">return</span> type;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="class_non_joueur.html#a0c184d9692270276aa7cd3613e096784">  130</a></span>&#160;    <a class="code" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> <a class="code" href="class_non_joueur.html#a0c184d9692270276aa7cd3613e096784">getType</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> type;}</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    Type type;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> type;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_joueur.html">  136</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_joueur.html">Joueur</a>: <span class="keyword">public</span> <a class="code" href="class_entite.html">Entite</a> {</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//constructeur &amp; destructeur</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="class_joueur.html">Joueur</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<span class="keywordtype">double</span> speed,std::string nom,Choix_Algo choix):</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">  139</a></span>&#160;    <a class="code" href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Joueur</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<span class="keywordtype">double</span> speed,std::string nom,<a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> choix):</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="class_entite.html">Entite</a>(pos),speed(speed),nom(nom),destination(pos),Algo(choix){</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    };</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_joueur.html">Joueur</a>() =<span class="keywordflow">default</span>; <span class="comment">// destructeur retiré pour que celui de Voleur et Gendarme soient utilisés</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">~Joueur</a>() =<span class="keywordflow">default</span>; <span class="comment">// destructeur retiré pour que celui de Voleur et Gendarme soient utilisés</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//accesseurs</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">//getters</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">double</span> getSpeed()<span class="keyword">const</span>{<span class="keywordflow">return</span> speed;}</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    std::string getNom()<span class="keyword">const</span>{<span class="keywordflow">return</span> nom;}</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="class_position.html">Position</a> getDestination()<span class="keyword">const</span>{<span class="keywordflow">return</span> destination;}</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    Choix_Algo getAlgo()<span class="keyword">const</span>{<span class="keywordflow">return</span> Algo;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_joueur.html#a883d23307fb862a01c57eeb983cf3aab">  148</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_joueur.html#a883d23307fb862a01c57eeb983cf3aab">getSpeed</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> speed;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_joueur.html#a04eaeeda184cfba380d5210bc035a8ed">  149</a></span>&#160;    std::string <a class="code" href="class_joueur.html#a04eaeeda184cfba380d5210bc035a8ed">getNom</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> nom;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="class_joueur.html#a7f9df3378942d1e0f698801e7318b227">  150</a></span>&#160;    <a class="code" href="class_position.html">Position</a> <a class="code" href="class_joueur.html#a7f9df3378942d1e0f698801e7318b227">getDestination</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> destination;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="class_joueur.html#a9cc463acd630c78cb4e27d0d7f4b3834">  151</a></span>&#160;    <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> <a class="code" href="class_joueur.html#a9cc463acd630c78cb4e27d0d7f4b3834">getAlgo</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> Algo;}</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">//setters</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> setDestination(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp;pos){destination=pos;this-&gt;setPosition(destination);}</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> setAlgo(Choix_Algo <span class="keyword">const</span> choix) {Algo=choix;}</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="class_joueur.html#a4932f85db45861875de78bd51e019bfb">  154</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#a4932f85db45861875de78bd51e019bfb">setDestination</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp;pos){destination=pos;this-&gt;<a class="code" href="class_entite.html#ac432ef254ab09d2f6267dd268b0d856f">setPosition</a>(destination);}</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="class_joueur.html#a302f0b771e40eb1d3b3478895c2f0649">  155</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#a302f0b771e40eb1d3b3478895c2f0649">setAlgo</a>(<a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> <span class="keyword">const</span> choix) {Algo=choix;}</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//méthode virtuelle</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> deplacement() =0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_joueur.html#ac1953bb1542fab6034567814709b814e">deplacement</a>() =0;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">//méthodes</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_position.html">Direction</a> Se_Rapprocher(<a class="code" href="class_joueur.html">Joueur</a> &amp; J);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="class_position.html">Direction</a> Fuir (<a class="code" href="class_joueur.html">Joueur</a> &amp; J);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_position.html">Direction</a> <a class="code" href="class_joueur.html#afd1dc764155979aa2de85ad8235169e5">Se_Rapprocher</a>(<a class="code" href="class_joueur.html">Joueur</a> &amp; J);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="class_position.html">Direction</a> <a class="code" href="class_joueur.html#a53b19118e1aeb126e27b2f271666a370">Fuir</a> (<a class="code" href="class_joueur.html">Joueur</a> &amp; J);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">double</span> speed;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::string nom;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="class_position.html">Position</a> destination;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    Choix_Algo Algo;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> Algo;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;};</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">class </span><a class="code" href="class_gendarme.html">Gendarme</a>; <span class="comment">// Déclaration pour faire appel à la fonction Gendarme_Plus_Proche</span></div>
@@ -245,45 +276,107 @@ $(function() {
 <div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="class_voleur.html">  173</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_voleur.html">Voleur</a> : <span class="keyword">public</span> <a class="code" href="class_joueur.html">Joueur</a>{</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//constructeurs</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_voleur.html">Voleur</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<span class="keywordtype">double</span> speed,std::string nom, Choix_Algo choix):</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="class_voleur.html#a1b16e4189c794ad76da3a00255e777f7">  176</a></span>&#160;    <a class="code" href="class_voleur.html#a1b16e4189c794ad76da3a00255e777f7">Voleur</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<span class="keywordtype">double</span> speed,std::string nom, <a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> choix):</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="class_joueur.html">Joueur</a>(pos,speed,nom,choix){</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        };</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">//redefinition du constructeur virtuel</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="class_voleur.html">Voleur</a>* clone()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_voleur.html">Voleur</a>(*<span class="keyword">this</span>);}</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_voleur.html#a48544c2cbef2f23e404c974190a319bc">  181</a></span>&#160;    <a class="code" href="class_voleur.html">Voleur</a>* <a class="code" href="class_voleur.html#a48544c2cbef2f23e404c974190a319bc">clone</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_voleur.html#a1b16e4189c794ad76da3a00255e777f7">Voleur</a>(*<span class="keyword">this</span>);}</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">//méthodes</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> deplacement() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a> Gendarme_Plus_Proche(std::vector&lt;Gendarme*&gt; Liste);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_voleur.html#aaa61cda6fa489ffdb00d8f7dfc483c09">deplacement</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a> <a class="code" href="class_voleur.html#a30e9b3d41e84f7366dcd6fdad3a00248">Gendarme_Plus_Proche</a>(std::vector&lt;Gendarme*&gt; Liste);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;};</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="class_gendarme.html">  188</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_gendarme.html">Gendarme</a> : <span class="keyword">public</span> <a class="code" href="class_joueur.html">Joueur</a> {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">//constructeurs</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<span class="keywordtype">double</span> speed,std::string nom,Choix_Algo choix):</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="class_gendarme.html#a21488c95f7546a8fe40c370e59ffbd0d">  191</a></span>&#160;    <a class="code" href="class_gendarme.html#a21488c95f7546a8fe40c370e59ffbd0d">Gendarme</a>(<a class="code" href="class_position.html">Position</a> <span class="keyword">const</span> &amp; pos,<span class="keywordtype">double</span> speed,std::string nom,<a class="code" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> choix):</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="class_joueur.html">Joueur</a>(pos,speed,nom,choix){</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        };</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">//redefinition du constructeur virtuel</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a>* clone()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_gendarme.html">Gendarme</a>(*<span class="keyword">this</span>);}</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="class_gendarme.html#acdc7b6fc9ab2eed8661ce7d5e01d83a6">  196</a></span>&#160;    <a class="code" href="class_gendarme.html">Gendarme</a>* <a class="code" href="class_gendarme.html#acdc7b6fc9ab2eed8661ce7d5e01d83a6">clone</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_gendarme.html#a21488c95f7546a8fe40c370e59ffbd0d">Gendarme</a>(*<span class="keyword">this</span>);}</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//méthodes</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> deplacement() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="class_voleur.html">Voleur</a> Voleur_Plus_Proche(std::vector&lt;Voleur*&gt; Liste);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_gendarme.html#a20e4ee82f68db4567577b5788a7b9e53">deplacement</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="class_voleur.html">Voleur</a> <a class="code" href="class_gendarme.html#a3a683ae4080f656b95b584f50b76439c">Voleur_Plus_Proche</a>(std::vector&lt;Voleur*&gt; Liste);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_position_html_ab2465b63e44c30a27b315d9ac87e3ee1"><div class="ttname"><a href="class_position.html#ab2465b63e44c30a27b315d9ac87e3ee1">Position::setY</a></div><div class="ttdeci">void setY(double const &amp;nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:46</div></div>
 <div class="ttc" id="aclass_joueur_html"><div class="ttname"><a href="class_joueur.html">Joueur</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:136</div></div>
+<div class="ttc" id="aclass_joueur_html_a9cc463acd630c78cb4e27d0d7f4b3834"><div class="ttname"><a href="class_joueur.html#a9cc463acd630c78cb4e27d0d7f4b3834">Joueur::getAlgo</a></div><div class="ttdeci">Choix_Algo getAlgo() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:151</div></div>
 <div class="ttc" id="aclass_hitbox_html"><div class="ttname"><a href="class_hitbox.html">Hitbox</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:61</div></div>
+<div class="ttc" id="aclass_joueur_html_aea68cdc4b07364339f82f2da73d85f36"><div class="ttname"><a href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Joueur::Joueur</a></div><div class="ttdeci">Joueur(Position const &amp;pos, double speed, std::string nom, Choix_Algo choix)</div><div class="ttdef"><b>Definition:</b> Entites.hh:139</div></div>
+<div class="ttc" id="aclass_position_html_a338a68b8a203304e9598b137851fc212"><div class="ttname"><a href="class_position.html#a338a68b8a203304e9598b137851fc212">Position::operator+</a></div><div class="ttdeci">Position operator+(Position const &amp;d)</div><div class="ttdef"><b>Definition:</b> Entites.cc:168</div></div>
+<div class="ttc" id="aclass_voleur_html_a1b16e4189c794ad76da3a00255e777f7"><div class="ttname"><a href="class_voleur.html#a1b16e4189c794ad76da3a00255e777f7">Voleur::Voleur</a></div><div class="ttdeci">Voleur(Position const &amp;pos, double speed, std::string nom, Choix_Algo choix)</div><div class="ttdef"><b>Definition:</b> Entites.hh:176</div></div>
+<div class="ttc" id="aclass_entite_html_ac432ef254ab09d2f6267dd268b0d856f"><div class="ttname"><a href="class_entite.html#ac432ef254ab09d2f6267dd268b0d856f">Entite::setPosition</a></div><div class="ttdeci">void setPosition(Position nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:98</div></div>
 <div class="ttc" id="aclass_voleur_html"><div class="ttname"><a href="class_voleur.html">Voleur</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:173</div></div>
+<div class="ttc" id="a_entites_8hh_html_aac49c294d628ab23fd82a93da14fb29baf6e660ced42e946f69a41cc473d923cc"><div class="ttname"><a href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29baf6e660ced42e946f69a41cc473d923cc">Choix_Algo::bas</a></div></div>
+<div class="ttc" id="a_entites_8hh_html_a1d1cfd8ffb84e947f82999c682b666a7"><div class="ttname"><a href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Entites.hh:21</div></div>
+<div class="ttc" id="aclass_joueur_html_a4932f85db45861875de78bd51e019bfb"><div class="ttname"><a href="class_joueur.html#a4932f85db45861875de78bd51e019bfb">Joueur::setDestination</a></div><div class="ttdeci">void setDestination(Position const &amp;pos)</div><div class="ttdef"><b>Definition:</b> Entites.hh:154</div></div>
+<div class="ttc" id="a_entites_8hh_html_aac49c294d628ab23fd82a93da14fb29ba7ddf32e17a6ac5ce04a8ecbf782ca509"><div class="ttname"><a href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba7ddf32e17a6ac5ce04a8ecbf782ca509">Choix_Algo::random</a></div></div>
 <div class="ttc" id="aclass_entite_html"><div class="ttname"><a href="class_entite.html">Entite</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:86</div></div>
+<div class="ttc" id="aclass_position_html_aa20c621178e22416f14fbe3083b00403"><div class="ttname"><a href="class_position.html#aa20c621178e22416f14fbe3083b00403">Position::operator==</a></div><div class="ttdeci">bool operator==(Position const &amp;d)</div><div class="ttdef"><b>Definition:</b> Entites.cc:182</div></div>
+<div class="ttc" id="aclass_gendarme_html_a3a683ae4080f656b95b584f50b76439c"><div class="ttname"><a href="class_gendarme.html#a3a683ae4080f656b95b584f50b76439c">Gendarme::Voleur_Plus_Proche</a></div><div class="ttdeci">Voleur Voleur_Plus_Proche(std::vector&lt; Voleur * &gt; Liste)</div><div class="ttdef"><b>Definition:</b> Entites.cc:55</div></div>
+<div class="ttc" id="aclass_entite_html_a1ccd07ff8f265353b657bc348c978efe"><div class="ttname"><a href="class_entite.html#a1ccd07ff8f265353b657bc348c978efe">Entite::getDistance_From</a></div><div class="ttdeci">double getDistance_From(Entite E)</div><div class="ttdef"><b>Definition:</b> Entites.cc:152</div></div>
+<div class="ttc" id="aclass_hitbox_html_a1bf0baca3e029e4011d380c4b9243741"><div class="ttname"><a href="class_hitbox.html#a1bf0baca3e029e4011d380c4b9243741">Hitbox::getB</a></div><div class="ttdeci">double getB() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:72</div></div>
+<div class="ttc" id="aclass_position_html_a83ae4a9db1a4f29e5a43e5592b65f095"><div class="ttname"><a href="class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095">Position::getY</a></div><div class="ttdeci">double getY() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:45</div></div>
+<div class="ttc" id="a_entites_8hh_html_aac49c294d628ab23fd82a93da14fb29b"><div class="ttname"><a href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a></div><div class="ttdeci">Choix_Algo</div><div class="ttdef"><b>Definition:</b> Entites.hh:28</div></div>
 <div class="ttc" id="aclass_non_joueur_html"><div class="ttname"><a href="class_non_joueur.html">NonJoueur</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:123</div></div>
+<div class="ttc" id="aclass_hitbox_html_a5c63a10c35934c3f4b6672f1a03ec8f7"><div class="ttname"><a href="class_hitbox.html#a5c63a10c35934c3f4b6672f1a03ec8f7">Hitbox::setG</a></div><div class="ttdeci">void setG(double const &amp;nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:79</div></div>
+<div class="ttc" id="aclass_entite_html_a89d2eacf7270905863521e5c7a74a40e"><div class="ttname"><a href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Entite::Entite</a></div><div class="ttdeci">Entite(Position const &amp;pos)</div><div class="ttdef"><b>Definition:</b> Entites.cc:121</div></div>
+<div class="ttc" id="aclass_joueur_html_a7f9df3378942d1e0f698801e7318b227"><div class="ttname"><a href="class_joueur.html#a7f9df3378942d1e0f698801e7318b227">Joueur::getDestination</a></div><div class="ttdeci">Position getDestination() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:150</div></div>
+<div class="ttc" id="aclass_joueur_html_a302f0b771e40eb1d3b3478895c2f0649"><div class="ttname"><a href="class_joueur.html#a302f0b771e40eb1d3b3478895c2f0649">Joueur::setAlgo</a></div><div class="ttdeci">void setAlgo(Choix_Algo const choix)</div><div class="ttdef"><b>Definition:</b> Entites.hh:155</div></div>
+<div class="ttc" id="aclass_gendarme_html_a20e4ee82f68db4567577b5788a7b9e53"><div class="ttname"><a href="class_gendarme.html#a20e4ee82f68db4567577b5788a7b9e53">Gendarme::deplacement</a></div><div class="ttdeci">void deplacement() override</div><div class="ttdef"><b>Definition:</b> Entites.cc:15</div></div>
+<div class="ttc" id="aclass_hitbox_html_a698820a5f45987919f13573934843195"><div class="ttname"><a href="class_hitbox.html#a698820a5f45987919f13573934843195">Hitbox::setB</a></div><div class="ttdeci">void setB(double const &amp;nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:78</div></div>
+<div class="ttc" id="aclass_entite_html_a963fe64369d736c7b33b9671f0b93bc3"><div class="ttname"><a href="class_entite.html#a963fe64369d736c7b33b9671f0b93bc3">Entite::setHitbox</a></div><div class="ttdeci">void setHitbox()</div><div class="ttdef"><b>Definition:</b> Entites.cc:100</div></div>
+<div class="ttc" id="aclass_non_joueur_html_a0c184d9692270276aa7cd3613e096784"><div class="ttname"><a href="class_non_joueur.html#a0c184d9692270276aa7cd3613e096784">NonJoueur::getType</a></div><div class="ttdeci">Type getType() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:130</div></div>
+<div class="ttc" id="aclass_entite_html_ad6a7464bbaeb55e205040bec3c870418"><div class="ttname"><a href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Entite::Affiche_Hitbox</a></div><div class="ttdeci">std::string Affiche_Hitbox()</div><div class="ttdef"><b>Definition:</b> Entites.cc:109</div></div>
 <div class="ttc" id="aclass_gendarme_html"><div class="ttname"><a href="class_gendarme.html">Gendarme</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:188</div></div>
+<div class="ttc" id="aclass_entite_html_a3d4f13a4c32eda908922dd9525facbc9"><div class="ttname"><a href="class_entite.html#a3d4f13a4c32eda908922dd9525facbc9">Entite::getHitbox</a></div><div class="ttdeci">Hitbox getHitbox() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:106</div></div>
+<div class="ttc" id="aclass_entite_html_a71cdfaa090f6bdc0c94ff4cc2c9c92db"><div class="ttname"><a href="class_entite.html#a71cdfaa090f6bdc0c94ff4cc2c9c92db">Entite::getItem</a></div><div class="ttdeci">QGraphicsRectItem * getItem() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:112</div></div>
+<div class="ttc" id="aclass_hitbox_html_a37d2d16d1a9a43dc2da95193aac05331"><div class="ttname"><a href="class_hitbox.html#a37d2d16d1a9a43dc2da95193aac05331">Hitbox::setH</a></div><div class="ttdeci">void setH(double const &amp;nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:77</div></div>
+<div class="ttc" id="aclass_gendarme_html_acdc7b6fc9ab2eed8661ce7d5e01d83a6"><div class="ttname"><a href="class_gendarme.html#acdc7b6fc9ab2eed8661ce7d5e01d83a6">Gendarme::clone</a></div><div class="ttdeci">Gendarme * clone() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:196</div></div>
+<div class="ttc" id="aclass_hitbox_html_a3c907f386c56070386949af96de6a4a3"><div class="ttname"><a href="class_hitbox.html#a3c907f386c56070386949af96de6a4a3">Hitbox::getH</a></div><div class="ttdeci">double getH() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:71</div></div>
 <div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Entites.hh:35</div></div>
+<div class="ttc" id="aclass_joueur_html_a883d23307fb862a01c57eeb983cf3aab"><div class="ttname"><a href="class_joueur.html#a883d23307fb862a01c57eeb983cf3aab">Joueur::getSpeed</a></div><div class="ttdeci">double getSpeed() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:148</div></div>
+<div class="ttc" id="aclass_position_html_a9a92c54bccad78bbd06223c99064e650"><div class="ttname"><a href="class_position.html#a9a92c54bccad78bbd06223c99064e650">Position::setX</a></div><div class="ttdeci">void setX(double const &amp;nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:44</div></div>
+<div class="ttc" id="aclass_joueur_html_a53b19118e1aeb126e27b2f271666a370"><div class="ttname"><a href="class_joueur.html#a53b19118e1aeb126e27b2f271666a370">Joueur::Fuir</a></div><div class="ttdeci">Direction Fuir(Joueur &amp;J)</div><div class="ttdef"><b>Definition:</b> Entites.cc:43</div></div>
+<div class="ttc" id="aclass_hitbox_html_acbca0f4f5eda0268e33910b3afd4736b"><div class="ttname"><a href="class_hitbox.html#acbca0f4f5eda0268e33910b3afd4736b">Hitbox::getG</a></div><div class="ttdeci">double getG() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:73</div></div>
+<div class="ttc" id="aclass_entite_html_aa0d688d26c6836fe586ebf79eae579e3"><div class="ttname"><a href="class_entite.html#aa0d688d26c6836fe586ebf79eae579e3">Entite::getId</a></div><div class="ttdeci">unsigned int getId() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:94</div></div>
+<div class="ttc" id="aclass_joueur_html_a04eaeeda184cfba380d5210bc035a8ed"><div class="ttname"><a href="class_joueur.html#a04eaeeda184cfba380d5210bc035a8ed">Joueur::getNom</a></div><div class="ttdeci">std::string getNom() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:149</div></div>
+<div class="ttc" id="aclass_hitbox_html_a399bf485b4c664e8aeeba7e0b7b2a600"><div class="ttname"><a href="class_hitbox.html#a399bf485b4c664e8aeeba7e0b7b2a600">Hitbox::setD</a></div><div class="ttdeci">void setD(double const &amp;nouv)</div><div class="ttdef"><b>Definition:</b> Entites.hh:80</div></div>
+<div class="ttc" id="aclass_entite_html_abad0bb9ca169b5829bc615451274cd46"><div class="ttname"><a href="class_entite.html#abad0bb9ca169b5829bc615451274cd46">Entite::getPosition</a></div><div class="ttdeci">Position getPosition() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:97</div></div>
+<div class="ttc" id="aclass_position_html_a10a2a09ec64310f42138f98238ec5fbd"><div class="ttname"><a href="class_position.html#a10a2a09ec64310f42138f98238ec5fbd">Position::getX</a></div><div class="ttdeci">double getX() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:43</div></div>
+<div class="ttc" id="aclass_entite_html_abe3f29c00cc58cd952e1076afa7ee138"><div class="ttname"><a href="class_entite.html#abe3f29c00cc58cd952e1076afa7ee138">Entite::Affiche_Position</a></div><div class="ttdeci">std::string Affiche_Position()</div><div class="ttdef"><b>Definition:</b> Entites.hh:102</div></div>
+<div class="ttc" id="aclass_joueur_html_afd1dc764155979aa2de85ad8235169e5"><div class="ttname"><a href="class_joueur.html#afd1dc764155979aa2de85ad8235169e5">Joueur::Se_Rapprocher</a></div><div class="ttdeci">Direction Se_Rapprocher(Joueur &amp;J)</div><div class="ttdef"><b>Definition:</b> Entites.cc:23</div></div>
+<div class="ttc" id="aclass_position_html_a509106e4b677a9c7266a6579b24cfc67"><div class="ttname"><a href="class_position.html#a509106e4b677a9c7266a6579b24cfc67">Position::Position</a></div><div class="ttdeci">Position(double const &amp;x, double const &amp;y)</div><div class="ttdef"><b>Definition:</b> Entites.hh:39</div></div>
+<div class="ttc" id="aclass_entite_html_a01aa4b9bd81b3fa2987f6a419662edf0"><div class="ttname"><a href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Entite::Hitbox_touche</a></div><div class="ttdeci">bool Hitbox_touche(Entite &amp;E)</div><div class="ttdef"><b>Definition:</b> Entites.cc:130</div></div>
+<div class="ttc" id="aclass_joueur_html_ac1953bb1542fab6034567814709b814e"><div class="ttname"><a href="class_joueur.html#ac1953bb1542fab6034567814709b814e">Joueur::deplacement</a></div><div class="ttdeci">virtual void deplacement()=0</div></div>
+<div class="ttc" id="aclass_voleur_html_a30e9b3d41e84f7366dcd6fdad3a00248"><div class="ttname"><a href="class_voleur.html#a30e9b3d41e84f7366dcd6fdad3a00248">Voleur::Gendarme_Plus_Proche</a></div><div class="ttdeci">Gendarme Gendarme_Plus_Proche(std::vector&lt; Gendarme * &gt; Liste)</div><div class="ttdef"><b>Definition:</b> Entites.cc:76</div></div>
+<div class="ttc" id="aclass_gendarme_html_a21488c95f7546a8fe40c370e59ffbd0d"><div class="ttname"><a href="class_gendarme.html#a21488c95f7546a8fe40c370e59ffbd0d">Gendarme::Gendarme</a></div><div class="ttdeci">Gendarme(Position const &amp;pos, double speed, std::string nom, Choix_Algo choix)</div><div class="ttdef"><b>Definition:</b> Entites.hh:191</div></div>
+<div class="ttc" id="a_entites_8hh_html_a1d1cfd8ffb84e947f82999c682b666a7a9d414651fe8820061b0485fe70f1cdb2"><div class="ttname"><a href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7a9d414651fe8820061b0485fe70f1cdb2">Type::sortie</a></div></div>
+<div class="ttc" id="aclass_entite_html_ae4afbb94196a1822698ce8854bd19ac4"><div class="ttname"><a href="class_entite.html#ae4afbb94196a1822698ce8854bd19ac4">Entite::setItem</a></div><div class="ttdeci">void setItem(Position const &amp;pos)</div><div class="ttdef"><b>Definition:</b> Entites.hh:113</div></div>
+<div class="ttc" id="aclass_joueur_html_a70578940a2e923aadc568e6714706ed8"><div class="ttname"><a href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">Joueur::~Joueur</a></div><div class="ttdeci">virtual ~Joueur()=default</div></div>
+<div class="ttc" id="aclass_hitbox_html_a024061687f3562c9eb3db66b99ea5c43"><div class="ttname"><a href="class_hitbox.html#a024061687f3562c9eb3db66b99ea5c43">Hitbox::getD</a></div><div class="ttdeci">double getD() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:74</div></div>
+<div class="ttc" id="aclass_voleur_html_a48544c2cbef2f23e404c974190a319bc"><div class="ttname"><a href="class_voleur.html#a48544c2cbef2f23e404c974190a319bc">Voleur::clone</a></div><div class="ttdeci">Voleur * clone() const</div><div class="ttdef"><b>Definition:</b> Entites.hh:181</div></div>
+<div class="ttc" id="aclass_voleur_html_aaa61cda6fa489ffdb00d8f7dfc483c09"><div class="ttname"><a href="class_voleur.html#aaa61cda6fa489ffdb00d8f7dfc483c09">Voleur::deplacement</a></div><div class="ttdeci">void deplacement() override</div><div class="ttdef"><b>Definition:</b> Entites.cc:7</div></div>
+<div class="ttc" id="a_entites_8hh_html_aac49c294d628ab23fd82a93da14fb29ba87bd21f69a6bfe2708bac03724c9be48"><div class="ttname"><a href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba87bd21f69a6bfe2708bac03724c9be48">Choix_Algo::Gendarme_Chasseurs</a></div></div>
+<div class="ttc" id="a_entites_8hh_html_aac49c294d628ab23fd82a93da14fb29ba3ebb3fd63d4e9f9124c0196eb883c7ec"><div class="ttname"><a href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba3ebb3fd63d4e9f9124c0196eb883c7ec">Choix_Algo::haut</a></div></div>
+<div class="ttc" id="aclass_position_html_a54a8992507e99dc3e627a2b850e0dc52"><div class="ttname"><a href="class_position.html#a54a8992507e99dc3e627a2b850e0dc52">Position::operator*</a></div><div class="ttdeci">Position operator*(double mult)</div><div class="ttdef"><b>Definition:</b> Entites.cc:175</div></div>
+<div class="ttc" id="aclass_hitbox_html_a90efd9d3f3abaf9cbef8d8e9fc20a4b1"><div class="ttname"><a href="class_hitbox.html#a90efd9d3f3abaf9cbef8d8e9fc20a4b1">Hitbox::Hitbox</a></div><div class="ttdeci">Hitbox(double const &amp;H, double const &amp;B, double const &amp;G, double const &amp;D)</div><div class="ttdef"><b>Definition:</b> Entites.hh:65</div></div>
+<div class="ttc" id="a_entites_8hh_html_a1d1cfd8ffb84e947f82999c682b666a7a03e66bbda52953e53e1b31d486a9072e"><div class="ttname"><a href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7a03e66bbda52953e53e1b31d486a9072e">Type::cachette</a></div></div>
+<div class="ttc" id="aclass_non_joueur_html_ac697085808fa2b8ac90ed27bb807df1d"><div class="ttname"><a href="class_non_joueur.html#ac697085808fa2b8ac90ed27bb807df1d">NonJoueur::NonJoueur</a></div><div class="ttdeci">NonJoueur(Position const &amp;pos, Type const &amp;t)</div><div class="ttdef"><b>Definition:</b> Entites.hh:126</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="_entites_8hh.html">Entites.hh</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

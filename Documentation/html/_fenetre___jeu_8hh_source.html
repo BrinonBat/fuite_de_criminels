@@ -5,13 +5,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fuite de criminels:  Fichier source de Fenetre_Qt/Fenetre_Jeu.hh</title>
+<title>Fuite de criminels:  Fichier source de Source/Fenetre_Jeu.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,9 +35,25 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fuite de criminels
-   &#160;<span id="projectnumber">2.1</span>
+   &#160;<span id="projectnumber">v2.2</span>
    </div>
+   <div id="projectbrief">early alpha</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +65,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_fenetre___jeu_8hh_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,50 +96,55 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_1b335782890350683f587e335c1d0c2e.html">Fenetre_Qt</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Fenetre_Jeu.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="_fenetre___jeu_8hh.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QtWidgets&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QCloseEvent&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Entites.hh&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_entites_8hh.html">Entites.hh</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_fenetre___jeu.html">Fenetre_Jeu</a> : <span class="keyword">public</span> QWidget {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_fenetre___jeu.html">Fenetre_Jeu</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_fenetre___jeu.html#a5880e1058773a1c8a3c52c05636a86f7">Fenetre_Jeu</a>();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    QGraphicsScene * _Scene;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    QGraphicsView * _View;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> Fenetre_Apercu;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f">   13</a></span>&#160;    QGraphicsScene * <a class="code" href="class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f">_Scene</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338">   14</a></span>&#160;    QGraphicsView * <a class="code" href="class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338">_View</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">   15</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Apercu</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> closeEvent(QCloseEvent *event)</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">closeEvent</a>(QCloseEvent *event)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (!Fenetre_Apercu){</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Apercu</a>){</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    exit(0);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QWidget::closeEvent(event);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Fenetre_Apercu = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Apercu</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_fenetre___jeu_html_a4a6a48d4dea33f6c925ffe8c8798beaa"><div class="ttname"><a href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Jeu::Fenetre_Apercu</a></div><div class="ttdeci">bool Fenetre_Apercu</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:15</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a8289d7f48670f2a613e07df8822c5500"><div class="ttname"><a href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">Fenetre_Jeu::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event)</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:17</div></div>
+<div class="ttc" id="a_entites_8hh_html"><div class="ttname"><a href="_entites_8hh.html">Entites.hh</a></div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_ae85dd77d3f1bf39a88b7452d2086d34f"><div class="ttname"><a href="class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f">Fenetre_Jeu::_Scene</a></div><div class="ttdeci">QGraphicsScene * _Scene</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:13</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_ae8adf7b05f90be7407f98dcbc6bd5338"><div class="ttname"><a href="class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338">Fenetre_Jeu::_View</a></div><div class="ttdeci">QGraphicsView * _View</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:14</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a5880e1058773a1c8a3c52c05636a86f7"><div class="ttname"><a href="class_fenetre___jeu.html#a5880e1058773a1c8a3c52c05636a86f7">Fenetre_Jeu::Fenetre_Jeu</a></div><div class="ttdeci">Fenetre_Jeu()</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.cc:5</div></div>
 <div class="ttc" id="aclass_fenetre___jeu_html"><div class="ttname"><a href="class_fenetre___jeu.html">Fenetre_Jeu</a></div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:7</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="_fenetre___jeu_8hh.html">Fenetre_Jeu.hh</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>
