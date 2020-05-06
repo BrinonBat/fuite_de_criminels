@@ -33,6 +33,10 @@ private slots :
 	void Ajouter_NonJoueur();
 
 	void Apercu();
+
+	void Configuration_Partie();
+	void Jouer_Partie();
+
 	void Lancer_Partie();
 	
 	void Choix_Exemple();
@@ -68,6 +72,7 @@ private :
 	QLabel * _Liste;
 
 	Jeu * Game;
+	Fenetre_Jeu * Fenetre_Game;
 
 }; 
 
