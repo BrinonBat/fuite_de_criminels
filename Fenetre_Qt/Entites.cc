@@ -1,10 +1,30 @@
 #include "Entites.hh"
 
+unsigned int Entite::compteur(0);//compteur permettant d'attribuer des ID uniques.
 
+/*************************************** IAs *******************************************/
 
+void Entite::setHitbox(){
 
-unsigned int Entite::compteur(0);
-/************************** IAs **************************/
+	HB.setH(getPosition().getY()+(TAILLE_HITBOX/2));
+	HB.setB(getPosition().getY()-(TAILLE_HITBOX/2));
+	HB.setG(getPosition().getX()-(TAILLE_HITBOX/2));
+	HB.setD(getPosition().getX()+(TAILLE_HITBOX/2));
+
+}
+
+std::string Entite::Affiche_Hitbox(){
+
+	// "Hitbox: (G,D,H,B)"
+	return "Hitbox:("
+		+std::to_string(this->HB.getG())+","
+		+std::to_string(this->HB.getD())+","
+		+std::to_string(this->HB.getH())+","
+		+std::to_string(this->HB.getB())+
+	")";
+
+}
+
 void Voleur::deplacement(){
 
 	//calcul de la nouvelle position
@@ -12,98 +32,104 @@ void Voleur::deplacement(){
 	this->setHitbox();
 
 }
+
 void Gendarme::deplacement(){
 
 	//calcul de la nouvelle position
 	this->setPosition(this->getDestination());
 	this->setHitbox();
-	
+
 }
 
-Direction Joueur::Se_Rapprocher(Joueur & J)
-{
+Direction Joueur::Se_Rapprocher(Joueur & J){
+
+	//déclarations
 	double x,y;
 
-	if (J.getPosition().getX()>this->getPosition().getX())
-	{
-		x=1;
-	}
-	else if (J.getPosition().getX()<getPosition().getX())
-	{
-		x=-1;
-	}
-	else {
-		x=0;
-	}
+	//traitement de X
+	if (J.getPosition().getX()>this->getPosition().getX()) x=1;
+	else if (J.getPosition().getX()<getPosition().getX()) x=-1;
+	else x=0;
 
-	if (J.getPosition().getY()>this->getPosition().getY())
-	{
-		y=1;
-	}
-	else if (J.getPosition().getY()<getPosition().getY())
-	{
-		y=-1;
-	}
-	else {
-		y=0;
-	}
+	//traitement de Y
+	if (J.getPosition().getY()>this->getPosition().getY()) y=1;
+	else if (J.getPosition().getY()<getPosition().getY()) y=-1;
+	else y=0;
 
+	//retourne la direction à emprunter
 	return Direction(x,y);
+
 }
 
-Direction Joueur::Fuir(Joueur & J)
-{
+Direction Joueur::Fuir(Joueur & J){
+
+	//Pour fuir, on exécute l'action contraire à celle de se rapprocher
 	Direction D = Se_Rapprocher(J);
 	D.setX(-D.getX());
 	D.setY(-D.getY());
 
+	//retourne la diréction à emprunter
 	return D;
+
 }
 
-Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> Liste)
-{
+Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> Liste){
+
+	//définitions
 	double distance = 1000;
 	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
 
-	for (auto && i : Liste)
-	{
-		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision 
-		if (this->getDistance_From(*i)<distance)
-		{
-			distance = this->getDistance_From(*i);
-			V = *i;	
-		}
-	}
+	//traitement pour chaque voleur
+	for (auto && voleur : Liste){
+
+		//On récupére la distance du voleur actuel, et la comparons à celle du plus proche connu.
+		//Si elle lui est inférieure, le voleur est donc le nouveau plus proche
+		if (this->getDistance_From(*voleur)<distance /*and this->getDistance_From(*i)<50*/){
+			distance = this->getDistance_From(*voleur);
+			V = *voleur;
+		}//fin voleur actuel
+	}//fin liste voleurs
+
+	//fin
 	return V;
 }
 
 
-Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste)
-{
+Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste){
+
+	//définition
 	double distance = 1000;
 	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
 
-	for (auto && i : Liste)
-	{
-		// (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<50) -> pour donner un champs de vision 
-		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20)
-		{
+	//traitement pour chaque gendarme
+	for (auto && i : Liste){
+
+		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
+		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
+		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20){
 			distance = this->getDistance_From(*i);
-			G = *i;	
-		}
-	}
+			G = *i;
+		}//fin gendarme actuel
+	}//fin liste gendarmes
+
+	//fin
 	return G;
+
 }
 
 
-/************************* autre *************************/
+/******************************************* autre *******************************************/
 
-Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),pos.getY()-(TAILLE_HITBOX/2),pos.getX()-(TAILLE_HITBOX/2),pos.getX()+(TAILLE_HITBOX/2)){
+Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),
+		pos.getY()-(TAILLE_HITBOX/2),
+		pos.getX()-(TAILLE_HITBOX/2),
+		pos.getX()+(TAILLE_HITBOX/2))
+{
 	item = new QGraphicsRectItem(0,0,(TAILLE_HITBOX),(TAILLE_HITBOX));
 	item->setPos(pos.getX(),pos.getY());
 }
 
-bool Entite::Hitbox_touche(Entite &J2) 
+bool Entite::Hitbox_touche(Entite &J2)
 {
 	return (
 	((this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG()) && ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH()) or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB()))))
