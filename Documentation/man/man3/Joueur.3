@@ -1,0 +1,50 @@
+.TH "Joueur" 3 "Mercredi 6 Mai 2020" "Version 2.1" "Fuite de criminels" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Joueur
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de \fBEntite\fP\&.
+.PP
+Dérivée par \fBGendarme\fP, et \fBVoleur\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBJoueur\fP (\fBPosition\fP const &pos, double speed, std::string nom, Choix_Algo choix)"
+.br
+.ti -1c
+.RI "double \fBgetSpeed\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetNom\fP () const"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBgetDestination\fP () const"
+.br
+.ti -1c
+.RI "Choix_Algo \fBgetAlgo\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDestination\fP (\fBPosition\fP const &pos)"
+.br
+.ti -1c
+.RI "void \fBsetAlgo\fP (Choix_Algo const choix)"
+.br
+.ti -1c
+.RI "virtual void \fBdeplacement\fP ()=0"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fBSe_Rapprocher\fP (\fBJoueur\fP &J)"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fBFuir\fP (\fBJoueur\fP &J)"
+.br
+.in -1c
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Fuite de criminels à partir du code source\&.

@@ -1,0 +1,54 @@
+.TH "Entite" 3 "Mercredi 6 Mai 2020" "Version 2.1" "Fuite de criminels" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Entite
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dérivée par \fBJoueur\fP, et \fBNonJoueur\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBEntite\fP (\fBPosition\fP const &pos)"
+.br
+.ti -1c
+.RI "unsigned int \fBgetId\fP () const"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBgetPosition\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (\fBPosition\fP nouv)"
+.br
+.ti -1c
+.RI "std::string \fBAffiche_Position\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetDistance_From\fP (\fBEntite\fP E)"
+.br
+.ti -1c
+.RI "\fBHitbox\fP \fBgetHitbox\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHitbox\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBAffiche_Hitbox\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHitbox_touche\fP (\fBEntite\fP &E)"
+.br
+.ti -1c
+.RI "QGraphicsRectItem * \fBgetItem\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetItem\fP (\fBPosition\fP const &pos)"
+.br
+.in -1c
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Fuite de criminels à partir du code source\&.

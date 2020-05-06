@@ -1,0 +1,100 @@
+.TH "Jeu" 3 "Mercredi 6 Mai 2020" "Version 2.1" "Fuite de criminels" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Jeu
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBJeu\fP (double plargeur, double phauteur)"
+.br
+.ti -1c
+.RI "\fBJeu\fP (\fBJeu\fP const &JeuCopier)"
+.br
+.ti -1c
+.RI "const \fBVoleur\fP & \fBgetVoleur\fP (std::size_t num) const"
+.br
+.ti -1c
+.RI "void \fBajouter_voleur\fP (\fBVoleur\fP const &V)"
+.br
+.ti -1c
+.RI "void \fBsupprimer_voleur\fP (\fBVoleur\fP &V)"
+.br
+.ti -1c
+.RI "const \fBGendarme\fP & \fBgetGendarme\fP (std::size_t num) const"
+.br
+.ti -1c
+.RI "void \fBajouter_gendarme\fP (\fBGendarme\fP const &G)"
+.br
+.ti -1c
+.RI "const \fBNonJoueur\fP & \fBgetObject\fP (std::size_t num) const"
+.br
+.ti -1c
+.RI "void \fBajouter_nonJoueur\fP (\fBNonJoueur\fP const nJ)"
+.br
+.ti -1c
+.RI "double \fBgetLargeur\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetHauteur\fP () const"
+.br
+.ti -1c
+.RI "unsigned int \fBgetNbCaptures\fP () const"
+.br
+.ti -1c
+.RI "void \fBajoutUneCapture\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetNbVoleurs\fP () const"
+.br
+.ti -1c
+.RI "void \fBajoutUnVoleur\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetNbGendarmes\fP () const"
+.br
+.ti -1c
+.RI "void \fBajoutUnGendarme\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetNbVoleursSorties\fP () const"
+.br
+.ti -1c
+.RI "std::vector< \fBVoleur\fP * > \fBgetListeVoleur\fP () const"
+.br
+.ti -1c
+.RI "std::vector< \fBGendarme\fP * > \fBgetListeGendarme\fP () const"
+.br
+.ti -1c
+.RI "std::vector< \fBNonJoueur\fP * > \fBgetListeNonJoueur\fP () const"
+.br
+.ti -1c
+.RI "void \fBJouer_tour\fP ()"
+.br
+.ti -1c
+.RI "void \fBafficher\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialise\fP ()"
+.br
+.ti -1c
+.RI "void \fBJoue_deplacement\fP (\fBVoleur\fP &V)"
+.br
+.ti -1c
+.RI "void \fBJoue_deplacement\fP (\fBGendarme\fP &G)"
+.br
+.ti -1c
+.RI "bool \fBCoup_Possible\fP (\fBJoueur\fP &J, \fBDirection\fP coup)"
+.br
+.ti -1c
+.RI "bool \fBestFini\fP ()"
+.br
+.in -1c
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Fuite de criminels à partir du code source\&.
