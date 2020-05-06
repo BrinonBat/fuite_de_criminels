@@ -50,7 +50,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_Ajouter2 = new QPushButton("Ajouter",this);
 	_Ajouter2->setGeometry(300,100,60,20);
 	connect(_Ajouter2,SIGNAL(released()),this,SLOT(Ajouter_NonJoueur()));
-	
+
 	// Lancement de partie
 	_Lancer = new QPushButton("Lancer la partie!",this);
 	_Lancer->setGeometry(150,150,150,50);
@@ -82,8 +82,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	}
 
 	// Ajout d'un joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
-	void Fenetre_Ajout::Ajouter_Joueur()
-	{
+	void Fenetre_Ajout::Ajouter_Joueur(){
 		switch (_ChoixJoueur->currentIndex())
         {
             case 0:
@@ -95,7 +94,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 						this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
             		}
             		break;
-            		
+
             		case 1:
             		{
             			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
@@ -131,7 +130,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 						this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
             		}
             		break;
-            		
+
             		case 1:
             		{
             			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
@@ -178,7 +177,7 @@ Fenetre_Ajout::Fenetre_Ajout()
             case 1:
             {
             	// Pas encore de gestion de cachette.
-                
+
             }
                 break;
         }
@@ -212,7 +211,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 			i->getItem()->setBrush(QBrush(Qt::green));
 			J->_Scene->addItem(i->getItem());
-			
+
 			}
 			else {
 
@@ -227,11 +226,11 @@ Fenetre_Ajout::Fenetre_Ajout()
 		std::ofstream Resultats;
 
   		Resultats.open ("Resultats.txt",std::ios::app);
-  		Resultats << "------------------------------\n Résultat de la partie : \n Temps : "<< 
+  		Resultats << "------------------------------\n Résultat de la partie : \n Temps : "<<
   		std::to_string(duree)<<" secondes \n Nombre de voleur(s): "<<std::to_string(Game->getNbVoleurs())<<"\n Nombre de gendarme(s): "<<std::to_string(Game->getNbGendarmes())<<"\nVoleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<
   		" sur "<<std::to_string(Game->getNbVoleurs())<<" \n Voleur(s) Sortie(s) :"<<std::to_string(Game->getNbVoleursSorties())<<" sur "<<std::to_string(Game->getNbVoleurs())<<
   		" \n Algorithme utilisé : AFAIRE \n Autres informations : AFAIRE \n------------------------------\n";
-  		
+
   		Resultats.close();
 	}
 
@@ -261,7 +260,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 			i->getItem()->setBrush(QBrush(Qt::green));
 			J->_Scene->addItem(i->getItem());
-			
+
 			}
 			else {
 
@@ -295,7 +294,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 		loop.exec();
 
 		Game->afficher();
-		
+
 		}
 		// Fin TIMER
 		auto stop = high_resolution_clock::now();
@@ -338,7 +337,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	NonJoueur Sortie(Position(38,38),Type::sortie);
 	Voleur V1(Position(-150,-150),1.0,"V1",Choix_Algo::random);
 	Voleur V2(Position(38,30),0.5,"V2",Choix_Algo::random);
-	Gendarme G1(Position(-148,300),2.0,"G1",Choix_Algo::random);	
+	Gendarme G1(Position(-148,300),2.0,"G1",Choix_Algo::random);
 	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::random);
 
 	// ajout des entités au Jeu
@@ -367,7 +366,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 			i->getItem()->setBrush(QBrush(Qt::green));
 			J->_Scene->addItem(i->getItem());
-			
+
 			}
 			else {
 
@@ -398,7 +397,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 		loop.exec();
 
 		Game->afficher();
-		
+
 		}
 		// Fin TIMER
 		auto stop = high_resolution_clock::now();
@@ -450,7 +449,7 @@ void Fenetre_Ajout::Exemple2()
 
 			i->getItem()->setBrush(QBrush(Qt::green));
 			J->_Scene->addItem(i->getItem());
-			
+
 			}
 			else {
 
@@ -481,7 +480,7 @@ void Fenetre_Ajout::Exemple2()
 		loop.exec();
 
 		Game->afficher();
-		
+
 		}
 		// Fin TIMER
 		auto stop = high_resolution_clock::now();
@@ -498,5 +497,3 @@ void Fenetre_Ajout::Exemple3()
 	{
 		// Exemple3
 	}
-
-	
