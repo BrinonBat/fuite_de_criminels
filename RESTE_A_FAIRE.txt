@@ -17,7 +17,7 @@ OK	- ajout de la vitesse
 OK	- ajout de "hitbox " et de distance de capture
 OK	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
 VERIFIER- ajout d'une fonction vérifiant si un coup est possible
-		(avant de retourner result, verifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
+		(avant de retourner result, vérifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 OK	- ajout de sortie sur fichier texte sous forme d'historique
 X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
 X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
@@ -33,3 +33,6 @@ OK		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
 
 	- ajout de génération automatique de doc via Doxygen
 réfléchir aux IA
+
+
+AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
