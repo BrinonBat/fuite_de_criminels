@@ -20,45 +20,6 @@ void Jeu::afficher()
 		std::cout<<"Sortie"<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
 	}
 }
-
-// déroulement d'un tour
-void Jeu::Jouer_tour(){
-//calcul des déplacement
-	for(auto &&V:Liste_Voleurs){
-		Joue_deplacement(*V);
-	}
-	for(auto &&G:Liste_Gendarmes){
-		Joue_deplacement(*G);
-	}
-
-//application des déplacement
-	for(auto &&V:Liste_Voleurs){
-		V->deplacement();
-	}
-	for(auto &&G:Liste_Gendarmes){
-		G->deplacement();
-		//on verifie s'il capture un voleur
-		for(auto &&V:Liste_Voleurs){
-			if (G->Hitbox_touche(*V)){
-				std::cout<<"Le Gendarme "<<G->getNom()<<" à capturé le voleur "<<V->getNom()<<std::endl;
-				std::cout<<V->Affiche_Hitbox()<<"\n";
-				 supprimer_voleur(*V);
-				 ajoutUneCapture();
-			 }
-		}
-	}
-	//on verifie si un voleur s'est enfui sans se faire attraper
-	for(auto &&V:Liste_Voleurs){
-		for(auto &&S : Liste_Objets){
-			if(S->getType()==Type::sortie && S->Hitbox_touche(*V)){
-				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
-				std::cout<<V->Affiche_Hitbox()<<"\n";
-				supprimer_voleur(*V);
-			}
-		}
-	}
-}
-
 //ajoute un voleur à la partie
 void Jeu::ajouter_voleur(Voleur const &V)
 {
@@ -91,12 +52,51 @@ void Jeu::ajouter_nonJoueur(NonJoueur const nJ){
 	Liste_Objets.push_back(new NonJoueur(nJ)); // fonctionnement à confirmer
 }
 
+/// Execution d'un tour entier pour le Jeu pris en paramètre.
+void Jeu::Jouer_tour(){
+	
+//calcul des déplacements
+	for(auto &&V:Liste_Voleurs){
+		calcule_deplacement(*V);
+	}
+	for(auto &&G:Liste_Gendarmes){
+		calcule_deplacement(*G);
+	}
+
+//application des déplacements
+	for(auto &&V:Liste_Voleurs){
+		V->deplacement();
+	}
+	for(auto &&G:Liste_Gendarmes){
+		G->deplacement();
+		//on verifie s'il capture un voleur
+		for(auto &&V:Liste_Voleurs){
+			if (G->Hitbox_touche(*V)){
+				std::cout<<"Le Gendarme "<<G->getNom()<<" à capturé le voleur "<<V->getNom()<<std::endl;
+				std::cout<<V->Affiche_Hitbox()<<"\n";
+				 supprimer_voleur(*V);
+				 ajoutUneCapture();
+			 }
+		}
+	}
+	//on verifie si un voleur s'est enfui sans se faire attraper
+	for(auto &&V:Liste_Voleurs){
+		for(auto &&S : Liste_Objets){
+			if(S->getType()==Type::sortie && S->Hitbox_touche(*V)){
+				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
+				std::cout<<V->Affiche_Hitbox()<<"\n";
+				supprimer_voleur(*V);
+			}
+		}
+	}
+}
+
 double fRand(double fMin, double fMax)
 {
     double f = (double)rand() / RAND_MAX;
     return fMin + f * (fMax - fMin);
 }
-
+/*
 // execute le déplacement d'un voleur vers sa destination
 void Jeu::Joue_deplacement(Voleur &V){
 	//calcul du déplacement à réaliser
@@ -200,7 +200,7 @@ void Jeu::Joue_deplacement(Gendarme &G){
 
 
 }
-
+*/
 bool Jeu::Coup_Possible(Joueur &J, Direction coup)
 {
 

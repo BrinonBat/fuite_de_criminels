@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Fenetre_Ajout.hh"
 #include <ctime>
-#include "Jeu.hh"
 
 using namespace std;
 
@@ -46,5 +45,3 @@ int main(int argc, char *argv[])
 	// std::cout<<G1.Affiche_Position();
 
 }
-
-

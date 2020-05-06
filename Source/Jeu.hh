@@ -51,8 +51,8 @@ public :
 	void Jouer_tour();
     void afficher();
     void initialise();
-    void Joue_deplacement(Voleur &V);
-	void Joue_deplacement(Gendarme &G);
+    void calcule_deplacement(Voleur &V);
+	void calcule_deplacement(Gendarme &G);
 	bool Coup_Possible(Joueur & J, Direction coup);
     bool estFini();
 

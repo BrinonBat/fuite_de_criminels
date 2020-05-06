@@ -3,18 +3,19 @@
 unsigned int Entite::compteur(0);//compteur permettant d'attribuer des ID uniques.
 
 /*************************************** IAs *******************************************/
-
+/// déplace le Voleur à la position suivante, qu'il à au préalable calculé
 void Voleur::deplacement(){
 
-	//calcul de la nouvelle position
+	//on place le Voleur à sa nouvelle position
 	this->setPosition(this->getDestination());
 	this->setHitbox();
 
 }
 
+/// déplace le Gendarme à la position suivante, qu'il à au préalable calculé
 void Gendarme::deplacement(){
 
-	//calcul de la nouvelle position
+	//on place le Gendarme à sa nouvelle position
 	this->setPosition(this->getDestination());
 	this->setHitbox();
 
@@ -97,6 +98,7 @@ Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste){
 
 /******************************************* autre *******************************************/
 
+/// Défini les dimension de la hitbox à partir de TAILLE_HITBOX
 void Entite::setHitbox(){
 
 	HB.setH(getPosition().getY()+(TAILLE_HITBOX/2));
@@ -105,6 +107,7 @@ void Entite::setHitbox(){
 	HB.setD(getPosition().getX()+(TAILLE_HITBOX/2));
 
 }
+
 
 std::string Entite::Affiche_Hitbox(){
 

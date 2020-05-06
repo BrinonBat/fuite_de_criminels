@@ -15,12 +15,12 @@
 #include <unistd.h>
 #include <iostream>
 #include <fstream>
-#include <chrono> 
+#include <chrono>
 
 #include "Fenetre_Jeu.hh"
 #include "Jeu.hh"
 
-using namespace std::chrono; 
+using namespace std::chrono;
 
 class Fenetre_Ajout : public QWidget {
 	Q_OBJECT
@@ -38,7 +38,7 @@ private slots :
 	void Jouer_Partie();
 
 	void Lancer_Partie();
-	
+
 	void Choix_Exemple();
 	void Exemple1();
 	void Exemple2();
@@ -74,9 +74,4 @@ private :
 	Jeu * Game;
 	Fenetre_Jeu * Fenetre_Game;
 
-}; 
-
-
-
-
-
+};
