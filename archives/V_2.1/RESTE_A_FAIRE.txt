@@ -1,0 +1,37 @@
+reste à faire :
+OK	- passage en pointeurs des objets stockés dans les vecteurs de Jeu
+OK	- passage en private des attributs de toutes les classes
+OK	- redéfinir l'operaton "+" de Position
+OK	- methode de test fin de partie
+		->la méthode est appellée UNIQUEMENT dans supprimer_voleur (que quand un voleur quitte le terrain.)
+
+OK	- ajout de variable "voleursCaptures" et "nbVoleurDepart" pour pouvoir déterminer un vainqueur
+OK	- mettre "id" sous forme de variable partagée unique ( via un compteur d'entite )
+OK	- mise en place d'un vrai "main" et de vrais "tours"
+OK		-> mise en place de comportements basiques permettant le déroulement d'une partie
+OK		-> définir fonctionnement d'un tour
+OK		-> mise en place d'une partie entière
+OK	- diviser Liste_Joueur en Liste_Gendarmes et Liste_Voleurs
+OK	- remplacer le booléen fini par nb_voleurs
+OK	- ajout de la vitesse
+OK	- ajout de "hitbox " et de distance de capture
+OK	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
+VERIFIER- ajout d'une fonction vérifiant si un coup est possible
+		(avant de retourner result, vérifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
+OK	- ajout de sortie sur fichier texte sous forme d'historique
+X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
+X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
+	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
+	-passer speed en variable de classe
+PUIS mise en place d'une GUI <- OK
+PUIS :
+	- terminer une (ou plusieurs) méthodes d'initialisation:
+		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
+OK		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
+
+Les points bonus :
+	- ajout de tests das un fichier spécialisé.
+	- ajout de génération automatique de doc via Doxygen
+
+
+AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
