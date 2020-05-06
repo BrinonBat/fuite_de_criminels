@@ -26,13 +26,12 @@ X			aprés une tentative avec des pointeurs, et une autre avec un passage par r�
 PUIS mise en place d'une GUI <- OK
 PUIS :
 	- terminer une (ou plusieurs) méthodes d'initialisation:
-OK		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
-		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
+		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
+OK		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
 
-
-
+Les points bonus :
+	- ajout de tests das un fichier spécialisé.
 	- ajout de génération automatique de doc via Doxygen
-réfléchir aux IA
 
 
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
