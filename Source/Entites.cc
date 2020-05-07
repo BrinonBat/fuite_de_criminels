@@ -3,25 +3,16 @@
 unsigned int Entite::compteur(0);//compteur permettant d'attribuer des ID uniques.
 
 /*************************************** IAs *******************************************/
-/// déplace le Voleur à la position suivante, qu'il à au préalable calculé
-void Voleur::deplacement(){
+/// déplace le Personnage à la position suivante, qu'il a au préalable calculé
+void Joueur::Deplacement(){
 
-	//on place le Voleur à sa nouvelle position
+	//on place le Personnage à sa nouvelle position
 	this->setPosition(this->getDestination());
 	this->setHitbox();
 
 }
-
-/// déplace le Gendarme à la position suivante, qu'il à au préalable calculé
-void Gendarme::deplacement(){
-
-	//on place le Gendarme à sa nouvelle position
-	this->setPosition(this->getDestination());
-	this->setHitbox();
-
-}
-
-Direction Joueur::Se_Rapprocher(Joueur & J){
+/// indique la Direction dans laquelle se trouve le Joueur indiqué en paramètre
+Direction Joueur::Se_Rapprocher(Joueur const & J){
 
 	//déclarations
 	double x,y;
@@ -41,7 +32,8 @@ Direction Joueur::Se_Rapprocher(Joueur & J){
 
 }
 
-Direction Joueur::Fuir(Joueur & J){
+/// indique la Direction opposée à celle où se trouve le Joueur indiqué en paramètre
+Direction Joueur::Fuir(Joueur const & J){
 
 	//Pour fuir, on exécute l'action contraire à celle de se rapprocher
 	Direction D = Se_Rapprocher(J);

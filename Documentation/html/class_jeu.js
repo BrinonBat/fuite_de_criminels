@@ -2,15 +2,15 @@ var class_jeu =
 [
     [ "Jeu", "class_jeu.html#aec013425e5bf1024e0a4a30e44072847", null ],
     [ "Jeu", "class_jeu.html#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41", null ],
-    [ "afficher", "class_jeu.html#a54a25003d167335db122efb513f6508f", null ],
+    [ "Afficher", "class_jeu.html#a5f0e08108be70f271a584edb44e9a375", null ],
     [ "ajouter_gendarme", "class_jeu.html#aa265d592cf0bf8c682fc367d727cdc3a", null ],
     [ "ajouter_nonJoueur", "class_jeu.html#a4675b7360326a2f0e96cb85dcf05a01e", null ],
     [ "ajouter_voleur", "class_jeu.html#a50dc429c5ffe621a20465b52af0d07f6", null ],
     [ "ajoutUneCapture", "class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82", null ],
     [ "ajoutUnGendarme", "class_jeu.html#a4eeff410c295d409ca074439340a3603", null ],
     [ "ajoutUnVoleur", "class_jeu.html#a5f397a8e1e933914ea9226343ef934ee", null ],
-    [ "calcule_deplacement", "class_jeu.html#a1de0f01f153dacef4d242716ee864fc0", null ],
-    [ "calcule_deplacement", "class_jeu.html#a4e121af8e50267bd4fbaa8b49aa7ff95", null ],
+    [ "Calcule_Deplacement", "class_jeu.html#afa19b24f81d70508da53e8db9bed171d", null ],
+    [ "Calcule_Deplacement", "class_jeu.html#a62374d3dab9f9a27fb6b5c7472e02113", null ],
     [ "Coup_Possible", "class_jeu.html#a07691f1737745e8c0e340ebc303301d1", null ],
     [ "estFini", "class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9", null ],
     [ "getGendarme", "class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af", null ],
@@ -25,7 +25,7 @@ var class_jeu =
     [ "getNbVoleursSorties", "class_jeu.html#ad9bbb553e7a056dd693ce9933fd6025f", null ],
     [ "getObject", "class_jeu.html#a2aaed308d67bd5e822d700b569ddef99", null ],
     [ "getVoleur", "class_jeu.html#a785eafba89b50893a8226b9e320f0ce2", null ],
-    [ "initialise", "class_jeu.html#aea58e40d51cbcf4d8b4331ca4b913d23", null ],
+    [ "Initialise", "class_jeu.html#a26a20ba14b42b35d55cd21ca42f2b71c", null ],
     [ "Jouer_tour", "class_jeu.html#a69f55abdaf9f5a72c01159951165eb68", null ],
     [ "supprimer_voleur", "class_jeu.html#a0f6f117931bda32f680b926fc6f08a51", null ]
 ];

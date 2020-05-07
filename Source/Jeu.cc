@@ -1,11 +1,11 @@
 #include "Jeu.hh"
 
-void Jeu::initialise(){
+void Jeu::Initialise(){
 
 	//à configurer aprés le GUI
 }
 
-void Jeu::afficher()
+void Jeu::Afficher()
 {
 	std::cout<<"Liste Joueurs avec position et Hitbox :\n";
 	for(auto i:Liste_Voleurs){
@@ -57,18 +57,18 @@ void Jeu::Jouer_tour(){
 
 //calcul des déplacements
 	for(auto &&V:Liste_Voleurs){
-		calcule_deplacement(*V);
+		Calcule_Deplacement(*V);
 	}
 	for(auto &&G:Liste_Gendarmes){
-		calcule_deplacement(*G);
+		Calcule_Deplacement(*G);
 	}
 
 //application des déplacements
 	for(auto &&V:Liste_Voleurs){
-		V->deplacement();
+		V->Deplacement();
 	}
 	for(auto &&G:Liste_Gendarmes){
-		G->deplacement();
+		G->Deplacement();
 		//on verifie s'il capture un voleur
 		for(auto &&V:Liste_Voleurs){
 			if (G->Hitbox_touche(*V)){

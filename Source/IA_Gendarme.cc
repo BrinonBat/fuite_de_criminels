@@ -1,6 +1,6 @@
 #include "Jeu.hh"
 /// calcule la prochaine destination du gendarme
-void Jeu::calcule_deplacement(Gendarme &G){
+void Jeu::Calcule_Deplacement(Gendarme &G){
 
 	//définition
 	Direction result(0,0);

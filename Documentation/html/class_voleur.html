@@ -112,7 +112,7 @@ Graphe d'héritage de Voleur:</div>
  <div class="center">
   <img src="class_voleur.png" usemap="#Voleur_map" alt=""/>
   <map id="Voleur_map" name="Voleur_map">
-<area href="class_joueur.html" alt="Joueur" shape="rect" coords="0,56,52,80"/>
+<area href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs...." alt="Joueur" shape="rect" coords="0,56,52,80"/>
 <area href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu..." alt="Entite" shape="rect" coords="0,0,52,24"/>
   </map>
 </div></div>
@@ -124,32 +124,39 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a48544c2cbef2f23e404c974190a319bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_voleur.html">Voleur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_voleur.html#a48544c2cbef2f23e404c974190a319bc">clone</a> () const</td></tr>
 <tr class="memdesc:a48544c2cbef2f23e404c974190a319bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">redefinition du constructeur virtuel  <a href="class_voleur.html#a48544c2cbef2f23e404c974190a319bc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a48544c2cbef2f23e404c974190a319bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa61cda6fa489ffdb00d8f7dfc483c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_voleur.html#aaa61cda6fa489ffdb00d8f7dfc483c09">deplacement</a> () override</td></tr>
-<tr class="memdesc:aaa61cda6fa489ffdb00d8f7dfc483c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">déplace le <a class="el" href="class_voleur.html">Voleur</a> à la position suivante, qu'il à au préalable calculé  <a href="class_voleur.html#aaa61cda6fa489ffdb00d8f7dfc483c09">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aaa61cda6fa489ffdb00d8f7dfc483c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e9b3d41e84f7366dcd6fdad3a00248"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gendarme.html">Gendarme</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_voleur.html#a30e9b3d41e84f7366dcd6fdad3a00248">Gendarme_Plus_Proche</a> (std::vector&lt; <a class="el" href="class_gendarme.html">Gendarme</a> * &gt; Liste)</td></tr>
 <tr class="separator:a30e9b3d41e84f7366dcd6fdad3a00248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_joueur"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_joueur')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_joueur.html">Joueur</a></td></tr>
 <tr class="memitem:aea68cdc4b07364339f82f2da73d85f36 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Joueur</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos, double speed, std::string nom, <a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> choix)</td></tr>
+<tr class="memdesc:aea68cdc4b07364339f82f2da73d85f36 inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur de <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a>, basé sur <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> en y ajoutant des variable lui permettant de se mouvoir et atteindre ses objectifs.  <a href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aea68cdc4b07364339f82f2da73d85f36 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70578940a2e923aadc568e6714706ed8 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">~Joueur</a> ()=default</td></tr>
+<tr class="memdesc:a70578940a2e923aadc568e6714706ed8 inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a> soient utilisés  <a href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a70578940a2e923aadc568e6714706ed8 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a883d23307fb862a01c57eeb983cf3aab inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a883d23307fb862a01c57eeb983cf3aab">getSpeed</a> () const</td></tr>
-<tr class="separator:a883d23307fb862a01c57eeb983cf3aab inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04eaeeda184cfba380d5210bc035a8ed inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a04eaeeda184cfba380d5210bc035a8ed">getNom</a> () const</td></tr>
-<tr class="separator:a04eaeeda184cfba380d5210bc035a8ed inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f9df3378942d1e0f698801e7318b227 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a7f9df3378942d1e0f698801e7318b227">getDestination</a> () const</td></tr>
-<tr class="separator:a7f9df3378942d1e0f698801e7318b227 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc463acd630c78cb4e27d0d7f4b3834 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a9cc463acd630c78cb4e27d0d7f4b3834">getAlgo</a> () const</td></tr>
-<tr class="separator:a9cc463acd630c78cb4e27d0d7f4b3834 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4932f85db45861875de78bd51e019bfb inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a4932f85db45861875de78bd51e019bfb">setDestination</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
-<tr class="separator:a4932f85db45861875de78bd51e019bfb inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a302f0b771e40eb1d3b3478895c2f0649 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a302f0b771e40eb1d3b3478895c2f0649">setAlgo</a> (<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> const choix)</td></tr>
-<tr class="separator:a302f0b771e40eb1d3b3478895c2f0649 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd1dc764155979aa2de85ad8235169e5 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#afd1dc764155979aa2de85ad8235169e5">Se_Rapprocher</a> (<a class="el" href="class_joueur.html">Joueur</a> &amp;J)</td></tr>
-<tr class="separator:afd1dc764155979aa2de85ad8235169e5 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b19118e1aeb126e27b2f271666a370 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a53b19118e1aeb126e27b2f271666a370">Fuir</a> (<a class="el" href="class_joueur.html">Joueur</a> &amp;J)</td></tr>
-<tr class="separator:a53b19118e1aeb126e27b2f271666a370 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c726bd4a2baeb36d2d05a7ba3e64b29 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a5c726bd4a2baeb36d2d05a7ba3e64b29">getSpeed</a> () const</td></tr>
+<tr class="memdesc:a5c726bd4a2baeb36d2d05a7ba3e64b29 inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable speed  <a href="class_joueur.html#a5c726bd4a2baeb36d2d05a7ba3e64b29">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5c726bd4a2baeb36d2d05a7ba3e64b29 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6bc77e0ef2da5297e74ec7833429a0 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a7d6bc77e0ef2da5297e74ec7833429a0">getNom</a> () const</td></tr>
+<tr class="memdesc:a7d6bc77e0ef2da5297e74ec7833429a0 inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable nom  <a href="class_joueur.html#a7d6bc77e0ef2da5297e74ec7833429a0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7d6bc77e0ef2da5297e74ec7833429a0 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62661960ccf96e2a320cf7e851d00102 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a62661960ccf96e2a320cf7e851d00102">getDestination</a> () const</td></tr>
+<tr class="memdesc:a62661960ccf96e2a320cf7e851d00102 inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable destination  <a href="class_joueur.html#a62661960ccf96e2a320cf7e851d00102">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a62661960ccf96e2a320cf7e851d00102 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b58d0a1b0fb3d9a4d183c1840619d7b inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a4b58d0a1b0fb3d9a4d183c1840619d7b">getAlgo</a> () const</td></tr>
+<tr class="memdesc:a4b58d0a1b0fb3d9a4d183c1840619d7b inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable Algo  <a href="class_joueur.html#a4b58d0a1b0fb3d9a4d183c1840619d7b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b58d0a1b0fb3d9a4d183c1840619d7b inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e6d5313b2b9e8388fa1e9b9a1a38b5 inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a77e6d5313b2b9e8388fa1e9b9a1a38b5">setDestination</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
+<tr class="memdesc:a77e6d5313b2b9e8388fa1e9b9a1a38b5 inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter permettant de donner une nouvelle destination au <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a>  <a href="class_joueur.html#a77e6d5313b2b9e8388fa1e9b9a1a38b5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a77e6d5313b2b9e8388fa1e9b9a1a38b5 inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae452b409c63a6fe2fceb9c125de47d2a inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#ae452b409c63a6fe2fceb9c125de47d2a">Deplacement</a> ()</td></tr>
+<tr class="memdesc:ae452b409c63a6fe2fceb9c125de47d2a inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">déplace le Personnage à la position suivante, qu'il a au préalable calculé  <a href="class_joueur.html#ae452b409c63a6fe2fceb9c125de47d2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae452b409c63a6fe2fceb9c125de47d2a inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6326051ded492fa78505711421bb6d inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a0c6326051ded492fa78505711421bb6d">Se_Rapprocher</a> (<a class="el" href="class_joueur.html">Joueur</a> const &amp;J)</td></tr>
+<tr class="memdesc:a0c6326051ded492fa78505711421bb6d inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">indique la Direction dans laquelle se trouve le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> indiqué en paramètre  <a href="class_joueur.html#a0c6326051ded492fa78505711421bb6d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0c6326051ded492fa78505711421bb6d inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c39d72bbe3a28abfa6b0cb7656b66f inherit pub_methods_class_joueur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#ac8c39d72bbe3a28abfa6b0cb7656b66f">Fuir</a> (<a class="el" href="class_joueur.html">Joueur</a> const &amp;J)</td></tr>
+<tr class="memdesc:ac8c39d72bbe3a28abfa6b0cb7656b66f inherit pub_methods_class_joueur"><td class="mdescLeft">&#160;</td><td class="mdescRight">indique la Direction opposée à celle où se trouve le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> indiqué en paramètre  <a href="class_joueur.html#ac8c39d72bbe3a28abfa6b0cb7656b66f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac8c39d72bbe3a28abfa6b0cb7656b66f inherit pub_methods_class_joueur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_entite"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_entite')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_entite.html">Entite</a></td></tr>
 <tr class="memitem:a89d2eacf7270905863521e5c7a74a40e inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Entite</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
 <tr class="memdesc:a89d2eacf7270905863521e5c7a74a40e inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur d'un Entité permettant de définir la hitbox. On ne va cependant jamais instancier <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a>, mais plutôt ses classes filles  <a href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Plus de détails...</a><br /></td></tr>
@@ -265,35 +272,6 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>redefinition du constructeur virtuel </p>
-
-</div>
-</div>
-<a id="aaa61cda6fa489ffdb00d8f7dfc483c09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa61cda6fa489ffdb00d8f7dfc483c09">&#9670;&nbsp;</a></span>deplacement()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Voleur::deplacement </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>déplace le <a class="el" href="class_voleur.html">Voleur</a> à la position suivante, qu'il à au préalable calculé </p>
-
-<p>Implémente <a class="el" href="class_joueur.html#ac1953bb1542fab6034567814709b814e">Joueur</a>.</p>
 
 </div>
 </div>

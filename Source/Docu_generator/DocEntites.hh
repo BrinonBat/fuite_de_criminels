@@ -264,7 +264,7 @@
 
 /** \class NonJoueur
 *	\brief Il s'agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs.
- 			Il peut s'agir de cachettes, de sorties ou de n'importe quel autre Type précisé dans l'enumeration dédiée.
+* 			Il peut s'agir de cachettes, de sorties ou de n'importe quel autre Type précisé dans l'enumeration dédiée.
 *	\see Type
 */
 
@@ -284,4 +284,76 @@
 	*	\see Jeu::Jouer_tour()
 	*/
 
-/** class Joueur
+/** \class Joueur
+*	\brief Correspond à toutes les entités "vivantes" du Jeu, pouvant se mouvoir et accomplir des objectifs.
+*			Il s'agit entre-autres de Voleur et Gendarme
+*/
+
+	/**	\fn Joueur::Joueur(Position const & pos,double speed,std::string nom,Choix_Algo choix)
+	*	\brief constructeur de Joueur,
+	*			basé sur Entite en y ajoutant des variable lui permettant de se mouvoir et atteindre ses objectifs.
+	*	\param pos Position de départ du Joueur
+	*	\param speed vitesse à laquelle va se déplacer le Joueur
+	*	\param nom Chaine de caractère correspondant au nom du Joueur
+	*	\param choix element de Choix_Algo désignant l'IA associée au Joueur
+	*	\see Choix_Algo
+	*/
+
+	/** \fn Joueur::getSpeed()
+	*	\brief	getter permettant d'accéder à la variable speed
+	*	\return un double correspondant à la vitesse du Joueur
+	*/
+
+	/** \fn Joueur::getNom()
+	*	\brief	getter permettant d'accéder à la variable nom
+	*	\return une chaine de caractère correspondant au nom du Joueur
+	*/
+
+	/** \fn Joueur::getDestination()
+	*	\brief	getter permettant d'accéder à la variable destination
+	*	\return une Position correspondant à l'endroit où se dirige le Joueur
+	*/
+
+	/** \fn Joueur::getAlgo()
+	*	\brief	getter permettant d'accéder à la variable Algo
+	*	\return un Choix_Algo correspondant à l'IA qu'utilise le Joueur
+	*	\see Choix_Algo
+	*/
+
+	/** \fn Joueur::setDestination(Position const &pos)
+	*	\brief setter permettant de donner une nouvelle destination au Joueur
+	*	\param pos nouvelle destination que va atteindre le Joueur à la fin du tour
+	*	\see Jeu::Jouer_tour()
+	*/
+
+	/** \fn Joueur::Deplacement()
+	*	\see Jeu::Calcule_Deplacement()
+	*/
+
+	/** \fn Joueur::Se_Rapprocher(Joueur const & J)
+	*	\param J Joueur dont on souhaite se rapprocher
+	*	\return Direction dans laquelle on doit se diriger pour se rapprocher du Joueur
+	*/
+
+	/**	\fn Joueur::Fuir(Joueur const & J)
+	*	\param J Joueur dont on souhaite s'éloigner
+	*	\return Direction dans laquelle on doit se diriger pour s'éloigner du Joueur
+	*/
+
+	/** \var Joueur::speed
+	*	\brief double correspondant à la distance que peut parcourir le Joueur lors d'un tour.
+	*/
+
+	/** \var Joueur::nom
+	*	\brief Chaine de caractère correspondant au nom du Joueur
+	*/
+
+	/** \var Joueur::destination
+	*	\brief Position que va atteindre le Joueur aprés s'être déplacé via la méthode associée
+	*	\see Jeu::Calcule_Deplacement() Joueur::Deplacement()
+	*/
+
+	/** \var Joueur::Algo
+	*	\brief il s'agit d'un element Choix_Algo qui correspond à l'IA utilisée pour calculer le déplacement via les méthodes associées
+	*	\see Jeu::Calcule_Deplacement()
+	*/

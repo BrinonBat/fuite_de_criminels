@@ -101,9 +101,12 @@ $(document).ready(function(){initNavTree('class_joueur.html','');});
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="class_joueur-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
-<div class="title">Référence de la classe Joueur<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">Référence de la classe Joueur</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Correspond à toutes les entités "vivantes" du <a class="el" href="class_jeu.html">Jeu</a>, pouvant se mouvoir et accomplir des objectifs. Il s'agit entre-autres de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a>.  
+ <a href="class_joueur.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_entites_8hh_source.html">Entites.hh</a>&gt;</code></p>
 <div class="dynheader">
@@ -121,27 +124,35 @@ Graphe d'héritage de Joueur:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:aea68cdc4b07364339f82f2da73d85f36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Joueur</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos, double speed, std::string nom, <a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> choix)</td></tr>
+<tr class="memdesc:aea68cdc4b07364339f82f2da73d85f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur de <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a>, basé sur <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> en y ajoutant des variable lui permettant de se mouvoir et atteindre ses objectifs.  <a href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aea68cdc4b07364339f82f2da73d85f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70578940a2e923aadc568e6714706ed8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">~Joueur</a> ()=default</td></tr>
+<tr class="memdesc:a70578940a2e923aadc568e6714706ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a> soient utilisés  <a href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a70578940a2e923aadc568e6714706ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a883d23307fb862a01c57eeb983cf3aab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a883d23307fb862a01c57eeb983cf3aab">getSpeed</a> () const</td></tr>
-<tr class="separator:a883d23307fb862a01c57eeb983cf3aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04eaeeda184cfba380d5210bc035a8ed"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a04eaeeda184cfba380d5210bc035a8ed">getNom</a> () const</td></tr>
-<tr class="separator:a04eaeeda184cfba380d5210bc035a8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f9df3378942d1e0f698801e7318b227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a7f9df3378942d1e0f698801e7318b227">getDestination</a> () const</td></tr>
-<tr class="separator:a7f9df3378942d1e0f698801e7318b227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc463acd630c78cb4e27d0d7f4b3834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a9cc463acd630c78cb4e27d0d7f4b3834">getAlgo</a> () const</td></tr>
-<tr class="separator:a9cc463acd630c78cb4e27d0d7f4b3834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4932f85db45861875de78bd51e019bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a4932f85db45861875de78bd51e019bfb">setDestination</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
-<tr class="separator:a4932f85db45861875de78bd51e019bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a302f0b771e40eb1d3b3478895c2f0649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a302f0b771e40eb1d3b3478895c2f0649">setAlgo</a> (<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> const choix)</td></tr>
-<tr class="separator:a302f0b771e40eb1d3b3478895c2f0649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1953bb1542fab6034567814709b814e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#ac1953bb1542fab6034567814709b814e">deplacement</a> ()=0</td></tr>
-<tr class="separator:ac1953bb1542fab6034567814709b814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd1dc764155979aa2de85ad8235169e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#afd1dc764155979aa2de85ad8235169e5">Se_Rapprocher</a> (<a class="el" href="class_joueur.html">Joueur</a> &amp;J)</td></tr>
-<tr class="separator:afd1dc764155979aa2de85ad8235169e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b19118e1aeb126e27b2f271666a370"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a53b19118e1aeb126e27b2f271666a370">Fuir</a> (<a class="el" href="class_joueur.html">Joueur</a> &amp;J)</td></tr>
-<tr class="separator:a53b19118e1aeb126e27b2f271666a370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c726bd4a2baeb36d2d05a7ba3e64b29"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a5c726bd4a2baeb36d2d05a7ba3e64b29">getSpeed</a> () const</td></tr>
+<tr class="memdesc:a5c726bd4a2baeb36d2d05a7ba3e64b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable speed  <a href="class_joueur.html#a5c726bd4a2baeb36d2d05a7ba3e64b29">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5c726bd4a2baeb36d2d05a7ba3e64b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6bc77e0ef2da5297e74ec7833429a0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a7d6bc77e0ef2da5297e74ec7833429a0">getNom</a> () const</td></tr>
+<tr class="memdesc:a7d6bc77e0ef2da5297e74ec7833429a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable nom  <a href="class_joueur.html#a7d6bc77e0ef2da5297e74ec7833429a0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7d6bc77e0ef2da5297e74ec7833429a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62661960ccf96e2a320cf7e851d00102"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a62661960ccf96e2a320cf7e851d00102">getDestination</a> () const</td></tr>
+<tr class="memdesc:a62661960ccf96e2a320cf7e851d00102"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable destination  <a href="class_joueur.html#a62661960ccf96e2a320cf7e851d00102">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a62661960ccf96e2a320cf7e851d00102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b58d0a1b0fb3d9a4d183c1840619d7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a4b58d0a1b0fb3d9a4d183c1840619d7b">getAlgo</a> () const</td></tr>
+<tr class="memdesc:a4b58d0a1b0fb3d9a4d183c1840619d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable Algo  <a href="class_joueur.html#a4b58d0a1b0fb3d9a4d183c1840619d7b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b58d0a1b0fb3d9a4d183c1840619d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e6d5313b2b9e8388fa1e9b9a1a38b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a77e6d5313b2b9e8388fa1e9b9a1a38b5">setDestination</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
+<tr class="memdesc:a77e6d5313b2b9e8388fa1e9b9a1a38b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter permettant de donner une nouvelle destination au <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a>  <a href="class_joueur.html#a77e6d5313b2b9e8388fa1e9b9a1a38b5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a77e6d5313b2b9e8388fa1e9b9a1a38b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae452b409c63a6fe2fceb9c125de47d2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#ae452b409c63a6fe2fceb9c125de47d2a">Deplacement</a> ()</td></tr>
+<tr class="memdesc:ae452b409c63a6fe2fceb9c125de47d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">déplace le Personnage à la position suivante, qu'il a au préalable calculé  <a href="class_joueur.html#ae452b409c63a6fe2fceb9c125de47d2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae452b409c63a6fe2fceb9c125de47d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6326051ded492fa78505711421bb6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a0c6326051ded492fa78505711421bb6d">Se_Rapprocher</a> (<a class="el" href="class_joueur.html">Joueur</a> const &amp;J)</td></tr>
+<tr class="memdesc:a0c6326051ded492fa78505711421bb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">indique la Direction dans laquelle se trouve le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> indiqué en paramètre  <a href="class_joueur.html#a0c6326051ded492fa78505711421bb6d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0c6326051ded492fa78505711421bb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c39d72bbe3a28abfa6b0cb7656b66f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#ac8c39d72bbe3a28abfa6b0cb7656b66f">Fuir</a> (<a class="el" href="class_joueur.html">Joueur</a> const &amp;J)</td></tr>
+<tr class="memdesc:ac8c39d72bbe3a28abfa6b0cb7656b66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">indique la Direction opposée à celle où se trouve le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> indiqué en paramètre  <a href="class_joueur.html#ac8c39d72bbe3a28abfa6b0cb7656b66f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac8c39d72bbe3a28abfa6b0cb7656b66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_entite"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_entite')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_entite.html">Entite</a></td></tr>
 <tr class="memitem:a89d2eacf7270905863521e5c7a74a40e inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Entite</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
 <tr class="memdesc:a89d2eacf7270905863521e5c7a74a40e inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur d'un Entité permettant de définir la hitbox. On ne va cependant jamais instancier <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a>, mais plutôt ses classes filles  <a href="class_entite.html#a89d2eacf7270905863521e5c7a74a40e">Plus de détails...</a><br /></td></tr>
@@ -183,7 +194,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a01aa4b9bd81b3fa2987f6a419662edf0 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux Entité sont en contact ou non.  <a href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a01aa4b9bd81b3fa2987f6a419662edf0 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Correspond à toutes les entités "vivantes" du <a class="el" href="class_jeu.html">Jeu</a>, pouvant se mouvoir et accomplir des objectifs. Il s'agit entre-autres de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a>. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="aea68cdc4b07364339f82f2da73d85f36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea68cdc4b07364339f82f2da73d85f36">&#9670;&nbsp;</a></span>Joueur()</h2>
 
@@ -230,6 +243,18 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>constructeur de <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a>, basé sur <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> en y ajoutant des variable lui permettant de se mouvoir et atteindre ses objectifs. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td><a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> de départ du <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </td></tr>
+    <tr><td class="paramname">speed</td><td>vitesse à laquelle va se déplacer le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </td></tr>
+    <tr><td class="paramname">nom</td><td>Chaine de caractère correspondant au nom du <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </td></tr>
+    <tr><td class="paramname">choix</td><td>element de Choix_Algo désignant l'IA associée au <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b" title="les variables de ce type servent à définir l&#39;algorithme qui sera utilisé pour calculer les déplacemen...">Choix_Algo</a> </dd></dl>
+
 </div>
 </div>
 <a id="a70578940a2e923aadc568e6714706ed8"></a>
@@ -255,38 +280,33 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a> soient utilisés </p>
+
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="ac1953bb1542fab6034567814709b814e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1953bb1542fab6034567814709b814e">&#9670;&nbsp;</a></span>deplacement()</h2>
+<a id="ae452b409c63a6fe2fceb9c125de47d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae452b409c63a6fe2fceb9c125de47d2a">&#9670;&nbsp;</a></span>Deplacement()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Joueur::deplacement </td>
+          <td class="memname">void Joueur::Deplacement </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implémenté dans <a class="el" href="class_gendarme.html#a20e4ee82f68db4567577b5788a7b9e53">Gendarme</a>, et <a class="el" href="class_voleur.html#aaa61cda6fa489ffdb00d8f7dfc483c09">Voleur</a>.</p>
+<p>déplace le Personnage à la position suivante, qu'il a au préalable calculé </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_jeu.html#a62374d3dab9f9a27fb6b5c7472e02113" title="calcule la prochaine destination du voleur">Jeu::Calcule_Deplacement()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a53b19118e1aeb126e27b2f271666a370"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b19118e1aeb126e27b2f271666a370">&#9670;&nbsp;</a></span>Fuir()</h2>
+<a id="ac8c39d72bbe3a28abfa6b0cb7656b66f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c39d72bbe3a28abfa6b0cb7656b66f">&#9670;&nbsp;</a></span>Fuir()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,17 +314,26 @@ Fonctions membres publiques</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a> Joueur::Fuir </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_joueur.html">Joueur</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_joueur.html">Joueur</a> const &amp;&#160;</td>
           <td class="paramname"><em>J</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>indique la Direction opposée à celle où se trouve le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> indiqué en paramètre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">J</td><td><a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> dont on souhaite s'éloigner </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Direction dans laquelle on doit se diriger pour s'éloigner du <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </dd></dl>
+
 </div>
 </div>
-<a id="a9cc463acd630c78cb4e27d0d7f4b3834"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cc463acd630c78cb4e27d0d7f4b3834">&#9670;&nbsp;</a></span>getAlgo()</h2>
+<a id="a4b58d0a1b0fb3d9a4d183c1840619d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b58d0a1b0fb3d9a4d183c1840619d7b">&#9670;&nbsp;</a></span>getAlgo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -313,7 +342,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> Joueur::getAlgo </td>
+          <td class="memname">Joueur::getAlgo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -326,10 +355,14 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder à la variable Algo </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un Choix_Algo correspondant à l'IA qu'utilise le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b" title="les variables de ce type servent à définir l&#39;algorithme qui sera utilisé pour calculer les déplacemen...">Choix_Algo</a> </dd></dl>
+
 </div>
 </div>
-<a id="a7f9df3378942d1e0f698801e7318b227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f9df3378942d1e0f698801e7318b227">&#9670;&nbsp;</a></span>getDestination()</h2>
+<a id="a62661960ccf96e2a320cf7e851d00102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62661960ccf96e2a320cf7e851d00102">&#9670;&nbsp;</a></span>getDestination()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,7 +371,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_position.html">Position</a> Joueur::getDestination </td>
+          <td class="memname">Joueur::getDestination </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -351,10 +384,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder à la variable destination </p>
+<dl class="section return"><dt>Renvoie</dt><dd>une <a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> correspondant à l'endroit où se dirige le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </dd></dl>
+
 </div>
 </div>
-<a id="a04eaeeda184cfba380d5210bc035a8ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04eaeeda184cfba380d5210bc035a8ed">&#9670;&nbsp;</a></span>getNom()</h2>
+<a id="a7d6bc77e0ef2da5297e74ec7833429a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6bc77e0ef2da5297e74ec7833429a0">&#9670;&nbsp;</a></span>getNom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +399,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Joueur::getNom </td>
+          <td class="memname">Joueur::getNom </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -376,10 +412,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder à la variable nom </p>
+<dl class="section return"><dt>Renvoie</dt><dd>une chaine de caractère correspondant au nom du <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </dd></dl>
+
 </div>
 </div>
-<a id="a883d23307fb862a01c57eeb983cf3aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a883d23307fb862a01c57eeb983cf3aab">&#9670;&nbsp;</a></span>getSpeed()</h2>
+<a id="a5c726bd4a2baeb36d2d05a7ba3e64b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c726bd4a2baeb36d2d05a7ba3e64b29">&#9670;&nbsp;</a></span>getSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,7 +427,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Joueur::getSpeed </td>
+          <td class="memname">Joueur::getSpeed </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -401,10 +440,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder à la variable speed </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un double correspondant à la vitesse du <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </dd></dl>
+
 </div>
 </div>
-<a id="afd1dc764155979aa2de85ad8235169e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd1dc764155979aa2de85ad8235169e5">&#9670;&nbsp;</a></span>Se_Rapprocher()</h2>
+<a id="a0c6326051ded492fa78505711421bb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6326051ded492fa78505711421bb6d">&#9670;&nbsp;</a></span>Se_Rapprocher()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,17 +454,26 @@ Fonctions membres publiques</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a> Joueur::Se_Rapprocher </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_joueur.html">Joueur</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_joueur.html">Joueur</a> const &amp;&#160;</td>
           <td class="paramname"><em>J</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>indique la Direction dans laquelle se trouve le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> indiqué en paramètre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">J</td><td><a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> dont on souhaite se rapprocher </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Direction dans laquelle on doit se diriger pour se rapprocher du <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </dd></dl>
+
 </div>
 </div>
-<a id="a302f0b771e40eb1d3b3478895c2f0649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a302f0b771e40eb1d3b3478895c2f0649">&#9670;&nbsp;</a></span>setAlgo()</h2>
+<a id="a77e6d5313b2b9e8388fa1e9b9a1a38b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e6d5313b2b9e8388fa1e9b9a1a38b5">&#9670;&nbsp;</a></span>setDestination()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,33 +482,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Joueur::setAlgo </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> const&#160;</td>
-          <td class="paramname"><em>choix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4932f85db45861875de78bd51e019bfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4932f85db45861875de78bd51e019bfb">&#9670;&nbsp;</a></span>setDestination()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Joueur::setDestination </td>
+          <td class="memname">Joueur::setDestination </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_position.html">Position</a> const &amp;&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -470,6 +495,15 @@ Fonctions membres publiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>setter permettant de donner une nouvelle destination au <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>nouvelle destination que va atteindre le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> à la fin du tour </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68" title="Execution d&#39;un tour entier pour le Jeu pris en paramètre.">Jeu::Jouer_tour()</a> </dd></dl>
 
 </div>
 </div>

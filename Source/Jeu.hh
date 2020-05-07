@@ -49,10 +49,10 @@ public :
 
 //méthodes
 	void Jouer_tour();
-    void afficher();
-    void initialise();
-    void calcule_deplacement(Voleur &V);
-	void calcule_deplacement(Gendarme &G);
+    void Afficher();
+    void Initialise();
+    void Calcule_Deplacement(Voleur &V);
+	void Calcule_Deplacement(Gendarme &G);
 	bool Coup_Possible(Joueur & J, Direction coup);
     bool estFini();
 

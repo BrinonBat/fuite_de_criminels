@@ -1,6 +1,6 @@
 #include "Jeu.hh"
 /// calcule la prochaine destination du voleur
-void Jeu::calcule_deplacement(Voleur &V){
+void Jeu::Calcule_Deplacement(Voleur &V){
 
 	//définition
 	Direction result(0,0);

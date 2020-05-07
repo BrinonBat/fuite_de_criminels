@@ -2,7 +2,7 @@ var searchData=
 [
   ['affiche_5fhitbox_2',['Affiche_Hitbox',['../class_entite.html#ad6a7464bbaeb55e205040bec3c870418',1,'Entite']]],
   ['affiche_5fposition_3',['Affiche_Position',['../class_entite.html#abd42da7528006238820fb0b5656bd19c',1,'Entite']]],
-  ['afficher_4',['afficher',['../class_jeu.html#a54a25003d167335db122efb513f6508f',1,'Jeu']]],
+  ['afficher_4',['Afficher',['../class_jeu.html#a5f0e08108be70f271a584edb44e9a375',1,'Jeu']]],
   ['ajouter_5fgendarme_5',['ajouter_gendarme',['../class_jeu.html#aa265d592cf0bf8c682fc367d727cdc3a',1,'Jeu']]],
   ['ajouter_5fnonjoueur_6',['ajouter_nonJoueur',['../class_jeu.html#a4675b7360326a2f0e96cb85dcf05a01e',1,'Jeu']]],
   ['ajouter_5fvoleur_7',['ajouter_voleur',['../class_jeu.html#a50dc429c5ffe621a20465b52af0d07f6',1,'Jeu']]],

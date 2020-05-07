@@ -222,7 +222,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	void Fenetre_Ajout::Jouer_Partie()
 	{
 		std::cout<<"Etat Initial"<<std::endl;
-		Game->afficher();
+		Game->Afficher();
 		// Lancement TIMER
 		auto start = high_resolution_clock::now();
 		// Partie
@@ -244,7 +244,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 		QTimer::singleShot(100, &loop, SLOT(quit()));
 		loop.exec();
 
-		Game->afficher();
+		Game->Afficher();
 		}
 	if (Game->estFini())
 	{

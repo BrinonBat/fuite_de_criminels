@@ -140,7 +140,7 @@ public:
 		Entite(pos),speed(speed),nom(nom),destination(pos),Algo(choix){
 	};
 
-	virtual ~Joueur() =default; // destructeur retiré pour que celui de Voleur et Gendarme soient utilisés
+	virtual ~Joueur() =default; ///< destructeur mis en virtuel pour que celui de Voleur et Gendarme soient utilisés
 
 //accesseurs
 
@@ -152,14 +152,13 @@ public:
 
 	//setters
 	void setDestination(Position const &pos){destination=pos;this->setPosition(destination);}
-	void setAlgo(Choix_Algo const choix) {Algo=choix;}
 
 //méthode virtuelle
-	virtual void deplacement() =0;
+	void Deplacement();
 
 //méthodes
-	Direction Se_Rapprocher(Joueur & J);
-	Direction Fuir (Joueur & J);
+	Direction Se_Rapprocher(Joueur const & J);
+	Direction Fuir(Joueur const & J);
 
 private:
 	double speed;
@@ -181,7 +180,6 @@ public:
 	Voleur* clone() const {return new Voleur(*this);}
 
 //méthodes
-	void deplacement() override;
 	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> Liste);
 };
 
@@ -196,6 +194,5 @@ public:
 	Gendarme* clone() const {return new Gendarme(*this);}
 
 //méthodes
-	void deplacement() override;
 	Voleur Voleur_Plus_Proche(std::vector<Voleur*> Liste);
 };
