@@ -41,7 +41,7 @@
 	*	\brief l'algorithme choisi déplace le Personnage vers le bas uniquement
 	*/
 
-	/**	\var Choix_Algo::Gendarmes_Chasseurs
+	/**	\var Choix_Algo::gendarmes_chasseurs
 	*	\brief l'algorithme choisi indique la position de l'ennemi le plus proche,
 	*			permettant de le fuir ou de le poursuivre
 	*/
@@ -98,6 +98,55 @@
 *	\see TAILLE_HITBOX
 */
 
+	/** \fn Hitbox::Hitbox()
+	*	\brief constructeur d'une Hitbox
+	*/
+
+	/**	\fn Hitbox::setH(double const & nouv)
+	*	\brief attribue une nouvelle valeur à la variable haut
+	*	\param nouv nouvelle valeur de la variable haut
+	*/
+
+	/**	\fn Hitbox::setB(double const & nouv)
+	*	\brief attribue une nouvelle valeur à la variable bas
+	*	\param nouv nouvelle valeur de la variable bas
+	*/
+
+	/**	\fn Hitbox::setG(double const & nouv)
+	*	\brief attribue une nouvelle valeur à la variable gauche
+	*	\param nouv nouvelle valeur de la variable gauche
+	*/
+
+	/**	\fn Hitbox::setD(double const & nouv)
+	*	\brief attribue une nouvelle valeur à la variable droite
+	*	\param nouv nouvelle valeur de la variable droite
+	*/
+
+	/**	\fn Hitbox::getH()
+	*	\brief getter de la variable haut
+	*	\return la valeur de la variable haut
+	*/
+
+	/**	\fn Hitbox::getB()
+	*	\brief getter de la variable bas
+	*	\return la valeur de la variable bas
+	*/
+
+	/**	\fn Hitbox::getG()
+	*	\brief getter de la variable gauche
+	*	\return la valeur de la variable gauche
+	*/
+
+	/**	\fn Hitbox::getD()
+	*	\brief getter de la variable droite
+	*	\return la valeur de la variable droite
+	*/
+
+
+	/**
+	*
+	*/
+
 /**
 *
 */
@@ -105,7 +154,36 @@
 /**
 *
 */
+
+/**
+*
+*/
+
+/**
+*
+*/
+
+/**
+*
+*/
+
+/**
+*
+*/
+
+/**
+*
+*/
+
+/**
+*
+*/
+
+/**
+*
+*/
+
 
 /** \fn void Entite::setHitbox()
-* 	\sa TAILLE_HITBOX
+* 	\see TAILLE_HITBOX
 */
