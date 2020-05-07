@@ -64,3 +64,5 @@ private:
     std::vector<NonJoueur *> Liste_Objets;
 
 };
+
+double fRand(double fMin, double fMax);

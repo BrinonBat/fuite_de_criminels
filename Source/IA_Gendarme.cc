@@ -10,7 +10,7 @@ void Jeu::calcule_deplacement(Gendarme &G){
 
 		//cas de l'algo retournant des déplacements aléatoires
 		case Choix_Algo::random:{
-			//result = Direction(fRand(-3,3),fRand(-3,3));
+			result = Direction(fRand(-3,3),fRand(-3,3));
 		}break;
 
 		//cas de l'algo déplacant le personnage vers le haut
