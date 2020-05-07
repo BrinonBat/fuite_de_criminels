@@ -168,13 +168,15 @@ double Entite::getDistance_From(Entite E){
 
 }
 
-Position Position::operator+(Position const & p){
+/// redéfinition de l'operateur +, permettant ainsi d'additionner deux Positions
+Position Position::operator+(Position const & pos){
 
 	//retour du résultat de l'addition
-	return Position(getX() + p.getX(),getY() + p.getY());
+	return Position(getX() + pos.getX(),getY() + pos.getY());
 
 }
 
+/// redéfinition de l'operateur *, permettant ainsi de multiplier une position par un double
 Position Position::operator*(double mult){
 
 	//retour du résultat de la multiplication
@@ -182,27 +184,9 @@ Position Position::operator*(double mult){
 
 }
 
-bool Position::operator==(Position const & p){
+/// redéfinition de l'operateur ==, permettant ainsi de verifier si deux Positions sont identiques
+bool Position::operator==(Position const & pos){
 
 	//retour du résultat de la comparaison
-	return (p.getX()==x && p.getY()==y);
-}
-
-void afficherValeur(Type type){
-
-	//pour chaque type, on affiche ce qui lui correspond
-    switch (type) {
-
-		//cas de la cachette
-	    case Type::cachette:
-	        std::cout<<"C";
-	    break;
-
-		//cas de la sortie
-	    case Type::sortie:
-	        std::cout<<"S";
-	    break;
-
-    }
-
+	return (pos.getX()==x && pos.getY()==y);
 }

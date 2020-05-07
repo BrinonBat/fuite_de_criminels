@@ -41,20 +41,20 @@ public:
 
 //accesseurs
 	double getX()const{return x;}
-	void setX(double const & nouv){x=nouv;}
 	double getY()const{return y;}
+	void setX(double const & nouv){x=nouv;}
 	void setY(double const & nouv){y=nouv;}
 
 //operateurs
-	Position operator+(Position const & d); // redéfinition de l'addition pour les positions
+	Position operator+(Position const & pos); // redéfinition de l'addition pour les positions
 	Position operator*(double mult); //redéfinition de la multiplication
-	bool operator==(Position const & d); //redéfinition de la comparaison
+	bool operator==(Position const & pos); //redéfinition de la comparaison
 
 private:
 	double x,y;
 };
 
-//classes identiques, mais concepts différents
+/// les classes Direction et Position sont identiques bien que les concepts soient différents
 using Direction = Position;
 
 
