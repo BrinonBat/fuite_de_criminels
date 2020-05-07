@@ -13,15 +13,20 @@ public:
 	QGraphicsScene * _Scene;
 	QGraphicsView * _View;
 	bool Fenetre_Apercu;
+	bool Fermeture;
 
 void closeEvent(QCloseEvent *event)
 {
-	if (!Fenetre_Apercu){
-    exit(0);
+	if (!Fenetre_Apercu and Fermeture == false){
     QWidget::closeEvent(event);
 	}
-	Fenetre_Apercu = false;
+	else Fenetre_Apercu = false;
 
+	if (Fermeture==	true)
+	{
+		QWidget::closeEvent(event);
+		Fermeture = false;
+	}
 }
 
 };

@@ -226,6 +226,9 @@ Fenetre_Ajout::Fenetre_Ajout()
 		// Lancement TIMER
 		auto start = high_resolution_clock::now();
 		// Partie
+	while (Fenetre_Game->Fermeture == false)
+	{
+
 	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
 		Game->Jouer_tour();
@@ -244,8 +247,13 @@ Fenetre_Ajout::Fenetre_Ajout()
 		loop.exec();
 
 		Game->afficher();
-
 		}
+	if (Game->estFini())
+	{
+		Fenetre_Game->Fermeture = true;
+	}
+
+	}
 		// Fin TIMER
 		auto stop = high_resolution_clock::now();
 		auto duree = duration_cast<seconds>(stop - start);

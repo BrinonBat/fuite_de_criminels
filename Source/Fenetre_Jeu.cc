@@ -13,6 +13,7 @@
 		_View->setSceneRect(-TAILLE_TERRAIN,-TAILLE_TERRAIN,(TAILLE_TERRAIN*2),(TAILLE_TERRAIN*2)); // Permet de bloquer le scroll-auto d'un GraphicScene
 		 _View->fitInView(_Scene->sceneRect(), Qt::KeepAspectRatio);
 		 Fenetre_Apercu = false;
+		 Fermeture = false;
 
 	}
 

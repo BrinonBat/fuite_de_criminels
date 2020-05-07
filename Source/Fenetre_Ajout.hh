@@ -46,6 +46,11 @@ private slots :
 
 	void Ecriture_Resultats(int duree);
 
+	void closeEvent(QCloseEvent *event)
+	{
+		exit(0);
+	}
+
 private :
 
 	QLabel * _Intro;
