@@ -108,7 +108,7 @@ void Entite::setHitbox(){
 
 }
 
-
+/// Permet d'afficher la hitbox de l'Entite dans le terminal
 std::string Entite::Affiche_Hitbox(){
 
 	// "Hitbox: (G,D,H,B)"
@@ -120,7 +120,8 @@ std::string Entite::Affiche_Hitbox(){
 	")";
 
 }
-/// constructeur d'un Entité
+
+/// constructeur d'un Entité permettant de définir la hitbox. On ne va cependant jamais instancier Entite, mais plutôt ses classes filles
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),pos.getY()-(TAILLE_HITBOX/2),pos.getX()-(TAILLE_HITBOX/2),pos.getX()+(TAILLE_HITBOX/2)){
 
 	//définition de la hitbox pour l'affichage
@@ -129,29 +130,30 @@ Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY
 
 }
 
-// A RE-COMMENTER, C LE BORDEL (exemple sur getDistance_From)
+/// Verifie si deux Entité sont en contact ou non
 bool Entite::Hitbox_touche(Entite &J2){
 
 	return (
-	(//cas 1
+	(//cas ou l'entité est à droite de J2
 			(this->getHitbox().getG()<=J2.getHitbox().getG() and this->getHitbox().getD()>=J2.getHitbox().getG())
 			and ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH())
 				or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB())
 				)
 			)
-	)//fin cas 1
+	)//fin cas
 		or
-	(// cas 2
+	(// cas ou l'entité est à gauche de J2
 		(this->getHitbox().getG()<=J2.getHitbox().getD() and this->getHitbox().getD()>=J2.getHitbox().getD())
 		and ((this->getHitbox().getB()<=J2.getHitbox().getH() and this->getHitbox().getH()>=J2.getHitbox().getH())
 			or ((this->getHitbox().getB()<=J2.getHitbox().getB() and this->getHitbox().getH()>=J2.getHitbox().getB())
 			)
 		)
-	)//fin cas 2
+	)//fin cas
 	);//fin return
 
 }
 
+/// retourne la distance entre l'instance actuelle et l'Entite prise en paramètre
 double Entite::getDistance_From(Entite E){
 
 	//retourne la racine carré de la difference des position

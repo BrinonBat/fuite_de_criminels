@@ -85,32 +85,32 @@ private:
 
 class Entite{
 public:
-//constructeur
+//constructeur & destructeur
 	Entite(Position const & pos);
+	virtual ~Entite() =default;
 
 //accesseurs
 
 	//getters
 	unsigned int getId()const{return id;}
+	Position getPosition()const{return emplacement;}
+	Hitbox getHitbox() const {return HB;}
+	double getDistance_From (Entite E);
+	QGraphicsRectItem* getItem()const{return item;}
 
 	//setters
-	Position getPosition()const{return emplacement;}
 	void setPosition(Position nouv){emplacement=nouv;}
-
+	void setHitbox();
+	void setItem() {this->item->setPos(emplacement.getX(),emplacement.getY());}
 
 //méthodes
+
+	//affiche "(x,y)"
 	std::string Affiche_Position() {return std::string()+"("+std::to_string(this->emplacement.getX())+","+std::to_string(this->emplacement.getY())+")";};
-	double getDistance_From (Entite E);// Distance entre deux entités
 
 	//gestion de la hitbox
-	Hitbox getHitbox() const {return HB;}
-	void setHitbox();
 	std::string Affiche_Hitbox();
 	bool Hitbox_touche(Entite &E);
-
-	//GUI
-	QGraphicsRectItem* getItem()const{return item;}
-	void setItem(Position const &pos) {this->item->setPos(pos.getX(),pos.getY());}
 
 private:
 	Position emplacement;
@@ -177,7 +177,7 @@ public:
 		Joueur(pos,speed,nom,choix){
 		};
 
-	//redefinition du constructeur virtuel
+	///redefinition du constructeur virtuel
 	Voleur* clone() const {return new Voleur(*this);}
 
 //méthodes
@@ -192,7 +192,7 @@ public:
 		Joueur(pos,speed,nom,choix){
 		};
 
-	//redefinition du constructeur virtuel
+	///redefinition du constructeur virtuel
 	Gendarme* clone() const {return new Gendarme(*this);}
 
 //méthodes

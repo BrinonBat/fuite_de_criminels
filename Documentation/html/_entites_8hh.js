@@ -14,7 +14,7 @@ var _entites_8hh =
       [ "random", "_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba7ddf32e17a6ac5ce04a8ecbf782ca509", null ],
       [ "haut", "_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba3ebb3fd63d4e9f9124c0196eb883c7ec", null ],
       [ "bas", "_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29baf6e660ced42e946f69a41cc473d923cc", null ],
-      [ "Gendarmes_Chasseurs", "_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba9185a8fa09de3d7a8aa3a8ef8ae73d88", null ]
+      [ "gendarmes_chasseurs", "_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba99f497ce7911a838ed242999fe3f566d", null ]
     ] ],
     [ "Type", "_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7", [
       [ "cachette", "_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7a03e66bbda52953e53e1b31d486a9072e", null ],

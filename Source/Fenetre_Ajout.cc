@@ -232,14 +232,12 @@ Fenetre_Ajout::Fenetre_Ajout()
 	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
 		Game->Jouer_tour();
-		for (auto i : Game->getListeVoleur())
-		{
-			i->setItem(i->getPosition());
+		for (auto i : Game->getListeVoleur()){
+			i->setItem();
 		}
 
-		for (auto i : Game->getListeGendarme())
-		{
-			i->setItem(i->getPosition());
+		for (auto i : Game->getListeGendarme()){
+			i->setItem();
 		}
 
 		QEventLoop loop;
