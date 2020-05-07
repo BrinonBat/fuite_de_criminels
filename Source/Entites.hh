@@ -29,7 +29,7 @@ enum class Choix_Algo {
 	random,
 	haut,
 	bas,
-	Gendarme_Chasseurs,
+	Gendarmes_Chasseurs,
 };
 
 class Position {
