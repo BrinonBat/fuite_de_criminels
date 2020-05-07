@@ -24,7 +24,7 @@ void Jeu::calcule_deplacement(Voleur &V){
 		}break;
 
 		//cas de l'algo permettant au voleur de fuir le gendarme le plus proche
-		case Choix_Algo::Gendarmes_Chasseurs:{
+		case Choix_Algo::gendarmes_chasseurs:{
 			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarme());
 			result = V.Fuir(G);
 		}break;

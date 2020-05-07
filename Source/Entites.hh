@@ -29,7 +29,7 @@ enum class Choix_Algo {
 	random,
 	haut,
 	bas,
-	Gendarmes_Chasseurs,
+	gendarmes_chasseurs,
 };
 
 class Position {
@@ -63,24 +63,24 @@ public:
 
 //constructeur
 	Hitbox(double const & H,double const & B,double const & G,double const & D):
-		Haut(H),Bas(B),Gauche(G),Droite(D){};
+		haut(H),bas(B),gauche(G),droite(D){};
 
 //accesseurs
 
 	//getters
-	double getH()const{return Haut;}
-	double getB()const{return Bas;}
-	double getG()const{return Gauche;}
-	double getD()const{return Droite;}
+	double getH()const{return haut;}
+	double getB()const{return bas;}
+	double getG()const{return gauche;}
+	double getD()const{return droite;}
 
 	//setters
-	void setH(double const & nouv){Haut=nouv;}
-	void setB(double const & nouv){Bas=nouv;}
-	void setG(double const & nouv){Gauche=nouv;}
-	void setD(double const & nouv){Droite=nouv;}
+	void setH(double const & nouv){haut=nouv;}
+	void setB(double const & nouv){bas=nouv;}
+	void setG(double const & nouv){gauche=nouv;}
+	void setD(double const & nouv){droite=nouv;}
 
 private:
-	double Haut,Bas,Gauche,Droite;
+	double haut,bas,gauche,droite;
 };
 
 class Entite{

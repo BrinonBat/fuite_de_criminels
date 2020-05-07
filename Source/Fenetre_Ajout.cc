@@ -113,7 +113,7 @@ Fenetre_Ajout::Fenetre_Ajout()
             		case 3:
             		{
             			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Fuyard!\n");
-						this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::Gendarmes_Chasseurs));
+						this->Game->ajouter_voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
             		}
             		break;
 
@@ -149,7 +149,7 @@ Fenetre_Ajout::Fenetre_Ajout()
             		case 3:
             		{
             			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Chasseur!\n");
-						this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::Gendarmes_Chasseurs));
+						this->Game->ajouter_gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
             		}
             		break;
             	}
