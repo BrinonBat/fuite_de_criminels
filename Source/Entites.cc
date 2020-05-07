@@ -120,7 +120,7 @@ std::string Entite::Affiche_Hitbox(){
 	")";
 
 }
-
+/// constructeur d'un Entité
 Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY()+(TAILLE_HITBOX/2),pos.getY()-(TAILLE_HITBOX/2),pos.getX()-(TAILLE_HITBOX/2),pos.getX()+(TAILLE_HITBOX/2)){
 
 	//définition de la hitbox pour l'affichage

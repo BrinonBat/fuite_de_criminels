@@ -1,11 +1,11 @@
 var class_position =
 [
     [ "Position", "class_position.html#a509106e4b677a9c7266a6579b24cfc67", null ],
-    [ "getX", "class_position.html#a10a2a09ec64310f42138f98238ec5fbd", null ],
-    [ "getY", "class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095", null ],
+    [ "getX", "class_position.html#a0bf96214b1135574713c7f3e96aa7672", null ],
+    [ "getY", "class_position.html#a776a232c5d3059b1611b24209f770aae", null ],
     [ "operator*", "class_position.html#a54a8992507e99dc3e627a2b850e0dc52", null ],
-    [ "operator+", "class_position.html#a338a68b8a203304e9598b137851fc212", null ],
-    [ "operator==", "class_position.html#aa20c621178e22416f14fbe3083b00403", null ],
-    [ "setX", "class_position.html#a9a92c54bccad78bbd06223c99064e650", null ],
-    [ "setY", "class_position.html#ab2465b63e44c30a27b315d9ac87e3ee1", null ]
+    [ "operator+", "class_position.html#af2ec7b0799b842109e125c9aa69b8ebb", null ],
+    [ "operator==", "class_position.html#af00294a8e30036b60bee8e29dee3a9bc", null ],
+    [ "setX", "class_position.html#a36af2924631c0c28b5830d0995a94611", null ],
+    [ "setY", "class_position.html#a1cc9aac6ee9b65b2ffa7d767d0293c31", null ]
 ];

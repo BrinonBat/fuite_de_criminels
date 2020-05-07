@@ -1,8 +1,8 @@
 var searchData=
 [
   ['gendarme_34',['Gendarme',['../class_gendarme.html',1,'Gendarme'],['../class_gendarme.html#a21488c95f7546a8fe40c370e59ffbd0d',1,'Gendarme::Gendarme()']]],
-  ['gendarme_5fchasseurs_35',['Gendarme_Chasseurs',['../_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba87bd21f69a6bfe2708bac03724c9be48',1,'Entites.hh']]],
-  ['gendarme_5fplus_5fproche_36',['Gendarme_Plus_Proche',['../class_voleur.html#a30e9b3d41e84f7366dcd6fdad3a00248',1,'Voleur']]],
+  ['gendarme_5fplus_5fproche_35',['Gendarme_Plus_Proche',['../class_voleur.html#a30e9b3d41e84f7366dcd6fdad3a00248',1,'Voleur']]],
+  ['gendarmes_5fchasseurs_36',['Gendarmes_Chasseurs',['../_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba9185a8fa09de3d7a8aa3a8ef8ae73d88',1,'Entites.hh']]],
   ['getalgo_37',['getAlgo',['../class_joueur.html#a9cc463acd630c78cb4e27d0d7f4b3834',1,'Joueur']]],
   ['getb_38',['getB',['../class_hitbox.html#a1bf0baca3e029e4011d380c4b9243741',1,'Hitbox']]],
   ['getd_39',['getD',['../class_hitbox.html#a024061687f3562c9eb3db66b99ea5c43',1,'Hitbox']]],
@@ -29,6 +29,6 @@ var searchData=
   ['getspeed_60',['getSpeed',['../class_joueur.html#a883d23307fb862a01c57eeb983cf3aab',1,'Joueur']]],
   ['gettype_61',['getType',['../class_non_joueur.html#a0c184d9692270276aa7cd3613e096784',1,'NonJoueur']]],
   ['getvoleur_62',['getVoleur',['../class_jeu.html#a785eafba89b50893a8226b9e320f0ce2',1,'Jeu']]],
-  ['getx_63',['getX',['../class_position.html#a10a2a09ec64310f42138f98238ec5fbd',1,'Position']]],
-  ['gety_64',['getY',['../class_position.html#a83ae4a9db1a4f29e5a43e5592b65f095',1,'Position']]]
+  ['getx_63',['getX',['../class_position.html#a0bf96214b1135574713c7f3e96aa7672',1,'Position']]],
+  ['gety_64',['getY',['../class_position.html#a776a232c5d3059b1611b24209f770aae',1,'Position']]]
 ];

@@ -143,45 +143,46 @@
 	*/
 
 
+/**	\class Entite
+*	\brief Il s'agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueur)
+*	\see Voleur Gendarme NonJoueur
+*/
+
+	/** \fn Entite(Position const & pos)
+	*	 
+	*/
+
 	/**
 	*
 	*/
 
-/**
-*
-*/
+	/**
+	*
+	*/
 
-/**
-*
-*/
+	/**
+	*
+	*/
 
-/**
-*
-*/
+	/**
+	*
+	*/
 
-/**
-*
-*/
+	/**
+	*
+	*/
 
-/**
-*
-*/
+	/**
+	*
+	*/
 
-/**
-*
-*/
+	/**
+	*
+	*/
 
-/**
-*
-*/
-
-/**
-*
-*/
-
-/**
-*
-*/
+	/**
+	*
+	*/
 
 
 /** \fn void Entite::setHitbox()

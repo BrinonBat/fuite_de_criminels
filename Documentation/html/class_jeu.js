@@ -9,6 +9,8 @@ var class_jeu =
     [ "ajoutUneCapture", "class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82", null ],
     [ "ajoutUnGendarme", "class_jeu.html#a4eeff410c295d409ca074439340a3603", null ],
     [ "ajoutUnVoleur", "class_jeu.html#a5f397a8e1e933914ea9226343ef934ee", null ],
+    [ "calcule_deplacement", "class_jeu.html#a1de0f01f153dacef4d242716ee864fc0", null ],
+    [ "calcule_deplacement", "class_jeu.html#a4e121af8e50267bd4fbaa8b49aa7ff95", null ],
     [ "Coup_Possible", "class_jeu.html#a07691f1737745e8c0e340ebc303301d1", null ],
     [ "estFini", "class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9", null ],
     [ "getGendarme", "class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af", null ],
@@ -24,8 +26,6 @@ var class_jeu =
     [ "getObject", "class_jeu.html#a2aaed308d67bd5e822d700b569ddef99", null ],
     [ "getVoleur", "class_jeu.html#a785eafba89b50893a8226b9e320f0ce2", null ],
     [ "initialise", "class_jeu.html#aea58e40d51cbcf4d8b4331ca4b913d23", null ],
-    [ "Joue_deplacement", "class_jeu.html#a811a703dfaa0ef7c9cef090916d07a14", null ],
-    [ "Joue_deplacement", "class_jeu.html#aeef630cfcb73ebe59eec330f474755fa", null ],
     [ "Jouer_tour", "class_jeu.html#a69f55abdaf9f5a72c01159951165eb68", null ],
     [ "supprimer_voleur", "class_jeu.html#a0f6f117931bda32f680b926fc6f08a51", null ]
 ];
