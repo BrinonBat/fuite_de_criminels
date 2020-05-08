@@ -110,7 +110,7 @@ public:
 
 	//gestion de la hitbox
 	std::string Affiche_Hitbox();
-	bool Hitbox_touche(Entite &E);
+	bool Hitbox_Touche(Entite &E);
 
 private:
 	Position emplacement;
@@ -137,8 +137,7 @@ class Joueur: public Entite {
 public:
 //constructeur & destructeur
 	Joueur(Position const & pos,double speed,std::string nom,Choix_Algo choix):
-		Entite(pos),speed(speed),nom(nom),destination(pos),Algo(choix){
-	};
+		Entite(pos),speed(speed),nom(nom),destination(pos),Algo(choix){};
 
 	virtual ~Joueur() =default; ///< destructeur mis en virtuel pour que celui de Voleur et Gendarme soient utilisés
 
@@ -173,26 +172,24 @@ class Voleur : public Joueur{
 public:
 //constructeurs
 	Voleur(Position const & pos,double speed,std::string nom, Choix_Algo choix):
-		Joueur(pos,speed,nom,choix){
-		};
+		Joueur(pos,speed,nom,choix){};
 
 	///redefinition du constructeur virtuel
 	Voleur* clone() const {return new Voleur(*this);}
 
 //méthodes
-	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> Liste);
+	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> liGen);
 };
 
 class Gendarme : public Joueur {
 public:
 //constructeurs
 	Gendarme(Position const & pos,double speed,std::string nom,Choix_Algo choix):
-		Joueur(pos,speed,nom,choix){
-		};
+		Joueur(pos,speed,nom,choix){};
 
 	///redefinition du constructeur virtuel
 	Gendarme* clone() const {return new Gendarme(*this);}
 
 //méthodes
-	Voleur Voleur_Plus_Proche(std::vector<Voleur*> Liste);
+	Voleur Voleur_Plus_Proche(std::vector<Voleur*> liVol);
 };

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['nonjoueur_184',['NonJoueur',['../class_non_joueur.html#ac697085808fa2b8ac90ed27bb807df1d',1,'NonJoueur']]]
+  ['operator_2a_183',['operator*',['../class_position.html#a54a8992507e99dc3e627a2b850e0dc52',1,'Position']]],
+  ['operator_2b_184',['operator+',['../class_position.html#af2ec7b0799b842109e125c9aa69b8ebb',1,'Position']]],
+  ['operator_3d_3d_185',['operator==',['../class_position.html#af00294a8e30036b60bee8e29dee3a9bc',1,'Position']]]
 ];

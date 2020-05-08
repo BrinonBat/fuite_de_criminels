@@ -117,8 +117,8 @@ Graphe d'héritage de Entite:</div>
   <map id="Entite_map" name="Entite_map">
 <area href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs...." alt="Joueur" shape="rect" coords="42,56,117,80"/>
 <area href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett..." alt="NonJoueur" shape="rect" coords="127,56,202,80"/>
-<area href="class_gendarme.html" alt="Gendarme" shape="rect" coords="0,112,75,136"/>
-<area href="class_voleur.html" alt="Voleur" shape="rect" coords="85,112,160,136"/>
+<area href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs." alt="Gendarme" shape="rect" coords="0,112,75,136"/>
+<area href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen..." alt="Voleur" shape="rect" coords="85,112,160,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -160,13 +160,13 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad6a7464bbaeb55e205040bec3c870418"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Affiche_Hitbox</a> ()</td></tr>
 <tr class="memdesc:ad6a7464bbaeb55e205040bec3c870418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher la hitbox de l'<a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> dans le terminal.  <a href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad6a7464bbaeb55e205040bec3c870418"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01aa4b9bd81b3fa2987f6a419662edf0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Hitbox_touche</a> (<a class="el" href="class_entite.html">Entite</a> &amp;E)</td></tr>
-<tr class="memdesc:a01aa4b9bd81b3fa2987f6a419662edf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux Entité sont en contact ou non.  <a href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a01aa4b9bd81b3fa2987f6a419662edf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29bae727d36561d3036f530ac06c6d2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a29bae727d36561d3036f530ac06c6d2c">Hitbox_Touche</a> (<a class="el" href="class_entite.html">Entite</a> &amp;E)</td></tr>
+<tr class="memdesc:a29bae727d36561d3036f530ac06c6d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux Entité sont en contact ou non.  <a href="class_entite.html#a29bae727d36561d3036f530ac06c6d2c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a29bae727d36561d3036f530ac06c6d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Il s'agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueur) </p>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_voleur.html">Voleur</a> <a class="el" href="class_gendarme.html">Gendarme</a> <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> </dd></dl>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a89d2eacf7270905863521e5c7a74a40e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89d2eacf7270905863521e5c7a74a40e">&#9670;&nbsp;</a></span>Entite()</h2>
@@ -191,7 +191,7 @@ Fonctions membres publiques</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_voleur.html">Voleur</a> <a class="el" href="class_gendarme.html">Gendarme</a> <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> Entite::compteur </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> Entite::compteur </dd></dl>
 
 </div>
 </div>
@@ -405,14 +405,14 @@ Fonctions membres publiques</h2></td></tr>
 
 </div>
 </div>
-<a id="a01aa4b9bd81b3fa2987f6a419662edf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01aa4b9bd81b3fa2987f6a419662edf0">&#9670;&nbsp;</a></span>Hitbox_touche()</h2>
+<a id="a29bae727d36561d3036f530ac06c6d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29bae727d36561d3036f530ac06c6d2c">&#9670;&nbsp;</a></span>Hitbox_Touche()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Entite::Hitbox_touche </td>
+          <td class="memname">bool Entite::Hitbox_Touche </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> &amp;&#160;</td>
           <td class="paramname"><em>E</em></td><td>)</td>
@@ -422,13 +422,6 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifie si deux Entité sont en contact ou non. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">E</td><td><a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> dont on veut verifier le contact avec l'instance actuelle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>un booléen indiquant si oui ou non les deux <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> se touchent </dd></dl>
 
 </div>
 </div>

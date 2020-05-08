@@ -105,59 +105,82 @@ $(document).ready(function(){initNavTree('class_jeu.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.  
+ <a href="class_jeu.html#details">Plus de détails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_jeu_8hh_source.html">Jeu.hh</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:aec013425e5bf1024e0a4a30e44072847"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#aec013425e5bf1024e0a4a30e44072847">Jeu</a> (double plargeur, double phauteur)</td></tr>
+<tr class="memdesc:aec013425e5bf1024e0a4a30e44072847"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur de <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> à partir de la taille du terrain  <a href="class_jeu.html#aec013425e5bf1024e0a4a30e44072847">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aec013425e5bf1024e0a4a30e44072847"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ffc444bdb8e3ac9dc48ca0b7f1aaa41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41">Jeu</a> (<a class="el" href="class_jeu.html">Jeu</a> const &amp;JeuCopier)</td></tr>
-<tr class="separator:a9ffc444bdb8e3ac9dc48ca0b7f1aaa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a785eafba89b50893a8226b9e320f0ce2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_voleur.html">Voleur</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a785eafba89b50893a8226b9e320f0ce2">getVoleur</a> (std::size_t num) const</td></tr>
-<tr class="separator:a785eafba89b50893a8226b9e320f0ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50dc429c5ffe621a20465b52af0d07f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a50dc429c5ffe621a20465b52af0d07f6">ajouter_voleur</a> (<a class="el" href="class_voleur.html">Voleur</a> const &amp;V)</td></tr>
-<tr class="separator:a50dc429c5ffe621a20465b52af0d07f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f6f117931bda32f680b926fc6f08a51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a0f6f117931bda32f680b926fc6f08a51">supprimer_voleur</a> (<a class="el" href="class_voleur.html">Voleur</a> &amp;V)</td></tr>
-<tr class="separator:a0f6f117931bda32f680b926fc6f08a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f3aa80bec9732ad9d0d0a3a1f9373af"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_gendarme.html">Gendarme</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a1f3aa80bec9732ad9d0d0a3a1f9373af">getGendarme</a> (std::size_t num) const</td></tr>
-<tr class="separator:a1f3aa80bec9732ad9d0d0a3a1f9373af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa265d592cf0bf8c682fc367d727cdc3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#aa265d592cf0bf8c682fc367d727cdc3a">ajouter_gendarme</a> (<a class="el" href="class_gendarme.html">Gendarme</a> const &amp;G)</td></tr>
-<tr class="separator:aa265d592cf0bf8c682fc367d727cdc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aaed308d67bd5e822d700b569ddef99"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_non_joueur.html">NonJoueur</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a2aaed308d67bd5e822d700b569ddef99">getObject</a> (std::size_t num) const</td></tr>
-<tr class="separator:a2aaed308d67bd5e822d700b569ddef99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4675b7360326a2f0e96cb85dcf05a01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a4675b7360326a2f0e96cb85dcf05a01e">ajouter_nonJoueur</a> (<a class="el" href="class_non_joueur.html">NonJoueur</a> const nJ)</td></tr>
-<tr class="separator:a4675b7360326a2f0e96cb85dcf05a01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b5516da45db336ae957d13ba5460a89"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a4b5516da45db336ae957d13ba5460a89">getLargeur</a> () const</td></tr>
-<tr class="separator:a4b5516da45db336ae957d13ba5460a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae282b903eefeb6e1988c7ac49abba456"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ae282b903eefeb6e1988c7ac49abba456">getHauteur</a> () const</td></tr>
-<tr class="separator:ae282b903eefeb6e1988c7ac49abba456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9332948cc431565dabcebdc60197325d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a9332948cc431565dabcebdc60197325d">getNbCaptures</a> () const</td></tr>
-<tr class="separator:a9332948cc431565dabcebdc60197325d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5cd0e57e22245bce7caf322f4fe8d82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ac5cd0e57e22245bce7caf322f4fe8d82">ajoutUneCapture</a> ()</td></tr>
-<tr class="separator:ac5cd0e57e22245bce7caf322f4fe8d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6934bc26cad6c9682ef84432f7109cf"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#af6934bc26cad6c9682ef84432f7109cf">getNbVoleurs</a> () const</td></tr>
-<tr class="separator:af6934bc26cad6c9682ef84432f7109cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f397a8e1e933914ea9226343ef934ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a5f397a8e1e933914ea9226343ef934ee">ajoutUnVoleur</a> ()</td></tr>
-<tr class="separator:a5f397a8e1e933914ea9226343ef934ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03196acb5b98dedd73ea35378eac63dd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a03196acb5b98dedd73ea35378eac63dd">getNbGendarmes</a> () const</td></tr>
-<tr class="separator:a03196acb5b98dedd73ea35378eac63dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eeff410c295d409ca074439340a3603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a4eeff410c295d409ca074439340a3603">ajoutUnGendarme</a> ()</td></tr>
-<tr class="separator:a4eeff410c295d409ca074439340a3603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9bbb553e7a056dd693ce9933fd6025f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ad9bbb553e7a056dd693ce9933fd6025f">getNbVoleursSorties</a> () const</td></tr>
-<tr class="separator:ad9bbb553e7a056dd693ce9933fd6025f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a502f907e163d99c0cce2ec283da32e31"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_voleur.html">Voleur</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a502f907e163d99c0cce2ec283da32e31">getListeVoleur</a> () const</td></tr>
-<tr class="separator:a502f907e163d99c0cce2ec283da32e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac993807e1fd27adba89ffb24db95c9f3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_gendarme.html">Gendarme</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ac993807e1fd27adba89ffb24db95c9f3">getListeGendarme</a> () const</td></tr>
-<tr class="separator:ac993807e1fd27adba89ffb24db95c9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb44afcb6ec800f93af34d549fe39a94"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_non_joueur.html">NonJoueur</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#acb44afcb6ec800f93af34d549fe39a94">getListeNonJoueur</a> () const</td></tr>
-<tr class="separator:acb44afcb6ec800f93af34d549fe39a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef243110d98fe658580a891a5a3a8035"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#aef243110d98fe658580a891a5a3a8035">Jeu</a> (<a class="el" href="class_jeu.html">Jeu</a> const &amp;jeuCopier)</td></tr>
+<tr class="memdesc:aef243110d98fe658580a891a5a3a8035"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur par recopie  <a href="class_jeu.html#aef243110d98fe658580a891a5a3a8035">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aef243110d98fe658580a891a5a3a8035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a451f723cd2c17e62d4640df10689b903"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_voleur.html">Voleur</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a451f723cd2c17e62d4640df10689b903">getVoleur</a> (std::size_t num) const</td></tr>
+<tr class="memdesc:a451f723cd2c17e62d4640df10689b903"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder au <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> associé au numero saisi  <a href="class_jeu.html#a451f723cd2c17e62d4640df10689b903">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a451f723cd2c17e62d4640df10689b903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b433943f5e30f1be08aec3ac1ce156"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a08b433943f5e30f1be08aec3ac1ce156">getNbVoleurs</a> () const</td></tr>
+<tr class="memdesc:a08b433943f5e30f1be08aec3ac1ce156"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter indiquant le nombre total de voleurs qui participent (ou ont participés) à la partie  <a href="class_jeu.html#a08b433943f5e30f1be08aec3ac1ce156">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a08b433943f5e30f1be08aec3ac1ce156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac769ebfca3cea939cece0da75ac8dae5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_voleur.html">Voleur</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ac769ebfca3cea939cece0da75ac8dae5">getListeVoleurs</a> () const</td></tr>
+<tr class="memdesc:ac769ebfca3cea939cece0da75ac8dae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant l'accés à toute la liste de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a>  <a href="class_jeu.html#ac769ebfca3cea939cece0da75ac8dae5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac769ebfca3cea939cece0da75ac8dae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1f238bc06b631cc88ad308c8ccbf92f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ac1f238bc06b631cc88ad308c8ccbf92f">getNbVoleursSortis</a> () const</td></tr>
+<tr class="memdesc:ac1f238bc06b631cc88ad308c8ccbf92f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter indiquant le nombre de voleurs qui ont atteint la sortie  <a href="class_jeu.html#ac1f238bc06b631cc88ad308c8ccbf92f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac1f238bc06b631cc88ad308c8ccbf92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca03390dc0c45688f0a137be34cd66f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a1ca03390dc0c45688f0a137be34cd66f">ajouter_Voleur</a> (<a class="el" href="class_voleur.html">Voleur</a> const &amp;V)</td></tr>
+<tr class="memdesc:a1ca03390dc0c45688f0a137be34cd66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter permettant d'ajouter un <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> à la partie  <a href="class_jeu.html#a1ca03390dc0c45688f0a137be34cd66f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1ca03390dc0c45688f0a137be34cd66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e22bc75f24969402389c36407ce590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a55e22bc75f24969402389c36407ce590">ajoutUnVoleur</a> ()</td></tr>
+<tr class="memdesc:a55e22bc75f24969402389c36407ce590"><td class="mdescLeft">&#160;</td><td class="mdescRight">augmente le nombre total de voleurs. Utilisé pour incrémenter la variable nbVoleurs  <a href="class_jeu.html#a55e22bc75f24969402389c36407ce590">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a55e22bc75f24969402389c36407ce590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bdbab30792ee0b5941a1a8bb9f3d76b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a1bdbab30792ee0b5941a1a8bb9f3d76b">supprimer_Voleur</a> (<a class="el" href="class_voleur.html">Voleur</a> &amp;V)</td></tr>
+<tr class="memdesc:a1bdbab30792ee0b5941a1a8bb9f3d76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter permettant de retirer un <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> de la partie et mettre fin à celle-ci s'il s'agissait du dernier  <a href="class_jeu.html#a1bdbab30792ee0b5941a1a8bb9f3d76b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1bdbab30792ee0b5941a1a8bb9f3d76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23009ad4e297ec12fd697b2b99f0a78c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_gendarme.html">Gendarme</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a23009ad4e297ec12fd697b2b99f0a78c">getGendarme</a> (std::size_t num) const</td></tr>
+<tr class="memdesc:a23009ad4e297ec12fd697b2b99f0a78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder au <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> associé au numero saisi  <a href="class_jeu.html#a23009ad4e297ec12fd697b2b99f0a78c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a23009ad4e297ec12fd697b2b99f0a78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1c4b32fab514be500f73d58ee886ad"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#acc1c4b32fab514be500f73d58ee886ad">getNbGendarmes</a> () const</td></tr>
+<tr class="memdesc:acc1c4b32fab514be500f73d58ee886ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter indiquant le nombre total de gendarmes qui participent (ou ont participés) à la partie  <a href="class_jeu.html#acc1c4b32fab514be500f73d58ee886ad">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acc1c4b32fab514be500f73d58ee886ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e498f61d9f44fb82b3cc90e188aa87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_gendarme.html">Gendarme</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a75e498f61d9f44fb82b3cc90e188aa87">getListeGendarmes</a> () const</td></tr>
+<tr class="memdesc:a75e498f61d9f44fb82b3cc90e188aa87"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant l'accés à toute la liste de <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a>  <a href="class_jeu.html#a75e498f61d9f44fb82b3cc90e188aa87">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a75e498f61d9f44fb82b3cc90e188aa87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f448f2bda89e769474ace6bfa21fd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a65f448f2bda89e769474ace6bfa21fd5">ajouter_Gendarme</a> (<a class="el" href="class_gendarme.html">Gendarme</a> const &amp;G)</td></tr>
+<tr class="memdesc:a65f448f2bda89e769474ace6bfa21fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter permettant d'ajouter un <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> à la partie  <a href="class_jeu.html#a65f448f2bda89e769474ace6bfa21fd5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a65f448f2bda89e769474ace6bfa21fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81402eac6a3b65900a637bc6fed05d12"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_non_joueur.html">NonJoueur</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a81402eac6a3b65900a637bc6fed05d12">getObject</a> (std::size_t num) const</td></tr>
+<tr class="memdesc:a81402eac6a3b65900a637bc6fed05d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder au nonJoueur associé au numero saisi  <a href="class_jeu.html#a81402eac6a3b65900a637bc6fed05d12">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a81402eac6a3b65900a637bc6fed05d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a907fc379daa08037360fdfa31ea32"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_non_joueur.html">NonJoueur</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#af2a907fc379daa08037360fdfa31ea32">getListeNonJoueurs</a> () const</td></tr>
+<tr class="memdesc:af2a907fc379daa08037360fdfa31ea32"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant l'accés à toute la liste de <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a>  <a href="class_jeu.html#af2a907fc379daa08037360fdfa31ea32">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af2a907fc379daa08037360fdfa31ea32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f13887bb2c4a03cee3bd19273b0f3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#af1f13887bb2c4a03cee3bd19273b0f3d">ajouter_nonJoueur</a> (<a class="el" href="class_non_joueur.html">NonJoueur</a> const &amp;nJ)</td></tr>
+<tr class="memdesc:af1f13887bb2c4a03cee3bd19273b0f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter permettant d'ajouter un <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> à la partie  <a href="class_jeu.html#af1f13887bb2c4a03cee3bd19273b0f3d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af1f13887bb2c4a03cee3bd19273b0f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21c91764852a9dbd8250b15d8a3d181"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#aa21c91764852a9dbd8250b15d8a3d181">getNbCaptures</a> () const</td></tr>
+<tr class="memdesc:aa21c91764852a9dbd8250b15d8a3d181"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant de connaître le nombre de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> capturés  <a href="class_jeu.html#aa21c91764852a9dbd8250b15d8a3d181">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa21c91764852a9dbd8250b15d8a3d181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2bbe2f118099a6f567fdc33424e157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#aae2bbe2f118099a6f567fdc33424e157">ajoutUneCapture</a> ()</td></tr>
+<tr class="memdesc:aae2bbe2f118099a6f567fdc33424e157"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute 1 à la liste de voleurs capturés  <a href="class_jeu.html#aae2bbe2f118099a6f567fdc33424e157">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aae2bbe2f118099a6f567fdc33424e157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584d8caeac780a5f15914b20cdb9661e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a584d8caeac780a5f15914b20cdb9661e">getLargeur</a> () const</td></tr>
+<tr class="memdesc:a584d8caeac780a5f15914b20cdb9661e"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la largeur du terrain  <a href="class_jeu.html#a584d8caeac780a5f15914b20cdb9661e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a584d8caeac780a5f15914b20cdb9661e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad682051dfd0772a899cb1e6b22ccbac8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#ad682051dfd0772a899cb1e6b22ccbac8">getHauteur</a> () const</td></tr>
+<tr class="memdesc:ad682051dfd0772a899cb1e6b22ccbac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la hauteur du terrain  <a href="class_jeu.html#ad682051dfd0772a899cb1e6b22ccbac8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad682051dfd0772a899cb1e6b22ccbac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7d42630c6f7d30733f9a8739fffdd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9">estFini</a> ()</td></tr>
+<tr class="memdesc:a2a7d42630c6f7d30733f9a8739fffdd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">le jeu se termine quand il n'y a plus de voleur en jeu  <a href="class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2a7d42630c6f7d30733f9a8739fffdd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69f55abdaf9f5a72c01159951165eb68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68">Jouer_tour</a> ()</td></tr>
-<tr class="memdesc:a69f55abdaf9f5a72c01159951165eb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution d'un tour entier pour le <a class="el" href="class_jeu.html">Jeu</a> pris en paramètre.  <a href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a69f55abdaf9f5a72c01159951165eb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution d'un tour entier pour le <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> pris en paramètre.  <a href="class_jeu.html#a69f55abdaf9f5a72c01159951165eb68">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a69f55abdaf9f5a72c01159951165eb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f0e08108be70f271a584edb44e9a375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a5f0e08108be70f271a584edb44e9a375">Afficher</a> ()</td></tr>
+<tr class="memdesc:a5f0e08108be70f271a584edb44e9a375"><td class="mdescLeft">&#160;</td><td class="mdescRight">génére un affichage de l'état actuel du <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> dans le terminal  <a href="class_jeu.html#a5f0e08108be70f271a584edb44e9a375">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f0e08108be70f271a584edb44e9a375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26a20ba14b42b35d55cd21ca42f2b71c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a26a20ba14b42b35d55cd21ca42f2b71c">Initialise</a> ()</td></tr>
-<tr class="separator:a26a20ba14b42b35d55cd21ca42f2b71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62374d3dab9f9a27fb6b5c7472e02113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a62374d3dab9f9a27fb6b5c7472e02113">Calcule_Deplacement</a> (<a class="el" href="class_voleur.html">Voleur</a> &amp;V)</td></tr>
 <tr class="memdesc:a62374d3dab9f9a27fb6b5c7472e02113"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcule la prochaine destination du voleur  <a href="class_jeu.html#a62374d3dab9f9a27fb6b5c7472e02113">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a62374d3dab9f9a27fb6b5c7472e02113"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,10 +189,10 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:afa19b24f81d70508da53e8db9bed171d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07691f1737745e8c0e340ebc303301d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a07691f1737745e8c0e340ebc303301d1">Coup_Possible</a> (<a class="el" href="class_joueur.html">Joueur</a> &amp;J, <a class="el" href="_entites_8hh.html#a7dec18d0b2ade19e922c3c63323b522c">Direction</a> coup)</td></tr>
 <tr class="separator:a07691f1737745e8c0e340ebc303301d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a7d42630c6f7d30733f9a8739fffdd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9">estFini</a> ()</td></tr>
-<tr class="separator:a2a7d42630c6f7d30733f9a8739fffdd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="aec013425e5bf1024e0a4a30e44072847"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec013425e5bf1024e0a4a30e44072847">&#9670;&nbsp;</a></span>Jeu() <span class="overload">[1/2]</span></h2>
 
@@ -204,10 +227,21 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>constructeur de <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> à partir de la taille du terrain </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plargeur</td><td>Double correspondant à la largeur du Terrain </td></tr>
+    <tr><td class="paramname">phauteur</td><td>Double correspondant à la hauteur du Terrain </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>en l'état, la hauteur et la largeur sont determiné par TAILLE_TERRAIN </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="_entites_8hh.html#a8b888934cc7fdedc4c6ad3267ab3ad65" title="constante déterminant la taille du terrain utilisé durant la partie. Elle est notamment utilisée pour...">TAILLE_TERRAIN</a> <a class="el" href="_entites_8hh.html" title="contient les classes présentes sur le terrain, qu&#39;il s&#39;agisse de joueurs ou d&#39;objets.">Entites.hh</a> </dd></dl>
+
 </div>
 </div>
-<a id="a9ffc444bdb8e3ac9dc48ca0b7f1aaa41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ffc444bdb8e3ac9dc48ca0b7f1aaa41">&#9670;&nbsp;</a></span>Jeu() <span class="overload">[2/2]</span></h2>
+<a id="aef243110d98fe658580a891a5a3a8035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef243110d98fe658580a891a5a3a8035">&#9670;&nbsp;</a></span>Jeu() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +253,7 @@ Fonctions membres publiques</h2></td></tr>
           <td class="memname">Jeu::Jeu </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_jeu.html">Jeu</a> const &amp;&#160;</td>
-          <td class="paramname"><em>JeuCopier</em></td><td>)</td>
+          <td class="paramname"><em>jeuCopier</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -229,6 +263,14 @@ Fonctions membres publiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>constructeur par recopie </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jeuCopier</td><td><a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> qui va être copié dans la nouvelle instance </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -248,16 +290,18 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>génére un affichage de l'état actuel du <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> dans le terminal </p>
+
 </div>
 </div>
-<a id="aa265d592cf0bf8c682fc367d727cdc3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa265d592cf0bf8c682fc367d727cdc3a">&#9670;&nbsp;</a></span>ajouter_gendarme()</h2>
+<a id="a65f448f2bda89e769474ace6bfa21fd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f448f2bda89e769474ace6bfa21fd5">&#9670;&nbsp;</a></span>ajouter_Gendarme()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Jeu::ajouter_gendarme </td>
+          <td class="memname">void Jeu::ajouter_Gendarme </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_gendarme.html">Gendarme</a> const &amp;&#160;</td>
           <td class="paramname"><em>G</em></td><td>)</td>
@@ -266,10 +310,18 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>setter permettant d'ajouter un <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> à la partie </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a></td><td>à ajouter à la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a4675b7360326a2f0e96cb85dcf05a01e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4675b7360326a2f0e96cb85dcf05a01e">&#9670;&nbsp;</a></span>ajouter_nonJoueur()</h2>
+<a id="af1f13887bb2c4a03cee3bd19273b0f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f13887bb2c4a03cee3bd19273b0f3d">&#9670;&nbsp;</a></span>ajouter_nonJoueur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,23 +329,31 @@ Fonctions membres publiques</h2></td></tr>
         <tr>
           <td class="memname">void Jeu::ajouter_nonJoueur </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_non_joueur.html">NonJoueur</a> const&#160;</td>
+          <td class="paramtype"><a class="el" href="class_non_joueur.html">NonJoueur</a> const &amp;&#160;</td>
           <td class="paramname"><em>nJ</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>setter permettant d'ajouter un <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> à la partie </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a></td><td>à ajouter à la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a50dc429c5ffe621a20465b52af0d07f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50dc429c5ffe621a20465b52af0d07f6">&#9670;&nbsp;</a></span>ajouter_voleur()</h2>
+<a id="a1ca03390dc0c45688f0a137be34cd66f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca03390dc0c45688f0a137be34cd66f">&#9670;&nbsp;</a></span>ajouter_Voleur()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Jeu::ajouter_voleur </td>
+          <td class="memname">void Jeu::ajouter_Voleur </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_voleur.html">Voleur</a> const &amp;&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
@@ -302,10 +362,18 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>setter permettant d'ajouter un <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> à la partie </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">V</td><td><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> à ajouter à la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac5cd0e57e22245bce7caf322f4fe8d82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5cd0e57e22245bce7caf322f4fe8d82">&#9670;&nbsp;</a></span>ajoutUneCapture()</h2>
+<a id="aae2bbe2f118099a6f567fdc33424e157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2bbe2f118099a6f567fdc33424e157">&#9670;&nbsp;</a></span>ajoutUneCapture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +382,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Jeu::ajoutUneCapture </td>
+          <td class="memname">Jeu::ajoutUneCapture </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -327,10 +395,12 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>ajoute 1 à la liste de voleurs capturés </p>
+
 </div>
 </div>
-<a id="a4eeff410c295d409ca074439340a3603"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eeff410c295d409ca074439340a3603">&#9670;&nbsp;</a></span>ajoutUnGendarme()</h2>
+<a id="a55e22bc75f24969402389c36407ce590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e22bc75f24969402389c36407ce590">&#9670;&nbsp;</a></span>ajoutUnVoleur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,7 +409,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Jeu::ajoutUnGendarme </td>
+          <td class="memname">Jeu::ajoutUnVoleur </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -352,30 +422,8 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a5f397a8e1e933914ea9226343ef934ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f397a8e1e933914ea9226343ef934ee">&#9670;&nbsp;</a></span>ajoutUnVoleur()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Jeu::ajoutUnVoleur </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>augmente le nombre total de voleurs. Utilisé pour incrémenter la variable nbVoleurs </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_jeu.html#a08b433943f5e30f1be08aec3ac1ce156" title="getter indiquant le nombre total de voleurs qui participent (ou ont participés) à la partie">Jeu::getNbVoleurs()</a> <a class="el" href="class_jeu.html#a1ca03390dc0c45688f0a137be34cd66f" title="setter permettant d&#39;ajouter un Voleur à la partie">Jeu::ajouter_Voleur()</a> <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> </dd></dl>
 
 </div>
 </div>
@@ -396,6 +444,14 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>calcule la prochaine destination du gendarme </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td><a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> dont on calcule la prochaine <a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>la <a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> est directement enregistrée dans la variable destination </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> Jeu::setDestination() </dd></dl>
 
 </div>
 </div>
@@ -416,6 +472,14 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>calcule la prochaine destination du voleur </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">V</td><td><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> dont on calcule la prochaine <a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>la <a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> est directement enregistrée dans la variable destination </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> Jeu::setDestination() </dd></dl>
 
 </div>
 </div>
@@ -444,6 +508,7 @@ Fonctions membres publiques</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>fonction inutilisée et non documentée pour le moment, mais conservée de côté si on a besoin à un moment de s'en servir. indique si le coup pris en paramètre est possible pour le <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a> pris en paramètre </p>
 
 </div>
 </div>
@@ -462,10 +527,14 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>le jeu se termine quand il n'y a plus de voleur en jeu </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un booléen indiquant si la partie est terminée </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>il retourne en vérité la réponse à "la liste de Voleurs en jeu est-elle vide?" mais comme on considère que la partie n'est terminée que lorsqu'il n'y a plus de voleurs sur le terrain, ça revient au même </dd></dl>
+
 </div>
 </div>
-<a id="a1f3aa80bec9732ad9d0d0a3a1f9373af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f3aa80bec9732ad9d0d0a3a1f9373af">&#9670;&nbsp;</a></span>getGendarme()</h2>
+<a id="a23009ad4e297ec12fd697b2b99f0a78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23009ad4e297ec12fd697b2b99f0a78c">&#9670;&nbsp;</a></span>getGendarme()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,7 +543,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_gendarme.html">Gendarme</a>&amp; Jeu::getGendarme </td>
+          <td class="memname">Jeu::getGendarme </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>num</em></td><td>)</td>
@@ -488,10 +557,19 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder au <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> associé au numero saisi </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>indice correspondant à la position du <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> recherché dans la liste de gendarmes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> correspondant au numero </dd></dl>
+
 </div>
 </div>
-<a id="ae282b903eefeb6e1988c7ac49abba456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae282b903eefeb6e1988c7ac49abba456">&#9670;&nbsp;</a></span>getHauteur()</h2>
+<a id="ad682051dfd0772a899cb1e6b22ccbac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad682051dfd0772a899cb1e6b22ccbac8">&#9670;&nbsp;</a></span>getHauteur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +578,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Jeu::getHauteur </td>
+          <td class="memname">Jeu::getHauteur </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -513,10 +591,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder à la hauteur du terrain </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un double correspondant à la hauteur du terrain </dd></dl>
+
 </div>
 </div>
-<a id="a4b5516da45db336ae957d13ba5460a89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b5516da45db336ae957d13ba5460a89">&#9670;&nbsp;</a></span>getLargeur()</h2>
+<a id="a584d8caeac780a5f15914b20cdb9661e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584d8caeac780a5f15914b20cdb9661e">&#9670;&nbsp;</a></span>getLargeur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +606,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Jeu::getLargeur </td>
+          <td class="memname">Jeu::getLargeur </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -538,10 +619,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder à la largeur du terrain </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un double correspondant à la largeur du terrain </dd></dl>
+
 </div>
 </div>
-<a id="ac993807e1fd27adba89ffb24db95c9f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac993807e1fd27adba89ffb24db95c9f3">&#9670;&nbsp;</a></span>getListeGendarme()</h2>
+<a id="a75e498f61d9f44fb82b3cc90e188aa87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e498f61d9f44fb82b3cc90e188aa87">&#9670;&nbsp;</a></span>getListeGendarmes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -550,7 +634,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_gendarme.html">Gendarme</a> *&gt; Jeu::getListeGendarme </td>
+          <td class="memname">Jeu::getListeGendarmes </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -563,10 +647,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant l'accés à toute la liste de <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> </p>
+<dl class="section return"><dt>Renvoie</dt><dd>une liste de pointeurs sur des gendarmes </dd></dl>
+
 </div>
 </div>
-<a id="acb44afcb6ec800f93af34d549fe39a94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb44afcb6ec800f93af34d549fe39a94">&#9670;&nbsp;</a></span>getListeNonJoueur()</h2>
+<a id="af2a907fc379daa08037360fdfa31ea32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2a907fc379daa08037360fdfa31ea32">&#9670;&nbsp;</a></span>getListeNonJoueurs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +662,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_non_joueur.html">NonJoueur</a> *&gt; Jeu::getListeNonJoueur </td>
+          <td class="memname">Jeu::getListeNonJoueurs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -588,10 +675,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant l'accés à toute la liste de <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> </p>
+<dl class="section return"><dt>Renvoie</dt><dd>une liste de pointeurs sur des nonJoueurs </dd></dl>
+
 </div>
 </div>
-<a id="a502f907e163d99c0cce2ec283da32e31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a502f907e163d99c0cce2ec283da32e31">&#9670;&nbsp;</a></span>getListeVoleur()</h2>
+<a id="ac769ebfca3cea939cece0da75ac8dae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac769ebfca3cea939cece0da75ac8dae5">&#9670;&nbsp;</a></span>getListeVoleurs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -600,7 +690,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_voleur.html">Voleur</a> *&gt; Jeu::getListeVoleur </td>
+          <td class="memname">Jeu::getListeVoleurs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -613,10 +703,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant l'accés à toute la liste de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> </p>
+<dl class="section return"><dt>Renvoie</dt><dd>une liste de pointeurs sur des voleurs </dd></dl>
+
 </div>
 </div>
-<a id="a9332948cc431565dabcebdc60197325d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9332948cc431565dabcebdc60197325d">&#9670;&nbsp;</a></span>getNbCaptures()</h2>
+<a id="aa21c91764852a9dbd8250b15d8a3d181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21c91764852a9dbd8250b15d8a3d181">&#9670;&nbsp;</a></span>getNbCaptures()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -625,7 +718,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Jeu::getNbCaptures </td>
+          <td class="memname">Jeu::getNbCaptures </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -638,10 +731,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant de connaître le nombre de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> capturés </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un entier non-signé correspondant au nombre de voleurs capturés </dd></dl>
+
 </div>
 </div>
-<a id="a03196acb5b98dedd73ea35378eac63dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03196acb5b98dedd73ea35378eac63dd">&#9670;&nbsp;</a></span>getNbGendarmes()</h2>
+<a id="acc1c4b32fab514be500f73d58ee886ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1c4b32fab514be500f73d58ee886ad">&#9670;&nbsp;</a></span>getNbGendarmes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -650,7 +746,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Jeu::getNbGendarmes </td>
+          <td class="memname">Jeu::getNbGendarmes </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -663,10 +759,15 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter indiquant le nombre total de gendarmes qui participent (ou ont participés) à la partie </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un entier non-signé correspondant au nombre total de gendarmes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>contrairement à <a class="el" href="class_jeu.html#a08b433943f5e30f1be08aec3ac1ce156" title="getter indiquant le nombre total de voleurs qui participent (ou ont participés) à la partie">getNbVoleurs()</a>, on ne retourne pas une variable enregistrée dans la classe, mais la taille du vecteur de Gendarmes. En effet, vu qu'aucun gendarme ne peut être tué, on considère qu'on ne va jamais supprimer de gendarmes et donc la taille de la liste de gendarmes suffit. </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> </dd></dl>
+
 </div>
 </div>
-<a id="af6934bc26cad6c9682ef84432f7109cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6934bc26cad6c9682ef84432f7109cf">&#9670;&nbsp;</a></span>getNbVoleurs()</h2>
+<a id="a08b433943f5e30f1be08aec3ac1ce156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08b433943f5e30f1be08aec3ac1ce156">&#9670;&nbsp;</a></span>getNbVoleurs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -675,7 +776,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Jeu::getNbVoleurs </td>
+          <td class="memname">Jeu::getNbVoleurs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -688,10 +789,14 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter indiquant le nombre total de voleurs qui participent (ou ont participés) à la partie </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un entier non-signé correspondant au nombre total de voleurs </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> </dd></dl>
+
 </div>
 </div>
-<a id="ad9bbb553e7a056dd693ce9933fd6025f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9bbb553e7a056dd693ce9933fd6025f">&#9670;&nbsp;</a></span>getNbVoleursSorties()</h2>
+<a id="ac1f238bc06b631cc88ad308c8ccbf92f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f238bc06b631cc88ad308c8ccbf92f">&#9670;&nbsp;</a></span>getNbVoleursSortis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -700,7 +805,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Jeu::getNbVoleursSorties </td>
+          <td class="memname">Jeu::getNbVoleursSortis </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -713,10 +818,13 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter indiquant le nombre de voleurs qui ont atteint la sortie </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un entier non-signé correspondant au nombe de voleurs sortis </dd></dl>
+
 </div>
 </div>
-<a id="a2aaed308d67bd5e822d700b569ddef99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aaed308d67bd5e822d700b569ddef99">&#9670;&nbsp;</a></span>getObject()</h2>
+<a id="a81402eac6a3b65900a637bc6fed05d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81402eac6a3b65900a637bc6fed05d12">&#9670;&nbsp;</a></span>getObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -725,7 +833,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_non_joueur.html">NonJoueur</a>&amp; Jeu::getObject </td>
+          <td class="memname">Jeu::getObject </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>num</em></td><td>)</td>
@@ -739,10 +847,19 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getter permettant d'accéder au nonJoueur associé au numero saisi </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>indice correspondant à la position du <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> recherché dans la liste d'objets' </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le <a class="el" href="class_non_joueur.html" title="Il s&#39;agit de toutes les Entites sur le terrain qui ne sont pas des Joueurs. Il peut s&#39;agir de cachett...">NonJoueur</a> correspondant au numero </dd></dl>
+
 </div>
 </div>
-<a id="a785eafba89b50893a8226b9e320f0ce2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a785eafba89b50893a8226b9e320f0ce2">&#9670;&nbsp;</a></span>getVoleur()</h2>
+<a id="a451f723cd2c17e62d4640df10689b903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a451f723cd2c17e62d4640df10689b903">&#9670;&nbsp;</a></span>getVoleur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -751,7 +868,7 @@ Fonctions membres publiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_voleur.html">Voleur</a>&amp; Jeu::getVoleur </td>
+          <td class="memname">Jeu::getVoleur </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>num</em></td><td>)</td>
@@ -765,22 +882,14 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a26a20ba14b42b35d55cd21ca42f2b71c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26a20ba14b42b35d55cd21ca42f2b71c">&#9670;&nbsp;</a></span>Initialise()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Jeu::Initialise </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>getter permettant d'accéder au <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> associé au numero saisi </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>indice correspondant à la position du <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> recherché dans la liste de voleurs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> correspondant au numero </dd></dl>
 
 </div>
 </div>
@@ -799,18 +908,18 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Execution d'un tour entier pour le <a class="el" href="class_jeu.html">Jeu</a> pris en paramètre. </p>
+<p>Execution d'un tour entier pour le <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a> pris en paramètre. </p>
 
 </div>
 </div>
-<a id="a0f6f117931bda32f680b926fc6f08a51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f6f117931bda32f680b926fc6f08a51">&#9670;&nbsp;</a></span>supprimer_voleur()</h2>
+<a id="a1bdbab30792ee0b5941a1a8bb9f3d76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bdbab30792ee0b5941a1a8bb9f3d76b">&#9670;&nbsp;</a></span>supprimer_Voleur()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Jeu::supprimer_voleur </td>
+          <td class="memname">void Jeu::supprimer_Voleur </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_voleur.html">Voleur</a> &amp;&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
@@ -818,6 +927,14 @@ Fonctions membres publiques</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setter permettant de retirer un <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> de la partie et mettre fin à celle-ci s'il s'agissait du dernier </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">V</td><td><a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> qui doit être supprimé de la liste et </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

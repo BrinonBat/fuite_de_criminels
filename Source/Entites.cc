@@ -45,35 +45,15 @@ Direction Joueur::Fuir(Joueur const & J){
 
 }
 
-Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> Liste){
-
-	//définitions
-	double distance = 1000;
-	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
-
-	//traitement pour chaque voleur
-	for (auto && voleur : Liste){
-
-		//On récupére la distance du voleur actuel, et la comparons à celle du plus proche connu.
-		//Si elle lui est inférieure, le voleur est donc le nouveau plus proche
-		if (this->getDistance_From(*voleur)<distance /*and this->getDistance_From(*i)<50*/){
-			distance = this->getDistance_From(*voleur);
-			V = *voleur;
-		}//fin voleur actuel
-	}//fin liste voleurs
-
-	//fin
-	return V;
-}
-
-Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste){
+/// indique au Voleur quel est le Gendarme le plus proche
+Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 
 	//définition
 	double distance = 1000;
 	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
 
 	//traitement pour chaque gendarme
-	for (auto && i : Liste){
+	for (auto && i : liGen){
 
 		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
 		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
@@ -88,7 +68,52 @@ Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> Liste){
 
 }
 
+/// indique au Gendarme quel est le Voleur le plus proche
+Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> liVol){
+
+	//définitions
+	double distance = 1000;
+	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
+
+	//traitement pour chaque voleur
+	for (auto && voleur : liVol){
+
+		//On récupére la distance du voleur actuel, et la comparons à celle du plus proche connu.
+		//Si elle lui est inférieure, le voleur est donc le nouveau plus proche
+		if (this->getDistance_From(*voleur)<distance /*and this->getDistance_From(*i)<50*/){
+			distance = this->getDistance_From(*voleur);
+			V = *voleur;
+		}//fin voleur actuel
+	}//fin liste voleurs
+
+	//fin
+	return V;
+}
+
 /******************************************* autre *******************************************/
+
+/// redéfinition de l'operateur +, permettant ainsi d'additionner deux Positions
+Position Position::operator+(Position const & pos){
+
+	//retour du résultat de l'addition
+	return Position(getX() + pos.getX(),getY() + pos.getY());
+
+}
+
+/// redéfinition de l'operateur *, permettant ainsi de multiplier une position par un double
+Position Position::operator*(double mult){
+
+	//retour du résultat de la multiplication
+	return Position(getX()*mult,getY()*mult);
+
+}
+
+/// redéfinition de l'operateur ==, permettant ainsi de verifier si deux Positions sont identiques
+bool Position::operator==(Position const & pos){
+
+	//retour du résultat de la comparaison
+	return (pos.getX()==x && pos.getY()==y);
+}
 
 /// Défini les dimension de la hitbox à partir de TAILLE_HITBOX
 void Entite::setHitbox(){
@@ -123,7 +148,7 @@ Entite::Entite(Position const & pos):emplacement(pos),id(compteur++),HB(pos.getY
 }
 
 /// Verifie si deux Entité sont en contact ou non
-bool Entite::Hitbox_touche(Entite &J2){
+bool Entite::Hitbox_Touche(Entite &J2){
 
 	return (
 	(//cas ou l'entité est à droite de J2
@@ -160,27 +185,4 @@ double Entite::getDistance_From(Entite E){
 		)
 	); // fin return
 
-}
-
-/// redéfinition de l'operateur +, permettant ainsi d'additionner deux Positions
-Position Position::operator+(Position const & pos){
-
-	//retour du résultat de l'addition
-	return Position(getX() + pos.getX(),getY() + pos.getY());
-
-}
-
-/// redéfinition de l'operateur *, permettant ainsi de multiplier une position par un double
-Position Position::operator*(double mult){
-
-	//retour du résultat de la multiplication
-	return Position(getX()*mult,getY()*mult);
-
-}
-
-/// redéfinition de l'operateur ==, permettant ainsi de verifier si deux Positions sont identiques
-bool Position::operator==(Position const & pos){
-
-	//retour du résultat de la comparaison
-	return (pos.getX()==x && pos.getY()==y);
 }

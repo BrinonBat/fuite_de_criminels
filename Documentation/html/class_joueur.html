@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('class_joueur.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Correspond à toutes les entités "vivantes" du <a class="el" href="class_jeu.html">Jeu</a>, pouvant se mouvoir et accomplir des objectifs. Il s'agit entre-autres de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a>.  
+<p>Correspond à toutes les entités "vivantes" du <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a>, pouvant se mouvoir et accomplir des objectifs. Il s'agit entre-autres de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> et <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a>.  
  <a href="class_joueur.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_entites_8hh_source.html">Entites.hh</a>&gt;</code></p>
@@ -116,8 +116,8 @@ Graphe d'héritage de Joueur:</div>
   <img src="class_joueur.png" usemap="#Joueur_map" alt=""/>
   <map id="Joueur_map" name="Joueur_map">
 <area href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu..." alt="Entite" shape="rect" coords="40,0,110,24"/>
-<area href="class_gendarme.html" alt="Gendarme" shape="rect" coords="0,112,70,136"/>
-<area href="class_voleur.html" alt="Voleur" shape="rect" coords="80,112,150,136"/>
+<area href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs." alt="Gendarme" shape="rect" coords="0,112,70,136"/>
+<area href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen..." alt="Voleur" shape="rect" coords="80,112,150,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -127,7 +127,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:aea68cdc4b07364339f82f2da73d85f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur de <a class="el" href="class_joueur.html" title="Correspond à toutes les entités &quot;vivantes&quot; du Jeu, pouvant se mouvoir et accomplir des objectifs....">Joueur</a>, basé sur <a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> en y ajoutant des variable lui permettant de se mouvoir et atteindre ses objectifs.  <a href="class_joueur.html#aea68cdc4b07364339f82f2da73d85f36">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aea68cdc4b07364339f82f2da73d85f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70578940a2e923aadc568e6714706ed8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">~Joueur</a> ()=default</td></tr>
-<tr class="memdesc:a70578940a2e923aadc568e6714706ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a> soient utilisés  <a href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a70578940a2e923aadc568e6714706ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> et <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> soient utilisés  <a href="class_joueur.html#a70578940a2e923aadc568e6714706ed8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a70578940a2e923aadc568e6714706ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c726bd4a2baeb36d2d05a7ba3e64b29"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur.html#a5c726bd4a2baeb36d2d05a7ba3e64b29">getSpeed</a> () const</td></tr>
 <tr class="memdesc:a5c726bd4a2baeb36d2d05a7ba3e64b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter permettant d'accéder à la variable speed  <a href="class_joueur.html#a5c726bd4a2baeb36d2d05a7ba3e64b29">Plus de détails...</a><br /></td></tr>
@@ -190,12 +190,12 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad6a7464bbaeb55e205040bec3c870418 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Affiche_Hitbox</a> ()</td></tr>
 <tr class="memdesc:ad6a7464bbaeb55e205040bec3c870418 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher la hitbox de l'<a class="el" href="class_entite.html" title="Il s&#39;agit de toute chose pouvant être placé sur le terrain, que ce soit animé(Joueur) ou non(NonJoueu...">Entite</a> dans le terminal.  <a href="class_entite.html#ad6a7464bbaeb55e205040bec3c870418">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad6a7464bbaeb55e205040bec3c870418 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01aa4b9bd81b3fa2987f6a419662edf0 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Hitbox_touche</a> (<a class="el" href="class_entite.html">Entite</a> &amp;E)</td></tr>
-<tr class="memdesc:a01aa4b9bd81b3fa2987f6a419662edf0 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux Entité sont en contact ou non.  <a href="class_entite.html#a01aa4b9bd81b3fa2987f6a419662edf0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a01aa4b9bd81b3fa2987f6a419662edf0 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29bae727d36561d3036f530ac06c6d2c inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a29bae727d36561d3036f530ac06c6d2c">Hitbox_Touche</a> (<a class="el" href="class_entite.html">Entite</a> &amp;E)</td></tr>
+<tr class="memdesc:a29bae727d36561d3036f530ac06c6d2c inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si deux Entité sont en contact ou non.  <a href="class_entite.html#a29bae727d36561d3036f530ac06c6d2c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a29bae727d36561d3036f530ac06c6d2c inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Correspond à toutes les entités "vivantes" du <a class="el" href="class_jeu.html">Jeu</a>, pouvant se mouvoir et accomplir des objectifs. Il s'agit entre-autres de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a>. </p>
+<div class="textblock"><p>Correspond à toutes les entités "vivantes" du <a class="el" href="class_jeu.html" title="Classe chargée du bon déroulement de la partie et de la gestion du terrain durant celle-ci.">Jeu</a>, pouvant se mouvoir et accomplir des objectifs. Il s'agit entre-autres de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> et <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a>. </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="aea68cdc4b07364339f82f2da73d85f36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea68cdc4b07364339f82f2da73d85f36">&#9670;&nbsp;</a></span>Joueur()</h2>
@@ -280,7 +280,7 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html">Voleur</a> et <a class="el" href="class_gendarme.html">Gendarme</a> soient utilisés </p>
+<p>destructeur mis en virtuel pour que celui de <a class="el" href="class_voleur.html" title="Il s&#39;agit des voleurs. Ils ont pour objectif d&#39;atteindre la sortie sans se faire attraper par les gen...">Voleur</a> et <a class="el" href="class_gendarme.html" title="Il s&#39;agit des gendarmes. Ils ont pour objectif d&#39;attraper les voleurs.">Gendarme</a> soient utilisés </p>
 
 </div>
 </div>

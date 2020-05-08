@@ -2,66 +2,67 @@
 #include "Entites.hh"
 
 class Jeu {
+public:
 
-public :
-//constructeurs et destructeurs
+//constructeurs
     Jeu(double plargeur, double phauteur) {
 		largeur=plargeur;
 		hauteur=phauteur;
 		nbVoleurs=0;
-		nbGendarmes=0;
 		nbCaptures=0;
     }
-    Jeu(Jeu const & JeuCopier){
-        largeur=JeuCopier.getLargeur();
-        hauteur=JeuCopier.getHauteur();
-		nbVoleurs=JeuCopier.getNbVoleurs();
-		nbCaptures=JeuCopier.getNbCaptures();
+
+    Jeu(Jeu const & jeuCopier){
+        largeur=jeuCopier.getLargeur();
+        hauteur=jeuCopier.getHauteur();
+		nbVoleurs=jeuCopier.getNbVoleurs();
+		nbCaptures=jeuCopier.getNbCaptures();
 	}
+
 //accesseurs
-	Voleur const & getVoleur(std::size_t num)const{return *(Liste_Voleurs.at(num));}
-	void ajouter_voleur(Voleur const &V);
-	void supprimer_voleur(Voleur  &V);
 
-	Gendarme const & getGendarme(std::size_t num)const{return *(Liste_Gendarmes.at(num));}
-	void ajouter_gendarme(Gendarme const &G);
+	//Voleurs
+	Voleur const & getVoleur(std::size_t num)const{return *(listeVoleurs.at(num));}
+	unsigned int getNbVoleurs()const{return nbVoleurs;}
+	std::vector<Voleur *> getListeVoleurs()const {return listeVoleurs;}
+	unsigned int getNbVoleursSortis()const{return nbVoleurs-(nbCaptures+listeVoleurs.size());}
+	void ajouter_Voleur(Voleur const &V);
+	void ajoutUnVoleur(){nbVoleurs++;}
+	void supprimer_Voleur(Voleur  &V);
 
-	NonJoueur const & getObject(std::size_t num)const{return *(Liste_Objets.at(num));}
-	void ajouter_nonJoueur(NonJoueur const nJ); // à retravailler
+	//Gendarmes
+	Gendarme const & getGendarme(std::size_t num)const{return *(listeGendarmes.at(num));}
+	unsigned int getNbGendarmes()const{return listeGendarmes.size();}
+	std::vector<Gendarme *> getListeGendarmes()const {return listeGendarmes;}
+	void ajouter_Gendarme(Gendarme const &G);
+
+	//NonJoueur
+	NonJoueur const & getObject(std::size_t num)const{return *(listeObjets.at(num));}
+	std::vector<NonJoueur *> getListeNonJoueurs()const {return listeObjets;}
+	void ajouter_nonJoueur(NonJoueur const &nJ); // à retravailler
+
+	//autre
+	unsigned int getNbCaptures()const{return nbCaptures;}
+	void ajoutUneCapture(){nbCaptures++;}
 
 	double getLargeur()const{return largeur;}
 	double getHauteur()const{return hauteur;}
 
-	unsigned int getNbCaptures()const{return nbCaptures;}
-	void ajoutUneCapture(){nbCaptures++;}
-
-	unsigned int getNbVoleurs()const{return nbVoleurs;}
-	void ajoutUnVoleur(){nbVoleurs++;}
-
-	unsigned int getNbGendarmes()const{return nbGendarmes;}
-	void ajoutUnGendarme(){nbGendarmes++;}
-
-	unsigned int getNbVoleursSorties()const{return nbVoleurs-(nbCaptures+Liste_Voleurs.size());}
-
-	std::vector<Voleur *> getListeVoleur()const {return Liste_Voleurs;}
-	std::vector<Gendarme *> getListeGendarme()const {return Liste_Gendarmes;}
-	std::vector<NonJoueur *> getListeNonJoueur()const {return Liste_Objets;}
+	bool estFini();
 
 //méthodes
 	void Jouer_tour();
     void Afficher();
-    void Initialise();
     void Calcule_Deplacement(Voleur &V);
 	void Calcule_Deplacement(Gendarme &G);
-	bool Coup_Possible(Joueur & J, Direction coup);
-    bool estFini();
+	bool Coup_Possible(Joueur & J, Direction coup); // pas encore utilisée, mise de côté
 
 private:
-	unsigned int nbVoleurs,nbGendarmes,nbCaptures;
+	unsigned int nbVoleurs,nbCaptures;
     double largeur,hauteur;
-    std::vector<Voleur *> Liste_Voleurs;
-	std::vector<Gendarme *> Liste_Gendarmes;
-    std::vector<NonJoueur *> Liste_Objets;
+    std::vector<Voleur *> listeVoleurs;
+	std::vector<Gendarme *> listeGendarmes;
+    std::vector<NonJoueur *> listeObjets;
 
 };
 
