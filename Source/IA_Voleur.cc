@@ -1,5 +1,5 @@
 #include "Jeu.hh"
-/// calcule la prochaine destination du voleur
+/// calcule la prochaine destination du voleur en fonction de l'IA choisie
 void Jeu::Calcule_Deplacement(Voleur &V){
 
 	//définition

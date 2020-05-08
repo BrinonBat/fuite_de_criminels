@@ -1,5 +1,5 @@
 #include "Jeu.hh"
-/// calcule la prochaine destination du gendarme
+/// calcule la prochaine destination du gendarme en fonction de l'IA choisie
 void Jeu::Calcule_Deplacement(Gendarme &G){
 
 	//définition
