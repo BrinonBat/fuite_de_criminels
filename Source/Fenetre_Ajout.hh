@@ -16,6 +16,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include <string>
 
 #include "Fenetre_Jeu.hh"
 #include "Jeu.hh"

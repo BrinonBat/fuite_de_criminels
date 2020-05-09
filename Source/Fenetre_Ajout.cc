@@ -1,5 +1,4 @@
 #include "Fenetre_Ajout.hh"
-#include <string>
 
 
 Fenetre_Ajout::Fenetre_Ajout()
@@ -135,7 +134,7 @@ void Fenetre_Ajout::Ajouter_Joueur(){
     }
 }
 
-// Ajout d'un Non_Joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
+/// Ajout d'un Non_Joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
 void Fenetre_Ajout::Ajouter_NonJoueur(){
 	switch (_AutreChoix->currentIndex()){
         case 0:{
@@ -154,7 +153,7 @@ void Fenetre_Ajout::Ajouter_NonJoueur(){
 
 
 
-// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
+/// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
 void Fenetre_Ajout::Configuration_Partie(){
 	for (auto i : this->Game->getListeVoleurs()){
 		i->getItem()->setBrush(QBrush(Qt::red));
@@ -242,72 +241,4 @@ void Fenetre_Ajout::Lancer_Partie(){
 	// Configuration et Lancement d'une partie
 	Configuration_Partie();
 	Jouer_Partie();
-}
-
-
-void Fenetre_Ajout::Choix_Exemple(){
-	switch (_ChoixExemple->currentIndex()){
-        case 0:
-            Exemple1();
-            break;
-
-        case 1:
-            Exemple2();
-            break;
-
-        case 2:
-        	Exemple3();
-        	break;
-    }
-}
-
-
-void Fenetre_Ajout::Exemple1(){
-	// Exemple 1 : Par défaut
-	Fenetre_Game->show();
-
-	//creation des entités
-	NonJoueur Sortie(Position(38,38),Type::sortie);
-	Voleur V1(Position(-150,-150),1.0,"V1",Choix_Algo::random);
-	Voleur V2(Position(38,30),0.5,"V2",Choix_Algo::random);
-	Gendarme G1(Position(-148,300),2.0,"G1",Choix_Algo::random);
-	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::random);
-
-	// ajout des entités au Jeu
-	Game->ajouter_Voleur(V1);
-	Game->ajouter_Gendarme(G1);
-	Game->ajouter_Voleur(V2);
-	Game->ajouter_Gendarme(G2);
-	Game->ajouter_nonJoueur(Sortie);
-
-	// Configuration et Lancement d'une partie
-	Configuration_Partie();
-	Jouer_Partie();
-}
-
-void Fenetre_Ajout::Exemple2(){
-	// Exemple2 Grosse Partie
-	Fenetre_Game->show();
-
-	for (int i=0;i<30;++i){
-		Voleur V(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas);
-		Game->ajouter_Voleur(V);
-	}
-
-	for (int i=0;i<30;++i){
-		Gendarme G(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut);
-		Game->ajouter_Gendarme(G);
-	}
-
-	NonJoueur Sortie(Position(0,0),Type::sortie);
-	Game->ajouter_nonJoueur(Sortie);
-
-	// Configuration et Lancement d'une partie
-	Configuration_Partie();
-	Jouer_Partie();
-}
-
-
-void Fenetre_Ajout::Exemple3(){
-		// Exemple3
 }
