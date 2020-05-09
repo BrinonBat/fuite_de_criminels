@@ -8,25 +8,18 @@ class Fenetre_Jeu : public QWidget {
 	Q_OBJECT
 
 public:
+
+	//constructeur
 	Fenetre_Jeu();
 
-	QGraphicsScene * _Scene;
-	QGraphicsView * _View;
-	bool Fenetre_Apercu;
-	bool Fermeture;
+	//méthodes
+	void closeEvent(QCloseEvent *event);
 
-void closeEvent(QCloseEvent *event)
-{
-	if (!Fenetre_Apercu and Fermeture == false){
-    QWidget::closeEvent(event);
-	}
-	else Fenetre_Apercu = false;
+	//variables
+	QGraphicsScene * scene;
+	QGraphicsView * view;
+	bool fenetre_apercu;
+	bool fermeture;
 
-	if (Fermeture==	true)
-	{
-		QWidget::closeEvent(event);
-		Fermeture = false;
-	}
-}
 
 };

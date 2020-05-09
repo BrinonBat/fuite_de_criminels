@@ -27,6 +27,7 @@ class Fenetre_Ajout : public QWidget {
 
 public:
 	Fenetre_Ajout();
+
 private slots :
 
 	void Ajouter_Joueur();
@@ -46,10 +47,7 @@ private slots :
 
 	void Ecriture_Resultats(int duree);
 
-	void closeEvent(QCloseEvent *event)
-	{
-		exit(0);
-	}
+	void closeEvent(QCloseEvent *event){exit(0);}
 
 private :
 

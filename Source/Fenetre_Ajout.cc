@@ -80,243 +80,189 @@ Fenetre_Ajout::Fenetre_Ajout()
 	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
 	Fenetre_Game = new Fenetre_Jeu();
 
+}
+
+// Ajout d'un joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
+void Fenetre_Ajout::Ajouter_Joueur(){
+	switch (_ChoixJoueur->currentIndex()){
+    	case 0:{
+			switch(_ChoixAlgo->currentIndex()){
+        		case 0:{
+        			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Random\n");
+					this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
+        		}break;
+
+        		case 1:{
+        			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
+					this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::haut));
+        		}break;
+
+        		case 2:{
+        			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le bas!\n");
+					this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::bas));
+        		}break;
+
+        		case 3:{
+        			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Fuyard!\n");
+					this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
+        		}break;
+        	}
+        }break;
+
+        case 1:{
+        	switch(_ChoixAlgo->currentIndex()){
+        		case 0:{
+        			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Random\n");
+					this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
+        		}break;
+
+        		case 1:{
+        			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
+					this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::haut));
+        		}break;
+
+        		case 2:{
+        			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le bas!\n");
+					this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::bas));
+        		}break;
+
+        		case 3:{
+        			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Chasseur!\n");
+					this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
+        		}break;
+        	}
+        }break;
+    }
+}
+
+// Ajout d'un Non_Joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
+void Fenetre_Ajout::Ajouter_NonJoueur(){
+	switch (_AutreChoix->currentIndex()){
+        case 0:{
+            // Voleur V1(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,"V1");
+             _Liste->setText(_Liste->text() + "Sortie: ("+_PositionX2->text()+","+_PositionY2->text()+")\n");
+			this->Game->ajouter_nonJoueur(NonJoueur(Position(_PositionX2->text().toDouble(),_PositionY2->text().toDouble()),Type::sortie));
+        }break;
+
+        case 1:{
+        	// Pas encore de gestion de cachette.
+
+        }break;
+    }
+
+}
+
+
+
+// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
+void Fenetre_Ajout::Configuration_Partie(){
+	for (auto i : this->Game->getListeVoleurs()){
+		i->getItem()->setBrush(QBrush(Qt::red));
+		Fenetre_Game->scene->addItem(i->getItem());
 	}
 
-	// Ajout d'un joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
-	void Fenetre_Ajout::Ajouter_Joueur(){
-		switch (_ChoixJoueur->currentIndex())
-        {
-            case 0:
-            {	switch(_ChoixAlgo->currentIndex())
-            	{
-            		case 0:
-            		{
-            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Random\n");
-						this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
-            		}
-            		break;
-
-            		case 1:
-            		{
-            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
-						this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::haut));
-            		}
-            		break;
-
-            		case 2:
-            		{
-            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le bas!\n");
-						this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::bas));
-            		}
-            		break;
-
-            		case 3:
-            		{
-            			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Fuyard!\n");
-						this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
-            		}
-            		break;
-
-            	}
-            }
-                break;
-
-            case 1:
-            {
-            	switch(_ChoixAlgo->currentIndex())
-            	{
-            		case 0:
-            		{
-            			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Random\n");
-						this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::random));
-            		}
-            		break;
-
-            		case 1:
-            		{
-            			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le haut!\n");
-						this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::haut));
-            		}
-            		break;
-
-            		case 2:
-            		{
-            			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Vers le bas!\n");
-						this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::bas));
-            		}
-            		break;
-
-            		case 3:
-            		{
-            			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Chasseur!\n");
-						this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
-            		}
-            		break;
-            	}
-            }
-                break;
-        }
-
-
-
+	for (auto i : this->Game->getListeGendarmes()){
+		i->getItem()->setBrush(QBrush(Qt::blue));
+		Fenetre_Game->scene->addItem(i->getItem());
 	}
 
-	// Ajout d'un Non_Joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
-	void Fenetre_Ajout::Ajouter_NonJoueur()
-	{
-		switch (_AutreChoix->currentIndex())
-        {
-            case 0:
-            {
-                // Voleur V1(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,"V1");
-                 _Liste->setText(_Liste->text() + "Sortie: ("+_PositionX2->text()+","+_PositionY2->text()+")\n");
-				this->Game->ajouter_nonJoueur(NonJoueur(Position(_PositionX2->text().toDouble(),_PositionY2->text().toDouble()),Type::sortie));
-            }
-                break;
-
-            case 1:
-            {
-            	// Pas encore de gestion de cachette.
-
-            }
-                break;
-        }
-
-	}
-
-
-
-	// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
-	void Fenetre_Ajout::Configuration_Partie()
-	{
-		for (auto i : this->Game->getListeVoleurs())
-		{
-			i->getItem()->setBrush(QBrush(Qt::red));
-			Fenetre_Game->_Scene->addItem(i->getItem());
-		}
-
-		for (auto i : this->Game->getListeGendarmes())
-		{
-			i->getItem()->setBrush(QBrush(Qt::blue));
-			Fenetre_Game->_Scene->addItem(i->getItem());
-		}
-
-		for (auto i : this->Game->getListeNonJoueurs())
-		{
-			if (i->getType()==Type::sortie)
-			{
-
+	for (auto i : this->Game->getListeNonJoueurs()){
+		if (i->getType()==Type::sortie){
 			i->getItem()->setBrush(QBrush(Qt::green));
-			Fenetre_Game->_Scene->addItem(i->getItem());
-
-			}
-			else {
-
+			Fenetre_Game->scene->addItem(i->getItem());
+		}
+		else {
 			i->getItem()->setBrush(QBrush(Qt::green));
-			Fenetre_Game->_Scene->addItem(i->getItem());
+			Fenetre_Game->scene->addItem(i->getItem());
+		}
+	}
+}
+
+void Fenetre_Ajout::Jouer_Partie(){
+	std::cout<<"Etat Initial"<<std::endl;
+	Game->Afficher();
+	// Lancement TIMER
+	auto start = high_resolution_clock::now();
+	// Partie
+	while (Fenetre_Game->fermeture == false){
+		for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
+			std::cout<<"\n TOUR "<<nb_tour<<" : \n";
+			Game->Jouer_tour();
+			for (auto i : Game->getListeVoleurs()){
+				i->setItem();
 			}
+			for (auto i : Game->getListeGendarmes()){
+				i->setItem();
+			}
+			QEventLoop loop;
+			QTimer::singleShot(100, &loop, SLOT(quit()));
+			loop.exec();
+			Game->Afficher();
 		}
-
+		if (Game->estFini())Fenetre_Game->fermeture = true;
 	}
 
-	void Fenetre_Ajout::Jouer_Partie()
-	{
-		std::cout<<"Etat Initial"<<std::endl;
-		Game->Afficher();
-		// Lancement TIMER
-		auto start = high_resolution_clock::now();
-		// Partie
-	while (Fenetre_Game->Fermeture == false)
-	{
+	// Fin TIMER
+	auto stop = high_resolution_clock::now();
+	auto duree = duration_cast<seconds>(stop - start);
 
-	for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
-		std::cout<<"\n TOUR "<<nb_tour<<" : \n";
-		Game->Jouer_tour();
-		for (auto i : Game->getListeVoleurs()){
-			i->setItem();
-		}
+	// Ecriture en fin de partie
+	int resultat_duree= duree.count();
+	Ecriture_Resultats(resultat_duree);
 
-		for (auto i : Game->getListeGendarmes()){
-			i->setItem();
-		}
+}
 
-		QEventLoop loop;
-		QTimer::singleShot(100, &loop, SLOT(quit()));
-		loop.exec();
+void Fenetre_Ajout::Apercu(){
+	Fenetre_Game->fenetre_apercu = true; // Pour gérer la fermeture de la fenetre Apercu, vue que le jeu une fois lancé si on quitte, arrête la partie
+	Fenetre_Game->show();
+	// Configuration_Partie() pour avoir un aperçu
+	Configuration_Partie();
+}
 
-		Game->Afficher();
-		}
-	if (Game->estFini())
-	{
-		Fenetre_Game->Fermeture = true;
-	}
+void Fenetre_Ajout::Ecriture_Resultats(int duree){
 
-	}
-		// Fin TIMER
-		auto stop = high_resolution_clock::now();
-		auto duree = duration_cast<seconds>(stop - start);
+	//déclaration
+	std::ofstream Resultats;
 
-		// Ecriture en fin de partie
-		int resultat_duree= duree.count();
-		Ecriture_Resultats(resultat_duree);
+	Resultats.open ("Resultats.txt",std::ios::app);
+	Resultats << "------------------------------\n Résultat de la partie : \n Temps : "<<
+	std::to_string(duree)<<" secondes \n Nombre de voleur(s): "<<std::to_string(Game->getNbVoleurs())<<"\n Nombre de gendarme(s): "<<std::to_string(Game->getNbGendarmes())<<"\nVoleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<
+	" sur "<<std::to_string(Game->getNbVoleurs())<<" \n Voleur(s) Sortie(s) :"<<std::to_string(Game->getNbVoleursSortis())<<" sur "<<std::to_string(Game->getNbVoleurs())<<
+	" \n Algorithme utilisé : AFAIRE \n Autres informations : AFAIRE \n------------------------------\n";
 
-	}
-
-	void Fenetre_Ajout::Apercu()
-	{
-
-		Fenetre_Game->Fenetre_Apercu = true; // Pour gérer la fermeture de la fenetre Apercu, vue que le jeu une fois lancé si on quitte, arrête la partie
-		Fenetre_Game->show();
-		// Configuration_Partie() pour avoir un aperçu
-		Configuration_Partie();
-	}
-
-	void Fenetre_Ajout::Ecriture_Resultats(int duree)
-	{
-		std::ofstream Resultats;
-
-  		Resultats.open ("Resultats.txt",std::ios::app);
-  		Resultats << "------------------------------\n Résultat de la partie : \n Temps : "<<
-  		std::to_string(duree)<<" secondes \n Nombre de voleur(s): "<<std::to_string(Game->getNbVoleurs())<<"\n Nombre de gendarme(s): "<<std::to_string(Game->getNbGendarmes())<<"\nVoleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<
-  		" sur "<<std::to_string(Game->getNbVoleurs())<<" \n Voleur(s) Sortie(s) :"<<std::to_string(Game->getNbVoleursSortis())<<" sur "<<std::to_string(Game->getNbVoleurs())<<
-  		" \n Algorithme utilisé : AFAIRE \n Autres informations : AFAIRE \n------------------------------\n";
-
-  		Resultats.close();
-	}
+	Resultats.close();
+}
 
 
-	void Fenetre_Ajout::Lancer_Partie()
-	{
-		// Affichage de la fenetre Jeu
-		Fenetre_Game->show();
-		// Configuration et Lancement d'une partie
-		Configuration_Partie();
-		Jouer_Partie();
-	}
+void Fenetre_Ajout::Lancer_Partie(){
+
+	// Affichage de la fenetre Jeu
+	Fenetre_Game->show();
+
+	// Configuration et Lancement d'une partie
+	Configuration_Partie();
+	Jouer_Partie();
+}
 
 
-	void Fenetre_Ajout::Choix_Exemple()
-	{
-		switch (_ChoixExemple->currentIndex())
-        {
-            case 0:
-                Exemple1();
-                break;
+void Fenetre_Ajout::Choix_Exemple(){
+	switch (_ChoixExemple->currentIndex()){
+        case 0:
+            Exemple1();
+            break;
 
-            case 1:
-                Exemple2();
-                break;
+        case 1:
+            Exemple2();
+            break;
 
-            case 2:
-            	Exemple3();
-            	break;
-        }
-	}
+        case 2:
+        	Exemple3();
+        	break;
+    }
+}
 
 
-
-	void Fenetre_Ajout::Exemple1()
-	{
+void Fenetre_Ajout::Exemple1(){
 	// Exemple 1 : Par défaut
 	Fenetre_Game->show();
 
@@ -337,21 +283,18 @@ Fenetre_Ajout::Fenetre_Ajout()
 	// Configuration et Lancement d'une partie
 	Configuration_Partie();
 	Jouer_Partie();
-	}
+}
 
-void Fenetre_Ajout::Exemple2()
-	{
+void Fenetre_Ajout::Exemple2(){
 	// Exemple2 Grosse Partie
 	Fenetre_Game->show();
 
-	for (int i=0;i<30;++i)
-	{
+	for (int i=0;i<30;++i){
 		Voleur V(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas);
 		Game->ajouter_Voleur(V);
 	}
 
-	for (int i=0;i<30;++i)
-	{
+	for (int i=0;i<30;++i){
 		Gendarme G(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut);
 		Game->ajouter_Gendarme(G);
 	}
@@ -359,13 +302,12 @@ void Fenetre_Ajout::Exemple2()
 	NonJoueur Sortie(Position(0,0),Type::sortie);
 	Game->ajouter_nonJoueur(Sortie);
 
-// Configuration et Lancement d'une partie
+	// Configuration et Lancement d'une partie
 	Configuration_Partie();
 	Jouer_Partie();
-	}
+}
 
 
-void Fenetre_Ajout::Exemple3()
-	{
+void Fenetre_Ajout::Exemple3(){
 		// Exemple3
-	}
+}
