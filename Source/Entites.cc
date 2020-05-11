@@ -12,19 +12,19 @@ void Joueur::Deplacement(){
 
 }
 /// indique la Direction dans laquelle se trouve le Joueur indiqué en paramètre
-Direction Joueur::Se_Rapprocher(Joueur const & J){
+Direction Joueur::Se_Rapprocher(Entite const & E){
 
 	//déclarations
 	double x,y;
 
 	//traitement de X
-	if (J.getPosition().getX()>this->getPosition().getX()) x=1;
-	else if (J.getPosition().getX()<getPosition().getX()) x=-1;
+	if (E.getPosition().getX()>this->getPosition().getX()) x=1;
+	else if (E.getPosition().getX()<getPosition().getX()) x=-1;
 	else x=0;
 
 	//traitement de Y
-	if (J.getPosition().getY()>this->getPosition().getY()) y=1;
-	else if (J.getPosition().getY()<getPosition().getY()) y=-1;
+	if (E.getPosition().getY()>this->getPosition().getY()) y=1;
+	else if (E.getPosition().getY()<getPosition().getY()) y=-1;
 	else y=0;
 
 	//retourne la direction à emprunter
@@ -33,10 +33,10 @@ Direction Joueur::Se_Rapprocher(Joueur const & J){
 }
 
 /// indique la Direction opposée à celle où se trouve le Joueur indiqué en paramètre
-Direction Joueur::Fuir(Joueur const & J){
+Direction Joueur::Fuir(Entite const & E){
 
 	//Pour fuir, on exécute l'action contraire à celle de se rapprocher
-	Direction D = Se_Rapprocher(J);
+	Direction D = Se_Rapprocher(E);
 	D.setX(-D.getX());
 	D.setY(-D.getY());
 
@@ -47,6 +47,29 @@ Direction Joueur::Fuir(Joueur const & J){
 
 /// indique au Voleur quel est le Gendarme le plus proche
 Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
+
+	//définition
+	double distance = 1000;
+	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
+
+	//traitement pour chaque gendarme
+	for (auto && i : liGen){
+
+		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
+		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
+		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20){
+			distance = this->getDistance_From(*i);
+			G = *i;
+		}//fin gendarme actuel
+	}//fin liste gendarmes
+
+	//fin
+	return G;
+
+}
+
+//Indique au gendarme le gendarme le plus proche
+Gendarme Gendarme::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 
 	//définition
 	double distance = 1000;

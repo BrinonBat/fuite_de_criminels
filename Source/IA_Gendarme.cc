@@ -28,8 +28,43 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
 			result = G.Se_Rapprocher(V);
 		}break;
-	}
 
+		// IA Facile
+		case Choix_Algo::IA_Facile:{
+
+			//Repère un voleur 
+			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
+			if (G.getDistance_From(V)<=20)
+			{
+				result = G.Se_Rapprocher(V);
+				break;
+			}
+
+			// Respect des distances entre Gendarmes
+			Gendarme G2 = G.Gendarme_Plus_Proche(getListeGendarmes());
+			if (G.getDistance_From(G2)<=15)
+			{	
+				result = G.Fuir(G2);
+			}
+	
+			// Vont vers les sorties
+			for (auto && sorties : getListeNonJoueurs())
+			{
+				result = G.Se_Rapprocher(*sorties);
+
+				if (G.getDistance_From(*sorties)<10)
+				{
+					result = G.Fuir(*sorties);
+					
+				}
+			}
+
+
+			// Sortie déja protégé -> Cherche position optimale
+			
+
+		}break;
+	}
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
 	result=result*G.getSpeed();
 

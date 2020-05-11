@@ -30,6 +30,7 @@ enum class Choix_Algo {
 	haut,
 	bas,
 	gendarmes_chasseurs,
+	IA_Facile
 };
 
 class Position {
@@ -156,8 +157,8 @@ public:
 	void Deplacement();
 
 //méthodes
-	Direction Se_Rapprocher(Joueur const & J);
-	Direction Fuir(Joueur const & J);
+	Direction Se_Rapprocher(Entite const & E);
+	Direction Fuir(Entite const & E);
 
 private:
 	double speed;
@@ -192,4 +193,5 @@ public:
 
 //méthodes
 	Voleur Voleur_Plus_Proche(std::vector<Voleur*> liVol);
+	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> liGen);
 };

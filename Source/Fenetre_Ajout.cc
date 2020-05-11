@@ -26,6 +26,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_ChoixAlgo->addItem("Vers le haut!",1);
 	_ChoixAlgo->addItem("Vers le bas!",2);
 	_ChoixAlgo->addItem("Gendarme Chasseur",3);
+	_ChoixAlgo->addItem("IA Facile",4);
 	_ChoixAlgo->setGeometry(400,40,140,20);
 
 	_Ajouter = new QPushButton("Ajouter",this);
@@ -105,6 +106,11 @@ void Fenetre_Ajout::Ajouter_Joueur(){
         			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Fuyard!\n");
 					this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
         		}break;
+
+        		case 4:{
+        			_Liste->setText(_Liste->text() + "Voleur:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : IA Facile\n");
+					this->Game->ajouter_Voleur(Voleur(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::IA_Facile));
+        		}break;
         	}
         }break;
 
@@ -128,6 +134,11 @@ void Fenetre_Ajout::Ajouter_Joueur(){
         		case 3:{
         			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : Chasseur!\n");
 					this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::gendarmes_chasseurs));
+        		}break;
+
+        		case 4:{
+        			_Liste->setText(_Liste->text() + "Gendarme:"+_NomJoueur->text()+"("+_PositionX->text()+","+_PositionY->text()+") Déplacement : IA Facile\n");
+					this->Game->ajouter_Gendarme(Gendarme(Position(_PositionX->text().toDouble(),_PositionY->text().toDouble()),1.0,_NomJoueur->text().toStdString(),Choix_Algo::IA_Facile));
         		}break;
         	}
         }break;

@@ -28,6 +28,17 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarmes());
 			result = V.Fuir(G);
 		}break;
+
+		//IA Facile
+		case Choix_Algo::IA_Facile:{
+			
+			// Va vers sorties
+			for (auto && sorties : getListeNonJoueurs())
+			{
+				result = G.Se_Rapprocher(*sorties);
+			}
+			
+		}break;
 	}
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
