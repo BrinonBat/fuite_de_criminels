@@ -80,7 +80,7 @@ Gendarme Gendarme::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 
 		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
 		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
-		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20){
+		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20 and this->getNom()!=(*i).getNom()){
 			distance = this->getDistance_From(*i);
 			G = *i;
 		}//fin gendarme actuel

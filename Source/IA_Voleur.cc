@@ -35,9 +35,9 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 			// Va vers sorties
 			for (auto && sorties : getListeNonJoueurs())
 			{
-				result = G.Se_Rapprocher(*sorties);
+				result = V.Se_Rapprocher(*sorties);
 			}
-			
+
 		}break;
 	}
 
