@@ -1,6 +1,6 @@
 #include "Fenetre_Ajout.hh"
 
-
+/// Constructeur d'une fenetre qui permet d'ajouter des joueurs/sorties avec différents paramètres
 Fenetre_Ajout::Fenetre_Ajout()
 	:QWidget() {
 		resize(620,600);
@@ -81,7 +81,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 
 }
 
-// Ajout d'un joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
+/// Ajout d'un joueur dans le JEU et modification du Label sur la fênetre de configuration pour voir les ajouts
 void Fenetre_Ajout::Ajouter_Joueur(){
 	switch (_ChoixJoueur->currentIndex()){
     	case 0:{
@@ -177,6 +177,7 @@ void Fenetre_Ajout::Configuration_Partie(){
 	}
 }
 
+/// Fonction qui permet de Jouer une partie
 void Fenetre_Ajout::Jouer_Partie(){
 	std::cout<<"Etat Initial"<<std::endl;
 	Game->Afficher();
@@ -210,7 +211,7 @@ void Fenetre_Ajout::Jouer_Partie(){
 	Ecriture_Resultats(resultat_duree);
 
 }
-
+/// Fenetre d'apercu avant lancement de partie
 void Fenetre_Ajout::Apercu(){
 	Fenetre_Game->fenetre_apercu = true; // Pour gérer la fermeture de la fenetre Apercu, vue que le jeu une fois lancé si on quitte, arrête la partie
 	Fenetre_Game->show();
@@ -218,6 +219,7 @@ void Fenetre_Ajout::Apercu(){
 	Configuration_Partie();
 }
 
+/// Fonction qui permet d'écrire les resultats de la partie une fois terminés dans "Resultat.txt"
 void Fenetre_Ajout::Ecriture_Resultats(int duree){
 
 	//déclaration
@@ -232,7 +234,7 @@ void Fenetre_Ajout::Ecriture_Resultats(int duree){
 	Resultats.close();
 }
 
-
+/// Fonction qui lance une partie -> Configuration puis lancement.
 void Fenetre_Ajout::Lancer_Partie(){
 
 	// Affichage de la fenetre Jeu

@@ -1,6 +1,8 @@
 #include "Fenetre_Jeu.hh"
 #include <string>
 
+/// Constructeur fenetre jeu -> Pour l'affichage du jeu après lancement de la partie
+
 	Fenetre_Jeu::Fenetre_Jeu():QWidget() {
 		resize((TAILLE_TERRAIN*2)+10,(TAILLE_TERRAIN*2)+10);
 		scene = new QGraphicsScene();
@@ -15,6 +17,7 @@
 
 	}
 
+/// Définition du closeEvent pour Fenetre_Jeu -> Prend en compte si c'est la fenetre aperçu/Lancer_Partie et effectue une action en cas de fermeture
 	void Fenetre_Jeu::closeEvent(QCloseEvent *event){
 		if (!fenetre_apercu and fermeture == false){
 	    	QWidget::closeEvent(event);
