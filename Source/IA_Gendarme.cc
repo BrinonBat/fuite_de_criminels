@@ -34,7 +34,7 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 
 			//Repère un voleur 
 			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
-			if (G.getDistance_From(V)<=20)
+			if (G.getDistance_From(V)<=50)
 			{
 				result = G.Se_Rapprocher(V);
 				break;
