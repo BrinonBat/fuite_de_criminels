@@ -48,3 +48,13 @@ Voleur(s) Capturé(s) : 1 sur 4
  Algorithme utilisé : AFAIRE 
  Autres informations : AFAIRE 
 ------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 16 secondes 
+ Nombre de voleur(s): 2
+ Nombre de gendarme(s): 2
+Voleur(s) Capturé(s) : 1 sur 2 
+ Voleur(s) Sortie(s) :1 sur 2 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------

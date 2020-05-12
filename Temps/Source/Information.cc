@@ -6,8 +6,7 @@ Position Information_Gendarme::Alerte_Zone(int niveau) {
 	return Ma_Position();
 }
 
-Direction Information_Gendarme::Aller_vers(Position P)
-{
+Direction Information_Gendarme::Aller_vers(Position P){
 
 	//déclarations
 	double x,y;
@@ -27,15 +26,9 @@ Direction Information_Gendarme::Aller_vers(Position P)
 
 }
 
-Direction Information_Gendarme::Effectue_Ronde()
-{
-	if (getRonde()==false)
-	{
-		setRonde(Ma_Position(),Position(30,30));
-		return Aller_vers(getArrivee());
-	}
-	
-
+Direction Information_Gendarme::Effectue_Ronde(){
+	setRonde(Ma_Position(),Position(30,30));
+	return Aller_vers(getArrivee());
 }
 
 // Direction Information_Gendarme::Joue(Jeu *J)
@@ -44,7 +37,7 @@ Direction Information_Gendarme::Effectue_Ronde()
 // 	// Repère un voleur
 // 	Voleur V = G.Voleur_Plus_Proche(J->getListeVoleur());
 // 	if (G.getDistance_From(V)>30)
-// 	{	
+// 	{
 // 		setAide(false);
 // 		setChasse(false);
 
