@@ -220,6 +220,12 @@ void Fenetre_Ajout::Jouer_Partie(){
 	// Ecriture en fin de partie
 	int resultat_duree= duree.count();
 	Ecriture_Resultats(resultat_duree);
+	
+	// Reset en fin de partie
+  	delete Game;
+    	delete Fenetre_Game;
+    	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
+    	Fenetre_Game = new Fenetre_Jeu();
 
 }
 /// Fenetre d'apercu avant lancement de partie
