@@ -41,6 +41,8 @@ private slots :
 
 	void Lancer_Partie();
 
+	void Fin();
+
 	void Choix_Exemple();
 	void Exemple1();
 	void Exemple2();
@@ -68,6 +70,7 @@ private :
 
 	QPushButton * _Lancer;
 	QPushButton * _Apercu;
+	QPushButton * _FinPartie;
 
 	QLabel * _Intro3;
 	QComboBox * _ChoixExemple;

@@ -15,11 +15,14 @@
 		 fenetre_apercu = false;
 		 fermeture = false;
 
+		 
+
 	}
 
 /// Définition du closeEvent pour Fenetre_Jeu -> Prend en compte si c'est la fenetre aperçu/Lancer_Partie et effectue une action en cas de fermeture
 	void Fenetre_Jeu::closeEvent(QCloseEvent *event){
 		if (!fenetre_apercu and fermeture == false){
+
 	    	QWidget::closeEvent(event);
 		}
 		else fenetre_apercu = false;

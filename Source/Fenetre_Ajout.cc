@@ -60,6 +60,10 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_Apercu->setGeometry(300,150,150,50);
 	connect(_Apercu,SIGNAL(released()),this,SLOT(Apercu()));
 
+	_FinPartie = new QPushButton("Fin Partie",this);
+	_FinPartie->setGeometry(450,150,150,50);
+	connect(_FinPartie,SIGNAL(released()),this,SLOT(Fin()));
+
 	// Partie configuré - exemple (3)
 	_Intro3 = new QLabel("	Sinon vous pouvez lancer une partie avec\n\t3 exemples déja configuré :\n ",this);
 	_Intro3->move(0,220);
@@ -222,8 +226,8 @@ void Fenetre_Ajout::Jouer_Partie(){
 	Ecriture_Resultats(resultat_duree);
 	
 	// Reset en fin de partie
-    	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
-    	Fenetre_Game = new Fenetre_Jeu();
+	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
+	Fenetre_Game = new Fenetre_Jeu();
 
 }
 /// Fenetre d'apercu avant lancement de partie
@@ -258,4 +262,11 @@ void Fenetre_Ajout::Lancer_Partie(){
 	// Configuration et Lancement d'une partie
 	Configuration_Partie();
 	Jouer_Partie();
+}
+
+
+/// Fenetre d'apercu avant lancement de partie
+void Fenetre_Ajout::Fin(){
+	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
+	Fenetre_Game = new Fenetre_Jeu();
 }
