@@ -265,8 +265,11 @@ void Fenetre_Ajout::Lancer_Partie(){
 }
 
 
-/// Fenetre d'apercu avant lancement de partie
-void Fenetre_Ajout::Fin(){
+/// Bouton de Fin de partie et reset
+void Fenetre_Ajout::Fin(){	
+	delete Game;
+	delete Fenetre_Game;
 	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
 	Fenetre_Game = new Fenetre_Jeu();
+	_Liste->setText("");
 }
