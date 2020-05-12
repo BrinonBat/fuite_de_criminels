@@ -45,8 +45,8 @@ Direction Joueur::Fuir(Entite const & E){
 
 }
 
-/// indique au Voleur quel est le Gendarme le plus proche
-Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
+/// indique au Joueur quel est le Gendarme le plus proche
+Gendarme Joueur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 
 	//définition
 	double distance = 1000;
@@ -58,29 +58,6 @@ Gendarme Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
 		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
 		if (this->getDistance_From(*i)<distance /*and this->getDistance_From(*i)<10*/){
-			distance = this->getDistance_From(*i);
-			G = *i;
-		}//fin gendarme actuel
-	}//fin liste gendarmes
-
-	//fin
-	return G;
-
-}
-
-//Indique au gendarme le gendarme le plus proche
-Gendarme Gendarme::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
-
-	//définition
-	double distance = 1000;
-	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
-
-	//traitement pour chaque gendarme
-	for (auto && i : liGen){
-
-		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
-		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
-		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<20 and this->getNom()!=(*i).getNom()){
 			distance = this->getDistance_From(*i);
 			G = *i;
 		}//fin gendarme actuel

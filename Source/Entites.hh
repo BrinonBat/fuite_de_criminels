@@ -134,6 +134,8 @@ private:
 	Type type;
 };
 
+class Gendarme; // Déclaration pour faire appel à la fonction Gendarme_Plus_Proche
+
 class Joueur: public Entite {
 public:
 //constructeur & destructeur
@@ -159,6 +161,7 @@ public:
 //méthodes
 	Direction Se_Rapprocher(Entite const & E);
 	Direction Fuir(Entite const & E);
+	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> liGen);
 
 private:
 	double speed;
@@ -167,7 +170,6 @@ private:
 	Choix_Algo Algo;
 };
 
-class Gendarme; // Déclaration pour faire appel à la fonction Gendarme_Plus_Proche
 
 class Voleur : public Joueur{
 public:
@@ -193,5 +195,4 @@ public:
 
 //méthodes
 	Voleur Voleur_Plus_Proche(std::vector<Voleur*> liVol);
-	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> liGen);
 };

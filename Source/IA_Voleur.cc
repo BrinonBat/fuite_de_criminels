@@ -31,18 +31,16 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 
 		//IA Facile
 		case Choix_Algo::IA_Facile:{
-			
+
 			// Fuit si rencontre un gendarme
 			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarmes());
-			if (V.getDistance_From(G)<30)
-			{
+			if (V.getDistance_From(G)<30){
 				result=V.Fuir(G);
 				break;
 			}
-			
+
 			// Va vers sorties
-			for (auto && sorties : getListeNonJoueurs())
-			{
+			for (auto && sorties : getListeNonJoueurs()){
 				result = V.Se_Rapprocher(*sorties);
 			}
 
