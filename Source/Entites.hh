@@ -27,8 +27,6 @@ enum class Type {
 //liste des différénts algorithmes disponible pour chaque joueurs
 enum class Choix_Algo {
 	random,
-	haut,
-	bas,
 	gendarmes_chasseurs,
 	IA_Facile
 };

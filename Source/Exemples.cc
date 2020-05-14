@@ -43,17 +43,18 @@ void Fenetre_Ajout::Exemple2(){
 	// Exemple2 Grosse Partie
 	Fenetre_Game->show();
 
-	for (int i=0;i<30;++i){
-		Voleur V(Position(-350+(i*20),300),1.0,"V"+std::to_string(i),Choix_Algo::bas);
-		Game->ajouter_Voleur(V);
-	}
-
-	for (int i=0;i<30;++i){
-		Gendarme G(Position(-350+(i*20),-300),1.0,"G"+std::to_string(i),Choix_Algo::haut);
-		Game->ajouter_Gendarme(G);
-	}
-
+	//creation des entités
 	NonJoueur Sortie(Position(0,0),Type::sortie);
+	Voleur V1(Position(-150,-150),1.0,"V1",Choix_Algo::IA_Facile);
+	Voleur V2(Position(38,30),0.5,"V2",Choix_Algo::IA_Facile);
+	Gendarme G1(Position(-148,300),2.0,"G1",Choix_Algo::IA_Facile);
+	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::IA_Facile);
+
+	// ajout des entités au Jeu
+	Game->ajouter_Voleur(V1);
+	Game->ajouter_Gendarme(G1);
+	Game->ajouter_Voleur(V2);
+	Game->ajouter_Gendarme(G2);
 	Game->ajouter_nonJoueur(Sortie);
 
 	// Configuration et Lancement d'une partie
