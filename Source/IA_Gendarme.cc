@@ -60,7 +60,7 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 	}
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
-	result=dir*V.getSpeed();
+	result=dir*G.getSpeed();
 
 	//enregistrement du résultat comme étant la prochaine destination du gendarme
 	G.setDestination(G.getPosition()+result);

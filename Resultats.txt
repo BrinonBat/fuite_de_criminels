@@ -128,3 +128,113 @@ Voleur(s) Capturé(s) : 0 sur 0
  Algorithme utilisé : AFAIRE 
  Autres informations : AFAIRE 
 ------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 30 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 15 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 7 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 40 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 5 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 5 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 12 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 24 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 0 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 0 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------
+------------------------------
+ Résultat de la partie : 
+ Temps : 5 secondes 
+ Nombre de voleur(s): 0
+ Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+ Voleur(s) Sortie(s) :0 sur 0 
+ Algorithme utilisé : AFAIRE 
+ Autres informations : AFAIRE 
+------------------------------

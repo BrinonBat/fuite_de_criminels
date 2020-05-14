@@ -16,7 +16,7 @@
 						// 	   -2<-| x |-> +2
 						// 		   -----
 						// 			-2
-
+#define PORTE_VUE 50
 //différents types d'objets non-joueurs
 enum class Type {
 	//Obstacle,
@@ -177,6 +177,7 @@ public:
 
 	///redefinition du constructeur virtuel
 	Voleur* clone() const {return new Voleur(*this);}
+	Direction Evite_Murs(Direction const & dirActuelle);
 };
 
 class Gendarme : public Joueur {

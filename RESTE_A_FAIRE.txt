@@ -22,7 +22,7 @@ OK	- ajout de sortie sur fichier texte sous forme d'historique
 X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
 X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
 	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
-	-passer speed en variable de classe
+X	-passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
 PUIS mise en place d'une GUI <- OK
 PUIS :
@@ -31,8 +31,12 @@ PUIS :
 OK		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
 
 Les points bonus :
-	- ajout de tests das un fichier spécialisé.
-	- ajout de génération automatique de doc via Doxygen
+X	- ajout de tests das un fichier spécialisé.
+OK	- ajout de génération automatique de doc via Doxygen
 
+
+pour les IA:
+	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
+		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
 
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
