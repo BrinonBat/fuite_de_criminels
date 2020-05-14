@@ -47,10 +47,13 @@ void Fenetre_Ajout::Exemple2(){
 	NonJoueur Sortie(Position(0,0),Type::sortie);
 	Voleur V1(Position(-250,0),2.0,"V1",Choix_Algo::IA_Facile);
 	Gendarme G1(Position(-230,0),2.0,"G1",Choix_Algo::IA_Facile);
-
+	Voleur V2(Position(345,0),2.0,"V1",Choix_Algo::IA_Facile);
+	Gendarme G2(Position(340,0),2.0,"G1",Choix_Algo::IA_Facile);
 	// ajout des entités au Jeu
 	Game->ajouter_Voleur(V1);
 	Game->ajouter_Gendarme(G1);
+	Game->ajouter_Voleur(V2);
+	Game->ajouter_Gendarme(G2);
 	Game->ajouter_nonJoueur(Sortie);
 
 	// Configuration et Lancement d'une partie
