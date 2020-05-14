@@ -139,8 +139,8 @@ Direction Voleur::Evite_Murs(Direction const & dirActuelle){
 
 		//cas ou il ne se dirige pas exactement droit dedans
 		else{
-			if(dirActuelle.getY()<0) dirResultat.setY(-1.0+fabs(dirResultat.getX()));
-			else dirResultat.setY(1.0-fabs(dirResultat.getX()));
+			if(dirActuelle.getY()<0) dirResultat.setX(-1.0+fabs(dirResultat.getY()));
+			else dirResultat.setX(1.0-fabs(dirResultat.getY()));
 		}
 
 	}
