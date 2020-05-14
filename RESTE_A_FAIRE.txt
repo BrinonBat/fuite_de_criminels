@@ -38,5 +38,10 @@ OK	- ajout de génération automatique de doc via Doxygen
 pour les IA:
 	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
 		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
-
+	- prise en compte des murs
+	- ajout des idées:
+		- gendarme en binomes dont 1 avec prédiction
+OK		- gendarme attendant devant la sortie
+		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
+		
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
