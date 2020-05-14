@@ -7,7 +7,7 @@
 #include <time.h>
 #include <math.h>
 #include <QtWidgets>
-#include <cmath>	// utilisé pour Double abs(Double) dans les IA
+#include <cmath>	// utilisé pour Double fabs(Double) dans les IA
 // Constantes pour la taille du TERRAIN et la taille HITBOX
 #define TAILLE_TERRAIN 400 // (400x400)
 #define TAILLE_HITBOX 4 // Correspond à un carré avec 4 en taille

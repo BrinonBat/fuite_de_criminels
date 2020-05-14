@@ -91,8 +91,8 @@ Direction Voleur::Evite_Murs(Direction const & dirActuelle){
 
 		//cas ou il ne se dirige pas exactement droit dedans
 		else{
-			if(dirActuelle.getY()<0) dirResultat.setY(-1.0+fabs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
-			else dirResultat.setY(1.0-fabs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
+			if(dirActuelle.getY()<0) dirResultat.setY(-1.0+fabs(dirResultat.getX())); // si le Voleur se dirigeais vers le bas du terrain, il fuit vers le bas
+			else dirResultat.setY(1.0-fabs(dirResultat.getX())); // si le Voleur se dirigeais vers le haut du terrain, il fuit vers le haut
 		}
 
 	}
@@ -100,32 +100,69 @@ Direction Voleur::Evite_Murs(Direction const & dirActuelle){
 	//si on peut apercevoir le mur Est
 	else if(this->getPosition().getX()>=TAILLE_TERRAIN-PORTE_VUE){
 		//déclarations
-		double proximite=TAILLE_TERRAIN-(this->getPosition().getX()+(dirActuelle.getX()*this->getSpeed())); // indice indiquant à quel point l'on est proche du mur
-		double marge_modif=fabs(dirActuelle.getX())+1.0; // on appliquera une modification appartenant à l'ensemble [0,marge_modif]
+		double proximite=TAILLE_TERRAIN-(this->getPosition().getX()+(dirActuelle.getX()*this->getSpeed()));
+		double marge_modif=fabs(dirActuelle.getX())+1.0;
 
 		//calcul du nouveau X
-		dirResultat.setX(dirActuelle.getX()-(marge_modif*((PORTE_VUE-proximite)/PORTE_VUE))); // application d'une modification correspondant à un %age du max possible
+		dirResultat.setX(dirActuelle.getX()-(marge_modif*((PORTE_VUE-proximite)/PORTE_VUE)));
 
 		//cas ou le Voleur se dirige droit dans le mur (direction perpendiculaire)
 		if(dirActuelle.getY()==this->getPosition().getY()){
-			if(this->getPosition().getY()<0) dirResultat.setY(1.0-fabs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
-			else dirResultat.setY(-1.0+fabs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
+			if(this->getPosition().getY()<0) dirResultat.setY(1.0-fabs(dirResultat.getX()));
+			else dirResultat.setY(-1.0+fabs(dirResultat.getX()));
 		}
 
 		//cas ou il ne se dirige pas exactement droit dedans
 		else{
-			if(dirActuelle.getY()<0) dirResultat.setY(-1.0+fabs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
-			else dirResultat.setY(1.0-fabs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
+			if(dirActuelle.getY()<0) dirResultat.setY(-1.0+fabs(dirResultat.getX()));
+			else dirResultat.setY(1.0-fabs(dirResultat.getX()));
 		}
 
 	}
 
 	//si on peut apercevoir le mur Sud
-	if(this->getPosition().getY()<=-(TAILLE_TERRAIN-PORTE_VUE)){}
+	if(this->getPosition().getY()<=-(TAILLE_TERRAIN-PORTE_VUE)){
+		//déclarations
+		double proximite=TAILLE_TERRAIN+(this->getPosition().getY()+(dirActuelle.getY()*this->getSpeed()));
+		double marge_modif=fabs(dirActuelle.getY())+1.0;
+
+		//calcul du nouveau Y
+		dirResultat.setY(dirActuelle.getY()+(marge_modif*((PORTE_VUE-proximite)/PORTE_VUE)));
+
+		//cas ou le Voleur se dirige droit dans le mur (direction perpendiculaire)
+		if(dirActuelle.getX()==this->getPosition().getX()){
+			if(this->getPosition().getX()<0) dirResultat.setX(1.0-fabs(dirResultat.getY()));
+			else dirResultat.setX(-1.0+fabs(dirResultat.getY()));
+		}
+
+		//cas ou il ne se dirige pas exactement droit dedans
+		else{
+			if(dirActuelle.getX()<0) dirResultat.setX(-1.0+fabs(dirResultat.getY()));
+			else dirResultat.setX(1.0-fabs(dirResultat.getY()));
+		}
+	}
 
 	//si on peut apercevoir le mur Nord
 	else if(this->getPosition().getY()>=TAILLE_TERRAIN-PORTE_VUE){
 
+		//déclarations
+		double proximite=TAILLE_TERRAIN-(this->getPosition().getY()+(dirActuelle.getY()*this->getSpeed()));
+		double marge_modif=fabs(dirActuelle.getY())+1.0;
+
+		//calcul du nouveau Y
+		dirResultat.setX(dirActuelle.getY()-(marge_modif*((PORTE_VUE-proximite)/PORTE_VUE)));
+
+		//cas ou le Voleur se dirige droit dans le mur (direction perpendiculaire)
+		if(dirActuelle.getX()==this->getPosition().getX()){
+			if(this->getPosition().getX()<0) dirResultat.setX(1.0-fabs(dirResultat.getY()));
+			else dirResultat.setX(-1.0+fabs(dirResultat.getY()));
+		}
+
+		//cas ou il ne se dirige pas exactement droit dedans
+		else{
+			if(dirActuelle.getX()<0) dirResultat.setX(-1.0+fabs(dirResultat.getY()));
+			else dirResultat.setX(1.0-fabs(dirResultat.getY()));
+		}
 	}
 
 	std::cout<<"PING resultat est "+std::to_string(dirResultat.getX())+","+std::to_string(dirResultat.getY())<<std::endl;
