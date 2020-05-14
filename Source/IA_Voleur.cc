@@ -76,18 +76,18 @@ Direction Voleur::Evite_Murs(Direction const & dirActuelle){
 	//si on peut apercevoir le mur Ouest et qu'on s'en approche
 	if((this->getPosition().getX()<=-(TAILLE_TERRAIN-PORTE_VUE)) && (dirActuelle.getX()<=0)){
 		double proximite=TAILLE_TERRAIN+(this->getPosition().getX()+(dirActuelle.getX()*this->getSpeed()));
-		double marge_modif=abs(dirActuelle.getX())+1;
-		dirResultat.setX(dirActuelle.getX()+(marge_modif*(proximite/PORTE_VUE))); // car PORTE_VUE est la valeur maximale de proximite.
+		double marge_modif=abs(dirActuelle.getX())+1.0;
+		dirResultat.setX(dirActuelle.getX()+(marge_modif*((PORTE_VUE-proximite)/PORTE_VUE))); // car PORTE_VUE est la valeur maximale de proximite.
 		//cas ou le Voleur se dirige droit dans le mur (direction perpendiculaire)
 		if(dirActuelle.getY()==this->getPosition().getY()){
 			std::cout<<"PING interne x="+std::to_string(dirResultat.getX())+"; proximite="+std::to_string(proximite)<<std::endl;
-			if(this->getPosition().getY()<0) dirResultat.setY(1-abs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
-			else dirResultat.setY(-1+abs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
+			if(this->getPosition().getY()<0) dirResultat.setY(1.0-abs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
+			else dirResultat.setY(-1.0+abs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
 		}
 		//cas ou il ne se dirige pas exactement droit dedans
 		else{
-			if(dirActuelle.getY()<0) dirResultat.setY(-1+abs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
-			else dirResultat.setY(1-abs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
+			if(dirActuelle.getY()<0) dirResultat.setY(-1.0+abs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
+			else dirResultat.setY(1.0-abs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
 		}
 	}
 
