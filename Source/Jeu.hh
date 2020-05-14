@@ -5,9 +5,9 @@ class Jeu {
 public:
 
 //constructeurs
-    Jeu(double plargeur, double phauteur) {
-		largeur=plargeur;
-		hauteur=phauteur;
+    Jeu() {
+		largeur=TAILLE_TERRAIN;
+		hauteur=TAILLE_TERRAIN;
 		nbVoleurs=0;
 		nbCaptures=0;
     }

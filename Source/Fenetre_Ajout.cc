@@ -81,7 +81,7 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_Liste = new QLabel("",this);
 	_Liste->setGeometry(0,310,600,300);
 
-	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
+	Game = new Jeu();
 	Fenetre_Game = new Fenetre_Jeu();
 
 }
@@ -224,9 +224,9 @@ void Fenetre_Ajout::Jouer_Partie(){
 	// Ecriture en fin de partie
 	int resultat_duree= duree.count();
 	Ecriture_Resultats(resultat_duree);
-	
+
 	// Reset en fin de partie
-	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
+	Game = new Jeu();
 	Fenetre_Game = new Fenetre_Jeu();
 
 }
@@ -266,10 +266,10 @@ void Fenetre_Ajout::Lancer_Partie(){
 
 
 /// Bouton de Fin de partie et reset
-void Fenetre_Ajout::Fin(){	
+void Fenetre_Ajout::Fin(){
 	delete Game;
 	delete Fenetre_Game;
-	Game = new Jeu(TAILLE_TERRAIN,TAILLE_TERRAIN);
+	Game = new Jeu();
 	Fenetre_Game = new Fenetre_Jeu();
 	_Liste->setText("");
 }
