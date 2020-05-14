@@ -32,7 +32,7 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 		// IA Facile
 		case Choix_Algo::IA_Facile:{
 
-			//Repère un voleur 
+			//Repère un voleur
 			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
 			if (G.getDistance_From(V)<=50)
 			{
@@ -42,26 +42,23 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 
 			// Respect des distances entre Gendarmes
 			Gendarme G2 = G.Gendarme_Plus_Proche(getListeGendarmes());
-			if (G.getDistance_From(G2)<=15)
-			{	
+			if (G.getDistance_From(G2)<=15){	
 				result = G.Fuir(G2);
 			}
-	
+
 			// Vont vers les sorties
-			for (auto && sorties : getListeNonJoueurs())
-			{
+			for (auto && sorties : getListeNonJoueurs()){
 				result = G.Se_Rapprocher(*sorties);
 
-				if (G.getDistance_From(*sorties)<10)
-				{
+				if (G.getDistance_From(*sorties)<10{
 					result = G.Fuir(*sorties);
-					
+
 				}
 			}
 
 
 			// Sortie déja protégé -> Cherche position optimale
-			
+
 
 		}break;
 	}
