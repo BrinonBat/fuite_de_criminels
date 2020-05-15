@@ -36,11 +36,12 @@ OK	- ajout de génération automatique de doc via Doxygen
 
 
 pour les IA:
-OK	- implémentation des calculs de déplacement par addition de vecteurs 
-	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
-		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
+OK	- implémentation des calculs de déplacement par addition de vecteurs
+X	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
+X		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
 OK	- prise en compte des murs
 	- ajout des idées:
+OK		- gendarme "garde la sortie"
 		- gendarme en binomes dont 1 avec prédiction
 OK		- gendarme attendant devant la sortie
 		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
