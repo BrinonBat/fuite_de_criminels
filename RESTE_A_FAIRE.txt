@@ -26,8 +26,8 @@ X	-passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
 PUIS mise en place d'une GUI <- OK
 PUIS :
-	- terminer une (ou plusieurs) méthodes d'initialisation:
-		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
+X	- terminer une (ou plusieurs) méthodes d'initialisation:
+X		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
 OK		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
 
 Les points bonus :
@@ -37,8 +37,8 @@ OK	- ajout de génération automatique de doc via Doxygen
 
 pour les IA:
 OK	- implémentation des calculs de déplacement par addition de vecteurs
-X	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
-X		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
+	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
+		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
 OK	- prise en compte des murs
 	- ajout des idées:
 OK		- gendarme "garde la sortie"
