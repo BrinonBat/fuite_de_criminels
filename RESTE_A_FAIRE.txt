@@ -46,7 +46,7 @@ OK	- prise en compte des murs
 	- ajout des idées:
 OK		- gendarme "garde la sortie"
 		- gendarme en binomes dont 1 avec prédiction (IA MOYEN)
-		- si un Voleur compte dépasser le mur, il se dirige plutôt vers la sortie
+OK		- si un Voleur compte dépasser le mur, il se dirige plutôt vers la sortie
 X		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
 OK		- s'il n'y a pas de gendarme entre le voleur et la sortie, alors il va tout droit vers celle-ci
 		- (IA MOYEN) Voleur s'échappe quand cerné ( si gendarme droit & gauche, va vers le haut ou le bas plutot que rester immobile)
