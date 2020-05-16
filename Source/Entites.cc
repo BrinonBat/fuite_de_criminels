@@ -48,16 +48,17 @@ Direction Joueur::Fuir(Entite const & E){
 /// indique au Joueur quel est le Gendarme le plus proche
 Gendarme Joueur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 
-	//définition
+	//définitions
 	double distance = 1000;
-	Gendarme G(Position(0,0),1.0,"G",Choix_Algo::random);
+	// on l'initialise loin du terrain, comme ça il est hors du champ de vision s'il est retourné. Il faut office de cas "non-existant"
+	Gendarme G(Position(TAILLE_TERRAIN*2,TAILLE_TERRAIN*2),1.0,"G",Choix_Algo::random);
 
 	//traitement pour chaque gendarme
 	for (auto && i : liGen){
 
 		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
 		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
-		if (this->getDistance_From(*i)<distance and this->getDistance_From(*i)<PORTE_VUE){
+		if (this->getDistance_From(*i)<distance){
 			distance = this->getDistance_From(*i);
 			G = *i;
 		}//fin gendarme actuel
@@ -68,12 +69,38 @@ Gendarme Joueur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen){
 
 }
 
+/// indique au Joueur quel est la Sortie le plus proche
+NonJoueur Joueur::Sortie_Plus_Proche(std::vector<NonJoueur*> liNonJ){
+
+	//définition
+	double distance = 1000;
+	NonJoueur S(Position(TAILLE_TERRAIN*2,TAILLE_TERRAIN*2),Type::sortie);
+
+	//traitement pour chaque gendarme
+	for (auto && s : liNonJ){
+
+		//On récupére la distance du gendarme actuel, et la comparons à celle du plus proche connu.
+		//Si elle lui est inférieure, le gendarme est donc le nouveau plus proche
+		if(s->getType()==Type::sortie){
+			if (this->getDistance_From(*s)<distance){
+				distance = this->getDistance_From(*s);
+				S = *s;
+			}//fin sortie actuel
+		}//fin test sortie
+	}//fin liste NonJoueur
+
+	//fin
+	return S;
+
+}
+
 /// indique au Gendarme quel est le Voleur le plus proche
 Voleur Gendarme::Voleur_Plus_Proche(std::vector<Voleur*> liVol){
 
 	//définitions
 	double distance = 1000;
-	Voleur V(Position(0,0),1.0,"V",Choix_Algo::random);
+	// on l'initialise loin du terrain, comme ça il est hors du champ de vision s'il est retourné. Il faut office de cas "non-existant"
+	Voleur V(Position(TAILLE_TERRAIN*2,TAILLE_TERRAIN*2),1.0,"V",Choix_Algo::random);
 
 	//traitement pour chaque voleur
 	for (auto && voleur : liVol){

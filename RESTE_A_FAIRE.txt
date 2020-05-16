@@ -24,6 +24,9 @@ X			aprés une tentative avec des pointeurs, et une autre avec un passage par r�
 	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
 X	-passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
+OK	- fonction Sortie_Plus_Proche ajoutée
+
+
 PUIS mise en place d'une GUI <- OK
 PUIS :
 X	- terminer une (ou plusieurs) méthodes d'initialisation:
@@ -37,13 +40,14 @@ OK	- ajout de génération automatique de doc via Doxygen
 
 pour les IA:
 OK	- implémentation des calculs de déplacement par addition de vecteurs
-	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
-		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
+OK	- gendarme_plus_proche et Voleur_plus_proche ne fonctionnent pas s'il y a un seul Voleur ou un seul Gendarme
+OK		(car initialisation avec un faux gendarme qui est retourné si aucun autre existe)
 OK	- prise en compte des murs
 	- ajout des idées:
 OK		- gendarme "garde la sortie"
 		- gendarme en binomes dont 1 avec prédiction
 OK		- gendarme attendant devant la sortie
-		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
+X		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
+		- Voleur s'échappe quand cerné ( si gendarme droit & gauche, va vers le haut ou le bas plutot que rester immobile)
 
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.

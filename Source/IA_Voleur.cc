@@ -7,7 +7,7 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 	Direction result(0,0);
 	//constantes correspondant à l'importance de chaque action
 	const int IMP_FUITE_GENDARME(6);
-	const int IMP_APPROCHE_SORTIE(4);
+	const int IMP_APPROCHE_SORTIE(3);
 
 	//calcul du déplacement à réaliser en fonction de l'algorithme séléctionné
 	switch (V.getAlgo()){
@@ -30,14 +30,15 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 
 			// Fuit si rencontre un gendarme
 			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarmes());
-			if (V.getDistance_From(G)<30){
+			if (V.getDistance_From(G)<PORTE_VUE){
 				result = result+V.Fuir(G)*IMP_FUITE_GENDARME;
 			}
 
-			// Va vers sorties
-			for (auto && sorties : getListeNonJoueurs()){
-				result = result+V.Se_Rapprocher(*sorties)*IMP_APPROCHE_SORTIE;
-			}
+			// Se dirige vers la sortie la plus proche
+			NonJoueur S = V.Sortie_Plus_Proche(getListeNonJoueurs());
+			/* if (V.getDistance_From(S)<PORTE_VUE){ // A IMPLEMENTER SI DOIT TROUVER LA SORTIE */
+				result = result+V.Se_Rapprocher(S)*IMP_APPROCHE_SORTIE;
+			/*}*/
 
 		}break;
 	}

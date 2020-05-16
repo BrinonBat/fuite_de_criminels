@@ -160,6 +160,7 @@ public:
 	Direction Se_Rapprocher(Entite const & E);
 	Direction Fuir(Entite const & E);
 	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> liGen);
+	NonJoueur Sortie_Plus_Proche(std::vector<NonJoueur*> liNonJ);
 
 private:
 	double speed;
