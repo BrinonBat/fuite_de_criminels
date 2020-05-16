@@ -24,27 +24,30 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 
 			//Repère un voleur
 			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
-			if (G.getDistance_From(V)<=50){
-				result = G.Se_Rapprocher(V);
-				break;
+			if (G.getDistance_From(V)<=PORTE_VUE){
+				result = result+G.Se_Rapprocher(V);
+				std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
 			}
-
+			else { // sinon,on va vers la sorie pour guetter
+				NonJoueur S = G.Sortie_Plus_Proche(getListeNonJoueurs());
+				// se rapproche de la sortie si on est loin
+				if (G.getDistance_From(S)>PORTE_VUE/2){
+					result = result+G.Se_Rapprocher(S);
+					std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
+				}
+				else{// reste à côté de la sortie une fois qu'on l'a ateinte
+					result = result+G.Fuir(S);
+					std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
+				}
+			}
+/*
 			// Respect des distances entre Gendarmes
 			Gendarme G2 = G.Gendarme_Plus_Proche(getListeGendarmes());
 			if (G.getDistance_From(G2)<=15){
-				result = G.Fuir(G2);
+				result = result+G.Fuir(G2);
+				std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
 			}
-
-			// Vont vers les sorties
-			for (auto && sorties : getListeNonJoueurs()){
-				result = G.Se_Rapprocher(*sorties);
-
-				if (G.getDistance_From(*sorties)<10){
-					result = G.Fuir(*sorties);
-				}
-			}
-
-
+*/
 			// Sortie déja protégé -> Cherche position optimale
 
 
@@ -54,9 +57,9 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 	//on ramene X et Y à des valeurs variant de -1 à 1 en effectuant le calcule suivant:
 		//x=x/(|x|+|y|)   et de même pour y
 	Direction dir=Direction(0,0);
-	if(abs(result.getX())+abs(result.getY())!=0){
-		dir.setX(result.getX()/(abs(result.getX())+abs(result.getY())));
-		dir.setY(result.getY()/(abs(result.getX())+abs(result.getY())));
+	if(fabs(result.getX())+fabs(result.getY())!=0){
+		dir.setX(result.getX()/(fabs(result.getX())+fabs(result.getY())));
+		dir.setY(result.getY()/(fabs(result.getX())+fabs(result.getY())));
 	}
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
@@ -67,6 +70,7 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY())+ // " + (x,y)"
 	") ---> ("+std::to_string(G.getPosition().getX()+result.getX())+","+std::to_string(G.getPosition().getY()+result.getY())+ // "---> (x,y)"
 	") déplacement total:" +std::to_string(fabs(result.getX())+fabs(result.getY()))<<std::endl;// "déplacement total : x+y"
+
 	//enregistrement du résultat comme étant la prochaine destination du gendarme
 	G.setDestination(G.getPosition()+result);
 

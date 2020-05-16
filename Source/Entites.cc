@@ -17,18 +17,17 @@ Direction Joueur::Se_Rapprocher(Entite const & E){
 	//déclarations
 	double x,y;
 
-	//traitement de X
-	if (E.getPosition().getX()>this->getPosition().getX()) x=1;
-	else if (E.getPosition().getX()<getPosition().getX()) x=-1;
-	else x=0;
+	//construction de la direction
+	x=E.getPosition().getX()-this->getPosition().getX();
+	y=E.getPosition().getY()-this->getPosition().getY();
+	Direction result(x,y);
 
-	//traitement de Y
-	if (E.getPosition().getY()>this->getPosition().getY()) y=1;
-	else if (E.getPosition().getY()<getPosition().getY()) y=-1;
-	else y=0;
+	//on transforme les grandes valeurs en ratio (|x|+|y|==1)
+	result.setX(x/(fabs(x)+fabs(y)));
+	result.setY(y/(fabs(x)+fabs(y)));
 
 	//retourne la direction à emprunter
-	return Direction(x,y);
+	return result;
 
 }
 
@@ -127,11 +126,19 @@ Position Position::operator+(Position const & pos){
 
 }
 
+/// redéfinition de l'operateur -, permettant ainsi de soustraire deux Positions
+Position Position::operator-(Position const & pos){
+
+	//retour du résultat de la soustraction
+	return Position(getX() - pos.getX(),getY() - pos.getY());
+
+}
+
 /// redéfinition de l'operateur *, permettant ainsi de multiplier une position par un double
 Position Position::operator*(double mult){
 
 	//retour du résultat de la multiplication
-	return Position(getX()*mult,getY()*mult);
+	return Position(x*mult,y*mult);
 
 }
 

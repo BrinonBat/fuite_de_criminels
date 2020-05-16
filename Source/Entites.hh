@@ -8,8 +8,8 @@
 #include <math.h>
 #include <QtWidgets>
 #include <cmath>	// utilisé pour Double fabs(Double) dans les IA
-// Constantes pour la taille du TERRAIN et la taille HITBOX
-#define TAILLE_TERRAIN 400 // (400x400)
+// Constantes pour la taille du TERRAIN, la taille HITBOX et la portée de vue
+#define TAILLE_TERRAIN 300 // (600x600)
 #define TAILLE_HITBOX 4 // Correspond à un carré avec 4 en taille
 						//           +2
 						// 		   -----
@@ -46,6 +46,7 @@ public:
 
 //operateurs
 	Position operator+(Position const & pos); // redéfinition de l'addition pour les positions
+	Position operator-(Position const & pos); // redéfinition de la soustraction pour les positions
 	Position operator*(double mult); //redéfinition de la multiplication
 	bool operator==(Position const & pos); //redéfinition de la comparaison
 

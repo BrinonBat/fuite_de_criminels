@@ -6,8 +6,8 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 	//définitions
 	Direction result(0,0);
 	//constantes correspondant à l'importance de chaque action
-	const int IMP_FUITE_GENDARME(6);
-	const int IMP_APPROCHE_SORTIE(3);
+	const double IMP_FUITE_GENDARME(6);
+	const double IMP_APPROCHE_SORTIE(2);
 
 	//calcul du déplacement à réaliser en fonction de l'algorithme séléctionné
 	switch (V.getAlgo()){
@@ -40,19 +40,30 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 				result = result+V.Se_Rapprocher(S)*IMP_APPROCHE_SORTIE;
 			/*}*/
 
+			//if(S.getX()==V.getPosition().getX())
+
 		}break;
 	}
 
 	//on ramene X et Y à des valeurs variant de -1 à 1 en effectuant le calcule suivant:
 		//x=x/(|x|+|y|)   et de même pour y
 	Direction dir=Direction(0,0);
-	if(abs(result.getX())+abs(result.getY())!=0){
-		dir.setX(result.getX()/(abs(result.getX())+abs(result.getY())));
-		dir.setY(result.getY()/(abs(result.getX())+abs(result.getY())));
+	if(fabs(result.getX())+fabs(result.getY())!=0){
+		dir.setX(result.getX()/(fabs(result.getX())+fabs(result.getY())));
+		dir.setY(result.getY()/(fabs(result.getX())+fabs(result.getY())));
 	}
+/*
+	//on évite le mur, mais que si on ne se dirige pas vers une sortie (donc quand on augmente la distance vers celle-ci)
+	if( // si ((|sortie.x|-|courant.x|)+(|sortie.y|-|courant.y|))<((|sortie.x|-|destination.x|)+(|sortie.y|-|destination.y|))
+		((fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getX())-fabs(V.getPosition().getX()))
+		+(fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getY())-fabs(V.getPosition().getY())))
+		>=
+		((fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getX())-fabs(V.getPosition().getX()+dir.getX()))
+		+(fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getY())-fabs(V.getPosition().getY()+dir.getY())))
+	){*/
+		dir=V.Evite_Murs(dir);
+	//}
 
-	// on évite les murs
-	dir=V.Evite_Murs(dir);
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
 	result=dir*V.getSpeed();

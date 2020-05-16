@@ -17,12 +17,12 @@ OK	- ajout de la vitesse
 OK	- ajout de "hitbox " et de distance de capture
 OK	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
 VERIFIER- ajout d'une fonction vérifiant si un coup est possible
-		(avant de retourner result, vérifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
+OK		(avant de retourner result, vérifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 OK	- ajout de sortie sur fichier texte sous forme d'historique
 X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
 X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
 	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
-X	-passer speed en variable de classe
+X	- passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
 OK	- fonction Sortie_Plus_Proche ajoutée
 
@@ -45,9 +45,11 @@ OK		(car initialisation avec un faux gendarme qui est retourné si aucun autre e
 OK	- prise en compte des murs
 	- ajout des idées:
 OK		- gendarme "garde la sortie"
-		- gendarme en binomes dont 1 avec prédiction
-OK		- gendarme attendant devant la sortie
+		- gendarme en binomes dont 1 avec prédiction (IA MOYEN)
 X		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
-		- Voleur s'échappe quand cerné ( si gendarme droit & gauche, va vers le haut ou le bas plutot que rester immobile)
+		- s'il n'y a pas de gendarme entre le voleur et la sortie, alors il va tout droit vers celle-ci
+		- (IA MOYEN) Voleur s'échappe quand cerné ( si gendarme droit & gauche, va vers le haut ou le bas plutot que rester immobile)
+		- (IA MOYEN) Voleur applique fuite sur l'ensemble des gendarmes qu'il aperçoit, pas uniquement le plus proche.
+OK		- si la sortie est contre un mur, le voleur n’évite PAS le mur
 
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
