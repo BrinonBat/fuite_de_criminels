@@ -7,7 +7,7 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 	Direction result(0,0);
 	//constantes correspondant à l'importance de chaque action
 	const int IMP_FUITE_GENDARME(6);
-	const int IMP_APPROCHE_SORTIE(2);
+	const int IMP_APPROCHE_SORTIE(4);
 
 	//calcul du déplacement à réaliser en fonction de l'algorithme séléctionné
 	switch (V.getAlgo()){
@@ -32,7 +32,6 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 			Gendarme G = V.Gendarme_Plus_Proche(getListeGendarmes());
 			if (V.getDistance_From(G)<30){
 				result = result+V.Fuir(G)*IMP_FUITE_GENDARME;
-				break;
 			}
 
 			// Va vers sorties
@@ -51,17 +50,17 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 		dir.setY(result.getY()/(abs(result.getX())+abs(result.getY())));
 	}
 
-	std::cout<<"PING dir Initiale est "+std::to_string(dir.getX())+","+std::to_string(dir.getY())<<std::endl;
 	// on évite les murs
 	dir=V.Evite_Murs(dir);
-
-	std::cout<<"PING dir fin est "+std::to_string(dir.getX())+","+std::to_string(dir.getY())<<std::endl;
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
 	result=dir*V.getSpeed();
 
-	std::cout<<"PING result fin est "+std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
-	std::cout<<"PING destination fin est "+std::to_string(V.getPosition().getX()+result.getX())+","+std::to_string(V.getPosition().getY()+result.getY())<<std::endl;
+	//affichage dans le termine pour visualisation
+	std::cout<<"PING V("+std::to_string(V.getPosition().getX())+","+std::to_string(V.getPosition().getY())+ // "PING V(x,y)"
+	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY()) // " + (x,y)"
+	") ---> ("+std::to_string(V.getPosition().getX()+result.getX())+","+std::to_string(V.getPosition().getY()+result.getY()) // "---> (x,y)"
+	+ ") déplacement total:" +std::to_string(fabs(result.getX())+fabs(result.getY()))<<std::endl;// "déplacement total : x+y"
 	//enregistrement du résultat comme étant la prochaine destination du voleur
 	V.setDestination(V.getPosition()+result);
 }
@@ -169,6 +168,5 @@ Direction Voleur::Evite_Murs(Direction const & dirActuelle){
 
 	}
 
-	std::cout<<"PING resultat est "+std::to_string(dirResultat.getX())+","+std::to_string(dirResultat.getY())<<std::endl;
 	return dirResultat;
 }

@@ -62,6 +62,11 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
 	result=dir*G.getSpeed();
 
+	//affichage dans le termine pour visualisation
+	std::cout<<"PING G("+std::to_string(G.getPosition().getX())+","+std::to_string(G.getPosition().getY())+ // "PING G(x,y)"
+	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY()) // " + (x,y)"
+	") ---> ("+std::to_string(G.getPosition().getX()+result.getX())+","+std::to_string(G.getPosition().getY()+result.getY()) // "---> (x,y)"
+	+ ") déplacement total:" +std::to_string(fabs(result.getX())+fabs(result.getY()))<<std::endl;// "déplacement total : x+y"
 	//enregistrement du résultat comme étant la prochaine destination du gendarme
 	G.setDestination(G.getPosition()+result);
 

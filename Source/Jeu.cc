@@ -81,7 +81,6 @@ void Jeu::Jouer_tour(){
 		for(auto &&V:listeVoleurs){
 			if (G->Hitbox_Touche(*V)){
 				std::cout<<"Le Gendarme "<<G->getNom()<<" à capturé le voleur "<<V->getNom()<<std::endl;
-				std::cout<<V->Affiche_Hitbox()<<"\n";
 				 supprimer_Voleur(*V);
 				 ajoutUneCapture();
 			 }
@@ -93,7 +92,6 @@ void Jeu::Jouer_tour(){
 		for(auto &&S : listeObjets){
 			if(S->getType()==Type::sortie && S->Hitbox_Touche(*V)){
 				std::cout<<"Le voleur "<<V->getNom()<<" est sorti!\n";
-				std::cout<<V->Affiche_Hitbox()<<"\n";
 				supprimer_Voleur(*V);
 			}
 		}
@@ -103,21 +101,21 @@ void Jeu::Jouer_tour(){
 /// génére un affichage de l'état actuel du Jeu dans le terminal
 void Jeu::Afficher(){
 
-	//affichage des Joueurs
-	std::cout<<"Liste Joueurs avec position et Hitbox :\n";
-
 	//affichage de tous les voleurs (position et hitbox)
+	std::cout<<"\nListe Voleurs avec position et Hitbox :\n";
 	for(auto i:listeVoleurs){
 		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
 	}
 
-	//affichage de tous les gendarmes
+
+	//affichage de tous les gendarmes (position et hitbox)
+	std::cout<<"\nListe Gendarmes avec position et Hitbox :\n";
 	for(auto i:listeGendarmes){
 		std::cout<<i->getNom()<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
 	}
 
-	//affichage des NonJoueurs
-	std::cout<<"Liste NonJoueur avec position et Hitbox :\n";
+	//affichage des NonJoueurs (position et hitbox)
+	std::cout<<"\nListe NonJoueur avec position et Hitbox :\n";
 	for (auto i:listeObjets){
 		std::cout<<"Sortie"<<" position : "<<i->Affiche_Position()<<" | "<<i->Affiche_Hitbox()<<"\n";
 	}
