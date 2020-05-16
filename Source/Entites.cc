@@ -207,7 +207,7 @@ bool Entite::Hitbox_Touche(Entite &J2){
 /// retourne la distance entre l'instance actuelle et l'Entite prise en paramètre
 double Entite::getDistance_From(Entite E){
 
-	//retourne la racine carré de la difference des position
+	//retourne la racine carré de la somme des difference des position au carré
 	return std::sqrt((
 			//traitement X
 			(E.getPosition().getX()-this->getPosition().getX())
