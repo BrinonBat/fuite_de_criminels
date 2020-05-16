@@ -9,6 +9,8 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 	const double IMP_FUITE_GENDARME(6);
 	const double IMP_APPROCHE_SORTIE(2);
 
+	NonJoueur S = V.Sortie_Plus_Proche(getListeNonJoueurs());//sortie la plus proche du voleur
+
 	//calcul du déplacement à réaliser en fonction de l'algorithme séléctionné
 	switch (V.getAlgo()){
 
@@ -35,7 +37,7 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 			}
 
 			// Se dirige vers la sortie la plus proche
-			NonJoueur S = V.Sortie_Plus_Proche(getListeNonJoueurs());
+
 			/* if (V.getDistance_From(S)<PORTE_VUE){ // A IMPLEMENTER SI DOIT TROUVER LA SORTIE */
 				result = result+V.Se_Rapprocher(S)*IMP_APPROCHE_SORTIE;
 			/*}*/
@@ -55,19 +57,22 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 
 	//on évite le mur, mais que si on ne se dirige pas vers une sortie (donc quand on augmente la distance vers celle-ci)
 	if( // si ((|sortie.x|-|courant.x|)+(|sortie.y|-|courant.y|))<((|sortie.x|-|destination.x|)+(|sortie.y|-|destination.y|))
-		((fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getX())-fabs(V.getPosition().getX()))
-		+(fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getY())-fabs(V.getPosition().getY())))
-		>=
-		((fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getX())-fabs(V.getPosition().getX()+dir.getX()))
-		+(fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getY())-fabs(V.getPosition().getY()+dir.getY())))
+		S.getDistance_From(V)
+		<=
+		S.getDistance_From(Voleur(V.getPosition()+dir,V.getSpeed(),"temp",Choix_Algo::random))
 	){
 		dir=V.Evite_Murs(dir);
 	}
-
+	std::cout<<"dist actuelle :"+std::to_string(S.getDistance_From(V))+"vs dist  destnation :"+std::to_string(S.getDistance_From(Voleur(V.getPosition()+dir,V.getSpeed(),"temp",Choix_Algo::random)))<<std::endl;
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
 	result=dir*V.getSpeed();
 
+	//si le personnage veut quitter le terrain, il est redirigé vers la sortie. (car s'il est proche du bord de terrain, c'est qu'il est proche de la sortie)
+	if(fabs((V.getPosition()+result).getX())>TAILLE_TERRAIN or fabs((V.getPosition()+result).getY())>TAILLE_TERRAIN){
+		result=V.Se_Rapprocher(S)*V.getSpeed();
+	}
+	
 	//affichage dans le termine pour visualisation
 	std::cout<<"PING V("+std::to_string(V.getPosition().getX())+","+std::to_string(V.getPosition().getY())+ // "PING V(x,y)"
 	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY())+ // " + (x,y)"

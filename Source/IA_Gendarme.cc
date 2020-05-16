@@ -26,26 +26,22 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
 			if (G.getDistance_From(V)<=PORTE_VUE){
 				result = result+G.Se_Rapprocher(V);
-				std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
 			}
 			else { // sinon,on va vers la sorie pour guetter
 				NonJoueur S = G.Sortie_Plus_Proche(getListeNonJoueurs());
 				// se rapproche de la sortie si on est loin
 				if (G.getDistance_From(S)>PORTE_VUE/2){
 					result = result+G.Se_Rapprocher(S);
-					std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
 				}
 				else{// reste à côté de la sortie une fois qu'on l'a ateinte
 					result = result+G.Fuir(S);
-					std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
 				}
 			}
-/*
+/* ici, result devient NaN ??
 			// Respect des distances entre Gendarmes
 			Gendarme G2 = G.Gendarme_Plus_Proche(getListeGendarmes());
 			if (G.getDistance_From(G2)<=15){
 				result = result+G.Fuir(G2);
-				std::cout<<std::to_string(result.getX())+","+std::to_string(result.getY())<<std::endl;
 			}
 */
 			// Sortie déja protégé -> Cherche position optimale

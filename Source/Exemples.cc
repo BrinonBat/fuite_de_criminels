@@ -101,9 +101,9 @@ void Fenetre_Ajout::Exemple4(){
 
 	//creation des entités
 	NonJoueur Sortie(Position(200,299),Type::sortie);
-	Voleur V1(Position(100,100),3.0,"V1",Choix_Algo::IA_Facile);
+	Voleur V1(Position(100,150),3.0,"V1",Choix_Algo::IA_Facile);
 	Voleur V2(Position(38,30),2.0,"V2",Choix_Algo::IA_Facile);
-	Gendarme G1(Position(100,150),3.0,"G1",Choix_Algo::IA_Facile);
+	Gendarme G1(Position(100,100),3.0,"G1",Choix_Algo::IA_Facile);
 	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::IA_Facile);
 
 	// ajout des entités au Jeu
