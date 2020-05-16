@@ -70,6 +70,8 @@ Fenetre_Ajout::Fenetre_Ajout()
 	_ChoixExemple->addItem("Exemple1",0);
 	_ChoixExemple->addItem("Exemple2",1);
 	_ChoixExemple->addItem("Exemple3",2);
+	_ChoixExemple->addItem("Exemple4",3);
+	_ChoixExemple->addItem("Exemple5",4);
 	_ChoixExemple->setGeometry(0,280,100,20);
 
 	_Lancer2 = new QPushButton("Lancer la partie!",this);

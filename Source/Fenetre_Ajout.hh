@@ -47,7 +47,8 @@ private slots :
 	void Exemple1();
 	void Exemple2();
 	void Exemple3();
-
+	void Exemple4();
+	void Exemple5();
 	void Ecriture_Resultats(int duree);
 
 	void closeEvent(QCloseEvent *event){exit(0);}

@@ -13,6 +13,14 @@ void Fenetre_Ajout::Choix_Exemple(){
         case 2:
         	Exemple3();
         	break;
+
+		case 3:
+			Exemple4();
+			break;
+
+		case 4:
+			Exemple5();
+			break;
     }
 }
 
@@ -86,16 +94,16 @@ void Fenetre_Ajout::Exemple3(){
 	Jouer_Partie();
 
 }
-/*
+
 void Fenetre_Ajout::Exemple4(){
-	// Exemple4 : grosse partie
+	// Exemple4 : sortie bloquée, gendarme pénibles
 	Fenetre_Game->show();
 
 	//creation des entités
 	NonJoueur Sortie(Position(200,299),Type::sortie);
-	Voleur V1(Position(-150,-150),3.0,"V1",Choix_Algo::IA_Facile);
+	Voleur V1(Position(100,100),3.0,"V1",Choix_Algo::IA_Facile);
 	Voleur V2(Position(38,30),2.0,"V2",Choix_Algo::IA_Facile);
-	Gendarme G1(Position(150,150),3.0,"G1",Choix_Algo::IA_Facile);
+	Gendarme G1(Position(100,150),3.0,"G1",Choix_Algo::IA_Facile);
 	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::IA_Facile);
 
 	// ajout des entités au Jeu
@@ -110,4 +118,12 @@ void Fenetre_Ajout::Exemple4(){
 	Jouer_Partie();
 
 }
-*/
+
+void Fenetre_Ajout::Exemple5(){
+	// Exemple5 : grosse partie
+	Fenetre_Game->show();
+
+	// Configuration et Lancement d'une partie
+	Configuration_Partie();
+	Jouer_Partie();
+}
