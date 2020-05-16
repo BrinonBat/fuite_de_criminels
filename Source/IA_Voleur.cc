@@ -52,7 +52,7 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 		dir.setX(result.getX()/(fabs(result.getX())+fabs(result.getY())));
 		dir.setY(result.getY()/(fabs(result.getX())+fabs(result.getY())));
 	}
-/*
+
 	//on évite le mur, mais que si on ne se dirige pas vers une sortie (donc quand on augmente la distance vers celle-ci)
 	if( // si ((|sortie.x|-|courant.x|)+(|sortie.y|-|courant.y|))<((|sortie.x|-|destination.x|)+(|sortie.y|-|destination.y|))
 		((fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getX())-fabs(V.getPosition().getX()))
@@ -60,9 +60,9 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 		>=
 		((fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getX())-fabs(V.getPosition().getX()+dir.getX()))
 		+(fabs(V.Sortie_Plus_Proche(getListeNonJoueurs()).getPosition().getY())-fabs(V.getPosition().getY()+dir.getY())))
-	){*/
+	){
 		dir=V.Evite_Murs(dir);
-	//}
+	}
 
 
 	//on ajoute la vitesse à la direction pour obtenir le vecteur à appliquer au personnage
@@ -97,7 +97,7 @@ Direction Voleur::Evite_Murs(Direction const & dirActuelle){
 		//cas ou le Voleur se dirige droit dans le mur (direction perpendiculaire)
 		if(dirActuelle.getY()==this->getPosition().getY()){
 			if(this->getPosition().getY()<0) dirResultat.setY(1.0-fabs(dirResultat.getX())); // si le Voleur est vers le bas du terrain, il fuit vers le haut
-			else dirResultat.setY(-1.0+fabs(dirResultat.getX())); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
+			else dirResultat.setY(fabs(dirResultat.getX()-1.0)); // si le Voleur est vers le haut du terrain, il fuit vers la partie basse
 		}
 
 		//cas ou il ne se dirige pas exactement droit dedans
