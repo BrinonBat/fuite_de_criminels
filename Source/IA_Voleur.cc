@@ -58,9 +58,9 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 
 	//affichage dans le termine pour visualisation
 	std::cout<<"PING V("+std::to_string(V.getPosition().getX())+","+std::to_string(V.getPosition().getY())+ // "PING V(x,y)"
-	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY()) // " + (x,y)"
-	") ---> ("+std::to_string(V.getPosition().getX()+result.getX())+","+std::to_string(V.getPosition().getY()+result.getY()) // "---> (x,y)"
-	+ ") déplacement total:" +std::to_string(fabs(result.getX())+fabs(result.getY()))<<std::endl;// "déplacement total : x+y"
+	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY())+ // " + (x,y)"
+	") ---> ("+std::to_string(V.getPosition().getX()+result.getX())+","+std::to_string(V.getPosition().getY()+result.getY())+ // "---> (x,y)"
+	") déplacement total:" +std::to_string(fabs(result.getX())+fabs(result.getY()))<<std::endl;// "déplacement total : x+y"
 	//enregistrement du résultat comme étant la prochaine destination du voleur
 	V.setDestination(V.getPosition()+result);
 }
