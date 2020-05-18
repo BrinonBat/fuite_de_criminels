@@ -170,6 +170,7 @@ void Fenetre_Ajout::Ajouter_NonJoueur(){
         }break;
 
         case 1:{ // cas de l'ajout d'une Cachette
+
         	// Pas encore de gestion de cachette.
 
         }break;
@@ -180,50 +181,67 @@ void Fenetre_Ajout::Ajouter_NonJoueur(){
 
 /// Ajout de la couleur de l'item Rect de chaque entité et ajout sur la scène.
 void Fenetre_Ajout::Configuration_Partie(){
+
+	//coloration et ajout des Voleurs
 	for (auto i : this->Game->getListeVoleurs()){
 		i->getItem()->setBrush(QBrush(Qt::red));
 		Fenetre_Game->scene->addItem(i->getItem());
 	}
 
+	//coloration et ajout des Gendarmes
 	for (auto i : this->Game->getListeGendarmes()){
 		i->getItem()->setBrush(QBrush(Qt::blue));
 		Fenetre_Game->scene->addItem(i->getItem());
 	}
 
+	//coloration et ajout des NonJoueurs
 	for (auto i : this->Game->getListeNonJoueurs()){
-		if (i->getType()==Type::sortie){
+		if (i->getType()==Type::sortie){ //gestion des sorties
 			i->getItem()->setBrush(QBrush(Qt::green));
 			Fenetre_Game->scene->addItem(i->getItem());
 		}
-		else {
+		else { //gestion des autres objets
 			i->getItem()->setBrush(QBrush(Qt::green));
 			Fenetre_Game->scene->addItem(i->getItem());
 		}
 	}
 }
 
-/// Fonction qui permet de Jouer une partie
+/// Methode qui permet de Jouer une partie
 void Fenetre_Ajout::Jouer_Partie(){
+
+	//affichage
 	std::cout<<"Etat Initial"<<std::endl;
 	Game->Afficher();
+
 	// Lancement TIMER
 	auto start = high_resolution_clock::now();
+
 	// Partie
 	while (Fenetre_Game->fermeture == false){
+
+		//execution de tours tant que la partie n'est pas finie
 		for(unsigned int nb_tour=1;!Game->estFini();nb_tour++){
 			std::cout<<"\n TOUR "<<nb_tour<<" : \n";
+
+			// execution du tour
 			Game->Jouer_tour();
-			for (auto i : Game->getListeVoleurs()){
-				i->setItem();
+
+			//mise à jour de l'affichage
+			for (auto vol : Game->getListeVoleurs()){
+				vol->setItem();
 			}
-			for (auto i : Game->getListeGendarmes()){
-				i->setItem();
+			for (auto gen : Game->getListeGendarmes()){
+				gen->setItem();
 			}
+
 			QEventLoop loop;
 			QTimer::singleShot(100, &loop, SLOT(quit()));
 			loop.exec();
 			Game->Afficher();
+
 		}
+
 		if (Game->estFini())Fenetre_Game->fermeture = true;
 	}
 
@@ -249,7 +267,7 @@ void Fenetre_Ajout::Apercu(){
 	Configuration_Partie();
 }
 
-/// Fonction qui permet d'écrire les resultats de la partie une fois terminés dans "Resultat.txt"
+/// Methode qui permet d'écrire les resultats de la partie une fois terminés dans "Resultat.txt"
 void Fenetre_Ajout::Ecriture_Resultats(int duree){
 
 	//ouverture du fichier
@@ -271,7 +289,7 @@ void Fenetre_Ajout::Ecriture_Resultats(int duree){
 	Resultats.close();
 }
 
-/// Fonction qui lance une partie -> Configuration puis lancement.
+/// Methode qui lance une partie -> Configuration puis lancement.
 void Fenetre_Ajout::Lancer_Partie(){
 
 	// Affichage de la fenetre Jeu
