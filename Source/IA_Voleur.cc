@@ -42,7 +42,11 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 				result = result+V.Se_Rapprocher(S)*IMP_APPROCHE_SORTIE;
 			/*}*/
 
-			//if(S.getX()==V.getPosition().getX())
+		}break;
+
+		case Choix_Algo::IA_Moyen:{
+
+
 
 		}break;
 	}
@@ -72,7 +76,7 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 	if(fabs((V.getPosition()+result).getX())>TAILLE_TERRAIN or fabs((V.getPosition()+result).getY())>TAILLE_TERRAIN){
 		result=V.Se_Rapprocher(S)*V.getSpeed();
 	}
-	
+
 	//affichage dans le termine pour visualisation
 	std::cout<<"PING V("+std::to_string(V.getPosition().getX())+","+std::to_string(V.getPosition().getY())+ // "PING V(x,y)"
 	") + ("+std::to_string(result.getX())+","+std::to_string(result.getY())+ // " + (x,y)"

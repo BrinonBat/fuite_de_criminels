@@ -28,7 +28,8 @@ enum class Type {
 enum class Choix_Algo {
 	random,
 	gendarmes_chasseurs,
-	IA_Facile
+	IA_Facile,
+	IA_Moyen
 };
 
 class Position {

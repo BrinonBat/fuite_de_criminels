@@ -44,9 +44,13 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 				result = result+G.Fuir(G2);
 			}
 */
+			
+		}break;
+
+		case Choix_Algo::IA_Moyen:{
+
+
 			// Sortie déja protégé -> Cherche position optimale
-
-
 		}break;
 	}
 
