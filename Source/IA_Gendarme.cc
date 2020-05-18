@@ -47,12 +47,31 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 
 		case Choix_Algo::IA_Moyen:{
 
-			//Repère un voleur
-			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
-			if (G.getDistance_From(V)<=PORTE_VUE){
-				result = result+G.Se_Rapprocher(V);
+			//Repère un (ou plusieurs) voleur
+			for(auto &&V : getListeVoleurs()){
+
+				//on traite tous les voleurs qu'on aperçoit
+				if (G.getDistance_From(*V)<=PORTE_VUE){
+
+					//par défaut, il faut poursuivre le voleur
+					bool deja_poursuivi(false);
+
+					//on verifie si un camarade poursuit déjà le Voleur de façon plus efficace
+					for(auto &&camarade : getListeGendarmes()){
+						if(G.getDistance_From(*V)<camarade->getDistance_From(*V)) deja_poursuivi=true;
+					}
+
+					//si ce n'est pas le cas, on se lance à la poursuite du Voleur
+					if(!deja_poursuivi){
+						result = result+G.Se_Rapprocher(*V);
+						break;
+					}
+
+				}
 			}
-			else { // sinon,on va vers la sorie pour guetter
+
+			 // sinon,on va vers la sorie pour guetter
+			if(result==Direction(0,0)){
 				NonJoueur S = G.Sortie_Plus_Proche(getListeNonJoueurs());
 				// se rapproche de la sortie si on est loin
 				if (G.getDistance_From(S)>PORTE_VUE/3){ // divisé par 3 pour avoir 2/3 de champ de vision de marge de l'autre côté de la Sortie

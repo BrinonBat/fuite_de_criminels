@@ -54,3 +54,5 @@ OK		- (IA MOYEN) Voleur applique fuite sur l'ensemble des gendarmes qu'il aperç
 OK		- si la sortie est contre un mur, le voleur n’évite PAS le mur
 
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
+				  mettre à jour la gen de doc automatique
+				  remplacer auto i par auto G, auto V ou auto S en fonction des cas.
