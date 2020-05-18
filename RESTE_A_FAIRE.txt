@@ -25,7 +25,7 @@ X			aprés une tentative avec des pointeurs, et une autre avec un passage par r�
 X	- passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
 OK	- fonction Sortie_Plus_Proche ajoutée
-
+	- rename IA_gendarmes_chasseurs en IA_primitive ou autre nom
 
 PUIS mise en place d'une GUI <- OK
 PUIS :
@@ -45,12 +45,12 @@ OK		(car initialisation avec un faux gendarme qui est retourné si aucun autre e
 OK	- prise en compte des murs
 	- ajout des idées:
 OK		- gendarme "garde la sortie"
-		- gendarme en binomes dont 1 avec prédiction (IA MOYEN)
+		- (IA MOYEN) gendarme en binomes dont 1 avec prédiction (IA MOYEN)
 OK		- si un Voleur compte dépasser le mur, il se dirige plutôt vers la sortie
-X		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
+OK		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
 OK		- s'il n'y a pas de gendarme entre le voleur et la sortie, alors il va tout droit vers celle-ci
-		- (IA MOYEN) Voleur s'échappe quand cerné ( si gendarme droit & gauche, va vers le haut ou le bas plutot que rester immobile)
-		- (IA MOYEN) Voleur applique fuite sur l'ensemble des gendarmes qu'il aperçoit, pas uniquement le plus proche.
+OK		- (IA MOYEN) Voleur s'échappe quand cerné ( si gendarme droit & gauche, va vers le haut ou le bas plutot que rester immobile)
+OK		- (IA MOYEN) Voleur applique fuite sur l'ensemble des gendarmes qu'il aperçoit, pas uniquement le plus proche.
 OK		- si la sortie est contre un mur, le voleur n’évite PAS le mur
 
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.

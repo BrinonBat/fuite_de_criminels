@@ -30,12 +30,10 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 			else { // sinon,on va vers la sorie pour guetter
 				NonJoueur S = G.Sortie_Plus_Proche(getListeNonJoueurs());
 				// se rapproche de la sortie si on est loin
-				if (G.getDistance_From(S)>PORTE_VUE/2){
+				if (G.getDistance_From(S)>PORTE_VUE){ // IA_facile, il ne guette que du côté où il se trouve
 					result = result+G.Se_Rapprocher(S);
-				}
-				else{// reste à côté de la sortie une fois qu'on l'a ateinte
-					result = result+G.Fuir(S);
-				}
+				} // sinon, il reste à côté de la sortie en tant que guet
+
 			}
 /* ici, result devient NaN ??
 			// Respect des distances entre Gendarmes
@@ -44,11 +42,24 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 				result = result+G.Fuir(G2);
 			}
 */
-			
+
 		}break;
 
 		case Choix_Algo::IA_Moyen:{
 
+			//Repère un voleur
+			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
+			if (G.getDistance_From(V)<=PORTE_VUE){
+				result = result+G.Se_Rapprocher(V);
+			}
+			else { // sinon,on va vers la sorie pour guetter
+				NonJoueur S = G.Sortie_Plus_Proche(getListeNonJoueurs());
+				// se rapproche de la sortie si on est loin
+				if (G.getDistance_From(S)>PORTE_VUE/3){ // divisé par 3 pour avoir 2/3 de champ de vision de marge de l'autre côté de la Sortie
+					result = result+G.Se_Rapprocher(S);
+				} // sinon, il reste à côté de la sortie en tant que guet
+
+			}
 
 			// Sortie déja protégé -> Cherche position optimale
 		}break;

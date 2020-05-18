@@ -72,15 +72,15 @@ void Fenetre_Ajout::Exemple2(){
 
 
 void Fenetre_Ajout::Exemple3(){
-	// Exemple3 : garder la sortie
+	// Exemple3 : sortie contre le mur, gendarme garde la sortie
 	Fenetre_Game->show();
 
 	//creation des entités
-	NonJoueur Sortie(Position(38,38),Type::sortie);
-	Voleur V1(Position(-150,-150),1.0,"V1",Choix_Algo::IA_Facile);
-	Voleur V2(Position(38,30),0.5,"V2",Choix_Algo::IA_Facile);
-	Gendarme G1(Position(-148,200),2.0,"G1",Choix_Algo::IA_Facile);
-	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::IA_Facile);
+	NonJoueur Sortie(Position(200,299),Type::sortie);
+	Voleur V1(Position(100,150),3.0,"V1",Choix_Algo::IA_Facile);
+	Voleur V2(Position(38,30),3.0,"V2",Choix_Algo::IA_Facile);
+	Gendarme G1(Position(100,100),3.0,"G1",Choix_Algo::IA_Facile);
+	Gendarme G2(Position(6,9),3.0,"G2",Choix_Algo::IA_Facile);
 
 	// ajout des entités au Jeu
 	Game->ajouter_Voleur(V1);
@@ -96,21 +96,21 @@ void Fenetre_Ajout::Exemple3(){
 }
 
 void Fenetre_Ajout::Exemple4(){
-	// Exemple4 : sortie bloquée, gendarme pénibles
+	// Exemple4 : Voleur cerné
 	Fenetre_Game->show();
 
 	//creation des entités
-	NonJoueur Sortie(Position(200,299),Type::sortie);
-	Voleur V1(Position(100,150),3.0,"V1",Choix_Algo::IA_Facile);
-	Voleur V2(Position(38,30),2.0,"V2",Choix_Algo::IA_Facile);
-	Gendarme G1(Position(100,100),3.0,"G1",Choix_Algo::IA_Facile);
-	Gendarme G2(Position(6,9),2.0,"G2",Choix_Algo::IA_Facile);
+	NonJoueur Sortie(Position(0,0),Type::sortie);
+	Voleur V1(Position(150,0),2.0,"V1",Choix_Algo::IA_Moyen);
+	Gendarme G1(Position(200,0),2.0,"G1",Choix_Algo::IA_Facile);
+	Gendarme G2(Position(40,0),2.0,"G2",Choix_Algo::IA_Facile);
+	Gendarme G3(Position(10,-10),2.0,"G3",Choix_Algo::IA_Facile);
 
 	// ajout des entités au Jeu
 	Game->ajouter_Voleur(V1);
 	Game->ajouter_Gendarme(G1);
-	Game->ajouter_Voleur(V2);
 	Game->ajouter_Gendarme(G2);
+	Game->ajouter_Gendarme(G3);
 	Game->ajouter_nonJoueur(Sortie);
 
 	// Configuration et Lancement d'une partie
