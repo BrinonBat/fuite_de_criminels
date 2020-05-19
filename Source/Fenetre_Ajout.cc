@@ -282,7 +282,6 @@ void Fenetre_Ajout::Ecriture_Resultats(int duree){
 	"Nombre de gendarme(s): "<<std::to_string(Game->getNbGendarmes())<<"\n"<<
 	"Voleur(s) Capturé(s) : "<<std::to_string(Game->getNbCaptures())<<" sur "<<std::to_string(Game->getNbVoleurs())<<" \n"<<
 	"Voleur(s) Sorti(s) :"<<std::to_string(Game->getNbVoleursSortis())<<" sur "<<std::to_string(Game->getNbVoleurs())<<" \n"<<
-	//"Autres informations : A FAIRE \n"<<
 	"------------------------------\n";
 
 	//fermeture du fichier

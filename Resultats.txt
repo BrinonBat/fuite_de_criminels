@@ -1194,3 +1194,75 @@ Nombre de gendarme(s): 5
 Voleur(s) Capturé(s) : 3 sur 8 
 Voleur(s) Sorti(s) :5 sur 8 
 ------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 26 secondes 
+Nombre de voleur(s): 2
+Nombre de gendarme(s): 2
+Voleur(s) Capturé(s) : 1 sur 2 
+Voleur(s) Sorti(s) :1 sur 2 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 19 secondes 
+Nombre de voleur(s): 2
+Nombre de gendarme(s): 2
+Voleur(s) Capturé(s) : 0 sur 2 
+Voleur(s) Sorti(s) :2 sur 2 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 47 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 3
+Voleur(s) Capturé(s) : 1 sur 1 
+Voleur(s) Sorti(s) :0 sur 1 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 84 secondes 
+Nombre de voleur(s): 8
+Nombre de gendarme(s): 5
+Voleur(s) Capturé(s) : 3 sur 8 
+Voleur(s) Sorti(s) :5 sur 8 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 84 secondes 
+Nombre de voleur(s): 8
+Nombre de gendarme(s): 5
+Voleur(s) Capturé(s) : 3 sur 8 
+Voleur(s) Sorti(s) :5 sur 8 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 26 secondes 
+Nombre de voleur(s): 2
+Nombre de gendarme(s): 2
+Voleur(s) Capturé(s) : 1 sur 2 
+Voleur(s) Sorti(s) :1 sur 2 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 25 secondes 
+Nombre de voleur(s): 2
+Nombre de gendarme(s): 2
+Voleur(s) Capturé(s) : 1 sur 2 
+Voleur(s) Sorti(s) :1 sur 2 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 2 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 47 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 3
+Voleur(s) Capturé(s) : 1 sur 1 
+Voleur(s) Sorti(s) :0 sur 1 
+------------------------------
