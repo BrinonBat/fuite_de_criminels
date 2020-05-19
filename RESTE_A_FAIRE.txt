@@ -26,7 +26,9 @@ X	- passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
 OK	- fonction Sortie_Plus_Proche ajoutée
 	- rename IA_gendarmes_chasseurs en IA_primitive ou autre nom
+	- ajout d'une saisie de vitesse dans le menu
 
+	
 PUIS mise en place d'une GUI <- OK
 PUIS :
 X	- terminer une (ou plusieurs) méthodes d'initialisation:

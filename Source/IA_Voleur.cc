@@ -47,33 +47,41 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 
 	/////IA MOYEN/////
 		case Choix_Algo::IA_Moyen:{
-			
+
 			//constantes locales correspondant à l'importance de chaque action
 			const double IMP_FUITE_GENDARME(4); // comptée deux fois, donc plus faible que dans IA_Facile
 			const double IMP_APPROCHE_SORTIE(3);
 
-			// Fuit si rencontre un (ou plusieurs) gendarmes
-			for(auto &&G: getListeGendarmes()){
+			//si la sortie est plus proche que n'importe quel gendarme, le voleur néglige les gendarmes
+			if(V.getDistance_From(V.Gendarme_Plus_Proche(getListeGendarmes()))<=V.getDistance_From(S)){
 
-				//traitement pour chaque gendarme repéré
-				if(V.getDistance_From(*G)<PORTE_VUE){
+				// Fuit si rencontre un (ou plusieurs) gendarmes
+				for(auto &&G: getListeGendarmes()){
 
-					//calcul de la fuite
-					Direction temp=result+V.Fuir(*G)*IMP_FUITE_GENDARME;
+					//traitement pour chaque gendarme repéré
+					if(V.getDistance_From(*G)<=PORTE_VUE){
 
-					//cas ou le voleur est cerné
-					if(temp==Direction(0,0)){
-						//rotation à 90°
-						temp.setX(result.getY());
-						temp.setY(result.getX());
+						//calcul de la fuite
+						Direction temp=result+V.Fuir(*G)*IMP_FUITE_GENDARME;
+
+						//cas ou le voleur est cerné
+						if(temp==Direction(0,0)){
+							//rotation à 90°
+							temp.setX(result.getY());
+							temp.setY(result.getX());
+						}
+						result=temp;
 					}
-					result=temp;
+
+				}
+
+				//on s'éloigne un peu plus du gendarme le plus proche
+				Gendarme G = V.Gendarme_Plus_Proche(getListeGendarmes());
+				if (V.getDistance_From(G)<=PORTE_VUE){
+					result = result+V.Fuir(G)*IMP_FUITE_GENDARME;
 				}
 
 			}
-
-			//on s'éloigne un peu plus du gendarme le plus proche
-			result=result+(V.Fuir(V.Gendarme_Plus_Proche(getListeGendarmes()))*IMP_FUITE_GENDARME);
 
 			// Se dirige vers la sortie la plus proche
 			/* if (V.getDistance_From(S)<PORTE_VUE){ // A IMPLEMENTER SI DOIT TROUVER LA SORTIE */

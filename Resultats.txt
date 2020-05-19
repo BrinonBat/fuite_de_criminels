@@ -1082,3 +1082,115 @@ Nombre de gendarme(s): 3
 Voleur(s) Capturé(s) : 1 sur 1 
 Voleur(s) Sorti(s) :0 sur 1 
 ------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 27 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 23 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 3
+Voleur(s) Capturé(s) : 1 sur 1 
+Voleur(s) Sorti(s) :0 sur 1 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 40 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 57 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 3
+Voleur(s) Capturé(s) : 1 sur 1 
+Voleur(s) Sorti(s) :0 sur 1 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 57 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 3
+Voleur(s) Capturé(s) : 1 sur 1 
+Voleur(s) Sorti(s) :0 sur 1 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 112 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 34 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 3
+Voleur(s) Capturé(s) : 1 sur 1 
+Voleur(s) Sorti(s) :0 sur 1 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 66 secondes 
+Nombre de voleur(s): 1
+Nombre de gendarme(s): 4
+Voleur(s) Capturé(s) : 0 sur 1 
+Voleur(s) Sorti(s) :1 sur 1 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 29 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 81 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 92 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 90 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 69 secondes 
+Nombre de voleur(s): 0
+Nombre de gendarme(s): 0
+Voleur(s) Capturé(s) : 0 sur 0 
+Voleur(s) Sorti(s) :0 sur 0 
+------------------------------
+------------------------------
+Résultat de la partie : 
+Temps : 84 secondes 
+Nombre de voleur(s): 8
+Nombre de gendarme(s): 5
+Voleur(s) Capturé(s) : 3 sur 8 
+Voleur(s) Sorti(s) :5 sur 8 
+------------------------------

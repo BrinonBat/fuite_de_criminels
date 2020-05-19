@@ -58,7 +58,7 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 
 					//on verifie si un camarade poursuit déjà le Voleur de façon plus efficace
 					for(auto &&camarade : getListeGendarmes()){
-						if(G.getDistance_From(*V)<camarade->getDistance_From(*V)) deja_poursuivi=true;
+						if((G.getDistance_From(*V)>camarade->getDistance_From(*V))&&(G.getDistance_From(*V)>G.getDistance_From(*camarade))) deja_poursuivi=true;
 					}
 
 					//si ce n'est pas le cas, on se lance à la poursuite du Voleur
@@ -70,17 +70,56 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 				}
 			}
 
-			 // sinon,on va vers la sorie pour guetter
+			 // sinon,on surveille une sortie
 			if(result==Direction(0,0)){
+
+				//on verifie si la sortie la plus proche de nous doit être surveillée
 				NonJoueur S = G.Sortie_Plus_Proche(getListeNonJoueurs());
-				// se rapproche de la sortie si on est loin
-				if (G.getDistance_From(S)>PORTE_VUE/3){ // divisé par 3 pour avoir 2/3 de champ de vision de marge de l'autre côté de la Sortie
-					result = result+G.Se_Rapprocher(S);
-				} // sinon, il reste à côté de la sortie en tant que guet
 
-			}
+/*				//si on garde actuellement la sortie la plus proche, on ne bouge pas.
+				if(G.getDistance_From(S)>=PORTE_VUE/3){
+*/
+					bool est_garde(false);
+					// se rapproche de la sortie la plus proche qui n'est pas gardée
+					for(auto &&camarade : getListeGendarmes()){
+						if((camarade->getDistance_From(S)<=PORTE_VUE/3)&&(G.getDistance_From(S)>=G.getDistance_From(*camarade))){
+							est_garde=true;
+							break;
+						}
+					}
 
-			// Sortie déja protégé -> Cherche position optimale
+					//si la sortie la plus proche est gardée, on vérifie s'il existe une autre sortie à garder
+					if(est_garde){
+						for(auto &&autre_sortie:getListeNonJoueurs()){
+
+							//parcours de la liste de sorties
+							if(autre_sortie->getType()==Type::sortie){
+								bool est_garde(false);
+
+								//verification de si la sortie est gardée par un camarade
+								for(auto &&camarade : getListeGendarmes()){
+									if((camarade->getDistance_From(*autre_sortie)<=PORTE_VUE/3)&&(G.getDistance_From(*autre_sortie)>=G.getDistance_From(*camarade))){
+										 est_garde=true;
+										 break;
+									 }
+								}
+								//si la sortie n'est pas gardée, alors c'est elle qu'on choisit
+								if(!est_garde){
+									S=*autre_sortie;
+									break;
+								}
+							}
+						}
+					}
+
+					//si la sortie choisie est trop loin, on s'en approche
+					if(G.getDistance_From(S)>PORTE_VUE/3){ // divisé par 3 pour avoir 2/3 de champ de vision de marge de l'autre côté de la Sortie
+						result = result+G.Se_Rapprocher(S);
+					}
+/*				}
+*/			}
+
+			// Sortie déja protégé -> Cherche position optimale, fonctionnalité de l'IA "Difficile"
 		}break;
 	}
 
