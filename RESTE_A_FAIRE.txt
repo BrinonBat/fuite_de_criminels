@@ -16,7 +16,7 @@ OK	- remplacer le booléen fini par nb_voleurs
 OK	- ajout de la vitesse
 OK	- ajout de "hitbox " et de distance de capture
 OK	- ajout d'une variable (ou constante de classe) "taille" utilisée pour determiner la hitbox
-VERIFIER- ajout d'une fonction vérifiant si un coup est possible
+OK 	- ajout d'une fonction vérifiant si un coup est possible
 OK		(avant de retourner result, vérifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 OK	- ajout de sortie sur fichier texte sous forme d'historique
 X	- suppressions des pointeurs (-> entraîne utilisation de pointeurs sur le vecteur plutôt que vecteur de pointeurs)
@@ -54,3 +54,4 @@ OK		- si la sortie est contre un mur, le voleur n’évite PAS le mur
 AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier le constructeur.
 				  mettre à jour la gen de doc automatique
 				  remplacer auto i par auto G, auto V ou auto S en fonction des cas.
+				  Retirer la verification de coup possible si inutilisée
