@@ -27,16 +27,12 @@ OK	- placer les IA dans des fichiers dédiés
 OK	- fonction Sortie_Plus_Proche ajoutée
 	- rename IA_gendarmes_chasseurs en IA_primitive ou autre nom
 	- ajout d'une saisie de vitesse dans le menu
-
-
-PUIS mise en place d'une GUI <- OK
-PUIS :
 X	- terminer une (ou plusieurs) méthodes d'initialisation:
 X		- generation de partie en indiquant le nb de voleur et le nb de gendarmes
 OK		- (bonus) possibilité de déplacer / ajouter / supprimer des Personnages ou éléments avant de lancer la partie.
 
 Les points bonus :
-X	- ajout de tests das un fichier spécialisé.
+X	- ajout des tests das un fichier spécialisé.
 OK	- ajout de génération automatique de doc via Doxygen
 
 
@@ -47,7 +43,7 @@ OK		(car initialisation avec un faux gendarme qui est retourné si aucun autre e
 OK	- prise en compte des murs
 	- ajout des idées:
 OK		- gendarme "garde la sortie"
-		- (IA MOYEN) gendarme en binomes dont 1 avec prédiction (IA MOYEN)
+		- (IA DIFFICILE) gendarme en binomes dont 1 avec prédiction
 OK		- si un Voleur compte dépasser le mur, il se dirige plutôt vers la sortie
 OK		- voleurs font le tour autour de la sortie pour "attirer" les gendarmes
 OK		- s'il n'y a pas de gendarme entre le voleur et la sortie, alors il va tout droit vers celle-ci
@@ -55,6 +51,6 @@ OK		- (IA MOYEN) Voleur s'échappe quand cerné ( si gendarme droit & gauche, va
 OK		- (IA MOYEN) Voleur applique fuite sur l'ensemble des gendarmes qu'il aperçoit, pas uniquement le plus proche.
 OK		- si la sortie est contre un mur, le voleur n’évite PAS le mur
 
-AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier la constructeur.
+AVANT DE RENDRE : vérifier si on définie une hitbox autrement qu'avec la taille classique. Si pas, alors modifier le constructeur.
 				  mettre à jour la gen de doc automatique
 				  remplacer auto i par auto G, auto V ou auto S en fonction des cas.
