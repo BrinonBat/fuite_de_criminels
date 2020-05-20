@@ -19,16 +19,16 @@ OK	- ajout d'une variable (ou constante de classe) "taille" utilisée pour deter
 VERIFIER- ajout d'une fonction vérifiant si un coup est possible
 OK		(avant de retourner result, vérifie si result n'est pas hors-terrain ou dans la hitbox d'un obstacle)
 OK	- ajout de sortie sur fichier texte sous forme d'historique
-X	- suppressions des pointeurs (-> entraine utilisation de pointeurs sur le vecteur plutot que vecteur de pointeurs)
-X			aprés une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
-	- implementer des "valeurs par défaut (randoms?)" dans les constructeurs
+X	- suppressions des pointeurs (-> entraîne utilisation de pointeurs sur le vecteur plutôt que vecteur de pointeurs)
+X			après une tentative avec des pointeurs, et une autre avec un passage par référence, aucun des deux ne fonctionnent.
+	- implémenter des "valeurs par défaut (randoms?)" dans les constructeurs
 X	- passer speed en variable de classe
 OK	- placer les IA dans des fichiers dédiés
 OK	- fonction Sortie_Plus_Proche ajoutée
 	- rename IA_gendarmes_chasseurs en IA_primitive ou autre nom
 	- ajout d'une saisie de vitesse dans le menu
 
-	
+
 PUIS mise en place d'une GUI <- OK
 PUIS :
 X	- terminer une (ou plusieurs) méthodes d'initialisation:
