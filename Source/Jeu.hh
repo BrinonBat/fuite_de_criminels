@@ -55,7 +55,6 @@ public:
     void Afficher();
     void Calcule_Deplacement(Voleur &V);
 	void Calcule_Deplacement(Gendarme &G);
-	bool Coup_Possible(Joueur & J, Direction coup); // pas encore utilisée, mise de côté
 
 private:
 	unsigned int nbVoleurs,nbCaptures;

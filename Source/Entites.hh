@@ -155,10 +155,8 @@ public:
 	//setters
 	void setDestination(Position const &pos){destination=pos;this->setPosition(destination);}
 
-//méthode virtuelle
-	void Deplacement();
-
 //méthodes
+	void Deplacement();
 	Direction Se_Rapprocher(Entite const & E);
 	Direction Fuir(Entite const & E);
 	Gendarme Gendarme_Plus_Proche(std::vector<Gendarme*> liGen);

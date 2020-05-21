@@ -121,34 +121,6 @@ void Jeu::Afficher(){
 	}
 }
 
-/// fonction inutilisée et non documentée pour le moment, mais conservée de côté si on a besoin à un moment de s'en servir.
-/// indique si le coup pris en paramètre est possible pour le Joueur pris en paramètre
-bool Jeu::Coup_Possible(Joueur &J, Direction coup)
-{
-
-	coup = coup *J.getSpeed();
-	Direction verif = J.getPosition()+coup;
-
-	// Sortie du Terrain
-	if (verif.getX()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getX()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN ){
-		return false;
-	}
-	if (verif.getY()+(TAILLE_HITBOX/2)>TAILLE_TERRAIN or verif.getY()-(TAILLE_HITBOX/2)<-TAILLE_TERRAIN){
-		return false;
-	}
-
-	// HitBox en contact avec un autre joueur
-	for (auto &&i : listeVoleurs){
-		if (J.Hitbox_Touche(*i)) return false;
-	}
-
-	for (auto &&j : listeGendarmes){
-		if (J.Hitbox_Touche(*j)) return false;
-	}
-
-	return true;
-
-}
 
 /************************** fonction ******************************/
 
