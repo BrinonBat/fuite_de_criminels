@@ -37,13 +37,6 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 				} // sinon, il reste à côté de la sortie en tant que guet
 
 			}
-/* ici, result devient NaN ??
-			// Respect des distances entre Gendarmes
-			Gendarme G2 = G.Gendarme_Plus_Proche(getListeGendarmes());
-			if (G.getDistance_From(G2)<=15){
-				result = result+G.Fuir(G2);
-			}
-*/
 
 		}break;
 
