@@ -2,7 +2,9 @@
 - mécanique de "sprint" pour rattraper ou fuir quelqu'un
 - possibilité de positionner soi-même les gendarmes et voleurs avant de lancer la partie.
 - possibilité de saisir une durée maximale
-- panneau de configuration avec les règles à appliquer
+- panneau de configuration avec choix des règles de jeu à appliquer
 - positionner manuellement les éléments sur une carte vide
 - ajouter une prison à laquelle les gendarmes doivent raccompagner les voleurs.
-		- si un voleur touche un gendarme possédant un autre voleur, il libére le voleur et assome le gendarme pour X tours 
+		- si un voleur touche un gendarme possédant un autre voleur, il libére le voleur et assome le gendarme pour X tours
+- ajout de talkie-walkie
+- ajout d'obstacles, création de "salles" et terrains prédéfinis.
