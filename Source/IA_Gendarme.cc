@@ -8,18 +8,20 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 	//calcul du déplacement à réaliser en fonction de l'algorithme séléctionné
 	switch (G.getAlgo()){
 
+	/////IA RANDOM/////
 		//cas de l'algo retournant des déplacements aléatoires
 		case Choix_Algo::random:{
 			result = Direction(fRand(-3,3),fRand(-3,3));
 		}break;
 
+	/////IA CHASSE/////
 		//cas de l'algo déplacant le gendarme vers le voleur le plus proche
 		case Choix_Algo::gendarmes_chasseurs:{
 			Voleur V = G.Voleur_Plus_Proche(getListeVoleurs());
 			result = G.Se_Rapprocher(V);
 		}break;
 
-		// IA Facile
+	/////IA FACILE/////
 		case Choix_Algo::IA_Facile:{
 
 			//Repère un voleur
@@ -45,6 +47,7 @@ void Jeu::Calcule_Deplacement(Gendarme &G){
 
 		}break;
 
+	/////IA MOYEN/////
 		case Choix_Algo::IA_Moyen:{
 
 			//Repère un (ou plusieurs) voleur

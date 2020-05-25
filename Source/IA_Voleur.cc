@@ -25,7 +25,7 @@ void Jeu::Calcule_Deplacement(Voleur &V){
 			result = result+V.Fuir(G);
 		}break;
 
-	/////IA Facile/////
+	/////IA FACILE/////
 		case Choix_Algo::IA_Facile:{
 
 			//constantes locales correspondant à l'importance de chaque action
