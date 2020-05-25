@@ -117,13 +117,14 @@ $(document).ready(function(){initNavTree('_entites_8hh.html','');});
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;QtWidgets&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 </div>
 <p><a href="_entites_8hh_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position.html">Position</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions (additions, comparaisons, multiplications)  <a href="class_position.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions (additions, soustraction, comparaisons, multiplications)  <a href="class_position.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitbox.html">Hitbox</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correspond à la taille de l'entité associé, celle-ci étant définie par TAILLE_HITBOX.  <a href="class_hitbox.html#details">Plus de détails...</a><br /></td></tr>
@@ -146,12 +147,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a8b888934cc7fdedc4c6ad3267ab3ad65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entites_8hh.html#a8b888934cc7fdedc4c6ad3267ab3ad65">TAILLE_TERRAIN</a>&#160;&#160;&#160;400</td></tr>
+<tr class="memitem:a8b888934cc7fdedc4c6ad3267ab3ad65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entites_8hh.html#a8b888934cc7fdedc4c6ad3267ab3ad65">TAILLE_TERRAIN</a>&#160;&#160;&#160;300</td></tr>
 <tr class="memdesc:a8b888934cc7fdedc4c6ad3267ab3ad65"><td class="mdescLeft">&#160;</td><td class="mdescRight">constante déterminant la taille du terrain utilisé durant la partie. Elle est notamment utilisée pour définir le cadre du jeu.  <a href="_entites_8hh.html#a8b888934cc7fdedc4c6ad3267ab3ad65">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8b888934cc7fdedc4c6ad3267ab3ad65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e3831e6480a827be40892fe3286ff2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entites_8hh.html#a5e3831e6480a827be40892fe3286ff2e">TAILLE_HITBOX</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:a5e3831e6480a827be40892fe3286ff2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">constante déterminant le diamètre des entités  <a href="_entites_8hh.html#a5e3831e6480a827be40892fe3286ff2e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5e3831e6480a827be40892fe3286ff2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008c85a2156c1f2f76e08fcfff153029"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entites_8hh.html#a008c85a2156c1f2f76e08fcfff153029">PORTE_VUE</a>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a008c85a2156c1f2f76e08fcfff153029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
@@ -167,9 +170,9 @@ Définitions de type</h2></td></tr>
 <tr class="memdesc:a1d1cfd8ffb84e947f82999c682b666a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">les variables de ce type servent à définir quel rôle a l'entité la contenant.  <a href="_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1d1cfd8ffb84e947f82999c682b666a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac49c294d628ab23fd82a93da14fb29b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Choix_Algo</a> { <a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba7ddf32e17a6ac5ce04a8ecbf782ca509">Choix_Algo::random</a>, 
-<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba3ebb3fd63d4e9f9124c0196eb883c7ec">Choix_Algo::haut</a>, 
-<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29baf6e660ced42e946f69a41cc473d923cc">Choix_Algo::bas</a>, 
-<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba99f497ce7911a838ed242999fe3f566d">Choix_Algo::gendarmes_chasseurs</a>
+<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba99f497ce7911a838ed242999fe3f566d">Choix_Algo::gendarmes_chasseurs</a>, 
+<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29baac8f762231dc963b7b0e0a842e20eee9">Choix_Algo::IA_Facile</a>, 
+<a class="el" href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29ba4aa8d48f14c93d3191c36ef6edb6d8d7">Choix_Algo::IA_Moyen</a>
  }</td></tr>
 <tr class="memdesc:aac49c294d628ab23fd82a93da14fb29b"><td class="mdescLeft">&#160;</td><td class="mdescRight">les variables de ce type servent à définir l'algorithme qui sera utilisé pour calculer les déplacements du Personnage  <a href="_entites_8hh.html#aac49c294d628ab23fd82a93da14fb29b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aac49c294d628ab23fd82a93da14fb29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +184,20 @@ Définitions de type</h2></td></tr>
 <dd>
 Nicolas Martinez </dd></dl>
 </div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a008c85a2156c1f2f76e08fcfff153029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008c85a2156c1f2f76e08fcfff153029">&#9670;&nbsp;</a></span>PORTE_VUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORTE_VUE&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a5e3831e6480a827be40892fe3286ff2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e3831e6480a827be40892fe3286ff2e">&#9670;&nbsp;</a></span>TAILLE_HITBOX</h2>
 
@@ -204,7 +221,7 @@ Nicolas Martinez </dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TAILLE_TERRAIN&#160;&#160;&#160;400</td>
+          <td class="memname">#define TAILLE_TERRAIN&#160;&#160;&#160;300</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -256,9 +273,11 @@ Nicolas Martinez </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="aac49c294d628ab23fd82a93da14fb29ba7ddf32e17a6ac5ce04a8ecbf782ca509"></a>random&#160;</td><td class="fielddoc"><p>l'algorithme choisi génére un déplacement aléatoire </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aac49c294d628ab23fd82a93da14fb29ba3ebb3fd63d4e9f9124c0196eb883c7ec"></a>haut&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aac49c294d628ab23fd82a93da14fb29baf6e660ced42e946f69a41cc473d923cc"></a>bas&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aac49c294d628ab23fd82a93da14fb29ba99f497ce7911a838ed242999fe3f566d"></a>gendarmes_chasseurs&#160;</td><td class="fielddoc"><p>l'algorithme choisi indique la position de l'ennemi le plus proche, permettant de le fuir ou de le poursuivre </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aac49c294d628ab23fd82a93da14fb29baac8f762231dc963b7b0e0a842e20eee9"></a>IA_Facile&#160;</td><td class="fielddoc"><p>l'algorithme choisi correspond au choix d'une IA de niveau facile </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aac49c294d628ab23fd82a93da14fb29ba4aa8d48f14c93d3191c36ef6edb6d8d7"></a>IA_Moyen&#160;</td><td class="fielddoc"><p>l'algorithme choisi correspond au choix d'une IA de niveau moyen </p>
 </td></tr>
 </table>
 

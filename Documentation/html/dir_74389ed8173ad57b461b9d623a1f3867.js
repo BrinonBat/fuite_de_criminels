@@ -3,6 +3,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "Docu_generator", "dir_900b87ef93a380c14756b7e512bb9298.html", "dir_900b87ef93a380c14756b7e512bb9298" ],
     [ "Entites.cc", "_entites_8cc.html", null ],
     [ "Entites.hh", "_entites_8hh.html", "_entites_8hh" ],
+    [ "Exemples.cc", "_exemples_8cc.html", null ],
     [ "Fenetre_Ajout.cc", "_fenetre___ajout_8cc.html", null ],
     [ "Fenetre_Ajout.hh", "_fenetre___ajout_8hh.html", [
       [ "Fenetre_Ajout", "class_fenetre___ajout.html", "class_fenetre___ajout" ]

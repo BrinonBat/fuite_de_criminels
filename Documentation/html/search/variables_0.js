@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_5fscene_203',['_Scene',['../class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f',1,'Fenetre_Jeu']]],
-  ['_5fview_204',['_View',['../class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338',1,'Fenetre_Jeu']]]
+  ['fenetre_5fapercu_210',['fenetre_apercu',['../class_fenetre___jeu.html#a1bd02a4e752e803eb8a8e3cd4880416f',1,'Fenetre_Jeu']]],
+  ['fermeture_211',['fermeture',['../class_fenetre___jeu.html#a014ba51bfdb2a601ab2f673cbfb7e32b',1,'Fenetre_Jeu']]]
 ];

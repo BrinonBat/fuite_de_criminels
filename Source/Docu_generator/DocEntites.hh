@@ -36,24 +36,24 @@
 		*	\brief l'algorithme choisi génére un déplacement aléatoire
 		*/
 
-		/**	\var Choix_Algo::haut
-		*	\brief l'algorithme choisi déplace le Personnage vers le haut uniquement
-		*/
-
-		/**	\var Choix_Algo::bas
-		*	\brief l'algorithme choisi déplace le Personnage vers le bas uniquement
-		*/
 
 		/**	\var Choix_Algo::gendarmes_chasseurs
 		*	\brief l'algorithme choisi indique la position de l'ennemi le plus proche,
 		*			permettant de le fuir ou de le poursuivre
 		*/
 
+		/**	\var Choix_Algo::IA_Facile
+		*	\brief l'algorithme choisi correspond au choix d'une IA de niveau facile
+		*/
+
+		/**	\var Choix_Algo::IA_Moyen
+		*	\brief l'algorithme choisi correspond au choix d'une IA de niveau moyen
+		*/
+
 	/**	\class Position
 	*	\brief Correspond à une position, donc à des coordonnées.
-	*			Gére aussi les opérations associées aux positions (additions, comparaisons, multiplications)
+	*			Gére aussi les opérations associées aux positions (additions, soustraction, comparaisons, multiplications)
 	*/
-
 
 		/**	\fn Position::Position(double const & x, double const & y)
 		*	\brief constructeur d'une Position à partir d'un x et d'un y
@@ -84,6 +84,11 @@
 		/**	\fn Position::operator+(Position const & pos)
 		*	\param pos Position à ajouter à la position actuelle
 		*	\return le somme de le position actuelle et du paramètre pos
+		*/
+
+		/**	\fn Position::operator-(Position const & pos)
+		*	\param pos Position que l'on soustrait à la position actuelle
+		*	\return le résultat de la soustraction de la position actuelle par la position prise en paramètre
 		*/
 
 		/**	\fn Position::operator*(double mult)
@@ -342,6 +347,18 @@
 		*	\return Direction dans laquelle on doit se diriger pour s'éloigner du Joueur
 		*/
 
+		/** \fn Joueur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen)
+		*	\param liGen liste de Gendarme parmi lesquels il faut trouver le plus proche
+		*	\return le Gendarme le plus proche de l'instance actuelle
+		*	\see Position
+		*/
+
+		/** \fn Joueur::Sortie_Plus_Proche(std::vector<NonJoueur*> liNonJ)
+		*	\param liNonJ liste de NonJoueur parmi lesquels il faut trouver la sortie la plus proche
+		*	\return le NonJoueur de Type sortie le plus proche de l'instance actuelle
+		*	\see Position
+		*/
+
 		/** \var Joueur::speed
 		*	\brief double correspondant à la distance que peut parcourir le Joueur lors d'un tour.
 		*/
@@ -379,11 +396,11 @@
 		*	\return un pointeur sur un Voleur
 		*/
 
-		/** \fn Voleur::Gendarme_Plus_Proche(std::vector<Gendarme*> liGen)
-		*	\param liGen liste de Gendarme parmi lesquels il faut trouver le plus proche
-		*	\return le Gendarme le plus proche de l'instance actuelle
-		*	\see Position
+		/** \fn Voleur::Evite_Murs(Direction const & dirActuelle);
+		*	\param dirActuelle Direction dans laquelle compte se diriger le Voleur
+		*	\return la Direction modifiée de manière à éviter le mur.
 		*/
+
 
 	/**	\class Gendarme
 	*	\brief Il s'agit des gendarmes. Ils ont pour objectif d'attraper les voleurs

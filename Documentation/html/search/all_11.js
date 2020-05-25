@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['taille_5fhitbox_97',['TAILLE_HITBOX',['../_entites_8hh.html#a5e3831e6480a827be40892fe3286ff2e',1,'Entites.hh']]],
-  ['taille_5fterrain_98',['TAILLE_TERRAIN',['../_entites_8hh.html#a8b888934cc7fdedc4c6ad3267ab3ad65',1,'Entites.hh']]],
-  ['type_99',['Type',['../_entites_8hh.html#a1d1cfd8ffb84e947f82999c682b666a7',1,'Entites.hh']]]
+  ['_7eentite_106',['~Entite',['../class_entite.html#a8084762a25afbfbcdca31121a3dfcd87',1,'Entite']]],
+  ['_7ejoueur_107',['~Joueur',['../class_joueur.html#a70578940a2e923aadc568e6714706ed8',1,'Joueur']]]
 ];

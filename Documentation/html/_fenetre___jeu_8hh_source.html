@@ -111,38 +111,31 @@ $(document).ready(function(){initNavTree('_fenetre___jeu_8hh_source.html','');})
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_fenetre___jeu.html#a5880e1058773a1c8a3c52c05636a86f7">Fenetre_Jeu</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f">   13</a></span>&#160;    QGraphicsScene * <a class="code" href="class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f">_Scene</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338">   14</a></span>&#160;    QGraphicsView * <a class="code" href="class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338">_View</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">   15</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Apercu</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#ae7b106e69b7adb5316f788dd5d8a52d4">   16</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_fenetre___jeu.html#ae7b106e69b7adb5316f788dd5d8a52d4">Fermeture</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">//constructeur</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_fenetre___jeu.html#a5880e1058773a1c8a3c52c05636a86f7">Fenetre_Jeu</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//méthodes</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">closeEvent</a>(QCloseEvent *event);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">closeEvent</a>(QCloseEvent *event)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Apercu</a> and <a class="code" href="class_fenetre___jeu.html#ae7b106e69b7adb5316f788dd5d8a52d4">Fermeture</a> == <span class="keyword">false</span>){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QWidget::closeEvent(event);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Apercu</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//variables</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a03045b37dfd18d566c057257cb43b8d1">   19</a></span>&#160;    QGraphicsScene * <a class="code" href="class_fenetre___jeu.html#a03045b37dfd18d566c057257cb43b8d1">scene</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#ad02cfb6659c382104e56133f35420cb9">   20</a></span>&#160;    QGraphicsView * <a class="code" href="class_fenetre___jeu.html#ad02cfb6659c382104e56133f35420cb9">view</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a1bd02a4e752e803eb8a8e3cd4880416f">   21</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_fenetre___jeu.html#a1bd02a4e752e803eb8a8e3cd4880416f">fenetre_apercu</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_fenetre___jeu.html#a014ba51bfdb2a601ab2f673cbfb7e32b">   22</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_fenetre___jeu.html#a014ba51bfdb2a601ab2f673cbfb7e32b">fermeture</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_fenetre___jeu.html#ae7b106e69b7adb5316f788dd5d8a52d4">Fermeture</a>== <span class="keyword">true</span>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        QWidget::closeEvent(event);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_fenetre___jeu.html#ae7b106e69b7adb5316f788dd5d8a52d4">Fermeture</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_fenetre___jeu_html_a4a6a48d4dea33f6c925ffe8c8798beaa"><div class="ttname"><a href="class_fenetre___jeu.html#a4a6a48d4dea33f6c925ffe8c8798beaa">Fenetre_Jeu::Fenetre_Apercu</a></div><div class="ttdeci">bool Fenetre_Apercu</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:15</div></div>
-<div class="ttc" id="aclass_fenetre___jeu_html_a8289d7f48670f2a613e07df8822c5500"><div class="ttname"><a href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">Fenetre_Jeu::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event)</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:18</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a8289d7f48670f2a613e07df8822c5500"><div class="ttname"><a href="class_fenetre___jeu.html#a8289d7f48670f2a613e07df8822c5500">Fenetre_Jeu::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event)</div><div class="ttdoc">Définition du closeEvent pour Fenetre_Jeu -&gt; Prend en compte si c'est la fenetre aperçu/Lancer_Partie...</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.cc:23</div></div>
 <div class="ttc" id="a_entites_8hh_html"><div class="ttname"><a href="_entites_8hh.html">Entites.hh</a></div><div class="ttdoc">contient les classes présentes sur le terrain, qu'il s'agisse de joueurs ou d'objets.</div></div>
-<div class="ttc" id="aclass_fenetre___jeu_html_ae7b106e69b7adb5316f788dd5d8a52d4"><div class="ttname"><a href="class_fenetre___jeu.html#ae7b106e69b7adb5316f788dd5d8a52d4">Fenetre_Jeu::Fermeture</a></div><div class="ttdeci">bool Fermeture</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:16</div></div>
-<div class="ttc" id="aclass_fenetre___jeu_html_ae85dd77d3f1bf39a88b7452d2086d34f"><div class="ttname"><a href="class_fenetre___jeu.html#ae85dd77d3f1bf39a88b7452d2086d34f">Fenetre_Jeu::_Scene</a></div><div class="ttdeci">QGraphicsScene * _Scene</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:13</div></div>
-<div class="ttc" id="aclass_fenetre___jeu_html_ae8adf7b05f90be7407f98dcbc6bd5338"><div class="ttname"><a href="class_fenetre___jeu.html#ae8adf7b05f90be7407f98dcbc6bd5338">Fenetre_Jeu::_View</a></div><div class="ttdeci">QGraphicsView * _View</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:14</div></div>
-<div class="ttc" id="aclass_fenetre___jeu_html_a5880e1058773a1c8a3c52c05636a86f7"><div class="ttname"><a href="class_fenetre___jeu.html#a5880e1058773a1c8a3c52c05636a86f7">Fenetre_Jeu::Fenetre_Jeu</a></div><div class="ttdeci">Fenetre_Jeu()</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.cc:5</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a03045b37dfd18d566c057257cb43b8d1"><div class="ttname"><a href="class_fenetre___jeu.html#a03045b37dfd18d566c057257cb43b8d1">Fenetre_Jeu::scene</a></div><div class="ttdeci">QGraphicsScene * scene</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:19</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a5880e1058773a1c8a3c52c05636a86f7"><div class="ttname"><a href="class_fenetre___jeu.html#a5880e1058773a1c8a3c52c05636a86f7">Fenetre_Jeu::Fenetre_Jeu</a></div><div class="ttdeci">Fenetre_Jeu()</div><div class="ttdoc">Constructeur fenetre jeu -&gt; Pour l'affichage du jeu après lancement de la partie.</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.cc:6</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a1bd02a4e752e803eb8a8e3cd4880416f"><div class="ttname"><a href="class_fenetre___jeu.html#a1bd02a4e752e803eb8a8e3cd4880416f">Fenetre_Jeu::fenetre_apercu</a></div><div class="ttdeci">bool fenetre_apercu</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:21</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_a014ba51bfdb2a601ab2f673cbfb7e32b"><div class="ttname"><a href="class_fenetre___jeu.html#a014ba51bfdb2a601ab2f673cbfb7e32b">Fenetre_Jeu::fermeture</a></div><div class="ttdeci">bool fermeture</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:22</div></div>
 <div class="ttc" id="aclass_fenetre___jeu_html"><div class="ttname"><a href="class_fenetre___jeu.html">Fenetre_Jeu</a></div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:7</div></div>
+<div class="ttc" id="aclass_fenetre___jeu_html_ad02cfb6659c382104e56133f35420cb9"><div class="ttname"><a href="class_fenetre___jeu.html#ad02cfb6659c382104e56133f35420cb9">Fenetre_Jeu::view</a></div><div class="ttdeci">QGraphicsView * view</div><div class="ttdef"><b>Definition:</b> Fenetre_Jeu.hh:20</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,6 +1,6 @@
 var class_jeu =
 [
-    [ "Jeu", "class_jeu.html#aec013425e5bf1024e0a4a30e44072847", null ],
+    [ "Jeu", "class_jeu.html#acc5795ee00edf75516d3dfe65be3e6d6", null ],
     [ "Jeu", "class_jeu.html#aef243110d98fe658580a891a5a3a8035", null ],
     [ "Afficher", "class_jeu.html#a5f0e08108be70f271a584edb44e9a375", null ],
     [ "ajouter_Gendarme", "class_jeu.html#a65f448f2bda89e769474ace6bfa21fd5", null ],
@@ -10,7 +10,6 @@ var class_jeu =
     [ "ajoutUnVoleur", "class_jeu.html#a55e22bc75f24969402389c36407ce590", null ],
     [ "Calcule_Deplacement", "class_jeu.html#afa19b24f81d70508da53e8db9bed171d", null ],
     [ "Calcule_Deplacement", "class_jeu.html#a62374d3dab9f9a27fb6b5c7472e02113", null ],
-    [ "Coup_Possible", "class_jeu.html#a07691f1737745e8c0e340ebc303301d1", null ],
     [ "estFini", "class_jeu.html#a2a7d42630c6f7d30733f9a8739fffdd9", null ],
     [ "getGendarme", "class_jeu.html#a23009ad4e297ec12fd697b2b99f0a78c", null ],
     [ "getHauteur", "class_jeu.html#ad682051dfd0772a899cb1e6b22ccbac8", null ],

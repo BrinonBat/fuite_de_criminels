@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('class_position.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions (additions, comparaisons, multiplications)  
+<p>Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions (additions, soustraction, comparaisons, multiplications)  
  <a href="class_position.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_entites_8hh_source.html">Entites.hh</a>&gt;</code></p>
@@ -130,6 +130,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:af2ec7b0799b842109e125c9aa69b8ebb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position.html#af2ec7b0799b842109e125c9aa69b8ebb">operator+</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
 <tr class="memdesc:af2ec7b0799b842109e125c9aa69b8ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">redéfinition de l'operateur +, permettant ainsi d'additionner deux Positions  <a href="class_position.html#af2ec7b0799b842109e125c9aa69b8ebb">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af2ec7b0799b842109e125c9aa69b8ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3759748549201beec3662e7df2646e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position.html#ad3759748549201beec3662e7df2646e6">operator-</a> (<a class="el" href="class_position.html">Position</a> const &amp;pos)</td></tr>
+<tr class="memdesc:ad3759748549201beec3662e7df2646e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">redéfinition de l'operateur -, permettant ainsi de soustraire deux Positions  <a href="class_position.html#ad3759748549201beec3662e7df2646e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad3759748549201beec3662e7df2646e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54a8992507e99dc3e627a2b850e0dc52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position.html#a54a8992507e99dc3e627a2b850e0dc52">operator*</a> (double mult)</td></tr>
 <tr class="memdesc:a54a8992507e99dc3e627a2b850e0dc52"><td class="mdescLeft">&#160;</td><td class="mdescRight">redéfinition de l'operateur *, permettant ainsi de multiplier une position par un double  <a href="class_position.html#a54a8992507e99dc3e627a2b850e0dc52">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a54a8992507e99dc3e627a2b850e0dc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +141,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:af00294a8e30036b60bee8e29dee3a9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions (additions, comparaisons, multiplications) </p>
+<div class="textblock"><p>Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions (additions, soustraction, comparaisons, multiplications) </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a509106e4b677a9c7266a6579b24cfc67"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a509106e4b677a9c7266a6579b24cfc67">&#9670;&nbsp;</a></span>Position()</h2>
@@ -293,6 +296,33 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>le somme de le position actuelle et du paramètre pos </dd></dl>
+
+</div>
+</div>
+<a id="ad3759748549201beec3662e7df2646e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3759748549201beec3662e7df2646e6">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_position.html">Position</a> Position::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> const &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>redéfinition de l'operateur -, permettant ainsi de soustraire deux Positions </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td><a class="el" href="class_position.html" title="Correspond à une position, donc à des coordonnées. Gére aussi les opérations associées aux positions ...">Position</a> que l'on soustrait à la position actuelle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le résultat de la soustraction de la position actuelle par la position prise en paramètre </dd></dl>
 
 </div>
 </div>
